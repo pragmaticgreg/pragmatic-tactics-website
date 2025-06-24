@@ -1,0 +1,24 @@
+# macOS noise
+.DS_Store
+
+# Design archives, drafts, research, AI output dumps
+archive/
+mockups/
+assets/ai_outputs/
+assets/deep_research/
+assets/brand_guidelines/
+assets/brand_strategy/
+
+# Old sample/draft html
+sample-before-after*/
+journey-narratives-accordion.html
+Carousel-components.html
+Accordian-section.html
+bathymetry-full.html~
+
+WORKPLAN_DEPLOYMENT.md
+Website Hosting Strategy.md
+
+assets/
+
+Timeline-chevron-vert.svg

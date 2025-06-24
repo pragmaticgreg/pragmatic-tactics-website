@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragmatic Tactics - Clean Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Clean Professional Palette */
+        :root {
+            --primary-navy: #0f172a;
+            --secondary-blue: #33779e;
+            --accent-orange: #ea580c;
+            --success-green: #16a34a;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --background-white: #ffffff;
+            --background-light: #f5f5f5;
+            --background-medium: #e5e5e6;
+            --border-light: #e2e8f0;
+            --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 60px 0px;
+        }
+
+        /* Automatic alternating backgrounds for content sections */
+        main > .section:nth-of-type(odd)  { background: var(--background-white); }
+        main > .section:nth-of-type(even) { background: var(--background-light); }
+
+        /* Utility override classes */
+        .bg-white { background: var(--background-white) !important; }
+        .bg-light { background: var(--background-light) !important; }
+
+        /* Contrast card surfaces against their parent section background */
+        /* Odd sections are white → cards light */
+        main > .section:nth-of-type(odd) .card { background: var(--background-light); }
+
+        /* Even sections are light → cards white */
+        main > .section:nth-of-type(even) .card { background: var(--background-white); }
+
+        /* Explicit overrides when using bg-white / bg-light utility classes */
+        .section.bg-white .card { background: var(--background-light); }
+
+        .section.bg-light .card { background: var(--background-white); }
+
+        /* Navigation */
+        .nav {
+            background: var(--background-white);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            letter-spacing: -0.025em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-navy);
+        }
+
+        /* Mobile Navigation */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-navy);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--background-white);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-top: 1px solid var(--border-light);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 20px 24px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu .nav-link:hover {
+            background: var(--background-light);
+            color: var(--primary-navy);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav {
+                position: relative;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--primary-navy);
+            text-align: center;
+            padding: 240px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Bathymetric Background */
+        .bathymetric-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bathymetric-background svg {
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            transform: scale(1.2);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 55%;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .hero .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: rgba(355,355,255,0.9);
+            line-height: 1.4;
+        }
+
+        .cta-primary {
+            background: var(--accent-orange);
+            color: var(--background-white);
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px -8px var(--accent-orange);
+        }
+
+        /* ===== CONTENT GRID SYSTEM ===== */
+        
+        /* Clean content layout without card styling */
+        .content-grid {
+            display: grid;
+            gap: 40px;
+            margin-top: 64px;
+        }
+        
+        .content-grid--2-col { grid-template-columns: repeat(2, 1fr); }
+        .content-grid--3-col { grid-template-columns: repeat(3, 1fr); }
+        .content-grid--4-col { grid-template-columns: repeat(4, 1fr); }
+        
+        .content-grid__item {
+            text-align: center;
+            padding: 0;
+        }
+        
+        .content-grid__icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .content-grid__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .content-grid__title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            text-align: center;
+        }
+
+        .content-grid__content {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .content-grid__summary {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Design for Content Grid */
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 24px;
+            }
+            
+            .content-grid--2-col,
+            .content-grid--3-col,
+            .content-grid--4-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .content-grid__icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+            
+            .content-grid__title {
+            font-size: 20px;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-grid--2-col,
+            .content-grid--3-col,
+            .content-grid--4-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section {
+            padding: 30px 0px;
+        }
+        }
+
+        /* ===== UNIFIED CARD SYSTEM ===== */
+        
+        /* Base Grid System */
+        .card-grid {
+            display: grid;
+            gap: 40px;
+            margin-top: 64px;
+        }
+        
+        .card-grid--2-col { grid-template-columns: repeat(2, 1fr); }
+        .card-grid--3-col { grid-template-columns: repeat(3, 1fr); }
+        .card-grid--4-col { grid-template-columns: repeat(4, 1fr); }
+        
+        /* Base Card Component */
+        .card {
+            background: var(--background-white);
+            padding: 40px 32px;
+            text-align: center;
+            border-radius: 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+        
+        /* Card Variants */
+       
+        
+        .card--service {
+            border-top: 6px solid var(--secondary-blue);
+            padding: 48px 32px;
+        }
+        
+        .card--service::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), grey);
+        }
+        
+        .card--testimonial {
+            border-left: 8px solid var(--success-green);
+            background: var(--background-light);
+            text-align: left;
+        }
+        
+        .card--testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 80px;
+            color: var(--success-green);
+            font-weight: 900;
+            opacity: 0.3;
+        }
+        
+        .card--process {
+            border-bottom: 4px solid var(--accent-orange);
+            padding: 40px 24px;
+        }
+        
+        /* Card Content Elements */
+        .card__icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--background-light), #f8fafc);
+            border: 3px solid var(--secondary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            transition: all 0.3s ease;
+            padding: 16px;
+        }
+        
+        .card__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: opacity(0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .card__icon {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-navy));
+            border-color: var(--accent-orange);
+            transform: scale(1.1);
+        }
+        
+        .card:hover .card__icon img {
+            filter: brightness(0) invert(1);
+        }
+        
+        .card__icon--service {
+            width: 120px;
+            height: 120px;
+            background: none;
+            color: var(--accent-orange);
+            border: none;
+            border-radius: 0;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .card__icon--service img {
+            flex: 1;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Remove hover effects for service cards */
+        .card--service:hover .card__icon {
+            background: none;
+            border-color: transparent;
+            transform: none;
+        }
+        
+        .card--service:hover .card__icon img {
+            filter: none;
+        }
+        
+        .card__icon--process {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-navy);
+            color: var(--accent-orange);
+            border: 4px solid var(--secondary-blue);
+            border-radius: 0;
+            font-weight: 900;
+            font-size: 24px;
+            transform: rotate(45deg);
+        }
+        
+        .card__icon--process span {
+            transform: rotate(-45deg);
+        }
+        
+        .card__title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .card__title--problem {
+            color: #dc2626;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        
+        .card__title--service {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        
+        .card__title--process {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        
+        .card__summary {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .card__content {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .card__content--testimonial {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+        
+        .card__content--process {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Responsive Design for Card System */
+        @media (max-width: 768px) {
+            .card-grid {
+                gap: 24px;
+            }
+            
+            .card-grid--2-col,
+            .card-grid--3-col,
+            .card-grid--4-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .card__icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 20px;
+            }
+            
+            .card__title {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .card__summary {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-grid--2-col,
+            .card-grid--3-col,
+            .card-grid--4-col {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }   
+        }
+
+    
+        .section-title {
+            /* Base styling shared by all section titles */
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            text-align: center;
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+        }
+
+        /* Size variants based on HTML element for semantic hierarchy */
+        h1.section-title { font-size: 48px; }  /* Major page sections */
+        h2.section-title { font-size: 40px; }  /* Standard sections */
+        h3.section-title { font-size: 32px; }  /* Sub-sections */
+        h4.section-title { font-size: 30px; }  /* Minor sections like problems */
+        h5.section-title { font-size: 24px; }  /* Small sections */
+        h6.section-title { font-size: 20px; }  /* Tiny sections */
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 64px;
+        }
+
+
+        /* Reflective Testimonial Cards */
+        .card--testimonial--reflective {
+            border-left: 6px solid var(--secondary-blue);
+            background: var(--background-light);
+            padding: 32px;
+            text-align: left;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .card--testimonial--reflective .card__content--testimonial {
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 500;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            margin-top: 64px;
+        }
+
+        .testimonial {
+            background: var(--background-light);
+            padding: 40px;
+            border-radius: 0;
+            border-left: 8px solid var(--success-green);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 80px;
+            color: var(--success-green);
+            font-weight: 900;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--secondary-blue);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+
+
+        /* About */
+        .about-section {
+            background: var(--background-white);
+            border-bottom: none;
+            
+        }
+
+        .about-section .container {
+            max-width: 960px;
+        }
+
+        .about-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 32px;
+            text-align: center;
+            letter-spacing: -0.025em;
+            line-height: 1.3;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: var(--background-light);
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            border: 0px solid var(--secondary-blue);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            overflow: hidden;
+            margin: 30px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue)) !important;
+            color: var(--background-white);
+            text-align: center;
+            padding: 96px 0;
+        }
+
+        .final-cta h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.025em;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid var(--background-white);
+            color: var(--background-white);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-left: 24px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .cta-secondary:hover {
+            background: var(--background-white);
+            color: var(--primary-navy);
+        }
+
+        .risk-mitigation {
+            margin-top: 32px;
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Philosophy Quote Section */
+        .philosophy-quote {
+            background: var(--background-white);
+            padding-top: 40px;
+            padding-bottom: 0px;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .quote-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .quote-section {
+            background: #f5f5f5;
+            padding: 40px 40px;
+            border-radius: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--primary-navy);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            position: relative;
+            padding: 0 0px;
+        }
+
+        .quote-attribution {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary-blue);
+            font-style: normal;
+            margin-left: 16px;
+            white-space: nowrap;
+        }
+
+        .quote-context {
+            font-size: 18px;
+            color: var(--text-primary);
+            font-style: normal;
+            max-width: 700px;
+            margin: 32px auto 0;
+            line-height: 1.7;
+            text-align: left;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            border-left: none;
+            box-shadow: none;
+        }
+        
+        .quote-context::before {
+            display: none;
+        }
+        
+        .quote-context .opening-line {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .quote-context .main-content {
+            font-size: 15px;
+        }
+
+        /* Stacked Mantras Typography */
+        .stacked-mantras {
+            margin: 8px 0;
+            padding: 8px 0;
+        }
+        
+        .mantras-line {
+            font-size: 18px;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--primary-navy);
+            line-height: 1.6;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 90px 0;
+                min-height: 450px;
+                max-height: 600px;
+            }
+            
+            .hero-content {
+                top: 50%;
+            }
+            
+            .hero h1 { 
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .quote-text {
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .about-image {
+                order: -1;
+                width: 280px;
+                height: 280px;
+                margin: 0 auto;
+            }
+            
+            .about-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            /* Mantras Mobile */
+            .stacked-mantras {
+                margin: 16px 0;
+                padding: 14px 0;
+            }
+            
+            .mantras-line {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0;
+                min-height: 450px;
+                max-height: 450px;
+            }
+            
+            .hero-content {
+                top: 55%;
+            }
+            
+            .hero h1 { 
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            
+            .bathymetric-background {
+                height: 530px;
+            }
+            
+            .bathymetric-background svg {
+                transform: scale(1.8);
+                min-height: 100%;
+            }
+            
+            /* Smaller Mobile About Section */
+            .about-image {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .about-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .quote-context p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            /* Mobile tweaks: allow quote block full-width & tighter padding */
+            .philosophy-quote .container { padding: 0; }
+            .quote-section { padding: 24px 16px; }
+        }
+
+        /* Ultra-narrow screens - prevent container overflow */
+        @media (max-width: 410px) {
+            .hero {
+                padding: 90px 0;
+                min-height: 450px;
+                max-height: 450px;
+            }
+            
+            .hero-content {
+                top: 60%;
+            }
+            
+            .hero h1 { 
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .bathymetric-background {
+                height: 450px;
+            }
+            
+            .bathymetric-background svg {
+                transform: scale(2.0);
+                min-height: 100%;
+            }
+            
+            /* Ultra-narrow Mantras */
+            .mantras-line {
+                font-size: 15px;
+            }
+        }
+
+        /* ===== PROBLEMS LIST LAYOUT (Containerized Approach) ===== */
+        
+        .problems-list {
+            max-width: 1000px;
+            margin: 20px auto 0;
+            padding: 0;
+        }
+        
+        .problem-item {
+            display: grid;
+            grid-template-columns: 30% 1fr;
+            gap: 32px;
+            padding: 40px 40px 40px 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            background-color: var(--background-white);
+            transition: all 0.3s ease;
+        }
+        
+        /* Static shadow only for non-interactive cards */
+        .problem-item:not(.problem-item--interactive){
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        
+        /* Elevation on hover for interactive ones remains unchanged */
+        .problem-item--interactive { cursor: pointer; }
+        .problem-item--interactive:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-color: #e2e8f0;
+        }
+        
+        .problem-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .problem-item__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            min-height: 120px;
+        }
+        
+        .problem-item__icon img {
+            width: 90%;
+            height: auto;
+            max-height: 120px;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+        
+        .problem-item__content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .problem-item__title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        .problem-item__summary {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .problem-item__details {
+            margin: 0;
+        }
+        
+        .problem-item__details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .problem-item__details li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .problem-item__details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design for Problems List */
+        @media (max-width: 768px) {
+            .problems-list {
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+            
+            .problem-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+                text-align: left;
+            }
+            
+            .problem-item__icon {
+                width: 100% !important;
+                height: 150px !important;
+                justify-self: center;
+                flex-shrink: 0;
+                min-height: 150px;
+            }
+            
+            .problem-item__icon img {
+                width: 80% !important;
+                height: auto !important;
+                max-height: 140px !important;
+                object-fit: contain;
+            }
+            
+            .problem-item__title {
+                font-size: 18px;
+            }
+            
+            .problem-item__summary {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .problem-item {
+                padding: 16px;
+                gap: 16px;
+            }
+            
+            .problem-item__icon {
+                height: 120px !important;
+                min-height: 120px;
+            }
+            
+            .problem-item__icon img {
+                width: 75% !important;
+                max-height: 110px !important;
+            }
+            
+            .problem-item__title {
+                font-size: 16px;
+            }
+            
+            .problem-item__summary {
+                font-size: 14px;
+            }
+        }
+
+
+        /* Utility: keep sentence spans on one line */
+        .sentence-nowrap{white-space:nowrap;}
+
+        /* Sentence wrap helper */
+        .sentence-break{display:none;}
+        @media(max-width:600px){
+            .sentence-break{display:inline;}
+        }
+
+        /* Stack CTAs on small screens */
+        @media(max-width:480px){
+            .cta-primary, .cta-secondary{
+                display:block;
+                margin:0 auto 16px;
+            }
+            .cta-secondary{margin-left:0;}
+        }
+
+        /* ===== ACCORDION STYLES ===== */
+        /* Accordion */
+        .accordion{display:flex;flex-direction:column;gap:24px;}
+        details.accordion-item{background:var(--background-white);border:1px solid var(--border-light);border-left:6px solid var(--accent-orange);border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);overflow:hidden;}
+        summary{cursor:pointer;list-style:none;padding:24px 32px;display:flex;flex-direction:column;gap:8px;position:relative;}
+        summary::-webkit-details-marker{display:none;}
+        .accordion-content .title{font-size:24px;font-weight:700;color:var(--text-primary);}
+        .accordion-content .quote{font-style:italic;color:var(--text-secondary);font-size:16px;}
+        .accordion-content .subtitle{line-height:1.5;}
+
+        .accordion-content{padding:0 32px 32px 32px;display:grid;gap:12px;font-size:15px;color:var(--text-secondary);}    
+        
+        /* Content section styling */
+        .content-section {
+          margin-bottom: 16px;
+        }
+        
+        .content-section:last-child {
+          margin-bottom: 0;
+        }
+        
+        .section-header {
+          font-weight: 700;
+          color: var(--primary-navy);
+          font-size: 16px;
+          margin-bottom: 12px;
+          display: block;
+        }
+        
+
+        
+        .pragmatic-promise {
+          background: var(--background-light);
+          padding: 20px;
+          border-radius: 8px;
+          border: 1px solid var(--border-light);
+        }
+        
+        .promise-list {
+          list-style: none;
+          padding: 0;
+          margin: 12px 0 0 0;
+        }
+        
+        .promise-list li {
+          margin-bottom: 8px;
+          font-size: 14px;
+        }
+        
+        .promise-list li strong {
+          color: var(--primary-navy);
+          font-weight: 700;
+        }
+        
+        /* Special styling for Pragmatic Promise sections */
+        .vertical-timeline.pragmatic-promise {
+          display: block;
+          width: 80%;
+          margin: 24px auto;
+          background: var(--background-light);
+          padding: 20px;
+          border-radius: 8px;
+          border: 1px solid var(--border-light);
+        }
+        
+        .vertical-timeline.pragmatic-promise .vertical-timeline__icon {
+          display: none;
+        }
+        
+        .vertical-timeline.pragmatic-promise .vertical-timeline__content {
+          width: 100%;
+        }
+        
+        /* Vertical Timeline - based on problem-item styling */
+        .vertical-timeline {
+          display: grid;
+          grid-template-columns: 12% 1fr;
+          gap: 19px;
+          padding: 0;
+          margin-bottom: 24px;
+          transition: all 0.3s ease;
+        }
+        
+        .vertical-timeline:last-child {
+          margin-bottom: 0;
+        }
+        
+        .vertical-timeline__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          min-height: 120px;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .vertical-timeline__icon img {
+          width: 90%;
+          height: auto;
+          max-height: 120px;
+          object-fit: contain;
+          opacity: 0.9;
+        }
+        
+        .vertical-timeline__content {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        
+        .vertical-timeline__title {
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--text-primary);
+          margin: 0;
+          line-height: 1.3;
+        }
+        
+        .vertical-timeline__summary {
+          font-size: 16px;
+          color: var(--text-secondary);
+          line-height: 1.5;
+          margin: 0;
+          font-weight: 400;
+        }
+        
+        .vertical-timeline__details {
+          margin: 0;
+        }
+        
+        .vertical-timeline__details ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        
+        .vertical-timeline__details li {
+          position: relative;
+          padding-left: 24px;
+          color: var(--text-secondary);
+          font-size: 15px;
+          line-height: 1.5;
+          margin: 0;
+        }
+        
+        .vertical-timeline__details li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #10b981;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        details[open] summary{}    
+        /* Responsive design for vertical-timeline */
+        @media (max-width: 768px) {
+          .vertical-timeline {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+            text-align: left;
+          }
+          
+          .vertical-timeline__icon {
+            width: 100% !important;
+            height: 150px !important;
+            justify-self: center;
+            flex-shrink: 0;
+            min-height: 150px;
+          }
+          
+          .vertical-timeline__icon img {
+            width: 80% !important;
+            height: auto !important;
+            max-height: 140px !important;
+            object-fit: contain;
+          }
+          
+          .vertical-timeline__title {
+            font-size: 18px;
+          }
+          
+          .vertical-timeline__summary {
+            font-size: 15px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .vertical-timeline {
+            padding: 16px;
+            gap: 16px;
+          }
+          
+          .vertical-timeline__icon {
+            height: 120px !important;
+            min-height: 120px;
+          }
+          
+          .vertical-timeline__icon img {
+            width: 75% !important;
+            max-height: 110px !important;
+          }
+          
+          .vertical-timeline__title {
+            font-size: 16px;
+          }
+          
+          .vertical-timeline__summary {
+            font-size: 14px;
+          }
+        }
+
+        @media(max-width:600px){
+          summary{padding:20px;}
+          .accordion-content .title{font-size:20px;}
+          .accordion-content{padding:0 20px 20px 20px;}
+          .content-section {margin-bottom: 12px;}
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">Results</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">Results</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <section class="hero section">
+        <div class="container">
+            <div class="bathymetric-background">
+                <!-- Animated Bathymetric Chart SVG -->
+                <svg id="Layer_1" viewBox="0 0 2000 1200" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <style>
+                      .cls-1 { fill: #0f172a; }
+                      .cls-2 { fill: #03538e; }
+                      .cls-3 { fill: #0068a4; }
+                      .cls-4 { fill: #0ea5e9; }
+                      .cls-5 { fill: #1e3a5f; }
+                      .cls-6 { fill: #38bdf8; }
+                      .cls-7 { fill: #0284c7; }
+                    </style>
+                  </defs>
+                  <g id="bathymetry">
+                    <g id="sea-8" class="cls-1">
+                      <path d="M0,0V1200H2000V0H0Z"/>
+                    </g>
+                    <!-- Remaining SVG paths will be loaded from external file -->
+                  </g>
+                </svg>
+            </div>
+            
+            <div class="hero-content">
+                <p class="subtitle">Augmenting your people, processes, and technology <br>to bring your strategy to life.</p>
+            <a href="#" class="cta-primary">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-quote section bg-white">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-section">
+                    <div class="quote-text prefer-sentence-wrap"><strong>Ideas are cheap</strong>. Execution is everything. <span class="quote-attribution"><br class="sentence-break">— Christina Wodtke</span></div>
+                    <div class="quote-text prefer-sentence-wrap"><strong>Ideas are easy</strong>. Execution is everything. <span class="quote-attribution"><br class="sentence-break">— John Doerr</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section section">
+        <div class="container">
+            <h4 class="about-title">The best ideas mean nothing without execution.<br>The best execution of the wrong idea, a waste.</h4>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="../assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="quote-context">
+                    <p>You've heard it all before:</p>
+                    
+                    <div class="stacked-mantras">
+                        <div class="mantras-line">"Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"</div>
+                </div>
+                    
+                    <p>Solid advice. But here's the thing, knowing <strong>what to do and actually doing it</strong> are worlds apart.</p>
+                    
+                    <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice — it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-section section">
+        <div class="container">
+            <h4 class="section-title">Sound Familiar?</h4>
+            <div class="problems-list">
+                <div class="problem-item" data-problem="strategic">
+                    <div class="problem-item__icon">
+                        <img src="../assets/images/Icon - missed target.svg" alt="Strategic ambitions icon">
+                </div>
+                    <div class="problem-item__content">
+                        <h4 class="problem-item__title">Falling short on your strategic ambitions?</h4>
+                        <div class="problem-item__details">
+                            <ul>
+                                <li>A <strong>clear vision</strong>, but a nagging feeling your business <strong>isn't quite getting there</strong>.</li>
+                                <li><strong>Disheartened</strong> by lack of tangible progress towards goals.</li>
+                                <li>The sense that your true business potential is just <strong>waiting to be unlocked</strong>.</li>
+                            </ul>
+                </div>
+                    </div>
+                </div>
+
+                <div class="problem-item" data-problem="outcomes">
+                    <div class="problem-item__icon">
+                        <img src="../assets/images/Icon - Maze.svg" alt="Unpredictable outcomes icon">
+                </div>
+                    <div class="problem-item__content">
+                        <h3 class="problem-item__title">Unpredictable outcomes and team friction?</h3>
+                        <div class="problem-item__details">
+                            <ul>
+                                <li><strong>Battling capacity</strong> due to erratic or lengthy job turnarounds?</li>
+                                <li>Workflow results unpredictable: <strong>inconsistent outcomes</strong> or <strong>duration</strong>?</li>
+                                <li>Team <strong>energy wasted</strong> figuring out how to work, not on the work itself?</li>
+                            </ul>
+                </div>
+                    </div>
+                </div>
+
+                <div class="problem-item" data-problem="plateau">
+                    <div class="problem-item__icon">
+                        <img src="../assets/images/Icon - Plateau.svg" alt="Progress plateau icon">
+                    </div>
+                    <div class="problem-item__content">
+                        <h4 class="problem-item__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h4>
+                        <div class="problem-item__details">
+                            <ul>
+                                <li>Feel your team needs more <strong>support or new skills</strong> to deliver or develop?</li>
+                                <li>Want to <strong>develop your people</strong>, while they're delivering real business results?</li>
+                                <li>Despite everyone's hard work, you're <strong>not fully harnessing</strong> their collective strengths.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="problem-item" data-problem="toolbox">
+                    <div class="problem-item__icon">
+                        <img src="../assets/images/Icon - bad leverage.svg" alt="Toolbox solutions icon">
+                    </div>
+                    <div class="problem-item__content">
+                        <h4 class="problem-item__title">Toolbox: Cluttered, but lacking real solutions?</h4>
+                        <div class="problem-item__details">
+                            <ul>
+                                <li>Leveraging tools, but the <strong>'effort-to-impact'</strong> ratio feels poorly balanced?</li>
+                                <li>Tools <strong>lack connection</strong>, so streamlined workflows feel just out of reach?</li>
+                                <li><strong>Sense new opportunities</strong>, but lack the agility or confidence to seize them?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="solution-section section">
+        <div class="container">
+            <h2 class="section-title">The Pragmatic Core Elements</h2>
+            <p class="section-subtitle">Foundation first, tools second. This sequence ensures lasting results rather than expensive experiments.</p>
+            
+            <div class="content-grid content-grid--3-col">
+                <div class="content-grid__item">
+                    <div class="content-grid__icon">
+                        <img src="../assets/images/Cube - People.svg" alt="People">
+                </div>
+                    <h3 class="content-grid__title">People</h3>
+                    <p class="content-grid__content">Empower your team with clear roles, improved skills, and collaborative workflows that amplify their natural strengths.</p>
+                </div>
+                <div class="content-grid__item">
+                    <div class="content-grid__icon">
+                        <img src="../assets/images/Cube - Process.svg" alt="Process">
+                </div>
+                    <h3 class="content-grid__title">Process</h3>
+                    <p class="content-grid__content">Document, optimize, and systematize your operations to eliminate bottlenecks and create predictable outcomes.</p>
+                </div>
+                <div class="content-grid__item">
+                    <div class="content-grid__icon">
+                        <img src="../assets/images/Cube - Tools.svg" alt="Technology">
+                    </div>
+                    <h3 class="content-grid__title">Technology</h3>
+                    <p class="content-grid__content">Implement the right tools at the right time, fully integrated and adopted to amplify your team's effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="accordian-section section">
+        <div class="container">
+        <h2 class="section-title">Business Transformation Journeys</h2>
+    
+        <div class="accordion">
+          
+          <!-- Journey 1: The Sales Black Hole -->
+          <details class="accordion-item">
+            <summary>
+              <span class="title">The Sales Black Hole</span>
+              <span class="quote">"Our sales team is reactive, not proactive. Leads slip through the cracks."</span>
+              <span class="subtitle">We wouldn't have the capacity to handle more. We aren't closing enough deals. Leads arrive by phone, email, web-forms, and events—but nothing links them. Potential clients slip through the cracks.</p></span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">Reduced correspondence to assess potential client fit. The team follows a consistent process and rhythm. Every lead is captured, nurtured, and visible in a living pipeline that shows exactly where tomorrow's revenue will come from.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">We map every current lead-capture point, connect them to a right-sized CRM (sales pipeline), automate reminders, email templates, and set up a simple pipeline view. Team training sessions ensure the team log interactions without friction.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Comprehensive and appropriate contact forms to ensure the team has the information needed to serve each customer effectively. Clearly defined sales stages, requirements, and actions.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Email inbox relief, focus on getting all sales leads into a pipeline to create focus on sales tasks and goals. Consistent follow-ups convert more opportunities. Live data to provide sales forecasts for cashflow and action planning.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – coach and collaborate with the team to develop a simple sales process.</li>
+                      <li><strong>Process</strong> – define clear pipeline stages, exit criteria, and actions.</li>
+                      <li><strong>Tools/Tech</strong> – integrate email, web-forms, and phone logs into a lightweight CRM with reminders and other automations.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 2: The Task Tornado -->
+          <details class="accordion-item">
+            <summary>
+              <span class="title">The Task Tornado</span>
+              <span class="quote">"Tasks hide in email inboxes, sticky notes, and memory. Nothing ever feels 'done'."</span>
+              <span class="subtitle">Ownership is vague, priorities shift hourly, and nothing ever feels "done".</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">A consistent and transparent process that suits your team and work environment. Priorities are clear, details and expectations clearly conveyed. A step forward to get ahead of the firefighting.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">We inventory recurring workflows and encompass them into defined processes. Collaboratively develop a process for managing tasks/responsibilities that fall outside the recurring processes. Coach the team on creating clear expectations, ownership, and sustainable accountability.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Clarified communication surrounding tasks quickly creates clarity across the team. Early establishment of where tasks are tracked in a visible manner.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Creating a culture of breaking tasks into actionable items with clear definitions, prioritizing tasks based on contribution to company goals and measures of success.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – cultivate habits of clear ownership and accountability.</li>
+                      <li><strong>Process</strong> – standardise intake, prioritisation, and completion criteria.</li>
+                      <li><strong>Tools/Tech</strong> – implement an appropriate tool for tracking, communication, and collaboration.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 3: The Onboarding Nightmare -->
+          <details class="accordion-item">
+            <summary>
+              <span class="title">The Onboarding Nightmare</span>
+              <span class="quote">"You need to increase team capacity but new hires take so long to get up to speed."</span>
+              <span class="subtitle">It seems to take so long to get new members up to speed.</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">New hires contribute meaningful work in their first week, feeling confident—not overwhelmed, other team members aren't left feeling burdened.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">Systemization. Identify core processes within the business, document current model workflows, then apply easy efficiency wins through process or technology, develop quick reference guides and checklists to support process consistency. Document the process details in the form of dynamic digital products with interactivity and multimedia content for training of existing team members and future hires.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Consistent execution of workflows provide immediate results in both quality of work and timeframes for the existing team.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Faster ramp-up of new hires boosts morale, reduces turnover risk, and unlocks senior staff for high-value projects. Additionally, defined processes set you up for continuous improvement, automation, and other digital adoption initiatives including artificial intelligence tools.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – free veterans from ad-hoc training, give newcomers confidence.</li>
+                      <li><strong>Process</strong> – document and develop core workflows.</li>
+                      <li><strong>Tools/Tech</strong> – addition of a lightweight dynamic LMS (learning management system) and preparation for future process automation.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 4: Spreadsheet Sprawl -->
+          <details class="accordion-item">
+            <summary>
+              <span class="title">Spreadsheet Sprawl</span>
+              <span class="quote">"Operating with duplicate data, conflicting formulas, and endless copy/paste."</span>
+              <span class="subtitle">Regular breakdowns and endless copy/paste make reporting slow and error-prone.</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">Robust and sustainable spreadsheet system or graduation into dedicated operations software.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">Identify the objective and detailed needs of the system, consolidate sheets into a single source of truth, set proper permission and protected cells, identify and implement improvements. Ensure clear documentation and training documents are developed and automate imports/exports. Version control and permissions keep everything clean.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Your existing spreadsheet process quickly becomes more robust, reliable, and easier to use. Providing you confidence in both it and the team.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Teams relying on these spreadsheet tools can focus on their true role. A byproduct of our work provides you with clear future development opportunities for integration, automation, software adoption or custom development.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – instil trust in the numbers and reduce manual drudgery.</li>
+                      <li><strong>Process</strong> – clear process and improved functionality.</li>
+                      <li><strong>Tools/Tech</strong> – potential path forward for more powerful solutions.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 5: Strategy Stall -->
+          <details class="accordion-item">
+            <summary>
+              <span class="title">Strategy Stall</span>
+              <span class="quote">"Strategic goals exist but lack tactical clarity and leadership consensus."</span>
+              <span class="subtitle">The team cycles through the same priority discussions without resolution. Resources feel stretched, timelines seem unrealistic, and daily demands consume all bandwidth for strategic work.</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">A unified leadership team with crystal-clear tactical priorities that can realistically be executed with available resources. Strategic objectives translate into committed action with genuine consensus on trade-offs.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">Pressure-test strategic goals against organizational capabilities. Facilitate structured discussions to achieve alignment on 3-5 mission-critical objectives. Map tactical roadmap for next 90 days and identify key obstacles.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Complete leadership alignment on priorities and realistic resource assessment. Clear tactical roadmap with documented challenges and mitigation strategies.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Leadership team becomes a unified force driving shared objectives. Foundation established for a broader organizational execution framework (eg: 4DX or OKRs based on team maturity).</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="assets/images/Timeline-chevron-vert.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – leadership team stops circular strategy conversations and commits to shared direction.</li>
+                      <li><strong>Process</strong> – structured decision-making frameworks ensure genuine consensus and accountability.</li>
+                      <li><strong>Tools/Tech</strong> – documented priorities, challenge inventory, and tactical roadmap ready for rollout.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+          
+        </div>
+    </div>
+      </section>
+
+    <section class="process-section section">
+        <div class="container">
+            <h2 class="section-title">How We Work Together</h2>
+            
+            <div class="card-grid card-grid--4-col">
+                <div class="card card--process">
+                    <div class="card__icon card__icon--process"><span>1</span></div>
+                    <h4 class="card__title card__title--process">Deep Dive Assessment</h4>
+                    <p class="card__content card__content--process">We map your current operations and identify the highest-impact improvement opportunities.</p>
+                </div>
+                <div class="card card--process">
+                    <div class="card__icon card__icon--process"><span>2</span></div>
+                    <h4 class="card__title card__title--process">Collaborative Design</h4>
+                    <p class="card__content card__content--process">Together, we design solutions that work for your specific team, constraints, and goals.</p>
+                </div>
+                <div class="card card--process">
+                    <div class="card__icon card__icon--process"><span>3</span></div>
+                    <h4 class="card__title card__title--process">Hands-On Implementation</h4>
+                    <p class="card__content card__content--process">We work alongside your team to implement changes, ensuring adoption and immediate value.</p>
+                </div>
+                <div class="card card--process">
+                    <div class="card__icon card__icon--process"><span>4</span></div>
+                    <h4 class="card__title card__title--process">Sustainable Results</h4>
+                    <p class="card__content card__content--process">We transfer knowledge and establish systems so improvements stick long after we're gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta section">
+        <div class="container">
+            <h2>Ready to Break Through Your Operational Barriers?</h2>
+            <p>Let's discuss your specific challenges and explore if we're a good fit to work together.</p>
+            <a href="#" class="cta-primary">Schedule Free Consultation</a>
+            <a href="#" class="cta-secondary">Download Case Studies</a>
+            <div class="risk-mitigation">
+                ✓ No long-term contracts required<br>
+                ✓ Clear project milestones and deliverables<br>
+                ✓ Local BC references available
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Sentence wrap utility -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.prefer-sentence-wrap').forEach(function(el){
+                // replace only first occurrence of period+space
+                el.innerHTML = el.innerHTML.replace(/\.\s/, '. <br class="sentence-break">');
+            });
+        });
+    </script>
+
+    <!-- GSAP Color Transition Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Load complete SVG and initialize animations
+        async function loadAnimatedBathymetry() {
+            try {
+                const response = await fetch('bathymetry.html?v=' + Date.now());
+                const htmlText = await response.text();
+                
+                // Extract SVG content from the full HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, 'text/html');
+                const svg = doc.querySelector('svg');
+                
+                if (svg) {
+                    // Replace the placeholder SVG with the complete one
+                    const container = document.querySelector('.bathymetric-background');
+                    container.innerHTML = '';
+                    container.appendChild(svg.cloneNode(true));
+                    
+                    // Initialize the animation
+                    initBathymetricAnimation();
+                }
+            } catch (error) {
+                console.error('Failed to load bathymetric animation:', error);
+            }
+        }
+
+        // Initialize problem item interactions (simplified - no toggles needed)
+        function initProblemItemInteractions() {
+            // No interactive functionality needed - all content is visible by default
+            // This matches the clean layout shown in the attached image
+        }
+        
+        function initBathymetricAnimation() {
+            // Color palette definition
+            const originalColors = {
+                Land:  "#38bdf8", // cls-6
+                sea1:  "#0ea5e9", // cls-4
+                sea2:  "#0284c7", // cls-7
+                sea3:  "#0068a4", // cls-3
+                sea4:  "#03538e", // cls-2
+                sea5:  "#1e3a5f", // cls-5
+                sea6:  "#0f172a"  // cls-1
+            };
+
+            // Create main timeline with initial delay
+            const mainTimeline = gsap.timeline({ delay: 2 });
+
+            // Set initial text visibility states
+            gsap.set("#Text-1", { autoAlpha: 1 });
+            gsap.set("#Text-2, #Text-3, #Text-4, #Text-5", { autoAlpha: 0 });
+
+            // PULSE 1: Progressive shallowing effect
+            mainTimeline
+                .to("#sea-8", { duration: 1, fill: originalColors.sea6 }, "pulse1")
+                .to("#sea-6", { duration: 1, fill: originalColors.sea5 }, "pulse1")
+                .to("#sea-5", { duration: 1, fill: originalColors.sea4 }, "pulse1")
+                .to("#sea-4", { duration: 1, fill: originalColors.sea3 }, "pulse1")
+                .to("#sea-3", { duration: 1, fill: originalColors.sea2 }, "pulse1")
+                .to("#sea-2 path", { duration: 1, fill: originalColors.sea1 }, "pulse1")
+                .to("#sea-1 path", { duration: 1, fill: originalColors.Land }, "pulse1")
+                .to("#Text-1", { duration: 1, autoAlpha: 0 }, "pulse1")
+                .to("#Text-2", { duration: 1, autoAlpha: 1 }, "pulse1")
+                .to({}, { duration: 0.25 })
+
+            // PULSE 2: Continue progressive shallowing  
+                .to("#sea-8", { duration: 1, fill: originalColors.sea5 }, "pulse2")
+                .to("#sea-6", { duration: 1, fill: originalColors.sea4 }, "pulse2")
+                .to("#sea-5", { duration: 1, fill: originalColors.sea3 }, "pulse2")
+                .to("#sea-4", { duration: 1, fill: originalColors.sea2 }, "pulse2")
+                .to("#sea-3", { duration: 1, fill: originalColors.sea1 }, "pulse2")
+                .to("#sea-2 path", { duration: 1, fill: originalColors.Land }, "pulse2")
+                .to("#sea-1 path", { duration: 1, fill: originalColors.Land }, "pulse2")
+                .to("#Text-2", { duration: 1, autoAlpha: 0 }, "pulse2")
+                .to("#Text-3", { duration: 1, autoAlpha: 1 }, "pulse2")
+                .to({}, { duration: 0.25 })
+
+            // PULSE 3: Final progressive shallowing
+                .to("#sea-8", { duration: 1, fill: originalColors.sea4 }, "pulse3")
+                .to("#sea-6", { duration: 1, fill: originalColors.sea3 }, "pulse3")
+                .to("#sea-5", { duration: 1, fill: originalColors.sea2 }, "pulse3")
+                .to("#sea-4", { duration: 1, fill: originalColors.sea1 }, "pulse3")
+                .to("#sea-3", { duration: 1, fill: originalColors.Land }, "pulse3")
+                .to("#sea-2 path", { duration: 1, fill: originalColors.Land }, "pulse3")
+                .to("#sea-1 path", { duration: 1, fill: originalColors.Land }, "pulse3")
+                .to("#Text-3", { duration: 1, autoAlpha: 0 }, "pulse3")
+                .to("#Text-4", { duration: 1, autoAlpha: 1 }, "pulse3")
+                .to({}, { duration: 0.25 })
+
+            // PULSE 4: Final text transition to "Strategy & Execution"
+                .to("#Text-4", { duration: 1, autoAlpha: 0 }, "pulse4")
+                .to("#Text-5", { duration: 1, autoAlpha: 1 }, "pulse4");
+        }
+        
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAnimatedBathymetry();
+            initProblemItemInteractions();
+            initMobileMenu();
+        });
+
+        // Mobile Menu Functionality
+        function initMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+
+                // Close menu when clicking on menu links
+                const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+      
+    </script>
+</body>
+</html> 
