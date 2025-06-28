@@ -23,7 +23,7 @@ Site Builder/
 ### 1 · Install prerequisites
 1. Node ≥ 18 (https://nodejs.org)
 2. Firebase CLI
-   ```bash
+```bash
    npm install -g firebase-tools
    ```
 3. Git + GitHub account
@@ -50,7 +50,7 @@ Your site will be available at the provided `.web.app` & `.firebaseapp.com` URLs
 
 ### 5 · Continuous deployment from GitHub (recommended)
 1. Push the generated workflow file:
-   ```bash
+```bash
    git add .
    git commit -m "chore: initialise Firebase Hosting"
    git push origin main

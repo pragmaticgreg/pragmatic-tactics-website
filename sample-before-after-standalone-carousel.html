@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Transformation Carousel Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ===== Brand Palette ===== */
+    :root{
+      --primary-navy:#0f172a;
+      --secondary-blue:#33779e;
+      --accent-orange:#ea580c;
+      --success-green:#16a34a;
+      --text-primary:#1e293b;
+      --text-secondary:#475569;
+      --background-white:#ffffff;
+      --background-light:#f8fafc;
+      --border-light:#e2e8f0;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Lato',sans-serif;color:var(--text-primary);background:var(--background-white);padding:64px 0}
+    h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;}
+
+    .section-title{font-weight:800;font-size:32px;text-align:center;letter-spacing:-0.025em;margin-bottom:48px;text-transform:uppercase;}
+
+    /* ===== Carousel Layout ===== */
+    .carousel-wrapper{position:relative;}
+    .carousel{
+      display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+      padding:0 calc(50vw - 340px); /* viewport-centred; reveals next/prev */
+    }
+    .carousel::-webkit-scrollbar{display:none}
+
+    .carousel-card{
+      flex:0 0 640px; /* fixed width card */
+      scroll-snap-align:center;scroll-snap-stop:always;
+      background:var(--background-white);
+      border-radius:16px;padding:32px;
+      box-shadow:0 6px 16px rgb(0 0 0 /.06);
+      border-left:6px solid var(--accent-orange);
+      display:flex;flex-direction:column;gap:14px;
+    }
+
+    /* Accent variants */
+    .card--red   {border-left-color:#dc2626;}
+    .card--green {border-left-color:var(--success-green);}
+    .card--blue  {border-left-color:var(--secondary-blue);}
+
+    .title{font-weight:700;font-size:26px;margin-bottom:4px;}
+    .quote{font-style:italic;color:var(--text-secondary);}
+    .label-before{color:#dc2626;font-weight:700;}
+    .label-after{color:var(--success-green);font-weight:700;}
+    .impact{font-weight:700;color:var(--accent-orange);text-align:center;}
+    .why-us{font-size:.9rem;color:var(--text-secondary);border-top:1px solid var(--border-light);padding-top:12px;text-align:center;}
+
+    @media(max-width:760px){
+      .carousel-card{flex:0 0 80vw;padding:24px;}
+      .section-title{font-size:28px;}
+    }
+  </style>
+</head>
+<body>
+  <h3 class="section-title">Business Transformations</h3>
+
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <!-- Card 1 -->
+      <article class="carousel-card card--red">
+        <h4 class="title">The Sales Black Hole</h4>
+        <p class="quote">“It felt like every lead just disappeared.”</p>
+        <p><span class="label-before">Before:</span> Leads from phone and email went untracked. Follow-ups were missed.</p>
+        <p><span class="label-after">After:</span> CRM captures every enquiry and automates reminders.</p>
+        <p class="impact">Impact: 40 % fewer missed opportunities & 3-month revenue forecast.</p>
+        <p class="why-us">Human-centred systems that actually get adopted— not just software licences.</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="carousel-card card--blue">
+        <h4 class="title">The Task Tornado</h4>
+        <p class="quote">“Every day felt like chaos without progress.”</p>
+        <p><span class="label-before">Before:</span> Tasks scattered in inboxes and chats; no clear owners.</p>
+        <p><span class="label-after">After:</span> Shared task board aligns priorities and accountability.</p>
+        <p class="impact">Impact: 60 % fewer fire drills & lower team stress.</p>
+        <p class="why-us">We tailor systems to real workflows— not generic PM theory.</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="carousel-card card--green">
+        <h4 class="title">The Onboarding Nightmare</h4>
+        <p class="quote">“New hires took weeks to contribute.”</p>
+        <p><span class="label-before">Before:</span> Ad-hoc training; veterans too busy to help.</p>
+        <p><span class="label-after">After:</span> Digital onboarding modules ensure rapid ramp-up.</p>
+        <p class="impact">Impact: 75 % faster time-to-productivity.</p>
+        <p class="why-us">Onboarding that scales, not manuals that rot.</p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="carousel-card card--orange">
+        <h4 class="title">Spreadsheet Sprawl</h4>
+        <p class="quote">“We were drowning in versions.”</p>
+        <p><span class="label-before">Before:</span> Multiple sheets driving ops & finance—none reliable.</p>
+        <p><span class="label-after">After:</span> Integrated data model kills double entry and confusion.</p>
+        <p class="impact">Impact: 8 hrs/week saved & zero "which file?" debates.</p>
+        <p class="why-us">Tool-agnostic, budget-sensitive solutions.</p>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="carousel-card card--blue">
+        <h4 class="title">Strategy Stall</h4>
+        <p class="quote">“Everyone was busy, but goals stagnated.”</p>
+        <p><span class="label-before">Before:</span> Annual goals sat in slide decks—no traction.</p>
+        <p><span class="label-after">After:</span> Quarterly sprints & scoreboards drive weekly wins.</p>
+        <p class="impact">Impact: 3× faster progress on strategic objectives.</p>
+        <p class="why-us">We bridge strategy and execution with momentum systems.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html> 
