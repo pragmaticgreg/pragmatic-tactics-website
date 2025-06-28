@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "pragmatic-tactics-site",
     "public": "public",
     "ignore": [
       "firebase.json",
