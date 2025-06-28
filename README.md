@@ -94,4 +94,4 @@ Edit files in `src/`, then copy/build into `public/` (or configure your SSG to o
 * Namecheap DNS help: https://www.namecheap.com/support/knowledgebase/
 
 ---
-Built with ❤️ by Strategic Solutions Consulting 
+Built with ❤️ by Strategic Solutions Consulting # Deployment test
