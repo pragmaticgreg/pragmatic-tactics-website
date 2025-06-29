@@ -80,46 +80,63 @@
         </div>
     </section>
 
-    <section class="about-section section">
+    <section class="about section">
         <div class="container">
-            <div class="quote-container">
-                <div class="quote-block">
-                    <div class="quote-block__text prefer-sentence-wrap hidden"><strong>Ideas are cheap</strong>. Execution is everything. <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span></div>
-                    <div class="quote-block__text prefer-sentence-wrap"><strong>Ideas are easy</strong>. Execution is everything. <span class="quote-block__attribution"><br class="sentence-break">— John Doerr</span></div>
+          <!-- Reusable quote component (independent) -->
+          <div class="quote-block">
+            <div class="quote-block__text prefer-sentence-wrap hidden">
+              <strong>Ideas are cheap</strong>. Execution is everything. 
+              <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span>
                 </div>
+            <div class="quote-block__text prefer-sentence-wrap">
+              <strong>Ideas are easy</strong>. Execution is everything. 
+              <span class="quote-block__attribution"><br class="sentence-break">— John Doerr</span>
             </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="../assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+          
+          <!-- Reusable image-content layout -->
+          <div class="image-content-layout">
+            <div class="image-content-layout__image">
+              <img src="../assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier">
                 </div>
-                <div class="quote-context">
+            <div class="image-content-layout__content">
                     <p>You've heard it all before:</p>
                     
-                    <div class="stacked-mantras">
-                        <div class="mantras-line">"Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"</div>
-                </div>
+              <!-- Inline quote using semantic blockquote -->
+              <blockquote style="margin: 16px 0; padding: 8px 0; font-size: 18px; font-weight: 500; font-style: italic; color: var(--primary-navy); line-height: 1.6; opacity: 0.9; text-align: center; border: none;">
+                "Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"
+              </blockquote>
                     
                     <p>Solid advice. But here's the thing, knowing <strong>what to do and actually doing it</strong> are worlds apart.</p>
                     
                     <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice — it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>                    
                 </div>
             </div>
-            
-            <h4 class="about-title about-conclusion">Strategy without execution is <span class="hope">hope</span>.<br>Execution without strategy is <span class="haste">haste</span>.<br>The absence of both is <span class="waste">waste</span>.</h4>
+          
+          <!-- Reusable conclusion statement -->
+          <div class="conclusion-statement">
+            <h4 class="conclusion-statement__text">
+              Strategy without execution is <span class="hope">hope</span>.<br>
+              Execution without strategy is <span class="haste">haste</span>.<br>
+              The absence of both is <span class="waste">waste</span>.
+            </h4>
+            </div>
         </div>
     </section>
 
-    <section class="problem-section section">
+    <section class="problems section">
         <div class="container">
             <h4 class="section-title">Sound Familiar?</h4>
-            <div class="problems-list">
-                <div class="problem-item" data-problem="strategic">
-                    <div class="problem-item__icon">
+            
+            <!-- Reusable icon-content-list component -->
+            <div class="icon-content-list">
+                <div class="icon-content-list__item" data-problem="strategic">
+                    <div class="icon-content-list__icon">
                         <img src="../assets/images/Icon - missed target.svg" alt="Strategic ambitions icon">
                 </div>
-                    <div class="problem-item__content">
-                        <h4 class="problem-item__title">Falling short on your strategic ambitions?</h4>
-                        <div class="problem-item__details">
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">Falling short on your strategic ambitions?</h4>
+                        <div class="icon-content-list__details">
                             <ul>
                                 <li>A <strong>clear vision</strong>, but a nagging feeling your business <strong>isn't quite getting there</strong>.</li>
                                 <li><strong>Disheartened</strong> by lack of tangible progress towards goals.</li>
@@ -129,13 +146,13 @@
                     </div>
                 </div>
 
-                <div class="problem-item" data-problem="outcomes">
-                    <div class="problem-item__icon">
+                <div class="icon-content-list__item" data-problem="outcomes">
+                    <div class="icon-content-list__icon">
                         <img src="../assets/images/Icon - Maze.svg" alt="Unpredictable outcomes icon">
                 </div>
-                    <div class="problem-item__content">
-                        <h3 class="problem-item__title">Unpredictable outcomes and team friction?</h3>
-                        <div class="problem-item__details">
+                    <div class="icon-content-list__content">
+                        <h3 class="icon-content-list__title">Unpredictable outcomes and team friction?</h3>
+                        <div class="icon-content-list__details">
                             <ul>
                                 <li><strong>Battling capacity</strong> due to erratic or lengthy job turnarounds?</li>
                                 <li>Workflow results unpredictable: <strong>inconsistent outcomes</strong> or <strong>duration</strong>?</li>
@@ -145,13 +162,13 @@
                     </div>
                 </div>
 
-                <div class="problem-item" data-problem="plateau">
-                    <div class="problem-item__icon">
+                <div class="icon-content-list__item" data-problem="plateau">
+                    <div class="icon-content-list__icon">
                         <img src="../assets/images/Icon - Plateau.svg" alt="Progress plateau icon">
                     </div>
-                    <div class="problem-item__content">
-                        <h4 class="problem-item__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h4>
-                        <div class="problem-item__details">
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h4>
+                        <div class="icon-content-list__details">
                             <ul>
                                 <li>Feel your team needs more <strong>support or new skills</strong> to deliver or develop?</li>
                                 <li>Want to <strong>develop your people</strong>, while they're delivering real business results?</li>
@@ -161,13 +178,13 @@
                     </div>
                 </div>
 
-                <div class="problem-item" data-problem="toolbox">
-                    <div class="problem-item__icon">
+                <div class="icon-content-list__item" data-problem="toolbox">
+                    <div class="icon-content-list__icon">
                         <img src="../assets/images/Icon - bad leverage.svg" alt="Toolbox solutions icon">
                     </div>
-                    <div class="problem-item__content">
-                        <h4 class="problem-item__title">Toolbox: Cluttered, but lacking real solutions?</h4>
-                        <div class="problem-item__details">
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">Toolbox: Cluttered, but lacking real solutions?</h4>
+                        <div class="icon-content-list__details">
                             <ul>
                                 <li>Leveraging tools, but the <strong>'effort-to-impact'</strong> ratio feels poorly balanced?</li>
                                 <li>Tools <strong>lack connection</strong>, so streamlined workflows feel just out of reach?</li>
@@ -183,64 +200,64 @@
     </section>
 
 
-    <section class="solution-section section">
+    <section class="solutions section">
         <div class="container">
             <h2 class="section-title">The Pragmatic Core Elements</h2>
             <p class="section-subtitle">Foundation first, tools second. This sequence ensures lasting results rather than expensive experiments.</p>
             
-            <div class="content-grid content-grid--3-col">
-                <div class="content-grid__item">
-                    <div class="content-grid__icon">
+            <div class="grid grid--3-col">
+                <div class="grid__item">
+                    <div class="grid__icon">
                         <img src="../assets/images/Cube - People.svg" alt="People">
                 </div>
-                    <h3 class="content-grid__title">People</h3>
-                    <p class="content-grid__content">Overloading your team—or misaligning people with roles beyond their expertise—leads to delays, burnout, and erodes team cohesion.<br><br>Together we can empower your team with clear roles, hands-on skill-building, and collaborative workflows that amplify their natural strengths.</p>
+                    <h3 class="grid__title">People</h3>
+                    <p class="grid__content">Overloading your team—or misaligning people with roles beyond their expertise—leads to delays, burnout, and erodes team cohesion.<br><br>Together we can empower your team with clear roles, hands-on skill-building, and collaborative workflows that amplify their natural strengths.</p>
                 </div>
-                <div class="content-grid__item">
-                    <div class="content-grid__icon">
+                <div class="grid__item">
+                    <div class="grid__icon">
                         <img src="../assets/images/Cube - Process.svg" alt="Process">
                 </div>
-                    <h3 class="content-grid__title">Process</h3>
-                    <p class="content-grid__content">When processes live in people's heads—or scattered across docs—outcomes become unpredictable and progress grinds to a halt.<br><br>Let's document, optimize, and automatate your operations so work flows smoothly and results become reliably repeatable.</p>
+                    <h3 class="grid__title">Process</h3>
+                    <p class="grid__content">When processes live in people's heads—or scattered across docs—outcomes become unpredictable and progress grinds to a halt.<br><br>Let's document, optimize, and automatate your operations so work flows smoothly and results become reliably repeatable.</p>
                 </div>
-                <div class="content-grid__item">
-                    <div class="content-grid__icon">
+                <div class="grid__item">
+                    <div class="grid__icon">
                         <img src="../assets/images/Cube - Tools.svg" alt="Technology">
                     </div>
-                    <h3 class="content-grid__title">Technology</h3>
-                    <p class="content-grid__content">Delayed or poor digital adoption results in missed opportunities, competitive gaps, workflow friction, and operational chaos.<br><br>The Pragmatic approach delivers the right tool at the right time through holistic planning to reduce friction and free your team for high-value work.</p>
+                    <h3 class="grid__title">Technology</h3>
+                    <p class="grid__content">Delayed or poor digital adoption results in missed opportunities, competitive gaps, workflow friction, and operational chaos.<br><br>The Pragmatic approach delivers the right tool at the right time through holistic planning to reduce friction and free your team for high-value work.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="fit-section section">
+    <section class="client-fit section">
         <div class="container">
             <h2 class="section-title">Who We Work With</h2>
             <p class="section-subtitle">I do my best work with businesses ready to roll up their sleeves. See if we're a match—if you need help getting there first, that's often where we can start.</p>
-            <div class="card-grid card-grid--2-col">
-                <div class="card card--testimonial">
+            <div class="grid grid--2-col">
+                <div class="card card--compare" style="border-left-color: var(--success-green);">
                     <h3 class="card__title">🟢 We Work Best With Businesses That…</h3>
                     <ul class="card__content">
-                        <li>Have a clear operational pain point</li>
-                        <li>Know they need help to execute</li>
-                        <li>Are already trying — but stuck</li>
-                        <li>Have a champion for change on the team</li>
-                        <li>Want systems that fit their people and culture</li>
-                        <li>Are short on internal capacity or technical depth</li>
-                        <li>Value practical implementation over big theory</li>
+                        <li class="list-icon pro">Have a clear operational pain point</li>
+                        <li class="list-icon pro">Know they need help to execute</li>
+                        <li class="list-icon pro">Are already trying — but stuck</li>
+                        <li class="list-icon pro">Have a champion for change on the team</li>
+                        <li class="list-icon pro">Want systems that fit their people and culture</li>
+                        <li class="list-icon pro">Are short on internal capacity or technical depth</li>
+                        <li class="list-icon pro">Value practical implementation over big theory</li>
                     </ul>
                 </div>
-                <div class="card card--testimonial card--not-fit">
+                <div class="card card--compare" style="border-left-color: var(--accent-red);">
                     <h3 class="card__title">🔴 We're Probably Not a Fit If…</h3>
                     <ul class="card__content">
-                        <li>You're looking for a silver bullet</li>
-                        <li>You want advice, not hands-on help</li>
-                        <li>You expect results without committing time</li>
-                        <li>You're unwilling to examine current practices</li>
-                        <li>You think tech solves people/process issues by itself</li>
-                        <li>You're not ready to involve your team in the work</li>
-                        <li>You just want someone to "install" software and walk away</li>
+                        <li class="list-icon con">You're looking for a silver bullet</li>
+                        <li class="list-icon con">You want advice, not hands-on help</li>
+                        <li class="list-icon con">You expect results without committing time</li>
+                        <li class="list-icon con">You're unwilling to examine current practices</li>
+                        <li class="list-icon con">You think tech solves people/process issues by itself</li>
+                        <li class="list-icon con">You're not ready to involve your team in the work</li>
+                        <li class="list-icon con">You just want someone to "install" software and walk away</li>
                     </ul>
                 </div>
             </div>
@@ -603,23 +620,23 @@
         <div class="container">
             <h2 class="section-title">How We Work Together</h2>
             
-            <div class="card-grid card-grid--4-col">
-                <div class="card card--process">
+            <div class="grid grid--4-col">
+                <div class="card card--process grid__item">
                     <div class="card__icon card__icon--process"><span>1</span></div>
                     <h4 class="card__title card__title--process">Deep Dive Assessment</h4>
                     <p class="card__content card__content--process">We map your current operations and identify the highest-impact improvement opportunities.</p>
                 </div>
-                <div class="card card--process">
+                <div class="card card--process grid__item">
                     <div class="card__icon card__icon--process"><span>2</span></div>
                     <h4 class="card__title card__title--process">Collaborative Design</h4>
                     <p class="card__content card__content--process">Together, we design solutions that work for your specific team, constraints, and goals.</p>
                 </div>
-                <div class="card card--process">
+                <div class="card card--process grid__item">
                     <div class="card__icon card__icon--process"><span>3</span></div>
                     <h4 class="card__title card__title--process">Hands-On Implementation</h4>
                     <p class="card__content card__content--process">We work alongside your team to implement changes, ensuring adoption and immediate value.</p>
                 </div>
-                <div class="card card--process">
+                <div class="card card--process grid__item">
                     <div class="card__icon card__icon--process"><span>4</span></div>
                     <h4 class="card__title card__title--process">Sustainable Results</h4>
                     <p class="card__content card__content--process">We transfer knowledge and establish systems so improvements stick long after we're gone.</p>
@@ -919,6 +936,34 @@
         }
 
       
+    </script>
+
+    <script>
+        document.querySelectorAll('.accordion-item').forEach((item) => {
+            item.addEventListener('toggle', (event) => {
+                if (item.open) {
+                    let scrollNeeded = false;
+                    // Find any other open accordion items
+                    document.querySelectorAll('.accordion-item').forEach((otherItem) => {
+                        if (otherItem !== item && otherItem.open) {
+                            // Close the other item and flag that we'll need to scroll
+                            otherItem.open = false;
+                            scrollNeeded = true;
+                        }
+                    });
+
+                    // If we closed another item, the page will jump.
+                    // We scroll the new item into view to counteract this.
+                    if (scrollNeeded) {
+                        // We defer the scroll slightly to give the browser time to 
+                        // process the closing of the other item and reflow the layout.
+                        setTimeout(() => {
+                            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100); // A short delay for the browser to catch up
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html> 
