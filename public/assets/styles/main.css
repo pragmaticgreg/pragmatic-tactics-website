@@ -1190,29 +1190,6 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
         margin-top: 40px; 
         padding: 0 20px; 
     }
-    .icon-content-layout__image { 
-        order: -1; 
-        width: 280px; 
-        height: 280px; 
-        margin: 0 auto; 
-    }
-    .image-content-layout__content { 
-        font-size: 16px; 
-    }
-    
-    .conclusion-statement { 
-        margin: 40px auto; 
-    }
-    .conclusion-statement__text { 
-        font-size: 1.3rem; 
-        line-height: 1.5; 
-    }
-
-    /* Icon Content List - Mobile */
-    .icon-content-list { 
-        margin-top: 40px; 
-        padding: 0 20px; 
-    }
     .icon-content-list__item { 
         grid-template-columns: 1fr; 
         gap: 20px; 
@@ -1314,9 +1291,6 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
         height: 8px;
         bottom: -4px;
     }
-
-    /* Move hero background up */
-    .bathymetric-background svg { transform: translateY(-10%) scale(1.8); min-height: 100%; }
 }
 
 /* ---------- Medium screens (e.g., small tablets, large phones) ---------- */
@@ -1352,7 +1326,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .hero h1 { font-size: 2rem; }
     .hero .subtitle { font-size: 1rem; }
     .bathymetric-background { height: 530px; }
-    .bathymetric-background svg { transform: translateY(-10%) scale(1.8); min-height: 100%; }
+    .bathymetric-background svg { transform: scale(1.8) translateY(-5%); min-height: 100%; }
     
     /* About */
     .image-content-layout__image { width: 240px; height: 240px; }
@@ -1402,7 +1376,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .hero h1 { font-size: 1.8rem; margin-bottom: 0.8rem; }
     .hero .subtitle { font-size: 0.95rem; margin-bottom: 1.2rem; }
     .bathymetric-background { height: 450px; }
-    .bathymetric-background svg { transform: translateY(-10%) scale(2.0); min-height: 100%; }
+    .bathymetric-background svg { transform: scale(2.0) translateY(-5%); min-height: 100%; }
     
     /* Mantras */
     /* mantras-line removed - now using inline blockquote */
