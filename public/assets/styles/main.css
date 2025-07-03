@@ -693,7 +693,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     transform: rotate(45deg);
 }
 
-.card__icon--process span {
+.card__icon-digit {
     transform: rotate(-45deg);
 }
 
@@ -705,20 +705,20 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     text-align: center;
 }
 
-.card__title--problem {
+.card__title.card__title--problem {
     color: #dc2626;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.025em;
 }
 
-.card__title--service {
+.card__title.card__title--service {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 0.025em;
 }
 
-.card__title--process {
+.card__title.card__title--process {
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.025em;
@@ -888,21 +888,21 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     background: var(--background-medium);
 }
 
-.accordion-item summary .title {
+.accordion-item__title {
     font-size: 20px;
     font-weight: 700;
     color: var(--primary-navy);
     margin: 0;
 }
 
-.accordion-item summary .quote {
+.accordion-item__quote {
     font-size: 16px;
     font-style: italic;
     color: var(--text-secondary);
     margin: 0;
 }
 
-.accordion-item summary .subtitle {
+.accordion-item__subtitle {
     font-size: 14px;
     color: var(--text-secondary);
     margin: 0;
@@ -1300,9 +1300,6 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 
     /* Accordion */
     summary{padding:20px;}
-    .accordion-content .title{font-size:20px;}
-    .accordion-content{padding:20px 0px}
-    .content-section {margin-bottom: 12px;}
 }
 
 /* ---------- Small screens (e.g., standard phones) ---------- */
