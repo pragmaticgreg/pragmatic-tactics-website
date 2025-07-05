@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragmatic Tactics - Modern Green</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/assets/styles/main.css">
+    <style>
+        /* Modern Green Theme */
+        :root {
+            --primary-navy: #1B4F3C;
+            --primary-green: #2ECC71;
+            --accent-green: #58D68D;
+            --light-green: #85E085;
+            --forest-green: #145A32;
+            --mint: #ABEBC6;
+            --soft-gray: #F4F6F7;
+            --text-dark: #2C3E50;
+            --text-light: #5A6B7D;
+            --success-green: #27AE60;
+            --accent-red: #E74C3C;
+        }
+
+        /* Soft, rounded modern styling */
+        .section { border-radius: 25px !important; margin: 20px 0 !important; }
+        .card { 
+            border-radius: 20px !important; 
+            border: none !important;
+            box-shadow: 0 8px 32px rgba(46, 204, 113, 0.15) !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        .cta-primary { 
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green)) !important;
+            border-radius: 50px !important;
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4) !important;
+            border: none !important;
+            padding: 15px 35px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+        }
+        .cta-primary:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.5) !important;
+        }
+        .cta-secondary {
+            border: 2px solid var(--accent-green) !important;
+            color: var(--accent-green) !important;
+            border-radius: 50px !important;
+            font-weight: 500 !important;
+            background: rgba(255, 255, 255, 0.9) !important;
+        }
+        .nav {
+            background: linear-gradient(135deg, rgba(27, 79, 60, 0.95), rgba(46, 204, 113, 0.9)) !important;
+            backdrop-filter: blur(15px) !important;
+            border-radius: 0 0 25px 25px !important;
+            border: none !important;
+        }
+        .section-title {
+            color: var(--forest-green) !important;
+            font-weight: 600 !important;
+            border-bottom: none !important;
+            position: relative !important;
+        }
+        .section-title::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: -10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 60px !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green)) !important;
+            border-radius: 2px !important;
+        }
+        .grid__item {
+            border: none !important;
+            border-radius: 20px !important;
+            background: linear-gradient(145deg, #ffffff, var(--soft-gray)) !important;
+            box-shadow: 0 6px 25px rgba(46, 204, 113, 0.1) !important;
+            padding: 30px !important;
+        }
+        .icon-content-list__item {
+            border-left: none !important;
+            border-radius: 15px !important;
+            background: linear-gradient(145deg, #ffffff, var(--soft-gray)) !important;
+            box-shadow: 0 4px 20px rgba(46, 204, 113, 0.1) !important;
+            border: 1px solid var(--mint) !important;
+        }
+        .quote-block {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green)) !important;
+            color: white !important;
+            border-radius: 20px !important;
+            border: none !important;
+            box-shadow: 0 8px 30px rgba(46, 204, 113, 0.3) !important;
+        }
+        .accordion-item {
+            border: 1px solid var(--mint) !important;
+            border-radius: 15px !important;
+            margin-bottom: 15px !important;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.08) !important;
+        }
+        .card--process {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green)) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 20px !important;
+        }
+        .final-cta {
+            background: linear-gradient(135deg, var(--forest-green), var(--primary-green)) !important;
+            color: white !important;
+            border-radius: 25px !important;
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(244, 246, 247, 0.8), rgba(171, 235, 198, 0.3)) !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="../public/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">Results</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">Results</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <section class="hero section">
+        <div class="container">
+            <div class="bathymetric-background">
+                <!-- Animated Bathymetric Chart SVG -->
+                <svg id="Layer_1" viewBox="0 0 2000 1200" xmlns="http://www.w3.org/2000/svg">
+                  <g id="bathymetry">
+                    <g id="sea-8" class="cls-1">
+                      <path d="M0,0V1200H2000V0H0Z"/>
+                    </g>
+                    <!-- Remaining SVG paths will be loaded from external file -->
+                  </g>
+                </svg>
+            </div>
+            
+            <div class="hero-content">
+                <p class="subtitle">You don't need more strategy. You need it to actually happen.</p>
+            <a href="#" class="cta-primary">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about section">
+        <div class="container">
+          <!-- Reusable quote component (independent) -->
+          <div class="quote-block">
+            <div class="quote-block__text prefer-sentence-wrap hidden">
+              <strong>Ideas are cheap</strong>. Execution is everything. 
+              <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span>
+                </div>
+            <div class="quote-block__text prefer-sentence-wrap">
+              <strong>Ideas are easy</strong>. Execution is everything. 
+              <span class="quote-block__attribution"><br class="sentence-break">— John Doerr</span>
+            </div>
+        </div>
+          
+          <!-- Reusable image-content layout -->
+          <div class="image-content-layout">
+            <div class="image-content-layout__image">
+              <img src="../public/assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier">
+                </div>
+            <div class="image-content-layout__content">
+                    <p>You've heard it all before:</p>
+                    
+              <!-- Inline quote using semantic blockquote -->
+              <blockquote style="margin: 16px 0; padding: 8px 0; font-size: 18px; font-weight: 500; font-style: italic; color: var(--primary-navy); line-height: 1.6; opacity: 0.9; text-align: center; border: none;">
+                "Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"
+              </blockquote>
+                    
+                    <p>Solid advice. But here's the thing, knowing <strong>what to do and actually doing it</strong> are worlds apart.</p>
+                    
+                    <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice — it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>                    
+                </div>
+            </div>
+          
+          <!-- Reusable conclusion statement -->
+          <div class="conclusion-statement">
+            <h4 class="conclusion-statement__text">
+              Strategy without execution is <span class="hope">hope</span>.<br>
+              Execution without strategy is <span class="haste">haste</span>.<br>
+              The absence of both is <span class="waste">waste</span>.
+            </h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="problems section">
+        <div class="container">
+            <h4 class="section-title">Sound Familiar?</h4>
+            
+            <!-- Reusable icon-content-list component -->
+            <div class="icon-content-list">
+                <div class="icon-content-list__item" data-problem="strategic">
+                    <div class="icon-content-list__icon">
+                        <img src="../public/assets/images/Icon - missed target.svg" alt="Strategic ambitions icon">
+                </div>
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">Falling short on your strategic ambitions?</h4>
+                        <div class="icon-content-list__details">
+                            <ul>
+                                <li>A <strong>clear vision</strong>, but a nagging feeling your business <strong>isn't quite getting there</strong>.</li>
+                                <li><strong>Disheartened</strong> by lack of tangible progress towards goals.</li>
+                                <li>The sense that your true business potential is just <strong>waiting to be unlocked</strong>.</li>
+                            </ul>
+                </div>
+                    </div>
+                </div>
+
+                <div class="icon-content-list__item" data-problem="outcomes">
+                    <div class="icon-content-list__icon">
+                        <img src="../public/assets/images/Icon - Maze.svg" alt="Unpredictable outcomes icon">
+                </div>
+                    <div class="icon-content-list__content">
+                        <h3 class="icon-content-list__title">Unpredictable outcomes and team friction?</h3>
+                        <div class="icon-content-list__details">
+                            <ul>
+                                <li><strong>Battling capacity</strong> due to erratic or lengthy job turnarounds?</li>
+                                <li>Workflow results unpredictable: <strong>inconsistent outcomes</strong> or <strong>duration</strong>?</li>
+                                <li>Team <strong>energy wasted</strong> figuring out how to work, not on the work itself?</li>
+                            </ul>
+                </div>
+                    </div>
+                </div>
+
+                <div class="icon-content-list__item" data-problem="plateau">
+                    <div class="icon-content-list__icon">
+                        <img src="../public/assets/images/Icon - Plateau.svg" alt="Progress plateau icon">
+                    </div>
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h4>
+                        <div class="icon-content-list__details">
+                            <ul>
+                                <li>Feel your team needs more <strong>support or new skills</strong> to deliver or develop?</li>
+                                <li>Want to <strong>develop your people</strong>, while they're delivering real business results?</li>
+                                <li>Despite everyone's hard work, you're <strong>not fully harnessing</strong> their collective strengths.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon-content-list__item" data-problem="toolbox">
+                    <div class="icon-content-list__icon">
+                        <img src="../public/assets/images/Icon - bad leverage.svg" alt="Toolbox solutions icon">
+                    </div>
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">Toolbox: Cluttered, but lacking real solutions?</h4>
+                        <div class="icon-content-list__details">
+                            <ul>
+                                <li>Leveraging tools, but the <strong>'effort-to-impact'</strong> ratio feels poorly balanced?</li>
+                                <li>Tools <strong>lack connection</strong>, so streamlined workflows feel just out of reach?</li>
+                                <li><strong>Sense new opportunities</strong>, but lack the agility or confidence to seize them?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="section-subtitle" style="margin-top: 60px;">Real, lasting progress starts with a solid foundation. The Core Elements you'll see next—<strong>People</strong>, <strong>Process</strong>, and <strong>Technology</strong>—work together to solve the root issues behind these challenges.</p>
+        </div>
+    </section>
+
+
+    <section class="solutions section">
+        <div class="container">
+            <h2 class="section-title">The Pragmatic Core Elements</h2>
+            <p class="section-subtitle">Foundation first, tools second. This sequence ensures lasting results rather than expensive experiments.</p>
+            
+            <div class="grid grid--3-col">
+                <div class="grid__item">
+                    <div class="grid__icon">
+                        <img src="../public/assets/images/Cube - People.svg" alt="People">
+                </div>
+                    <h3 class="grid__title">People</h3>
+                    <p class="grid__content">Overloading your team—or misaligning people with responsibilities beyond their expertise—leads to delays, burnout, and erodes team cohesion.<br><br>Together we can empower your team with clear roles, hands-on skill-building, and collaborative workflows that amplify their natural strengths.</p>
+                </div>
+                <div class="grid__item">
+                    <div class="grid__icon">
+                        <img src="../public/assets/images/Cube - Process.svg" alt="Process">
+                </div>
+                    <h3 class="grid__title">Process</h3>
+                    <p class="grid__content">When processes live in people's heads—or scattered across docs—outcomes become unpredictable and progress grinds to a halt.<br><br>Let's document, optimize, and automatate your operations so work flows smoothly and results become reliably repeatable.</p>
+                </div>
+                <div class="grid__item">
+                    <div class="grid__icon">
+                        <img src="../public/assets/images/Cube - Tools.svg" alt="Technology">
+                    </div>
+                    <h3 class="grid__title">Technology</h3>
+                    <p class="grid__content">Delayed or poor digital adoption results in missed opportunities, competitive gaps, workflow friction, and operational chaos.<br><br>The Pragmatic approach delivers the right tool at the right time through holistic planning to reduce friction and free your team for high-value work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="client-fit section">
+        <div class="container">
+            <h2 class="section-title">Who We Work With</h2>
+            <p class="section-subtitle">I do my best work with businesses ready to roll up their sleeves. See if we're a match—if you need help getting there first, that's often where we can start.</p>
+            <div class="grid grid--2-col">
+                <div class="card card--compare" style="border-left-color: var(--success-green);">
+                    <h3 class="card__title">🟢 We Work Best With Businesses That…</h3>
+                    <ul class="card__content">
+                        <li class="list-icon pro">Have a clear operational pain point</li>
+                        <li class="list-icon pro">Know they need help to execute</li>
+                        <li class="list-icon pro">Are already trying — but stuck</li>
+                        <li class="list-icon pro">Have a champion for change on the team</li>
+                        <li class="list-icon pro">Want systems that fit their people and culture</li>
+                        <li class="list-icon pro">Are short on internal capacity or technical depth</li>
+                        <li class="list-icon pro">Value practical implementation over big theory</li>
+                    </ul>
+                </div>
+                <div class="card card--compare" style="border-left-color: var(--accent-red);">
+                    <h3 class="card__title">🔴 We're Probably Not a Fit If…</h3>
+                    <ul class="card__content">
+                        <li class="list-icon con">You're looking for a silver bullet</li>
+                        <li class="list-icon con">You want work done for you, not with you</li>
+                        <li class="list-icon con">You expect results without committing time</li>
+                        <li class="list-icon con">You're unwilling to examine current practices</li>
+                        <li class="list-icon con">You think tech solves people/process issues by itself</li>
+                        <li class="list-icon con">You're not ready to involve your team in the work</li>
+                        <li class="list-icon con">You just want someone to "install" software and walk away</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="section-subtitle" style="margin-top: 60px;">When the fit is right, real transformation becomes possible. Here are some examples of the practical challenges we solve and the progress we build together.</p>
+        </div>
+    </section>
+
+
+    <section class="accordian-section section">
+        <div class="container">
+        <h2 class="section-title">Sample Engagements</h2>
+    
+        <div class="accordion">
+          
+          <!-- Journey 1: The Sales Black Hole -->
+          <details class="accordion-item">
+            <summary>
+              <span class="accordion-item__title">The Sales Black Hole</span>
+              <span class="accordion-item__quote">"Our sales team is reactive, not proactive. Leads slip through the cracks."</span>
+              <span class="accordion-item__subtitle">We wouldn't have the capacity to handle more. We aren't closing enough deals. Leads arrive by phone, email, web-forms, and events—but nothing links them. Potential clients slip through the cracks.</p></span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">Reduced correspondence to assess potential client fit. The team follows a consistent process and rhythm. Every lead is captured, nurtured, and visible in a living pipeline that shows exactly where tomorrow's revenue will come from.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">We map every current lead-capture point, connect them to a right-sized CRM (sales pipeline), automate reminders, email templates, and set up a simple pipeline view. Team training sessions ensure the team log interactions without friction.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Comprehensive and appropriate contact forms to ensure the team has the information needed to serve each customer effectively. Clearly defined sales stages, requirements, and actions.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Email inbox relief, focus on getting all sales leads into a pipeline to create focus on sales tasks and goals. Consistent follow-ups convert more opportunities. Live data to provide sales forecasts for cashflow and action planning.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – coach and collaborate with the team to develop a simple sales process.</li>
+                      <li><strong>Process</strong> – define clear pipeline stages, exit criteria, and actions.</li>
+                      <li><strong>Tools/Tech</strong> – integrate email, web-forms, and phone logs into a lightweight CRM with reminders and other automations.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 2: The Task Tornado -->
+          <details class="accordion-item">
+            <summary>
+              <span class="accordion-item__title">The Task Tornado</span>
+              <span class="accordion-item__quote">"Tasks hide in email inboxes, sticky notes, and memory. Nothing ever feels 'done'."</span>
+              <span class="accordion-item__subtitle">Ownership is vague, priorities shift hourly, and nothing ever feels "done".</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">A consistent and transparent process that suits your team and work environment. Priorities are clear, details and expectations clearly conveyed. A step forward to get ahead of the firefighting.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">We inventory recurring workflows and encompass them into defined processes. Collaboratively develop a process for managing tasks/responsibilities that fall outside the recurring processes. Coach the team on creating clear expectations, ownership, and sustainable accountability.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Clarified communication surrounding tasks quickly creates clarity across the team. Early establishment of where tasks are tracked in a visible manner.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Creating a culture of breaking tasks into actionable items with clear definitions, prioritizing tasks based on contribution to company goals and measures of success.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – cultivate habits of clear ownership and accountability.</li>
+                      <li><strong>Process</strong> – standardise intake, prioritisation, and completion criteria.</li>
+                      <li><strong>Tools/Tech</strong> – implement an appropriate tool for tracking, communication, and collaboration.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 3: The Onboarding Nightmare -->
+          <details class="accordion-item">
+            <summary>
+              <span class="accordion-item__title">The Onboarding Nightmare</span>
+              <span class="accordion-item__quote">"You need to increase team capacity but new hires take so long to get up to speed."</span>
+              <span class="accordion-item__subtitle">It seems to take so long to get new members up to speed.</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">New hires contribute meaningful work in their first week, feeling confident—not overwhelmed, other team members aren't left feeling burdened.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">Systemization. Identify core processes within the business, document current model workflows, then apply easy efficiency wins through process or technology, develop quick reference guides and checklists to support process consistency. Document the process details in the form of dynamic digital products with interactivity and multimedia content for training of existing team members and future hires.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Consistent execution of workflows provide immediate results in both quality of work and timeframes for the existing team.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Faster ramp-up of new hires boosts morale, reduces turnover risk, and unlocks senior staff for high-value projects. Additionally, defined processes set you up for continuous improvement, automation, and other digital adoption initiatives including artificial intelligence tools.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – free veterans from ad-hoc training, give newcomers confidence.</li>
+                      <li><strong>Process</strong> – document and develop core workflows.</li>
+                      <li><strong>Tools/Tech</strong> – addition of a lightweight dynamic LMS (learning management system) and preparation for future process automation.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 4: Spreadsheet Sprawl -->
+          <details class="accordion-item">
+            <summary>
+              <span class="accordion-item__title">Spreadsheet Sprawl</span>
+              <span class="accordion-item__quote">"Operating with duplicate data, conflicting formulas, and endless copy/paste."</span>
+              <span class="accordion-item__subtitle">Regular breakdowns and endless copy/paste make reporting slow and error-prone.</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">Robust and sustainable spreadsheet system or graduation into dedicated operations software.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">Identify the objective and detailed needs of the system, consolidate sheets into a single source of truth, set proper permission and protected cells, identify and implement improvements. Ensure clear documentation and training documents are developed and automate imports/exports. Version control and permissions keep everything clean.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Your existing spreadsheet process quickly becomes more robust, reliable, and easier to use. Providing you confidence in both it and the team.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Teams relying on these spreadsheet tools can focus on their true role. A byproduct of our work provides you with clear future development opportunities for integration, automation, software adoption or custom development.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – instil trust in the numbers and reduce manual drudgery.</li>
+                      <li><strong>Process</strong> – clear process and improved functionality.</li>
+                      <li><strong>Tools/Tech</strong> – potential path forward for more powerful solutions.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+    
+          <!-- Journey 5: Strategy Stall -->
+          <details class="accordion-item">
+            <summary>
+              <span class="accordion-item__title">Strategy Stall</span>
+              <span class="accordion-item__quote">"Strategic goals exist but lack tactical clarity and leadership consensus."</span>
+              <span class="accordion-item__subtitle">The team cycles through the same priority discussions without resolution. Resources feel stretched, timelines seem unrealistic, and daily demands consume all bandwidth for strategic work.</span>
+            </summary>
+            <div class="accordion-content">
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Vision">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">North-Star Vision:</h4>
+                  <p class="vertical-timeline__summary">A unified leadership team with crystal-clear tactical priorities that can realistically be executed with available resources. Strategic objectives translate into committed action with genuine consensus on trade-offs.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Path">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Path Forward:</h4>
+                  <p class="vertical-timeline__summary">Pressure-test strategic goals against organizational capabilities. Facilitate structured discussions to achieve alignment on 3-5 mission-critical objectives. Map tactical roadmap for next 90 days and identify key obstacles.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Early Win">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Early Win:</h4>
+                  <p class="vertical-timeline__summary">Complete leadership alignment on priorities and realistic resource assessment. Clear tactical roadmap with documented challenges and mitigation strategies.</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Momentum">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Momentum Ahead:</h4>
+                  <p class="vertical-timeline__summary">Leadership team becomes a unified force driving shared objectives. Foundation established for a broader organizational execution framework (eg: 4DX or OKRs based on team maturity).</p>
+                </div>
+              </div>
+              
+              <div class="vertical-timeline pragmatic-promise">
+                <div class="vertical-timeline__icon">
+                  <img src="../public/assets/images/Wide-chevron-2.svg" alt="Promise">
+                </div>
+                <div class="vertical-timeline__content">
+                  <h4 class="vertical-timeline__title">Pragmatic Promise:</h4>
+                  <div class="vertical-timeline__details">
+                    <ul>
+                      <li><strong>People</strong> – leadership team stops circular strategy conversations and commits to shared direction.</li>
+                      <li><strong>Process</strong> – structured decision-making frameworks ensure genuine consensus and accountability.</li>
+                      <li><strong>Tools/Tech</strong> – documented priorities, challenge inventory, and tactical roadmap ready for rollout.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </details>
+          
+        </div>
+    </div>
+      </section>
+
+    <section class="process-section section">
+        <div class="container">
+            <h2 class="section-title">How We Work Together</h2>
+            
+            <div class="grid grid--4-col">
+                <div class="card card--process grid__item">
+                    <div class="card__icon card__icon--process"><span class="card__icon-digit">1</span></div>
+                    <h4 class="card__title card__title--process">Deep Dive Assessment</h4>
+                    <p class="card__content card__content--process">We map your current operations and identify the highest-impact improvement opportunities.</p>
+                </div>
+                <div class="card card--process grid__item">
+                    <div class="card__icon card__icon--process"><span class="card__icon-digit">2</span></div>
+                    <h4 class="card__title card__title--process">Collaborative Design</h4>
+                    <p class="card__content card__content--process">Together, we design solutions that work for your specific team, constraints, and goals.</p>
+                </div>
+                <div class="card card--process grid__item">
+                    <div class="card__icon card__icon--process"><span class="card__icon-digit">3</span></div>
+                    <h4 class="card__title card__title--process">Hands-On Implementation</h4>
+                    <p class="card__content card__content--process">We work alongside your team to implement changes, ensuring adoption and immediate value.</p>
+                </div>
+                <div class="card card--process grid__item">
+                    <div class="card__icon card__icon--process"><span class="card__icon-digit">4</span></div>
+                    <h4 class="card__title card__title--process">Sustainable Results</h4>
+                    <p class="card__content card__content--process">We transfer knowledge and establish systems so improvements stick long after we're gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta section">
+        <div class="container">
+            <h2>Ready to Break Through Your Operational Barriers?</h2>
+            <p>Let's discuss your specific challenges and explore if we're a good fit to work together.</p>
+            <a href="#" class="cta-primary">Schedule Free Consultation</a>
+            <a href="#" class="cta-secondary">Download Case Studies</a>
+            <div class="risk-mitigation">
+                ✓ No long-term contracts required<br>
+                ✓ Clear project milestones and deliverables<br>
+                ✓ Local BC references available
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Sentence wrap utility -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.prefer-sentence-wrap').forEach(function(el){
+                // replace only first occurrence of period+space
+                el.innerHTML = el.innerHTML.replace(/\.\s/, '. <br class="sentence-break">');
+            });
+        });
+    </script>
+
+    <!-- GSAP Color Transition Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Load complete SVG and initialize animations
+        async function loadAnimatedBathymetry() {
+            try {
+                const response = await fetch('../public/bathymetry.html?v=' + Date.now());
+                const htmlText = await response.text();
+                
+                // Extract SVG content from the full HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, 'text/html');
+                const svg = doc.querySelector('svg');
+                
+                if (svg) {
+                    // Replace the placeholder SVG with the complete one
+                    const container = document.querySelector('.bathymetric-background');
+                    container.innerHTML = '';
+                    container.appendChild(svg.cloneNode(true));
+                    
+                    // Initialize the animation
+                    initBathymetricAnimation();
+                }
+            } catch (error) {
+                console.error('Failed to load bathymetric animation:', error);
+            }
+        }
+
+        // Initialize problem item interactions (simplified - no toggles needed)
+        function initProblemItemInteractions() {
+            // No interactive functionality needed - all content is visible by default
+            // This matches the clean layout shown in the attached image
+        }
+        
+        function initBathymetricAnimation() {
+            // Get color palette from CSS variables
+            const rootStyles = getComputedStyle(document.documentElement);
+            const originalColors = {
+                Land:  rootStyles.getPropertyValue('--bathymetry-land').trim(), // cls-6
+                LandDark: "#B6BBA1", // Darker land color for animation steps
+                sea1:  rootStyles.getPropertyValue('--bathymetry-sea1').trim(), // cls-4
+                sea2:  rootStyles.getPropertyValue('--bathymetry-sea2').trim(), // cls-7
+                sea3:  rootStyles.getPropertyValue('--bathymetry-sea3').trim(), // cls-3
+                sea4:  rootStyles.getPropertyValue('--bathymetry-sea4').trim(), // cls-2
+                sea5:  rootStyles.getPropertyValue('--bathymetry-sea5').trim(), // cls-5
+                sea6:  rootStyles.getPropertyValue('--bathymetry-sea6').trim(), // cls-1
+                sea8:  "#000000", // sea-8 (keep hardcoded as it's unique)
+            };
+
+            // Create main timeline with initial delay
+            const mainTimeline = gsap.timeline({ delay: 1.75 });
+
+            // Set initial text visibility states
+            gsap.set("#Text-1", { autoAlpha: 1 });
+            gsap.set("#Text-2, #Text-3, #Text-4, #Text-5", { autoAlpha: 0 });
+
+            // Set initial hero content visibility (hidden until pulse-2)
+            gsap.set(".hero-content .subtitle, .hero-content .cta-primary", { 
+                opacity: 0, 
+                y: 20 
+            });
+
+            // PULSE 1: Progressive shallowing effect + Land darkens
+            // Each layer moves to the color of the layer above it, and Land shifts to darker color
+            mainTimeline
+                .to("#sea-8", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea6 
+                }, "pulse1")
+                .to("#sea-6", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea5 
+                }, "pulse1")
+                .to("#sea-5", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea4 
+                }, "pulse1")
+                .to("#sea-4", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea3 
+                }, "pulse1")
+                .to("#sea-3", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea2 
+                }, "pulse1")
+                .to("#sea-2 path", { 
+                    duration: 1, 
+                    fill: originalColors.sea1 
+                }, "pulse1")
+                .to("#sea-1 path", { 
+                    duration: 1.25, 
+                    fill: originalColors.Land 
+                }, "pulse1")
+                // NEW: Land elements (cls-6) change to darker color
+                .to(".cls-6", { 
+                    duration: 1.25, 
+                    fill: originalColors.LandDark 
+                }, "pulse1")
+                // Text transition: Text-1 out, Text-2 in
+                .to("#Text-1", { 
+                    duration: 1, 
+                    autoAlpha: 0 
+                }, "pulse1")
+                .to("#Text-2", { 
+                    duration: 1, 
+                    autoAlpha: 1 
+                }, "pulse1")
+                
+                // Pause between pulses
+                .to({}, { duration: 0.4 })
+
+            // PULSE 2: Continue progressive shallowing + sea-1 adopts dark land color + Hero content fade-in
+            mainTimeline
+                .to("#sea-8", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea5 
+                }, "pulse2")
+                .to("#sea-6", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea4 
+                }, "pulse2")
+                .to("#sea-5", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea3 
+                }, "pulse2")
+                .to("#sea-4", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea2 
+                }, "pulse2")
+                .to("#sea-3", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea1 
+                }, "pulse2")
+                .to("#sea-2 path", { 
+                    duration: 1.25, 
+                    fill: originalColors.Land 
+                }, "pulse2")
+                // UPDATED: sea-1 now adopts the darker land color
+                .to("#sea-1 path", { 
+                    duration: 1.25, 
+                    fill: originalColors.LandDark 
+                }, "pulse2")
+                // NEW: Hero content fade-in (subtitle and CTA)
+                .to(".hero-content .subtitle", { 
+                    duration: 1.2, 
+                    opacity: 1,
+                    y: 0,
+                    ease: "power2.out"
+                }, "pulse2+=0.3")
+                .to(".hero-content .cta-primary", { 
+                    duration: 1.2, 
+                    opacity: 1,
+                    y: 0,
+                    ease: "power2.out"
+                }, "pulse2+=0.5")
+                // Text transition: Text-2 out, Text-3 in
+                .to("#Text-2", { 
+                    duration: 1, 
+                    autoAlpha: 0 
+                }, "pulse2")
+                .to("#Text-3", { 
+                    duration: 1, 
+                    autoAlpha: 1 
+                }, "pulse2")
+                
+                // Pause between pulses
+                .to({}, { duration: 0.4 })
+
+            // PULSE 3: Final progressive shallowing (stops when sea-3 reaches Land color)
+            mainTimeline
+                .to("#sea-8", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea4 
+                }, "pulse3")
+                .to("#sea-6", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea3 
+                }, "pulse3")
+                .to("#sea-5", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea2 
+                }, "pulse3")
+                .to("#sea-4", { 
+                    duration: 1.25, 
+                    fill: originalColors.sea1 
+                }, "pulse3")
+                .to("#sea-3", { 
+                    duration: 1.25, 
+                    fill: originalColors.Land 
+                }, "pulse3")
+                .to("#sea-2 path", { 
+                    duration: 1.25, 
+                    fill: originalColors.LandDark 
+                }, "pulse3")
+                .to("#sea-1 path", { 
+                    duration: 1.25, 
+                    fill: originalColors.LandDark 
+                }, "pulse3")
+                // Text transition: Text-3 out, Text-4 in
+                .to("#Text-3", { 
+                    duration: 1, 
+                    autoAlpha: 0 
+                }, "pulse3")
+                .to("#Text-4", { 
+                    duration: 1, 
+                    autoAlpha: 1 
+                }, "pulse3")
+                
+                // Pause before final reveal
+                .to({}, { duration: 1.2 })
+                
+                // FINAL REVEAL: Text-4 out, Text-5 in (Strategy & Execution)
+                .to("#Text-4", { 
+                    duration: 1.5, 
+                    autoAlpha: 0 
+                }, "finalReveal")
+                .to("#Text-5", { 
+                    duration: 2, 
+                    autoAlpha: 1,
+                    ease: "power2.out"
+                }, "finalReveal+=0.5");
+
+            // Optional: Add a callback when animation completes
+            mainTimeline.eventCallback("onComplete", () => {
+                console.log("Bathymetry animation sequence completed!");
+            });
+        }
+        
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAnimatedBathymetry();
+            initProblemItemInteractions();
+            initMobileMenu();
+        });
+
+        // Mobile Menu Functionality
+        function initMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+
+                // Close menu when clicking on menu links
+                const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+      
+    </script>
+
+    <script>
+        document.querySelectorAll('.accordion-item').forEach((item) => {
+            item.addEventListener('toggle', (event) => {
+                if (item.open) {
+                    let scrollNeeded = false;
+                    // Find any other open accordion items
+                    document.querySelectorAll('.accordion-item').forEach((otherItem) => {
+                        if (otherItem !== item && otherItem.open) {
+                            // Close the other item and flag that we'll need to scroll
+                            otherItem.open = false;
+                            scrollNeeded = true;
+                        }
+                    });
+
+                    // If we closed another item, the page will jump.
+                    // We scroll the new item into view to counteract this.
+                    if (scrollNeeded) {
+                        // We defer the scroll slightly to give the browser time to 
+                        // process the closing of the other item and reflow the layout.
+                        setTimeout(() => {
+                            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100); // A short delay for the browser to catch up
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

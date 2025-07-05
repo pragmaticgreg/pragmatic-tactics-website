@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboration Section - Modern Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pain-point {
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .impact {
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #ffb3ba;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .approach {
+            margin-bottom: 1.5rem;
+        }
+
+        .approach h4 {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .approach ul {
+            list-style: none;
+            space-y: 0.5rem;
+        }
+
+        .approach li {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .approach li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .alternative {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #5a6fd8, #6a4190);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Things We Can Work On Together</h1>
+            <p>Stop struggling alone with these common challenges. Let's tackle them together with a clear plan.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Sales Lead Organization</h3>
+                <p class="pain-point">"Leads come from everywhere but nothing's organized"</p>
+                
+                <div class="impact">
+                    <strong>Why this matters:</strong> The average business loses 27% of potential revenue to poor follow-up.
+                </div>
+                
+                <div class="approach">
+                    <h4>Working together:</h4>
+                    <ul>
+                        <li>We audit your current lead sources in 1 week</li>
+                        <li>Pick the right tools for your team size and budget</li>
+                        <li>Set up everything together, not dump software on you</li>
+                        <li>Train your team hands-on until it clicks</li>
+                    </ul>
+                </div>
+                
+                <div class="alternative">
+                    <strong>vs. going it alone:</strong> Months of trial-and-error with CRM tools, team resistance, abandoned systems
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Task & Project Chaos</h3>
+                <p class="pain-point">"Nothing ever feels 'done' and priorities shift daily"</p>
+                
+                <div class="impact">
+                    <strong>Why this matters:</strong> Teams waste 25% of their time figuring out what to work on next.
+                </div>
+                
+                <div class="approach">
+                    <h4>Working together:</h4>
+                    <ul>
+                        <li>Map your actual workflows (not theoretical ones)</li>
+                        <li>Design a system that fits how your team actually works</li>
+                        <li>Implement gradually with your team's input</li>
+                        <li>Adjust based on real usage, not vendor recommendations</li>
+                    </ul>
+                </div>
+                
+                <div class="alternative">
+                    <strong>vs. buying software:</strong> Generic tools that don't fit your workflow, team confusion, back to spreadsheets
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔗</div>
+                <h3>Disconnected Tools & Data</h3>
+                <p class="pain-point">"Everything lives in different places, nothing talks to each other"</p>
+                
+                <div class="impact">
+                    <strong>Why this matters:</strong> Manual data entry and reporting steals 10+ hours per week from your team.
+                </div>
+                
+                <div class="approach">
+                    <h4>Working together:</h4>
+                    <ul>
+                        <li>Start with what you have (don't rip and replace)</li>
+                        <li>Connect systems step-by-step with clear priorities</li>
+                        <li>Automate the boring stuff first</li>
+                        <li>Build dashboards that actually get used</li>
+                    </ul>
+                </div>
+                
+                <div class="alternative">
+                    <strong>vs. vendor solutions:</strong> Expensive "enterprise" tools, complex integrations, consultant lock-in
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Team Growth & Training</h3>
+                <p class="pain-point">"New people take forever to get up to speed"</p>
+                
+                <div class="impact">
+                    <strong>Why this matters:</strong> Poor onboarding costs 6-12 months of reduced productivity per new hire.
+                </div>
+                
+                <div class="approach">
+                    <h4>Working together:</h4>
+                    <ul>
+                        <li>Document processes as we improve them</li>
+                        <li>Create training materials that your team will actually use</li>
+                        <li>Build systems that make good practices automatic</li>
+                        <li>Transfer knowledge so you're not dependent on me</li>
+                    </ul>
+                </div>
+                
+                <div class="alternative">
+                    <strong>vs. training companies:</strong> Generic programs, no follow-through, no lasting systems
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to stop struggling alone?</h2>
+            <p>Pick one area where you need the most help. We can start small and build from there.</p>
+            <a href="#contact" class="cta-button">Let's Talk About Your Biggest Challenge</a>
+        </div>
+    </div>
+</body>
+</html> 

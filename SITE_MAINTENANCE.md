@@ -106,8 +106,9 @@ Keep this file updated as the project evolves.
 |------|---------|
 | List Firebase deploy history | `firebase hosting:channel:list` |
 | Emulate Hosting locally (respecting rewrites/headers) | `firebase serve --only hosting` |
-| Generate a new CI token | `firebase login:ci` |
+| —— CI deploys now authenticate via Workload-Identity Federation —— | |
+| (no manual token rotation required) | |
 | Clear local dev-server cache | Hard-refresh (⌘-Shift-R) or incognito |
 
 ---
-*Last updated: June 24 2025* 
+*Last updated: July 2 2025 – switched CI to Workload-Identity Federation* 

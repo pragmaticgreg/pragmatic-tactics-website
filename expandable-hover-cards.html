@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Hover Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c3e50;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e8ecf0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            min-height: 200px;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .card:nth-child(1)::before {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .card:nth-child(2)::before {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .card:nth-child(3)::before {
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+
+        .card:nth-child(4)::before {
+            background: linear-gradient(90deg, #27ae60, #229954);
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover::before {
+            height: 8px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card:nth-child(1) .card-icon {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .card:nth-child(2) .card-icon {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .card:nth-child(3) .card-icon {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        .card:nth-child(4) .card-icon {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+
+        .card-title {
+            color: #2c3e50;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .hook-text {
+            color: #e74c3c;
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .teaser {
+            color: #5a6c7d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .expanded-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .card:hover .expanded-content {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1.5rem;
+        }
+
+        .impact-stat {
+            background: #fef9e7;
+            border: 1px solid #f1c40f;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #8e6a00;
+        }
+
+        .impact-stat h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .approach-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .approach-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #34495e;
+            font-size: 0.9rem;
+        }
+
+        .approach-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .vs-alternative {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            color: #6c757d;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .expand-hint {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(52, 73, 94, 0.1);
+            color: #34495e;
+            padding: 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .expand-hint {
+            opacity: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #5a6c7d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card:hover {
+                transform: translateY(-4px) scale(1);
+            }
+
+            .card:hover .expanded-content {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Things We Can Work On Together</h1>
+            <p>Hover over any card to explore how we can tackle these challenges together</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">Sales Lead Organization</h3>
+                </div>
+                
+                <p class="hook-text">"Leads come from everywhere but nothing's organized"</p>
+                <p class="teaser">Sound familiar? You're not alone. Most businesses lose significant revenue to poor lead management.</p>
+                
+                <div class="expanded-content">
+                    <div class="impact-stat">
+                        <h4>The Real Cost</h4>
+                        <p>The average business loses 27% of potential revenue to poor follow-up and disorganized lead tracking.</p>
+                    </div>
+                    
+                    <h4 style="color: #2c3e50; margin-bottom: 1rem;">Our Collaborative Approach:</h4>
+                    <ul class="approach-list">
+                        <li>Audit your current lead sources in 1 week</li>
+                        <li>Pick the right tools for your team size and budget</li>
+                        <li>Set up everything together, not dump software on you</li>
+                        <li>Train your team hands-on until it clicks</li>
+                    </ul>
+                    
+                    <div class="vs-alternative">
+                        <strong>vs. going it alone:</strong> Months of trial-and-error with CRM tools, team resistance, abandoned systems
+                    </div>
+                </div>
+                
+                <div class="expand-hint">Hover to explore →</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Task & Project Chaos</h3>
+                </div>
+                
+                <p class="hook-text">"Nothing ever feels 'done' and priorities shift daily"</p>
+                <p class="teaser">When everything is urgent, nothing gets the focus it deserves. Let's bring order to the chaos.</p>
+                
+                <div class="expanded-content">
+                    <div class="impact-stat">
+                        <h4>The Hidden Cost</h4>
+                        <p>Teams waste 25% of their time figuring out what to work on next instead of actually working.</p>
+                    </div>
+                    
+                    <h4 style="color: #2c3e50; margin-bottom: 1rem;">Our Collaborative Approach:</h4>
+                    <ul class="approach-list">
+                        <li>Map your actual workflows (not theoretical ones)</li>
+                        <li>Design a system that fits how your team actually works</li>
+                        <li>Implement gradually with your team's input</li>
+                        <li>Adjust based on real usage, not vendor recommendations</li>
+                    </ul>
+                    
+                    <div class="vs-alternative">
+                        <strong>vs. buying software:</strong> Generic tools that don't fit your workflow, team confusion, back to spreadsheets
+                    </div>
+                </div>
+                
+                <div class="expand-hint">Hover to explore →</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔗</div>
+                    <h3 class="card-title">Disconnected Tools & Data</h3>
+                </div>
+                
+                <p class="hook-text">"Everything lives in different places, nothing talks to each other"</p>
+                <p class="teaser">Data silos are productivity killers. Let's connect what matters without the complexity.</p>
+                
+                <div class="expanded-content">
+                    <div class="impact-stat">
+                        <h4>Time Drain</h4>
+                        <p>Manual data entry and reporting steals 10+ hours per week from your team's productive work.</p>
+                    </div>
+                    
+                    <h4 style="color: #2c3e50; margin-bottom: 1rem;">Our Collaborative Approach:</h4>
+                    <ul class="approach-list">
+                        <li>Start with what you have (don't rip and replace)</li>
+                        <li>Connect systems step-by-step with clear priorities</li>
+                        <li>Automate the boring stuff first</li>
+                        <li>Build dashboards that actually get used</li>
+                    </ul>
+                    
+                    <div class="vs-alternative">
+                        <strong>vs. vendor solutions:</strong> Expensive "enterprise" tools, complex integrations, consultant lock-in
+                    </div>
+                </div>
+                
+                <div class="expand-hint">Hover to explore →</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">Team Growth & Training</h3>
+                </div>
+                
+                <p class="hook-text">"New people take forever to get up to speed"</p>
+                <p class="teaser">Every new hire should accelerate your growth, not slow it down. Let's fix the onboarding.</p>
+                
+                <div class="expanded-content">
+                    <div class="impact-stat">
+                        <h4>Onboarding Cost</h4>
+                        <p>Poor onboarding costs 6-12 months of reduced productivity per new hire. That's expensive.</p>
+                    </div>
+                    
+                    <h4 style="color: #2c3e50; margin-bottom: 1rem;">Our Collaborative Approach:</h4>
+                    <ul class="approach-list">
+                        <li>Document processes as we improve them</li>
+                        <li>Create training materials that your team will actually use</li>
+                        <li>Build systems that make good practices automatic</li>
+                        <li>Transfer knowledge so you're not dependent on me</li>
+                    </ul>
+                    
+                    <div class="vs-alternative">
+                        <strong>vs. training companies:</strong> Generic programs, no follow-through, no lasting systems
+                    </div>
+                </div>
+                
+                <div class="expand-hint">Hover to explore →</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Found Your Challenge?</h2>
+            <p>Pick the area that resonates most. We can start small and build from there.</p>
+            <a href="#contact" class="cta-button">Let's Talk About Your Priority</a>
+        </div>
+    </div>
+</body>
+</html> 

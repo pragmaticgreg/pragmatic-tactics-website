@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split-Screen Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00f5ff, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .challenges-grid {
+            display: grid;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .challenge-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .challenge-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .challenge-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .challenge-content {
+            padding: 2rem;
+        }
+
+        .challenge-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #00f5ff;
+        }
+
+        .pain-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #ff6b6b;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .pain-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -0.5rem;
+            font-size: 3rem;
+            color: #ff6b6b;
+            opacity: 0.3;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats h4 {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .approach-section {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            border: 2px solid #00f5ff;
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approach-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 245, 255, 0.05), rgba(255, 107, 107, 0.05));
+            pointer-events: none;
+        }
+
+        .approach-section h4 {
+            color: #00f5ff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .approach-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .approach-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        .approach-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .vs-section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .vs-section strong {
+            color: #ff6b6b;
+        }
+
+        .visual-side {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .geometric-shape {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #00f5ff, #4ecdc4);
+            opacity: 0.1;
+            top: 10%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            opacity: 0.1;
+            bottom: 10%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .icon-large {
+            font-size: 4rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border: 2px solid #00f5ff;
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 245, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #00f5ff;
+            text-transform: uppercase;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #00f5ff, #4ecdc4);
+            color: #0a0a0a;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 245, 255, 0.3);
+            background: linear-gradient(45deg, #4ecdc4, #00f5ff);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .challenge-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .challenge-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .challenges-grid {
+                gap: 3rem;
+            }
+
+            .cta-section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Collaboration Areas</h1>
+            <p>Stop struggling alone. Let's tackle these challenges together with proven approaches.</p>
+        </div>
+
+        <div class="challenges-grid">
+            <div class="challenge-item">
+                <div class="challenge-content">
+                    <h3 class="challenge-title">Sales Lead Organization</h3>
+                    <p class="pain-quote">Leads come from everywhere but nothing's organized</p>
+                    
+                    <div class="stats">
+                        <h4>Impact</h4>
+                        <p>27% of potential revenue lost to poor follow-up</p>
+                    </div>
+
+                    <div class="approach-section">
+                        <h4>Our Collaborative Approach</h4>
+                        <ul class="approach-list">
+                            <li>Audit current lead sources in 1 week</li>
+                            <li>Select tools that fit your team & budget</li>
+                            <li>Implement together, not dump software on you</li>
+                            <li>Train hands-on until it clicks</li>
+                        </ul>
+                        
+                        <div class="vs-section">
+                            <strong>vs. DIY:</strong> Months of trial-and-error, team resistance, abandoned systems
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visual-side">
+                    <div class="geometric-shape shape-1"></div>
+                    <div class="geometric-shape shape-2"></div>
+                    <div class="icon-large">📊</div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-content">
+                    <h3 class="challenge-title">Task & Project Chaos</h3>
+                    <p class="pain-quote">Nothing ever feels 'done' and priorities shift daily</p>
+                    
+                    <div class="stats">
+                        <h4>Impact</h4>
+                        <p>25% of time wasted figuring out what to work on next</p>
+                    </div>
+
+                    <div class="approach-section">
+                        <h4>Our Collaborative Approach</h4>
+                        <ul class="approach-list">
+                            <li>Map actual workflows (not theoretical ones)</li>
+                            <li>Design systems that fit how teams actually work</li>
+                            <li>Implement gradually with team input</li>
+                            <li>Adjust based on real usage patterns</li>
+                        </ul>
+                        
+                        <div class="vs-section">
+                            <strong>vs. Software Purchase:</strong> Generic tools, workflow confusion, back to spreadsheets
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visual-side">
+                    <div class="geometric-shape shape-1"></div>
+                    <div class="geometric-shape shape-2"></div>
+                    <div class="icon-large">⚡</div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-content">
+                    <h3 class="challenge-title">Disconnected Systems</h3>
+                    <p class="pain-quote">Everything lives in different places, nothing talks to each other</p>
+                    
+                    <div class="stats">
+                        <h4>Impact</h4>
+                        <p>10+ hours per week lost to manual data entry</p>
+                    </div>
+
+                    <div class="approach-section">
+                        <h4>Our Collaborative Approach</h4>
+                        <ul class="approach-list">
+                            <li>Start with what you have (no rip & replace)</li>
+                            <li>Connect systems step-by-step with clear priorities</li>
+                            <li>Automate the boring stuff first</li>
+                            <li>Build dashboards that actually get used</li>
+                        </ul>
+                        
+                        <div class="vs-section">
+                            <strong>vs. Enterprise Solutions:</strong> Expensive tools, complex integrations, consultant lock-in
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visual-side">
+                    <div class="geometric-shape shape-1"></div>
+                    <div class="geometric-shape shape-2"></div>
+                    <div class="icon-large">🔗</div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-content">
+                    <h3 class="challenge-title">Team Growth & Training</h3>
+                    <p class="pain-quote">New people take forever to get up to speed</p>
+                    
+                    <div class="stats">
+                        <h4>Impact</h4>
+                        <p>6-12 months of reduced productivity per new hire</p>
+                    </div>
+
+                    <div class="approach-section">
+                        <h4>Our Collaborative Approach</h4>
+                        <ul class="approach-list">
+                            <li>Document processes as we improve them</li>
+                            <li>Create training materials teams actually use</li>
+                            <li>Build systems that make good practices automatic</li>
+                            <li>Transfer knowledge so you're not dependent on us</li>
+                        </ul>
+                        
+                        <div class="vs-section">
+                            <strong>vs. Training Companies:</strong> Generic programs, no follow-through, no lasting systems
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visual-side">
+                    <div class="geometric-shape shape-1"></div>
+                    <div class="geometric-shape shape-2"></div>
+                    <div class="icon-large">🚀</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Collaborate?</h2>
+            <p>Pick one area where you need the most help. We can start small and build from there.</p>
+            <a href="#contact" class="cta-button">Let's Talk Strategy</a>
+        </div>
+    </div>
+</body>
+</html> 
