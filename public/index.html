@@ -38,29 +38,24 @@
     </nav>
 
     <main>
-    <section class="hero section">
+    <section class="hero">
+        <picture class="hero__background">
+            <source media="(max-width: 768px)" srcset="assets/images/Bathymetry-mobile-grad.svg">
+            <img src="assets/images/Bathymetry-desktop.svg" alt="Strategic planning background visualization" loading="eager">
+        </picture>
+        
         <div class="container">
-            <div class="bathymetric-background">
-                <!-- Animated Bathymetric Chart SVG -->
-                <svg id="Layer_1" viewBox="0 0 2000 1200" xmlns="http://www.w3.org/2000/svg">
-                  <g id="bathymetry">
-                    <g id="sea-8" class="cls-1">
-                      <path d="M0,0V1200H2000V0H0Z"/>
-                    </g>
-                    <!-- Remaining SVG paths will be loaded from external file -->
-                  </g>
-                </svg>
-            </div>
-            
-            <div class="hero-content">
-                <p class="subtitle">You don't need more strategy. You need it to actually happen.</p>
-            <a href="#" class="cta-primary">Explore Solutions</a>
+            <div class="hero__content">
+                <h1 class="hero__title">You don't need more strategy.<br><span class="hero__title-right">It's time to execute.</span></h1>
+                <div class="hero__bottom">
+                    <h2 class="hero__subtitle">Helping small teams<br class="mobile-break"> translate strategic goals<br class="mobile-break"> into operational results.</h2>
+                    <a href="#solutions" class="hero__cta cta-primary">See How We Deliver Results</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="about section">
-        <div class="container">
           <!-- Reusable quote component (independent) -->
           <div class="quote-block">
             <div class="quote-block__text prefer-sentence-wrap hidden">
@@ -68,8 +63,8 @@
               <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span>
                 </div>
             <div class="quote-block__text prefer-sentence-wrap">
-              <strong>Ideas are easy</strong>. Execution is everything. 
-              <span class="quote-block__attribution"><br class="sentence-break">— John Doerr</span>
+              <strong>Ideas are easy</strong>.<br>Execution is everything. 
+              <span class="quote-block__attribution"><br>— John Doerr</span>
             </div>
         </div>
           
@@ -79,11 +74,9 @@
               <img src="../assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier">
             </div>
             <div class="image-content-layout__content">
-                <p>You've heard it all before:</p>
-                    
-              <!-- Inline quote using semantic blockquote -->
+                <!-- Inline quote using semantic blockquote -->
               <blockquote style="margin: 16px 0; padding: 8px 0; font-size: 18px; font-weight: 500; font-style: italic; color: var(--primary-navy); line-height: 1.6; opacity: 0.9; text-align: center; border: none;">
-                "Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"
+                "Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"<strong>.......etc.</strong>
               </blockquote>
                     
                     <p>Solid advice. But here's the thing, knowing <strong>what to do and actually doing it</strong> are worlds apart.</p>
@@ -107,9 +100,9 @@
         <div class="container">
             <h4 class="section-title">Sound Familiar?</h4>
             
-            <!-- Reusable icon-content-list component -->
-            <div class="icon-content-list">
-                <div class="icon-content-list__item" data-problem="strategic">
+            <!-- Main strategic problem - keeps current layout -->
+            <div class="icon-content-list" style="margin-bottom: 120px;">
+                <div id="0-strategic-problem" class="icon-content-list__item" data-problem="strategic">
                     <div class="icon-content-list__icon">
                         <img src="../assets/images/Icon - missed target.svg" alt="Strategic ambitions icon">
                 </div>
@@ -124,87 +117,116 @@
                 </div>
                     </div>
                 </div>
-
-                <div class="icon-content-list__item" data-problem="outcomes">
-                    <div class="icon-content-list__icon">
-                        <img src="../assets/images/Icon - Maze.svg" alt="Unpredictable outcomes icon">
-                </div>
-                    <div class="icon-content-list__content">
-                        <h3 class="icon-content-list__title">Unpredictable outcomes and team friction?</h3>
-                        <div class="icon-content-list__details">
-                            <ul>
-                                <li><strong>Battling capacity</strong> due to erratic or lengthy job turnarounds?</li>
-                                <li>Workflow results unpredictable: <strong>inconsistent outcomes</strong> or <strong>duration</strong>?</li>
-                                <li>Team <strong>energy wasted</strong> figuring out how to work, not on the work itself?</li>
-                            </ul>
-                </div>
-                    </div>
-                </div>
-
-                <div class="icon-content-list__item" data-problem="plateau">
-                    <div class="icon-content-list__icon">
+            </div>
+            <div class="transition-overlay" id="transition-hurdles">
+                <p class="section-subtitle">There is no shortage of hurdles that intefere with strategic execution<br>Do you identify with these common pain points?</p>
+            </div>
+            <!-- Other problems in 3-column grid -->
+            <div class="grid grid--3-col">
+                <div id="2-problem-plateau" class="grid__item grid__item--card" data-problem="plateau">
+                    <div class="grid__icon">
                         <img src="../assets/images/Icon - Plateau.svg" alt="Progress plateau icon">
                     </div>
-                    <div class="icon-content-list__content">
-                        <h4 class="icon-content-list__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h4>
-                        <div class="icon-content-list__details">
-                            <ul>
-                                <li>Feel your team needs more <strong>support or new skills</strong> to deliver or develop?</li>
-                                <li>Want to <strong>develop your people</strong>, while they're delivering real business results?</li>
-                                <li>Despite everyone's hard work, you're <strong>not fully harnessing</strong> their collective strengths.</li>
-                            </ul>
-                        </div>
+                    <h3 class="grid__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h3>
+                    <div class="grid__content">
+                        <ul>
+                            <li><strong>Capacity</strong> — Everyone's <strong>overloaded</strong>, priorities shift daily, and progress <strong>stalls</strong>.</li>
+                            <li><strong>Clarity</strong> — Roles blur, tasks <strong>ping-pong</strong> between owners, and deadlines <strong>drift</strong>.</li>
+                            <li><strong>Ability</strong> — Skill gaps keep your team—and your business—<strong>stuck</strong> at the same level.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="icon-content-list__item" data-problem="toolbox">
-                    <div class="icon-content-list__icon">
+                <div id="4-problem-outcomes" class="grid__item grid__item--card" data-problem="outcomes">
+                    <div class="grid__icon">
+                        <img src="../assets/images/Icon - Maze.svg" alt="Unpredictable outcomes icon">
+                    </div>
+                    <h3 class="grid__title">Unpredictable outcomes and team friction?</h3>
+                    <div class="grid__content">
+                        <ul>
+                            <li><strong>Efficiency</strong> — Hours disappear to figuring out <strong>"how" instead of doing</strong> the work.</li>
+                            <li><strong>Consistency</strong> — Everyone tackles the same task differently, so <strong>results vary</strong> and <strong>timelines slip</strong>.</li>
+                            <li><strong>Scalability</strong> — Manual, <strong>repetitive steps</strong> soak up capacity and <strong>cap your growth</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="6-problem-toolbox" class="grid__item grid__item--card" data-problem="toolbox">
+                    <div class="grid__icon">
                         <img src="../assets/images/Icon - bad leverage.svg" alt="Toolbox solutions icon">
                     </div>
-                    <div class="icon-content-list__content">
-                        <h4 class="icon-content-list__title">Toolbox: Cluttered, but lacking real solutions?</h4>
-                        <div class="icon-content-list__details">
-                            <ul>
-                                <li>Leveraging tools, but the <strong>'effort-to-impact'</strong> ratio feels poorly balanced?</li>
-                                <li>Tools <strong>lack connection</strong>, so streamlined workflows feel just out of reach?</li>
-                                <li><strong>Sense new opportunities</strong>, but lack the agility or confidence to seize them?</li>
-                            </ul>
-                        </div>
+                    <h3 class="grid__title">Toolbox: Cluttered, but lacking real solutions?</h3>
+                    <div class="grid__content">
+                        <ul>
+                            <li><strong>Utility</strong> — Your tools <strong>'effort-to-impact'</strong> ratio feels poorly balanced.</li>
+                            <li><strong>Connectivity</strong> — Disconnected apps force <strong>manual workarounds</strong> while workflows break and nothing flows.</li>
+                            <li><strong>Agility</strong> — Emerging tech opens doors, but you <strong>can't move fast enough</strong>.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            
-            <p class="section-subtitle" style="margin-top: 60px;">Real, lasting progress starts with a solid foundation. The Core Elements you'll see next—<strong>People</strong>, <strong>Process</strong>, and <strong>Technology</strong>—work together to solve the root issues behind these challenges.</p>
-        </div>
-    </section>
-
-
-    <section class="solutions section">
-        <div class="container">
-            <h2 class="section-title">The Pragmatic Core Elements</h2>
-            <p class="section-subtitle">Foundation first, tools second. This sequence ensures lasting results rather than expensive experiments.</p>
-            
+            <div class="transition-overlay" id="1-transition-foundation">
+                <p class="section-subtitle">Real, lasting progress starts with a solid foundation.<br><strong>People</strong>, <strong>Process</strong>, and <strong>Technology.</strong></p>
+            </div>
             <div class="grid grid--3-col">
-                <div class="grid__item">
+                <div id="3-solution-people" class="grid__item grid__item--card">
                     <div class="grid__icon">
                         <img src="../assets/images/Cube - People.svg" alt="People">
                 </div>
                     <h3 class="grid__title">People</h3>
-                    <p class="grid__content">Overloading your team—or misaligning people with responsibilities beyond their expertise—leads to delays, burnout, and erodes team cohesion.<br><br>Together we can empower your team with clear roles, hands-on skill-building, and collaborative workflows that amplify their natural strengths.</p>
+                    <div class="grid__content">
+                        <ul>
+                            <li><strong>Capacity</strong> — Find <strong>quick wins</strong> for breathing room, then I handle the development work while you <strong>run your business</strong>.</li>
+                            <li><strong>Clarity</strong> — Together we establish <strong>task management</strong> and <strong>ownership</strong> across your team and align how we collaborate.</li>
+                            <li><strong>Ability</strong> — I provide missing <strong>technical skills</strong> while building your team's capabilities through <strong>hands-on work</strong>.</li>
+                        </ul>
                 </div>
-                <div class="grid__item">
+                </div>
+                <div id="5-solution-process" class="grid__item grid__item--card">
                     <div class="grid__icon">
                         <img src="../assets/images/Cube - Process.svg" alt="Process">
                 </div>
                     <h3 class="grid__title">Process</h3>
-                    <p class="grid__content">When processes live in people's heads—or scattered across docs—outcomes become unpredictable and progress grinds to a halt.<br><br>Let's document, optimize, and automatate your operations so work flows smoothly and results become reliably repeatable.</p>
+                    <div class="grid__content">
+                        <ul>
+                            <li><strong>Efficiency</strong> — We streamline core workflows and remove roadblocks, turning <strong>lost hours into output</strong>.</li>
+                            <li><strong>Consistency</strong> — Lightweight <strong>digital playbooks</strong> and live checklists let anyone follow the proven path—<strong>every time</strong>.</li>
+                            <li><strong>Scalability</strong> — <strong>Targeted automations</strong> handle the repeat work so the business expands without <strong>extra head-count</strong> or <strong>heroics</strong>.</li>
+                        </ul>
                 </div>
-                <div class="grid__item">
+                </div>
+                <div id="7-solution-technology" class="grid__item grid__item--card">
                     <div class="grid__icon">
                         <img src="../assets/images/Cube - Tools.svg" alt="Technology">
                     </div>
                     <h3 class="grid__title">Technology</h3>
-                    <p class="grid__content">Delayed or poor digital adoption results in missed opportunities, competitive gaps, workflow friction, and operational chaos.<br><br>The Pragmatic approach delivers the right tool at the right time through holistic planning to reduce friction and free your team for high-value work.</p>
+                    <div class="grid__content">
+                        <ul>
+                            <li><strong>Utility</strong> — Deliver the <strong>right tool at the right time</strong> for your real needs, so every solution drives <strong>meaningful impact</strong>.</li>
+                            <li><strong>Connectivity</strong> — I <strong>link tools, teams, and data</strong> to create clean, connected workflows—<strong>no more patchwork</strong> systems.</li>
+                            <li><strong>Agility</strong> — Create <strong>systems that flex</strong> with your growth and adapt to what's next—<strong>without disruption</strong>.</li>
+                        </ul>
+                </div>
+            </div>
+            </div>
+            <div class="transition-overlay" id="8-transition-sequence">
+            <p class="section-subtitle">Foundation first, tools second. This sequence ensures lasting results rather than expensive experiments.</p>
+            </div>
+            <div class="icon-content-list" style="margin-bottom: 120px;">
+                <div id="9-strategic-solution" class="icon-content-list__item" data-problem="strategic">
+                    <div class="icon-content-list__icon">
+                        <img src="../assets/logos/Logo - Cube vibrant.svg" alt="Pragmatic Tactics Cube">
+                    </div>
+                    <div class="icon-content-list__content">
+                        <h4 class="icon-content-list__title">The Pragmatic Core Elements</h4>
+                        <div class="icon-content-list__details">
+                            <ul>
+                                <li>Your people empowered with clarity and capacity to execute on what matters most.</li>
+                                <li>Your processes streamlined for efficiency and consistency, scaling without your constant oversight.</li>
+                                <li>Your technology integrated and agile, delivering measurable impact while future-proofing your operations.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -765,9 +787,15 @@
         
         // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            loadAnimatedBathymetry();
+            // loadAnimatedBathymetry(); // Temporarily disabled while using static bathymetry background
             initProblemItemInteractions();
             initMobileMenu();
+
+            // Ensure hero subtitle and CTA are visible when static image is used
+            const subtitleEl = document.querySelector('.hero-content .subtitle');
+            const ctaEl = document.querySelector('.hero-content .cta-primary');
+            subtitleEl?.classList.add('visible');
+            ctaEl?.classList.add('visible');
         });
 
         // Mobile Menu Functionality
@@ -801,6 +829,183 @@
         }
 
       
+    </script>
+
+    <!-- Overlay SVG for Dynamic Connectors -->
+    <svg id="flow-lines" 
+         style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0.1;" 
+         aria-hidden="true">
+    </svg>
+
+    <script>
+        // Dynamic SVG Connectors for Problems Section
+        const svg = document.getElementById('flow-lines');
+
+        function drawProblemConnectors() {
+            // Clear previous paths
+            svg.innerHTML = '';
+            
+            // Update SVG dimensions to cover full document
+            const fullWidth = Math.max(document.documentElement.scrollWidth, window.innerWidth);
+            const fullHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight);
+            
+            svg.setAttribute('width', fullWidth);
+            svg.setAttribute('height', fullHeight);
+            svg.style.width = fullWidth + 'px';
+            svg.style.height = fullHeight + 'px';
+
+            // Get card elements (not icons)
+            const strategicProblem = document.getElementById('0-strategic-problem');
+            const problemCards = [
+                document.getElementById('2-problem-plateau'),
+                document.getElementById('4-problem-outcomes'), 
+                document.getElementById('6-problem-toolbox')
+            ];
+
+            if (!strategicProblem || problemCards.some(card => !card)) return;
+
+            // Calculate source position (strategic problem card bottom-center)
+            const sourceRect = strategicProblem.getBoundingClientRect();
+            const sourceX = sourceRect.left + sourceRect.width / 2;
+            const sourceY = sourceRect.bottom; // Bottom of card instead of center
+
+            // Create branching effect: single line down, then split to three targets
+            const branchStartY = sourceY + 40; // Shortened from 60px
+
+            // Draw the main trunk line from source card bottom down
+            const trunkPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const trunkData = `M${sourceX},${sourceY} L${sourceX},${branchStartY}`;
+            trunkPath.setAttribute('d', trunkData);
+            trunkPath.setAttribute('fill', 'none');
+            trunkPath.setAttribute('stroke', '#0f172a'); // Primary navy color
+            trunkPath.setAttribute('stroke-width', '5');
+            trunkPath.setAttribute('opacity', '0.8');
+            trunkPath.setAttribute('stroke-linecap', 'round');
+            svg.appendChild(trunkPath);
+
+            // Draw branches to each target card
+            problemCards.forEach((targetCard, index) => {
+                const targetRect = targetCard.getBoundingClientRect();
+                const targetX = targetRect.left + targetRect.width / 2;
+                const targetY = targetRect.top; // Top of card instead of center
+
+                // Create smooth curve from branch point to target card top
+                const pathData = `M${sourceX},${branchStartY} C${sourceX},${branchStartY + (targetY - branchStartY) * 0.3} ${targetX},${targetY - (targetY - branchStartY) * 0.3} ${targetX},${targetY}`;
+
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', pathData);
+                path.setAttribute('fill', 'none');
+                path.setAttribute('stroke', '#0f172a'); // Primary navy color
+                path.setAttribute('stroke-width', '5');
+                path.setAttribute('opacity', '0.8');
+                path.setAttribute('stroke-linecap', 'round');
+                svg.appendChild(path);
+            });
+
+            // Draw straight lines from problem cards to solution cards
+            const solutionCards = [
+                document.getElementById('3-solution-people'),    // Maps to problem-plateau
+                document.getElementById('5-solution-process'),   // Maps to problem-outcomes  
+                document.getElementById('7-solution-technology') // Maps to problem-toolbox
+            ];
+
+            if (solutionCards.every(card => card)) {
+                problemCards.forEach((problemCard, index) => {
+                    const solutionCard = solutionCards[index];
+                    
+                    const problemRect = problemCard.getBoundingClientRect();
+                    const solutionRect = solutionCard.getBoundingClientRect();
+                    
+                    const startX = problemRect.left + problemRect.width / 2;
+                    const startY = problemRect.bottom;
+                    const endX = solutionRect.left + solutionRect.width / 2;
+                    const endY = solutionRect.top;
+
+                    // Draw straight line from problem card bottom to solution card top
+                    const straightPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    const straightData = `M${startX},${startY} L${endX},${endY}`;
+                    straightPath.setAttribute('d', straightData);
+                    straightPath.setAttribute('fill', 'none');
+                    straightPath.setAttribute('stroke', '#0f172a');
+                    straightPath.setAttribute('stroke-width', '5');
+                    straightPath.setAttribute('opacity', '0.8');
+                    straightPath.setAttribute('stroke-linecap', 'round');
+                    svg.appendChild(straightPath);
+                });
+
+                // Draw branching lines from solution cards to strategic solution
+                const strategicSolution = document.getElementById('9-strategic-solution');
+                if (strategicSolution) {
+                    const strategicSolutionRect = strategicSolution.getBoundingClientRect();
+                    const strategicSolutionX = strategicSolutionRect.left + strategicSolutionRect.width / 2;
+                    const strategicSolutionY = strategicSolutionRect.top;
+
+                    // Create branching effect: lines from solution cards converge, then single line to strategic solution
+                    const convergenceY = strategicSolutionY - 40; // Branch point above strategic solution
+
+                    // Draw the main trunk line from convergence point to strategic solution top
+                    const solutionTrunkPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    const solutionTrunkData = `M${strategicSolutionX},${convergenceY} L${strategicSolutionX},${strategicSolutionY}`;
+                    solutionTrunkPath.setAttribute('d', solutionTrunkData);
+                    solutionTrunkPath.setAttribute('fill', 'none');
+                    solutionTrunkPath.setAttribute('stroke', '#0f172a');
+                    solutionTrunkPath.setAttribute('stroke-width', '5');
+                    solutionTrunkPath.setAttribute('opacity', '0.8');
+                    solutionTrunkPath.setAttribute('stroke-linecap', 'round');
+                    svg.appendChild(solutionTrunkPath);
+
+                    // Draw branches from each solution card to the convergence point
+                    solutionCards.forEach((solutionCard, index) => {
+                        const solutionRect = solutionCard.getBoundingClientRect();
+                        const solutionX = solutionRect.left + solutionRect.width / 2;
+                        const solutionY = solutionRect.bottom;
+
+                        // Create smooth curve from solution card bottom to convergence point
+                        const pathData = `M${solutionX},${solutionY} C${solutionX},${solutionY + (convergenceY - solutionY) * 0.3} ${strategicSolutionX},${convergenceY - (convergenceY - solutionY) * 0.3} ${strategicSolutionX},${convergenceY}`;
+
+                        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        path.setAttribute('d', pathData);
+                        path.setAttribute('fill', 'none');
+                        path.setAttribute('stroke', '#0f172a');
+                        path.setAttribute('stroke-width', '5');
+                        path.setAttribute('opacity', '0.8');
+                        path.setAttribute('stroke-linecap', 'round');
+                        svg.appendChild(path);
+                    });
+                }
+            }
+        }
+
+        // Handle mobile display
+        function handleConnectorMobileDisplay() {
+            if (window.innerWidth <= 768) {
+                svg.style.display = 'none';
+            } else {
+                svg.style.display = 'block';
+                drawProblemConnectors();
+            }
+        }
+
+        // Initialize connectors
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(handleConnectorMobileDisplay, 100);
+            });
+        } else {
+            setTimeout(handleConnectorMobileDisplay, 100);
+        }
+
+        // Event listeners for reactive updates
+        window.addEventListener('resize', () => {
+            clearTimeout(window.connectorTimeout);
+            window.connectorTimeout = setTimeout(handleConnectorMobileDisplay, 100);
+        });
+        
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 768) {
+                requestAnimationFrame(drawProblemConnectors);
+            }
+        });
     </script>
 
     <script>

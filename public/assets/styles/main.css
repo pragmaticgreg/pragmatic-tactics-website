@@ -139,9 +139,9 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 .quote-block {
     background: var(--background-medium);
     border-radius: 16px;
-    padding: 32px;
-    margin: 40px auto;
-    max-width: 800px;
+    padding: 20px;
+    margin: 0px auto;
+    max-width: 600px;
     text-align: center;
     position: relative;
     box-shadow: var(--shadow-subtle);
@@ -152,8 +152,35 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     font-weight: 600;
     color: var(--text-primary);
     line-height: 1.5;
-    margin-bottom: 16px;
     font-style: italic;
+    position: relative;
+    padding: 15px 40px 20px 40px;
+}
+
+.quote-block__text::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--primary-navy);
+    opacity: 0.3;
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
+}
+
+.quote-block__text::after {
+    content: '"';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--primary-navy);
+    opacity: 0.3;
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
 }
 
 .quote-block__attribution {
@@ -230,6 +257,48 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 }
 
 /* ---------- Icon Content List Component ---------- */
+
+/* Strategy card gradient backgrounds - dark charcoal to color gradients */
+.icon-content-list__item[id="0-strategic-problem"] {
+    background: linear-gradient(150deg, #2d3748 0%, #4a5568 50%, #742a2a 100%);
+    border-radius: 12px;
+}
+
+.icon-content-list__item[id="0-strategic-problem"] .icon-content-list__title {
+    color: #f7fafc;
+}
+
+.icon-content-list__item[id="0-strategic-problem"] .icon-content-list__details li {
+    color: #cbd5e0;
+}
+
+.icon-content-list__item[id="0-strategic-problem"] .icon-content-list__details li::before {
+    color: #fc8181;
+}
+
+.icon-content-list__item[id="9-strategic-solution"] {
+    background: linear-gradient(150deg, #276749 0%, #4a5568 50%, #2d3748 100%);
+    border-radius: 12px;
+}
+
+.icon-content-list__item[id="9-strategic-solution"] .icon-content-list__title {
+    color: #f7fafc;
+}
+
+.icon-content-list__item[id="9-strategic-solution"] .icon-content-list__details li {
+    color: #cbd5e0;
+}
+
+.icon-content-list__item[id="9-strategic-solution"] .icon-content-list__details li::before {
+    color: #68d391;
+}
+
+/* Strategy card icon styling for dark backgrounds */
+.icon-content-list__item[id="0-strategic-problem"] .icon-content-list__icon img {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(6%) saturate(200%) hue-rotate(186deg) brightness(106%) contrast(106%);
+    opacity: 0.9;
+}
+
 .icon-content-list {
     max-width: 900px;
     margin: 20px auto 0;
@@ -438,77 +507,193 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 /* COMPONENT: HERO SECTION              */
 /* ============================================= */
 
+/* ============================================= */
+/* HERO SECTION - Modern Implementation        */
+/* ============================================= */
+
 .hero {
-    background: var(--primary-navy);
-    text-align: center;
-    padding: 240px 0;
     position: relative;
+    background: var(--primary-navy);
     overflow: hidden;
+    /* Height determined by background image */
 }
 
-/* Bathymetric Background */
-.bathymetric-background {
+.hero__background {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.hero__background img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Never crop - show entire image */
+}
+
+.hero .container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.bathymetric-background svg {
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-    object-fit: cover;
-    object-position: center 40%;
-    transform: scale(1.2);
-}
-
-.hero-content {
-    position: absolute;
-    top: 55%;
-    left: 0;
-    right: 0;
-    z-index: 2;
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     text-align: center;
-    padding: 0 24px;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-.hero h1 {
+.hero__title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Increased max from 3.5rem to 4rem */
     font-weight: 700;
-    margin-bottom: 1.5rem;
     line-height: 1.2;
-    color: black;
+    color: #E5E5E5;
+    margin: 0 0 clamp(1rem, 3vw, 1.5rem);
+    text-align: center; /* Default: center for mobile */
 }
 
-.hero .subtitle {
+.hero__subtitle {
     font-family: 'Lato', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: black;
-    line-height: 1.4;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #E5E5E5;
+    margin: 0;
+    text-align: center; /* Default: center for mobile */
 }
 
-/* Hero content animation */
-.hero-content .subtitle,
-.hero-content .cta-primary {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.hero__cta {
+    margin-top: clamp(0.5rem, 2vw, 1rem);
 }
 
-.hero-content .subtitle.visible,
-.hero-content .cta-primary.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Desktop: Hero height matches SVG height exactly */
+@media (min-width: 769px) {
+    .hero {
+        /* Remove fixed height - let it be determined by background image */
+        height: auto;
+        max-height: calc((100vh - 100px) * 0.80); /* 80% of viewport minus header height */
+        min-height: 450px; /* Minimum height to ensure content is always visible */
+        overflow: hidden; /* Hide any overflow if image is too tall */
+    }
+    
+    .hero__background {
+        position: relative; /* Change from absolute to relative */
+        width: 100%;
+        height: auto;
+    }
+    
+    .hero__background::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(15deg, rgba(0, 0, 0, 0.85) 20%, rgba(30, 30, 30, 0.6) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    .hero__background img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        display: block;
+        object-fit: contain; /* Show full width, no cropping */
+        object-position: top center; /* Align to top, center horizontally */
+    }
+    
+    .hero .container {
+        /* Overlay content on the image */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+    
+    .hero__content {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        align-items: start;
+        text-align: left;
+        max-width: 75rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem 3rem 2rem;
+    }
+    
+    .hero__title {
+        text-align: left; /* Override to left on desktop */
+        margin-bottom: 0;
+    }
+    
+    .hero__title-right {
+        display: block;
+        text-align: right;
+    }
+    
+    .hero__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(3rem, 6vw, 8rem);
+    }
+    
+    .hero__subtitle {
+        text-align: center;
+        margin: 0;
+    }
+    
+    .hero__cta {
+        margin: 0;
+    }
+    
+    /* .mobile-break {
+        display: none; Hide line breaks on desktop
+    } */
+}
+
+/* Tablet and Mobile: Center hero text content */
+@media (max-width: 768px) {
+    .hero__content {
+        text-align: center;
+        padding: 0px;
+    }
+    
+    .hero__title {
+        text-align: center;
+    }
+    
+    .hero__bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero__subtitle {
+        text-align: center;
+    }
+    
+    .mobile-break {
+        display: inline; /* Show line breaks on mobile */
+    }
 }
 
 /* ============================================= */
@@ -522,7 +707,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
     display: inline-block;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-medium);
@@ -539,7 +724,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     color: var(--background-white);
     padding: 16px 32px;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-left: 24px;
     font-weight: 600;
     transition: all 0.2s ease;
@@ -569,15 +754,74 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     /* For now, it mainly serves as a semantic BEM element. */
 }
 
+.grid__item--card {
+    position: relative;
+    padding: 40px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background-color: var(--background-white);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.grid__item--card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.grid__item--card .grid__title {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.grid__item--card .grid__content {
+    text-align: left;
+}
+
+.grid__item--card .grid__content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grid__item--card .grid__content li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.grid__item--card .grid__content li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+    color: var(--secondary-blue);
+    font-weight: bold;
+}
+
 .grid__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 120px;
-    height: 120px;
+    height: 100px;
     margin: 0 auto 24px;
 }
 
 .grid__icon img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 100px;
+    max-height: 100px;
+    max-width: 180px;
     object-fit: contain;
 }
 
@@ -597,6 +841,34 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 }
 
 /* ============================================= */
+/* COMPONENT: TRANSITION OVERLAY               */
+/* ============================================= */
+
+.transition-overlay {
+    position: relative;
+    z-index: 2;
+    margin: 80px auto;
+    text-align: center;
+    max-width: 1000px;
+}
+
+.transition-overlay::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    right: -40px;
+    bottom: -20px;
+    background: var(--background-light);
+    opacity: 0.9;
+    border-radius: 20px;
+    box-shadow: 
+        0 0 60px 30px var(--background-light),
+        0 0 120px 60px rgba(245, 245, 245, 0.6);
+    z-index: -1;
+}
+
+/* ============================================= */
 /* COMPONENT: CARD SYSTEM               */
 /* ============================================= */
 
@@ -610,6 +882,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     border: 1px solid var(--border-light);
     transition: all 0.3s ease;
     position: relative;
+    z-index: 1;
 }
 
 .card:hover {
@@ -1228,15 +1501,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .hamburger { display: flex; }
     .nav { position: relative; }
     
-    /* Hero */
-    .hero {
-        padding: 90px 0;
-        min-height: 450px;
-        max-height: 600px;
-    }
-    .hero-content { top: 50%; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero .subtitle { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    /* Hero - Mobile optimizations handled by clamp() and picture element */
     
     /* Content Grid */
     .grid { gap: 24px; }
@@ -1262,6 +1527,67 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
         max-width: 50%;
     }
 
+    /* Mobile Problem-Solution Card Reordering */
+    .problems .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .problems .grid--3-col {
+        display: contents; /* Remove grid container on mobile */
+    }
+    
+    /* Mobile transition overlay positioning */
+    .problems #transition-hurdles { 
+        display: none; /* Hide "There is no shortage of hurdles..." */
+    }
+    .problems #transition-foundation { 
+        order: 1; /* After strategic-problem */
+    }
+    .problems #transition-sequence { 
+        order: 8; /* Just before strategic-solution */
+    }
+    
+    /* Remove margins from all transition overlays on mobile */
+    .transition-overlay {
+        margin: 0 auto;
+    }
+    
+    /* Remove gradient backgrounds from all transition overlays on mobile */
+    .transition-overlay::before {
+        display: none;
+    }
+    
+    /* Add bottom margins to solution cards on mobile */
+    .problems [id="3-solution-people"] {
+        margin-bottom: 50px;
+    }
+    .problems [id="5-solution-process"] {
+        margin-bottom: 50px;
+    }
+    
+    /* Mobile connecting chevrons - clean chevron shape with proper border */
+    .problems [id="2-problem-plateau"],
+    .problems [id="4-problem-outcomes"],
+    .problems [id="6-problem-toolbox"] {
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
+        border: 1px solid var(--border-light); /* Keep original border - it will be clipped naturally */
+    }
+    
+    /* Mobile card ordering using actual HTML IDs: 0,1,2,5,3,6,4,7,8,9 */
+    .problems [id^="0-"] { order: 0; } /* Strategic Problem */
+    .problems [id^="1-"] { order: 1; } /* Foundation Transition */
+    .problems [id^="2-"] { order: 2; } /* People Problem */
+    .problems [id^="3-"] { order: 5; } /* People Solution */
+    .problems [id^="4-"] { order: 3; } /* Process Problem */
+    .problems [id^="5-"] { order: 6; } /* Process Solution */
+    .problems [id^="6-"] { order: 4; } /* Technology Problem */
+    .problems [id^="7-"] { order: 7; } /* Technology Solution */
+    .problems [id^="8-"] { order: 8; } /* Sequence Transition */
+    .problems [id^="9-"] { order: 9; } /* Strategic Solution */
+
     /* Card System */
     .card__icon { width: 70px; height: 70px; margin-bottom: 20px; }
     .card__title { font-size: 18px; margin-bottom: 12px; }
@@ -1270,11 +1596,10 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     /* Reusable Components - Mobile */
     .quote-block { 
         padding: 24px; 
-        margin: 32px auto; 
+        margin: auto; 
     }
     .quote-block__text { 
         font-size: 20px; 
-        margin-bottom: 12px; 
     }
     .quote-block__attribution { 
         font-size: 16px; 
@@ -1306,8 +1631,8 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 
     /* Icon Content List - Mobile */
     .icon-content-list { 
-        margin-top: 40px; 
-        padding: 0 20px; 
+        margin: 0 auto !important; /* Remove all margins on mobile, override inline styles */
+        padding: 0 0px; 
     }
     .icon-content-list__item { 
         grid-template-columns: 1fr; 
@@ -1397,13 +1722,69 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
         max-width: 100%;
     }
 
-    /* Hero */
-    .hero { padding: 100px 0; min-height: 450px; max-height: 450px; }
-    .hero-content { top: 55%; }
-    .hero h1 { font-size: 2rem; }
-    .hero .subtitle { font-size: 1rem; }
-    .bathymetric-background { height: 530px; }
-    .bathymetric-background svg { transform: scale(1.8) translateY(-5%); min-height: 100%; }
+    /* Mobile Problem-Solution Card Reordering */
+    .problems .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .problems .grid--3-col {
+        display: contents; /* Remove grid container on mobile */
+    }
+    
+    /* Mobile transition overlay positioning */
+    .problems #transition-hurdles { 
+        display: none; /* Hide "There is no shortage of hurdles..." */
+    }
+    .problems #transition-foundation { 
+        order: 1; /* After strategic-problem */
+    }
+    .problems #transition-sequence { 
+        order: 8; /* Just before strategic-solution */
+    }
+    
+    /* Remove margins from all transition overlays on mobile */
+    .transition-overlay {
+        margin: 0 auto;
+    }
+    
+    /* Remove gradient backgrounds from all transition overlays on mobile */
+    .transition-overlay::before {
+        display: none;
+    }
+    
+    /* Add bottom margins to solution cards on mobile */
+    .problems [id="3-solution-people"] {
+        margin-bottom: 50px;
+    }
+    .problems [id="5-solution-process"] {
+        margin-bottom: 50px;
+    }
+    
+    /* Mobile connecting chevrons - clean chevron shape with proper border */
+    .problems [id="2-problem-plateau"],
+    .problems [id="4-problem-outcomes"],
+    .problems [id="6-problem-toolbox"] {
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
+        border: 1px solid var(--border-light); /* Keep original border - it will be clipped naturally */
+    }
+    
+    /* Mobile card ordering: Strategic Problem → People(2,5) → Process(3,6) → Technology(4,7) → Strategic Solution */
+    /* Mobile card ordering matching HTML IDs: 0,1,2,3,4,5,6,7,8,9 */
+    .problems .icon-content-list:has([id="0-strategic-problem"]) { order: 0; } /* Strategic Problem */
+    .problems [id="1-transition-foundation"] { order: 1; } /* Foundation Transition */
+    .problems [id="2-problem-plateau"] { order: 2; } /* People Problem */
+    .problems [id="3-solution-people"] { order: 3; } /* People Solution */
+    .problems [id="4-problem-outcomes"] { order: 4; } /* Process Problem */
+    .problems [id="5-solution-process"] { order: 5; } /* Process Solution */
+    .problems [id="6-problem-toolbox"] { order: 6; } /* Technology Problem */
+    .problems [id="7-solution-technology"] { order: 7; } /* Technology Solution */
+    .problems [id="8-transition-sequence"] { order: 8; } /* Sequence Transition */
+    .problems .icon-content-list:has([id="9-strategic-solution"]) { order: 9; } /* Strategic Solution */
+
+    /* Hero - Mobile optimizations handled by clamp() and picture element */
     
     /* About */
     .image-content-layout__image { width: 240px; height: 240px; }
@@ -1417,10 +1798,14 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .cta-secondary { margin-left:0; }
 
     /* Icon Content List - Small Mobile */
+    .icon-content-list { 
+        margin: 0 auto !important; /* Remove all margins on mobile, override inline styles */
+    }
     .icon-content-list__item { 
         padding: 16px; 
         gap: 16px; 
     }
+    .icon-content-layout__image { width: 240px; height: 240px; }
     .icon-content-list__icon { 
         height: 120px !important; 
         min-height: 120px; 
@@ -1435,6 +1820,9 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .icon-content-list__details { 
         font-size: 14px; 
     }
+    .card {
+        padding: 40px 16px;
+    }
 }
 
 /* ---------- Very small screens (e.g., iPhone 5/SE) ---------- */
@@ -1443,13 +1831,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 }
 
 @media (max-width: 410px) {
-    /* Hero */
-    .hero { padding: 90px 0; min-height: 450px; max-height: 450px; }
-    .hero-content { top: 60%; }
-    .hero h1 { font-size: 1.8rem; margin-bottom: 0.8rem; }
-    .hero .subtitle { font-size: 0.95rem; margin-bottom: 1.2rem; }
-    .bathymetric-background { height: 450px; }
-    .bathymetric-background svg { transform: scale(2.0) translateY(-5%); min-height: 100%; }
+    /* Hero - Mobile optimizations handled by clamp() and picture element */
     
     /* Mantras */
     /* mantras-line removed - now using inline blockquote */
@@ -1461,6 +1843,17 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 
 @media (max-width: 355px) {
     .conclusion-statement__text { font-size: 0.9rem; line-height: 1.3; }
+}
+
+@media (max-width: 377px) {
+    .hero__title {
+        font-size: clamp(1.75rem, 4.5vw, 3.15rem); /* Split difference for better balance */
+    }
+    
+    .hero__subtitle {
+        font-size: clamp(1.1rem, 3.2vw, 1.7rem); /* Improved readability */
+        line-height: 1.4; /* Better spacing between lines */
+    }
 }
 
 @media (max-width: 320px) {

@@ -39,7 +39,7 @@
             gap: 2rem;
         }
 
-        .card { 
+        .card {
             background: white;
             border-radius: 16px;
             padding: 32px;
@@ -191,8 +191,6 @@
             color: #a7f3d0;
         }
 
-        /* Remove old CSS - no longer needed with dynamic connectors */
-
         /* Elegant transition labels */
         .transition-label {
             text-align: center;
@@ -301,6 +299,10 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .problems-row, .solutions-row {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -337,8 +339,8 @@
                 <div class="icon"></div>
                 <h2 class="card-title">Central Principle</h2>
                 <p class="card-description">A concise statement defining the core business priority that needs to be dissected into actionable parts.</p>
-              </div>
-              
+            </div>
+
             <div id="analysis-section" class="transition-label">
                 <h4>Analysis</h4>
                 <p>Breaking down the principle into key challenges</p>
@@ -362,15 +364,15 @@
                     <h3 class="card-title">Problem C</h3>
                     <p class="card-description">Description of the third obstacle linked to the principle.</p>
                 </div>
-              </div>
-              
+            </div>
+
             <!-- Step Progression -->
             <div class="step-progression">
                 <div class="step-dot active"></div>
                 <div class="step-dot active"></div>
                 <div class="step-dot"></div>
-              </div>
-              
+            </div>
+
             <div class="transition-label">
                 <h4>Strategy</h4>
                 <p>Developing targeted solutions for each challenge</p>
@@ -394,13 +396,13 @@
                     <h3 class="card-title">Solution C</h3>
                     <p class="card-description">The fix implemented for problem C closing the loop.</p>
                 </div>
-              </div>
-              
+            </div>
+
             <!-- Section Separator -->
             <div class="section-separator">
                 <span>Execution</span>
-              </div>
-              
+            </div>
+
             <!-- Successful Outcome -->
             <div class="section-label">Expected Outcome</div>
             <div id="outcome" class="card outcome">
@@ -409,12 +411,10 @@
                 <p class="card-description">A concise summary of the value delivered by addressing each component and achieving the overall goal.</p>
             </div>
         </div>
-
-
     </div>
 
     <!-- Overlay SVG that hosts every connector -->
-    <svg id="flow-lines" class="pointer-events-none absolute inset-0 w-full h-full" aria-hidden="true"></svg>
+    <svg id="flow-lines" class="pointer-events-none absolute inset-0 w-full h-full" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;" aria-hidden="true"></svg>
 
     <!-- Dynamic Connection Logic -->
     <script>
@@ -432,9 +432,12 @@
         const svg = document.getElementById('flow-lines');
 
         function drawConnectors() {
-            svg.innerHTML = ''; // Clear previous paths
-            svg.setAttribute('width', document.documentElement.scrollWidth);
-            svg.setAttribute('height', document.body.scrollHeight);
+            // Clear previous paths
+            svg.innerHTML = '';
+            
+            // Update SVG dimensions
+            svg.setAttribute('width', Math.max(document.documentElement.scrollWidth, window.innerWidth));
+            svg.setAttribute('height', Math.max(document.body.scrollHeight, window.innerHeight));
 
             connectors.forEach(([fromId, toId]) => {
                 const fromElement = document.getElementById(fromId);
@@ -475,10 +478,17 @@
         }
 
         // Initial draw and reactive updates
-        window.addEventListener('load', () => {
+        function initConnectors() {
             drawConnectors();
             setTimeout(drawConnectors, 100); // Ensure proper layout
-        });
+        }
+
+        // Event listeners
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initConnectors);
+        } else {
+            initConnectors();
+        }
         
         window.addEventListener('resize', () => requestAnimationFrame(drawConnectors));
         window.addEventListener('scroll', () => requestAnimationFrame(drawConnectors));
@@ -489,11 +499,15 @@
                 svg.style.display = 'none';
             } else {
                 svg.style.display = 'block';
+                drawConnectors(); // Redraw when showing
             }
         }
         
         window.addEventListener('resize', handleMobileDisplay);
         window.addEventListener('load', handleMobileDisplay);
+
+        // Initial mobile check
+        handleMobileDisplay();
     </script>
 </body>
 </html> 
