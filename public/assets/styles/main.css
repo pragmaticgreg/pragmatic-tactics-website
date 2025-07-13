@@ -18,6 +18,9 @@
     --border-medium: #d1d5db;
     --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --filter-charcoal: brightness(0) saturate(100%) invert(8%) sepia(17%) saturate(1808%) hue-rotate(209deg) brightness(95%) contrast(93%);
+    --filter-white: brightness(0) saturate(100%) invert(90%) sepia(6%) saturate(200%) hue-rotate(186deg) brightness(106%) contrast(106%);
+    --filter-grey: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(60%) contrast(100%);
     --bathymetry-land: #D7D9C4;
     --bathymetry-sea1: #BFDCE2;
     --bathymetry-sea2: #A0C7D2;
@@ -256,6 +259,42 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     font-style: italic; 
 }
 
+/* ---------- Section Border Separator ---------- */
+.section.section--with-separator {
+    position: relative;
+}
+
+.section.section--with-separator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, 
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.3) 40%, 
+        transparent 40%, 
+        transparent 60%, 
+        rgba(0, 0, 0, 0.3) 60%, 
+        rgba(0, 0, 0, 0.3) 100%
+    );
+}
+
+.section.section--with-separator::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: url('/assets/logos/Cube-solid.svg') center/32px no-repeat;
+    filter: brightness(0) saturate(100%) invert(60%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(70%) contrast(100%);
+}
+
+
+
 /* ---------- Icon Content List Component ---------- */
 
 /* Strategy card gradient backgrounds - dark charcoal to color gradients */
@@ -295,7 +334,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 
 /* Strategy card icon styling for dark backgrounds */
 .icon-content-list__item[id="0-strategic-problem"] .icon-content-list__icon img {
-    filter: brightness(0) saturate(100%) invert(90%) sepia(6%) saturate(200%) hue-rotate(186deg) brightness(106%) contrast(106%);
+    filter: var(--filter-white);
     opacity: 0.9;
 }
 
@@ -1627,6 +1666,18 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .conclusion-statement__text { 
         font-size: 1.3rem; 
         line-height: 1.5; 
+    }
+
+    /* Section Border Separator - Mobile */
+    .section.section--with-separator::before {
+        height: 1px;
+    }
+    
+    .section.section--with-separator::after {
+        top: -16px;
+        width: 32px;
+        height: 32px;
+        background-size: 24px;
     }
 
     /* Icon Content List - Mobile */
