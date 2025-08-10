@@ -1015,6 +1015,11 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     position: relative;
 }
 
+/* Enable vertical scroll while allowing JS-driven horizontal swipes on the card area */
+.project-display__card {
+    touch-action: pan-y;
+}
+
 /* Both sides have overflow */
 .project-display__menu.has-overflow {
     mask-image: linear-gradient(
