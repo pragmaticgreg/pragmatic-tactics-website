@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Planning Framework - Source</title>
+    <title>Organic Flow Timeline - Source Design</title>
     <style>
         * {
             margin: 0;
@@ -12,257 +12,185 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 2rem 1rem;
         }
 
-        .container {
-            max-width: 1200px;
+        .timeline-container {
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
+            padding: 2rem 0;
         }
 
-        .framework {
+        .timeline-svg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 300px;
+            z-index: 1;
+        }
+
+        .connector-path {
+            fill: none;
+            stroke: url(#flowGradient);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.8;
+        }
+
+        .timeline-step {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 80px;
-        }
-
-        .card {
-            background-color: #2a2a2a;
-            border: 1px solid #404040;
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.2s ease-in-out;
+            margin-bottom: 8rem;
             position: relative;
+            z-index: 2;
         }
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        .timeline-step:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .central-principle {
-            max-width: 500px;
-            text-align: center;
-            border-color: #8b5cf6;
-            box-shadow: 0 0 0 1px #8b5cf6;
-        }
-
-        .central-principle .icon {
-            width: 24px;
-            height: 24px;
-            background-color: #8b5cf6;
+        .timeline-node {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            display: inline-flex;
+            background: white;
+            border: 4px solid;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 3;
         }
 
-        .central-principle .icon::before {
-            content: "⚡";
-            color: white;
-            font-size: 14px;
+        .step-1 .timeline-node { border-color: #0891b2; color: #0891b2; }
+        .step-2 .timeline-node { border-color: #059669; color: #059669; }
+        .step-3 .timeline-node { border-color: #ca8a04; color: #ca8a04; }
+        .step-4 .timeline-node { border-color: #ea580c; color: #ea580c; }
+        .step-5 .timeline-node { border-color: #dc2626; color: #dc2626; }
+        .step-6 .timeline-node { border-color: #7c2d92; color: #7c2d92; }
+
+        .content-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 320px;
+            margin: 0 2rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
         }
 
         .card-title {
-            font-size: 24px;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 16px;
-            color: #ffffff;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
         }
 
-        .card-description {
-            font-size: 16px;
+        .card-content {
+            font-size: 0.875rem;
+            color: #475569;
             line-height: 1.6;
-            color: #d1d5db;
-        }
-
-        .problems-row, .solutions-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .problem-card {
-            border-color: #f59e0b;
-            box-shadow: 0 0 0 1px #f59e0b;
-        }
-
-        .problem-card .icon {
-            width: 24px;
-            height: 24px;
-            background-color: #f59e0b;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .problem-card .icon::before {
-            content: "⚠";
-            color: white;
-            font-size: 14px;
-        }
-
-        .solution-card .icon {
-            width: 24px;
-            height: 24px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .solution-card .icon::before {
-            content: "✓";
-            color: white;
-            font-size: 14px;
-        }
-
-        .outcome {
-            max-width: 500px;
-            text-align: center;
-            background-color: #047857;
-            border-color: #10b981;
-            box-shadow: 0 0 0 1px #10b981;
-        }
-
-        .outcome .icon {
-            width: 24px;
-            height: 24px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .outcome .icon::before {
-            content: "★";
-            color: white;
-            font-size: 14px;
-        }
-
-        /* Connection lines */
-        .connection-line {
-            position: absolute;
-            stroke: #6b7280;
-            stroke-width: 1;
-            stroke-dasharray: 4 4;
-            fill: none;
-            opacity: 0.6;
-        }
-
-        .connections {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
         }
 
         @media (max-width: 768px) {
-            .problems-row, .solutions-row {
-                grid-template-columns: 1fr;
-                gap: 24px;
+            .timeline-step {
+                flex-direction: column !important;
+                text-align: center;
+                margin-bottom: 4rem;
             }
-            
-            .framework {
-                gap: 60px;
+
+            .content-card {
+                margin: 1rem 0 0 0;
+                max-width: 100%;
             }
-            
-            .card {
-                padding: 24px;
+
+            .timeline-svg {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="framework">
-            <!-- Central Principle -->
-            <div class="card central-principle">
-                <div class="icon"></div>
-                <h2 class="card-title">Central Principle</h2>
-                <p class="card-description">A concise statement defining the core business priority that needs to be dissected into actionable parts.</p>
-            </div>
+    <div class="timeline-container">
+        <!-- Organic Connector SVG -->
+        <svg class="timeline-svg" viewBox="0 0 300 1200" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <linearGradient id="flowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0891b2"/>
+                    <stop offset="20%" style="stop-color:#059669"/>
+                    <stop offset="40%" style="stop-color:#ca8a04"/>
+                    <stop offset="60%" style="stop-color:#ea580c"/>
+                    <stop offset="80%" style="stop-color:#dc2626"/>
+                    <stop offset="100%" style="stop-color:#7c2d92"/>
+                </linearGradient>
+            </defs>
+            <path class="connector-path" d="M150 40 Q150 100 150 160 Q180 220 120 280 Q60 340 150 400 Q240 460 150 520 Q60 580 150 640 Q240 700 150 760 Q60 820 150 880 Q180 940 150 1000 Q150 1060 150 1120"/>
+        </svg>
 
-            <!-- Problems Row -->
-            <div class="problems-row">
-                <div class="card problem-card">
-                    <div class="icon"></div>
-                    <h3 class="card-title">Problem A</h3>
-                    <p class="card-description">Description of the first obstacle stemming from the principle.</p>
-                </div>
-                <div class="card problem-card">
-                    <div class="icon"></div>
-                    <h3 class="card-title">Problem B</h3>
-                    <p class="card-description">Description of the second obstacle derived from the principle.</p>
-                </div>
-                <div class="card problem-card">
-                    <div class="icon"></div>
-                    <h3 class="card-title">Problem C</h3>
-                    <p class="card-description">Description of the third obstacle linked to the principle.</p>
-                </div>
-              </div>
-              
-            <!-- Solutions Row -->
-            <div class="solutions-row">
-                <div class="card solution-card">
-                    <div class="icon"></div>
-                    <h3 class="card-title">Solution A</h3>
-                    <p class="card-description">How we address problem A with measurable steps.</p>
-                </div>
-                <div class="card solution-card">
-                    <div class="icon"></div>
-                    <h3 class="card-title">Solution B</h3>
-                    <p class="card-description">The corrective plan for problem B with clear ownership.</p>
-                </div>
-                <div class="card solution-card">
-                    <div class="icon"></div>
-                    <h3 class="card-title">Solution C</h3>
-                    <p class="card-description">The fix implemented for problem C closing the loop.</p>
-                </div>
-              </div>
-              
-            <!-- Successful Outcome -->
-            <div class="card outcome">
-                <div class="icon"></div>
-                <h2 class="card-title">Successful Outcome</h2>
-                <p class="card-description">A concise summary of the value delivered by addressing each component and achieving the overall goal.</p>
+        <!-- Timeline Steps -->
+        <div class="timeline-step step-1">
+            <div class="timeline-node">👤</div>
+            <div class="content-card">
+                <div class="card-title">User Research</div>
+                <div class="card-content">Understanding user needs and pain points through comprehensive research and analysis to inform strategic decisions.</div>
             </div>
         </div>
 
-        <!-- Connection Lines SVG -->
-        <svg class="connections" viewBox="0 0 1200 800">
-            <!-- Principle to Problems -->
-            <path class="connection-line" d="M 600 150 Q 400 250 200 350" />
-            <path class="connection-line" d="M 600 150 L 600 350" />
-            <path class="connection-line" d="M 600 150 Q 800 250 1000 350" />
-            
-            <!-- Problems to Solutions -->
-            <path class="connection-line" d="M 200 450 L 200 550" />
-            <path class="connection-line" d="M 600 450 L 600 550" />
-            <path class="connection-line" d="M 1000 450 L 1000 550" />
-            
-            <!-- Solutions to Outcome -->
-            <path class="connection-line" d="M 200 650 Q 400 750 600 750" />
-            <path class="connection-line" d="M 600 650 L 600 750" />
-            <path class="connection-line" d="M 1000 650 Q 800 750 600 750" />
-        </svg>
+        <div class="timeline-step step-2">
+            <div class="timeline-node">💡</div>
+            <div class="content-card">
+                <div class="card-title">Ideation</div>
+                <div class="card-content">Generating innovative solutions and concepts through collaborative brainstorming and creative thinking sessions.</div>
+            </div>
+        </div>
+
+        <div class="timeline-step step-3">
+            <div class="timeline-node">🕒</div>
+            <div class="content-card">
+                <div class="card-title">Planning</div>
+                <div class="card-content">Developing comprehensive project timelines, resource allocation, and milestone definitions for successful execution.</div>
+            </div>
+        </div>
+
+        <div class="timeline-step step-4">
+            <div class="timeline-node">⚙️</div>
+            <div class="content-card">
+                <div class="card-title">Development</div>
+                <div class="card-content">Building and implementing solutions with attention to quality, performance, and user experience standards.</div>
+            </div>
+        </div>
+
+        <div class="timeline-step step-5">
+            <div class="timeline-node">🤝</div>
+            <div class="content-card">
+                <div class="card-title">Collaboration</div>
+                <div class="card-content">Working together with stakeholders to ensure alignment, gather feedback, and refine the final solution.</div>
+            </div>
+        </div>
+
+        <div class="timeline-step step-6">
+            <div class="timeline-node">📈</div>
+            <div class="content-card">
+                <div class="card-title">Success</div>
+                <div class="card-content">Measuring outcomes, analyzing results, and celebrating achievements while planning for future improvements.</div>
+            </div>
+        </div>
     </div>
 </body>
 </html> 

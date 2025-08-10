@@ -1,0 +1,389 @@
+<style>/* ============================================= */
+/* COMPONENT: FEATURE ITEM (EXPANDABLE)          */
+/* ============================================= */
+
+/* The main container and flex wrapper */
+.feature-item {
+    display: flex;
+    align-items: flex-start; /* Changed from center to flex-start */
+    position: relative;
+    max-width: 825px;
+    margin: 0 auto 1.5rem;
+    cursor: pointer;
+}
+
+/* The hexagon element on the left */
+.feature-item__hexagon {
+    flex-shrink: 0;
+    position: relative;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    height: 180px;
+    width: 155px;     /* Add this to clip any invisible whitespace */
+}
+
+.feature-item__hexagon-graphic {
+    width: auto;
+    height: 100%;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    --hexagon-inner-fill: var(--background-white);
+    --hexagon-outer-fill: var(--secondary-blue);
+    grid-area: 1 / 1;
+    transition: transform 0.4s ease;
+}
+
+.feature-item__step-number {
+    grid-area: 1 / 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    z-index: 3;
+}
+.feature-item__icon {
+    /* These three properties layer it on top of the hexagon */
+    grid-area: 1 / 1;
+    z-index: 3;
+    align-self: center;
+
+    /* Control the icon's size */
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+}
+
+/* The main content card on the right */
+.feature-item__card {
+    flex-grow: 1;
+    position: relative; /* Add this line to contain the indicator bar */
+    background-color: var(--background-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: -80px; /* Pulls card under the hexagon */
+    padding-left: 100px; /* Pushes content away from the hexagon */
+}
+
+.feature-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-item__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.feature-item__summary {
+    color: var(--text-tertiary);
+    line-height: 1.5;
+    padding-right: 2rem;
+}
+
+.feature-item__details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-in-out;
+    margin-top: 1rem;
+}
+
+.feature-item__details > div {
+    overflow: hidden;
+}
+
+
+
+/* --- Interactive States --- */
+
+.feature-item:hover .feature-item__card {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.feature-item:hover .feature-item__hexagon-graphic {
+    transform: rotate(10deg);
+}
+
+.feature-item:hover .feature-item__indicator::after {
+    opacity: 1;
+}
+
+.feature-item.is-open .feature-item__details {
+    grid-template-rows: 1fr;
+}
+
+.feature-item.is-open .feature-item__indicator::after {
+    transform: rotate(-90deg);
+}
+/* --- Updated Indicator Styles to Match Timeline --- */
+
+/* 1. Style the indicator bar itself */
+.feature-item__indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: var(--background-white);
+    border-top: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* 2. Add a subtle hover effect to the bar */
+.feature-item:hover .feature-item__indicator {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* 3. Style the chevron as a pseudo-element of the bar */
+.feature-item__indicator::after {
+    content: '›';
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #005A9C;
+    transform: rotate(90deg);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+    line-height: 1; /* Add for better vertical alignment */
+}
+
+/* 4. Show the chevron on hover */
+.feature-item:hover .feature-item__indicator::after {
+    opacity: 0.8;
+}
+
+/* 5. Flip the chevron when the item is open */
+.feature-item.is-open .feature-item__indicator::after {
+    opacity: 1;
+    transform: rotate(-90deg); /* The "up" state */
+}
+</style>
+
+<section class="feature-list-section section section--with-separator">
+    <div class="container">
+        <h2 class="section-title">What we could work on together</h2>
+        <p class="section-subtitle">Click any card to explore how we can tackle these challenges collaboratively</p>
+
+        <div class="feature-item-list">
+            <div class="feature-item">
+                <div class="feature-item__hexagon">
+                    <svg class="feature-item__hexagon-graphic"><use href="/assets/images/shapes.svg#shape-hexagon"></use></svg>
+                    <img src="assets/images/Generic icons/Brain.svg" alt="A descriptive alt text" class="feature-item__icon">
+                </div>
+                <div class="feature-item__card">
+                    <div class="feature-item__header">
+                        <h4 class="feature-item__title">The Sales Black Hole</h4>
+                    </div>
+                    <div class="feature-item__content">
+                        <p class="feature-item__summary">
+                            <strong>"Our sales team is reactive, not proactive. Leads slip through the cracks."</strong><br>
+                            We aren't closing enough deals and lack the capacity to handle more. Leads arrive from everywhere, but nothing links them.
+                        </p>
+                        <div class="feature-item__details">
+                            <div>
+                                <div class="impact-section">
+                                    <h4>The Rhythm</h4>
+                                    <p>Reduced correspondence to assess potential client fit. The team follows a consistent process and rhythm. Every lead is captured, nurtured, and visible in a living pipeline that shows exactly where tomorrow's revenue will come from.</p>
+                                </div>
+                                <div class="approach-section">
+                                    <h4>Our Collaborative Approach:</h4>
+                                    <ul class="approach-list">
+                                        <li>We map every current lead-capture point, connect them to a right-sized CRM (sales pipeline)</li>
+                                        <li>Automate reminders, email templates, and set up a simple pipeline view</li>
+                                        <li>Team training sessions ensure the team log interactions without friction</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-item__indicator"></div>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-item__hexagon">
+                    <svg class="feature-item__hexagon-graphic"><use href="/assets/images/shapes.svg#shape-hexagon"></use></svg>
+                    <span class="feature-item__step-number">2</span>
+                </div>
+                <div class="feature-item__card">
+                    <div class="feature-item__header">
+                        <h4 class="feature-item__title">The Task Tornado</h4>
+                    </div>
+                    <div class="feature-item__content">
+                        <p class="feature-item__summary">
+                            <strong>"Tasks hide in email inboxes, sticky notes, and memory. Nothing ever feels 'done'."</strong><br>
+                            Ownership is vague, priorities shift hourly, and progress stalls because the team is constantly firefighting.
+                        </p>
+                        <div class="feature-item__details">
+                            <div>
+                                <div class="impact-section">
+                                    <h4>The Hidden Cost</h4>
+                                    <p>A consistent and transparent process that suits your team and work environment. Priorities are clear, details and expectations clearly conveyed. A step forward to get ahead of the firefighting.</p>
+                                </div>
+                                <div class="approach-section">
+                                    <h4>Our Collaborative Approach:</h4>
+                                    <ul class="approach-list">
+                                        <li>We inventory recurring workflows and encompass them into defined processes</li>
+                                        <li>Collaboratively develop a process for managing tasks/responsibilities that fall outside the recurring processes</li>
+                                        <li>Coach the team on creating clear expectations, ownership, and sustainable accountability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-item__indicator"></div>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-item__hexagon">
+                    <svg class="feature-item__hexagon-graphic"><use href="/assets/images/shapes.svg#shape-hexagon"></use></svg>
+                    <span class="feature-item__step-number">3</span>
+                </div>
+                <div class="feature-item__card">
+                    <div class="feature-item__header">
+                        <h4 class="feature-item__title">The Onboarding Nightmare</h4>
+                    </div>
+                    <div class="feature-item__content">
+                        <p class="feature-item__summary">
+                            <strong>"You need to increase team capacity but new hires take so long to get up to speed."</strong><br>
+                            Training is ad-hoc, inconsistent, and pulls senior members away from their core responsibilities.
+                        </p>
+                        <div class="feature-item__details">
+                            <div>
+                                <div class="impact-section">
+                                    <h4>Onboarding Cost</h4>
+                                    <p>New hires contribute meaningful work in their first week, feeling confident—not overwhelmed, other team members aren't left feeling burdened.</p>
+                                </div>
+                                <div class="approach-section">
+                                    <h4>Our Collaborative Approach:</h4>
+                                    <ul class="approach-list">
+                                        <li>Systemization. Identify core processes within the business, document current model workflows</li>
+                                        <li>Apply easy efficiency wins through process or technology, develop quick reference guides</li>
+                                        <li>Develop checklists to support process consistency</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-item__indicator"></div>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-item__hexagon">
+                    <svg class="feature-item__hexagon-graphic"><use href="/assets/images/shapes.svg#shape-hexagon"></use></svg>
+                    <span class="feature-item__step-number">4</span>
+                </div>
+                <div class="feature-item__card">
+                    <div class="feature-item__header">
+                        <h4 class="feature-item__title">Spreadsheet Sprawl</h4>
+                    </div>
+                    <div class="feature-item__content">
+                        <p class="feature-item__summary">
+                            <strong>"Operating with duplicate data, conflicting formulas, and endless copy/paste."</strong><br>
+                            Regular breakdowns and manual data entry make reporting slow, error-prone, and a major time sink.
+                        </p>
+                        <div class="feature-item__details">
+                            <div>
+                                <div class="impact-section">
+                                    <h4>Time Drain</h4>
+                                    <p>Robust and sustainable spreadsheet system or graduation into dedicated operations software.</p>
+                                </div>
+                                <div class="approach-section">
+                                    <h4>Our Collaborative Approach:</h4>
+                                    <ul class="approach-list">
+                                        <li>Identify the objective and detailed needs of the system, consolidate sheets into a single source of truth</li>
+                                        <li>Set proper permission and protected cells, identify and implement improvements</li>
+                                        <li>Ensure clear documentation and training documents are developed and automate imports/exports</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-item__indicator"></div>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-item__hexagon">
+                    <svg class="feature-item__hexagon-graphic"><use href="/assets/images/shapes.svg#shape-hexagon"></use></svg>
+                    <span class="feature-item__step-number">5</span>
+                </div>
+                <div class="feature-item__card">
+                    <div class="feature-item__header">
+                        <h4 class="feature-item__title">Strategy Stall</h4> 
+                    </div>
+                    <div class="feature-item__content">
+                        <p class="feature-item__summary">
+                            <strong>"Strategic goals exist but lack tactical clarity and leadership consensus."</strong><br>
+                            The team cycles through the same priority discussions without resolution. Resources feel stretched and timelines seem unrealistic.
+                        </p>
+                        <div class="feature-item__details">
+                            <div>
+                                <div class="impact-section">
+                                    <h4>Leadership Cost</h4>
+                                    <p>A unified leadership team with crystal-clear tactical priorities that can realistically be executed with available resources. Strategic objectives translate into committed action with genuine consensus on trade-offs.</p>
+                                </div>
+                                <div class="approach-section">
+                                    <h4>Our Collaborative Approach:</h4>
+                                    <ul class="approach-list">
+                                        <li>Pressure-test strategic goals against organizational capabilities</li>
+                                        <li>Facilitate structured discussions to achieve alignment on 3-5 mission-critical objectives</li>
+                                        <li>Map tactical roadmap for next 90 days and identify key obstacles</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-item__indicator"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Pick the area that resonates most. We can start small and build from there.</p>
+            <a href="#contact" class="cta-primary">Let's Discuss Your Priority</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    // --- Script for Expandable Feature Items ---
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all of the main parent containers for our feature items.
+        const featureItems = document.querySelectorAll('.feature-item');
+    
+        // Add a click listener to each one.
+        featureItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Check if the item we clicked was already open.
+                const wasOpen = item.classList.contains('is-open');
+                
+                // First, close all other items to create an accordion effect.
+                featureItems.forEach(otherItem => {
+                    otherItem.classList.remove('is-open');
+                });
+    
+                // If the clicked item was not already open, open it.
+                // If it was open, the loop above will have already closed it.
+                if (!wasOpen) {
+                    item.classList.add('is-open');
+                }
+            });
+        });
+    });
+    </script>

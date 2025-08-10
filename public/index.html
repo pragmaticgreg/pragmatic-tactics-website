@@ -6,6 +6,7 @@
     <title>Pragmatic Tactics - Clean Professional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <nav class="nav">
@@ -46,9 +47,9 @@
         
         <div class="container">
             <div class="hero__content">
-                <h1 class="hero__title">You don't need more strategy.<br><span class="hero__title-right">It's time to execute.</span></h1>
+                <h1 class="hero__title"><span class="hero__title-line hero__title-line--left">You don't need more strategy.</span><br><span class="hero__title-line hero__title-line--right hero__title-right">It's time to execute.</span></h1>
                 <div class="hero__bottom">
-                    <h2 class="hero__subtitle">Helping small teams<br class="mobile-break"> translate strategic goals<br class="mobile-break"> into operational results.</h2>
+                    <h2 class="hero__subtitle"><span class="hero__subline">Helping small teams</span><br class="mobile-break"><span class="hero__subline"> translate strategic goals</span><br class="mobile-break"><span class="hero__subline"> into operational results.</span></h2>
                     <a href="#solutions" class="hero__cta cta-primary">See How We Deliver Results</a>
                 </div>
             </div>
@@ -56,26 +57,23 @@
     </section>
 
     <section class="about section">
-          <!-- Reusable quote component (independent) -->
-          <div class="quote-block">
+        <div class="quote-block">
             <div class="quote-block__text prefer-sentence-wrap hidden">
               <strong>Ideas are cheap</strong>. Execution is everything. 
               <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span>
-                </div>
+            </div>
             <div class="quote-block__text prefer-sentence-wrap">
               <strong>Ideas are easy</strong>.<br>Execution is everything. 
               <span class="quote-block__attribution"><br>— John Doerr</span>
             </div>
         </div>
-          
-          <!-- Reusable image-content layout -->
-          <div class="image-content-layout">
+        <div class="image-content-layout">
             <div class="image-content-layout__image">
               <img src="../assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier">
             </div>
             <div class="image-content-layout__content">
                 <!-- Inline quote using semantic blockquote -->
-              <blockquote style="margin: 16px 0; padding: 8px 0; font-size: 18px; font-weight: 500; font-style: italic; color: var(--primary-navy); line-height: 1.6; opacity: 0.9; text-align: center; border: none;">
+              <blockquote style="margin-bottom: 24px; font-size: 18px; font-weight: 500; font-style: italic; color: #0f172a; line-height: 1.6; opacity: 0.9; text-align: center; border: none;">
                 "Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle"<strong>.......etc.</strong>
               </blockquote>
                     
@@ -83,148 +81,103 @@
                     
                     <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice — it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>                    
             </div>
-            </div>
+        </div>
           
-          <!-- Reusable conclusion statement -->
-          <div class="conclusion-statement">
+        <div class="conclusion-statement">
             <h4 class="conclusion-statement__text">
               Strategy without execution is <span class="hope">hope</span>.<br>
               Execution without strategy is <span class="haste">haste</span>.<br>
-              Together, they build <span class="traction">traction</span>.
+              <!-- Together, they build <span class="traction">traction</span>. -->
             </h4>
-            </div>
         </div>
     </section>
-    
-    <section class="problems section section--with-separator">
+
+    <section id="fit-finder" class="section section--with-separator">
         <div class="container">
-            <h4 class="section-title">Sound Familiar?</h4>
+            <h2 class="section-title">Pragmatic Collaboration</h2>
+            <div class="icon-content-layout">
+                <div class="icon-content-layout__image">
+                    <img src="assets/images/Icon - Target blk-wht.svg" alt="Strategic ambitions icon">
+                </div>
+                <div class="icon-content-layout__content">
+                    <p>I work alongside business leaders looking to overcome strategic and operational challenges holding them back. If you're wrestling with issues like these, that's where I come in.</p>
+                </div>
+            </div>
+    
+            <div class="fit-finder-container">
+                <!-- Sliding pill toggle -->
+                <div id="fit-finder-checklist-container" class="fit-finder__checklist-container">
+                <div class="fit-finder__view-toggle">
+                    <div class="view-toggle__track">
+                        <div class="view-toggle__pill"></div>
+                        <button class="view-toggle__option" data-view="strategic" aria-selected="true">Big Picture</button>
+                        <button class="view-toggle__option" data-view="industry" aria-selected="false">By Industry</button>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-bottom: 24px;">Select your industry.</p>
+                <div id="fit-finder-selector" class="fit-finder__selector" data-reveal-on-scroll data-reveal-children=".fit-finder__button" data-stagger-children="90" data-reveal-random="true"></div>
             
-            <!-- Main strategic problem - keeps current layout -->
-            <div class="icon-content-list" style="margin-bottom: 120px;">
-                <div id="0-strategic-problem" class="icon-content-list__item" data-problem="strategic">
-                    <div class="icon-content-list__icon">
-                        <img src="../assets/images/Icon - missed target.svg" alt="Strategic ambitions icon">
-                </div>
-                    <div class="icon-content-list__content">
-                        <h4 class="icon-content-list__title">Falling short on your strategic ambitions?</h4>
-                        <div class="icon-content-list__details">
-                            <ul>
-                                <li>A <strong>clear vision</strong>, but a nagging feeling your business <strong>isn't quite getting there</strong>.</li>
-                                <li><strong>Disheartened</strong> by lack of tangible progress towards goals.</li>
-                                <li>The sense that your true business potential is just <strong>waiting to be unlocked</strong>.</li>
-                            </ul>
-                </div>
+                <h3 id="fit-finder-main-title" class="fit-finder__checklist-title"></h3>
+            
+                    <div class="fit-finder__checklist-wrapper" data-checklist-for="0" data-reveal-on-scroll data-reveal-delay="300">
+                        <div class="fit-finder__checklist">
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="target"></i><p class="fit-finder__item-text">Strategic goals take a backseat to fires and shifting priorities.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="users"></i><p class="fit-finder__item-text">Your team is stretched thin, or simply not equipped for what's next.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="user-round-cog"></i><p class="fit-finder__item-text">Your leaders are trapped in the day-to-day operations.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="wrench"></i><p class="fit-finder__item-text">Tools are inadequate, underused, or poorly integrated.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="trending-up"></i><p class="fit-finder__item-text">Scaling the business feels like it just means more complexity and longer hours.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="database"></i><p class="fit-finder__item-text">We don't have clear data to know if we're truly profitable or efficient.</p></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="transition-overlay" id="transition-hurdles">
-                <p class="section-subtitle">There is no shortage of hurdles that intefere with strategic execution<br>Do you identify with these common pain points?</p>
-            </div>
-            <!-- Other problems in 3-column grid -->
-            <div class="grid grid--3-col">
-                <div id="2-problem-plateau" class="grid__item grid__item--card" data-problem="plateau">
-                    <div class="grid__icon">
-                        <img src="../assets/images/Icon - Plateau.svg" alt="Progress plateau icon">
+                    <div class="fit-finder__checklist-wrapper" data-checklist-for="1">
+                        <div class="fit-finder__checklist">
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="hard-hat"></i><p class="fit-finder__item-text">We're great on-site, but disorganized behind the scenes.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="clipboard-x"></i><p class="fit-finder__item-text">Constantly chasing down info between the office and field.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="phone-outgoing"></i><p class="fit-finder__item-text">Always texting and calling crews to check progress and give direction.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="user"></i><p class="fit-finder__item-text">Too much depends on the owner or one key admin.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="receipt"></i><p class="fit-finder__item-text">Quotes take too long or get forgotten altogether.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="table"></i><p class="fit-finder__item-text">We've outgrown our spreadsheets, but not sure what to do next.</p></div>
+                        </div>
                     </div>
-                    <h3 class="grid__title">People. Potential. <span style="text-decoration: line-through;">Progress</span> Plateau?</h3>
-                    <div class="grid__content">
-                        <ul>
-                            <li><strong>Capacity</strong> — Everyone's <strong>overloaded</strong>, priorities shift daily, and progress <strong>stalls</strong>.</li>
-                            <li><strong>Clarity</strong> — Roles blur, tasks <strong>ping-pong</strong> between owners, and deadlines <strong>drift</strong>.</li>
-                            <li><strong>Ability</strong> — Skill gaps keep your team—and your business—<strong>stuck</strong> at the same level.</li>
-                        </ul>
+                    <div class="fit-finder__checklist-wrapper" data-checklist-for="2">
+                        <div class="fit-finder__checklist">
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="table"></i><p class="fit-finder__item-text">Spreadsheets, emails, and sticky notes drive production.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="user"></i><p class="fit-finder__item-text">We rely on one or two people to keep things running.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="package-open"></i><p class="fit-finder__item-text">Materials inventory issues regularly disrupts production.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="messages-square"></i><p class="fit-finder__item-text">Meetings are our main way to get production updates.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="user-plus"></i><p class="fit-finder__item-text">New staff are hard to train without hand-holding.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="dollar-sign"></i><p class="fit-finder__item-text">We're never sure about actual production costs and timelines.</p></div>
+                        </div>
                     </div>
-                </div>
-
-                <div id="4-problem-outcomes" class="grid__item grid__item--card" data-problem="outcomes">
-                    <div class="grid__icon">
-                        <img src="../assets/images/Icon - Maze.svg" alt="Unpredictable outcomes icon">
+                    <div class="fit-finder__checklist-wrapper" data-checklist-for="3">
+                        <div class="fit-finder__checklist">
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="truck"></i><p class="fit-finder__item-text">Fulfillment is messy—things get missed or delayed.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="refresh-cw-off"></i><p class="fit-finder__item-text">Marketing, fulfillment, and operations feel like different companies.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="package-open"></i><p class="fit-finder__item-text">Inventory counts are different everywhere we look.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="route-off"></i><p class="fit-finder__item-text">Too many manual steps between sales and delivery.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="monitor-x"></i><p class="fit-finder__item-text">We've outgrown our early tools, but upgrading feels risky.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="hand"></i><p class="fit-finder__item-text">Constantly syncing online sales with our accounting platform by hand.</p></div>
+                        </div>
                     </div>
-                    <h3 class="grid__title">Unpredictable outcomes and team friction?</h3>
-                    <div class="grid__content">
-                        <ul>
-                            <li><strong>Efficiency</strong> — Hours disappear to figuring out <strong>"how" instead of doing</strong> the work.</li>
-                            <li><strong>Consistency</strong> — Everyone tackles the same task differently, so <strong>results vary</strong> and <strong>timelines slip</strong>.</li>
-                            <li><strong>Scalability</strong> — Manual, <strong>repetitive steps</strong> soak up capacity and <strong>cap your growth</strong>.</li>
-                        </ul>
+                    <div class="fit-finder__checklist-wrapper" data-checklist-for="4">
+                        <div class="fit-finder__checklist">
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="list-restart"></i><p class="fit-finder__item-text">We're always guessing how much to order from suppliers.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="chart-column-stacked"></i><p class="fit-finder__item-text">We lose track of costs across suppliers, shipping, and channels.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="messages-square"></i><p class="fit-finder__item-text">Development and strategy teams only sync during time-consuming meetings.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="mail-x"></i><p class="fit-finder__item-text">Customer info is trapped in individual email inboxes and heads.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="calendar-clock"></i><p class="fit-finder__item-text">Follow-up cadence is inconsistent—some leads get forgotten.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="trending-up-down"></i><p class="fit-finder__item-text">Sales forecasting is just guesswork without real pipeline data.</p></div>
+                        </div>
                     </div>
-                </div>
-
-                <div id="6-problem-toolbox" class="grid__item grid__item--card" data-problem="toolbox">
-                    <div class="grid__icon">
-                        <img src="../assets/images/Icon - bad leverage.svg" alt="Toolbox solutions icon">
-                    </div>
-                    <h3 class="grid__title">Toolbox: Cluttered, but lacking real solutions?</h3>
-                    <div class="grid__content">
-                        <ul>
-                            <li><strong>Utility</strong> — Your tools <strong>'effort-to-impact'</strong> ratio feels poorly balanced.</li>
-                            <li><strong>Connectivity</strong> — Disconnected apps force <strong>manual workarounds</strong> while workflows break and nothing flows.</li>
-                            <li><strong>Agility</strong> — Emerging tech opens doors, but you <strong>can't move fast enough</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="transition-overlay" id="1-transition-foundation">
-                <p class="section-subtitle">Real, lasting progress starts with a solid foundation.<br><strong>People</strong>, <strong>Process</strong>, and <strong>Technology.</strong></p>
-            </div>
-            <div class="grid grid--3-col">
-                <div id="3-solution-people" class="grid__item grid__item--card">
-                    <div class="grid__icon">
-                        <img src="../assets/images/Cube - People.svg" alt="People">
-                </div>
-                    <h3 class="grid__title">People</h3>
-                    <div class="grid__content">
-                        <ul>
-                            <li><strong>Capacity</strong> — Find <strong>quick wins</strong> for breathing room, then I handle the development work while you <strong>run your business</strong>.</li>
-                            <li><strong>Clarity</strong> — Together we establish <strong>task management</strong> and <strong>ownership</strong> across your team and align how we collaborate.</li>
-                            <li><strong>Ability</strong> — I provide missing <strong>technical skills</strong> while building your team's capabilities through <strong>hands-on work</strong>.</li>
-                        </ul>
-                </div>
-                </div>
-                <div id="5-solution-process" class="grid__item grid__item--card">
-                    <div class="grid__icon">
-                        <img src="../assets/images/Cube - Process.svg" alt="Process">
-                </div>
-                    <h3 class="grid__title">Process</h3>
-                    <div class="grid__content">
-                        <ul>
-                            <li><strong>Efficiency</strong> — We streamline core workflows and remove roadblocks, turning <strong>lost hours into output</strong>.</li>
-                            <li><strong>Consistency</strong> — Lightweight <strong>digital playbooks</strong> and live checklists let anyone follow the proven path—<strong>every time</strong>.</li>
-                            <li><strong>Scalability</strong> — <strong>Targeted automations</strong> handle the repeat work so the business expands without <strong>extra head-count</strong> or <strong>heroics</strong>.</li>
-                        </ul>
-                </div>
-                </div>
-                <div id="7-solution-technology" class="grid__item grid__item--card">
-                    <div class="grid__icon">
-                        <img src="../assets/images/Cube - Tools.svg" alt="Technology">
-                    </div>
-                    <h3 class="grid__title">Technology</h3>
-                    <div class="grid__content">
-                        <ul>
-                            <li><strong>Utility</strong> — Deliver the <strong>right tool at the right time</strong> for your real needs, so every solution drives <strong>meaningful impact</strong>.</li>
-                            <li><strong>Connectivity</strong> — I <strong>link tools, teams, and data</strong> to create clean, connected workflows—<strong>no more patchwork</strong> systems.</li>
-                            <li><strong>Agility</strong> — Create <strong>systems that flex</strong> with your growth and adapt to what's next—<strong>without disruption</strong>.</li>
-                        </ul>
-                </div>
-            </div>
-            </div>
-            <div class="transition-overlay" id="8-transition-sequence">
-            <p class="section-subtitle">Foundation first, tools second. This sequence ensures lasting results rather than expensive experiments.</p>
-            </div>
-            <div class="icon-content-list" style="margin-bottom: 120px;">
-                <div id="9-strategic-solution" class="icon-content-list__item" data-problem="strategic">
-                    <div class="icon-content-list__icon">
-                        <img src="../assets/logos/Logo - Cube vibrant.svg" alt="Pragmatic Tactics Cube">
-                    </div>
-                    <div class="icon-content-list__content">
-                        <h4 class="icon-content-list__title">The Pragmatic Core Elements</h4>
-                        <div class="icon-content-list__details">
-                            <ul>
-                                <li>Your people empowered with clarity and capacity to execute on what matters most.</li>
-                                <li>Your processes streamlined for efficiency and consistency, scaling without your constant oversight.</li>
-                                <li>Your technology integrated and agile, delivering measurable impact while future-proofing your operations.</li>
-                            </ul>
+                    <div class="fit-finder__checklist-wrapper" data-checklist-for="5">
+                        <div class="fit-finder__checklist">
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="file-plus-2"></i><p class="fit-finder__item-text">Deliverables aren't standardized—everything's a custom reinvention.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="folder-kanban"></i><p class="fit-finder__item-text">Projects depend on memory and email threads instead of systems.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="handshake"></i><p class="fit-finder__item-text">Client onboarding/handoffs are clunky—details fall through the cracks.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="list-todo"></i><p class="fit-finder__item-text">Staff are overloaded or unclear on daily priorities.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="monitor-x"></i><p class="fit-finder__item-text">CRM and project tools either don't exist or sit unused or misused.</p></div>
+                            <div class="fit-finder__item"><i class="fit-finder__item-icon" data-lucide="file-sliders"></i><p class="fit-finder__item-text">We spend more time on admin than billable client work.</p></div>
                         </div>
                     </div>
                 </div>
@@ -232,131 +185,880 @@
         </div>
     </section>
 
-    <section class="client-fit section section--with-separator">
+    <section id="problems-v2" class="section section--with-separator">
         <div class="container">
-            <h2 class="section-title">Who We Work With</h2>
-            <p class="section-subtitle">I do my best work with businesses ready to roll up their sleeves. See if we're a match—if you need help getting there first, that's often where we can start.</p>
-            <div class="grid grid--2-col">
-                <div class="card card--compare" style="border-left-color: var(--success-green);">
-                    <h3 class="card__title">🟢 We Work Best With Businesses That…</h3>
-                    <ul class="card__content">
-                        <li class="list-icon pro">Have a clear operational pain point</li>
-                        <li class="list-icon pro">Know they need help to execute</li>
-                        <li class="list-icon pro">Are already trying — but stuck</li>
-                        <li class="list-icon pro">Have a champion for change on the team</li>
-                        <li class="list-icon pro">Want systems that fit their people and culture</li>
-                        <li class="list-icon pro">Are short on internal capacity or technical depth</li>
-                        <li class="list-icon pro">Value practical implementation over big theory</li>
-                    </ul>
-                </div>
-                <div class="card card--compare" style="border-left-color: var(--accent-red);">
-                    <h3 class="card__title">🔴 We're Probably Not a Fit If…</h3>
-                    <ul class="card__content">
-                        <li class="list-icon con">You're looking for a silver bullet</li>
-                        <li class="list-icon con">You want work done for you, not with you</li>
-                        <li class="list-icon con">You expect results without committing time</li>
-                        <li class="list-icon con">You're unwilling to examine current practices</li>
-                        <li class="list-icon con">You think tech solves people/process issues by itself</li>
-                        <li class="list-icon con">You're not ready to involve your team in the work</li>
-                        <li class="list-icon con">You just want someone to "install" software and walk away</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="section-subtitle" style="margin-top: 60px;">When the fit is right, real transformation becomes possible. Here are some examples of the practical challenges we solve and the progress we build together.</p>
-        </div>
-    </section>
-
-
-    <section class="modal-cards-section section section--with-separator">
-        <div class="container">
-            <h2 class="section-title">What we could work on together</h2>
-            <p class="section-subtitle">Click any card to explore how we can tackle these challenges collaboratively</p>
-
-            <div class="cards-grid">
-                <div class="card" onclick="openModal('modal1')">
-                    <div class="card-header">
-                        <div class="card-number">1</div>
-                        <h3 class="card-title">The Sales Black Hole</h3>
-                    </div>
-                    <p class="hook-text">"Our sales team is reactive, not proactive. Leads slip through the cracks."</p>
-                    <p class="brief-description">We wouldn't have the capacity to handle more. We aren't closing enough deals. Leads arrive from everywhere but nothing links them.</p>
-                    <div class="learn-more">Explore solution</div>
-                </div>
-
-                <div class="card" onclick="openModal('modal2')">
-                    <div class="card-header">
-                        <div class="card-number">2</div>
-                        <h3 class="card-title">The Task Tornado</h3>
-                    </div>
-                    <p class="hook-text">"Tasks hide in email inboxes, sticky notes, and memory. Nothing ever feels 'done'."</p>
-                    <p class="brief-description">Ownership is vague, priorities shift hourly, and nothing ever feels "done".</p>
-                    <div class="learn-more">Explore solution</div>
-                </div>
-
-                <div class="card" onclick="openModal('modal3')">
-                    <div class="card-header">
-                        <div class="card-number">3</div>
-                        <h3 class="card-title">The Onboarding Nightmare</h3>
-                    </div>
-                    <p class="hook-text">"You need to increase team capacity but new hires take so long to get up to speed."</p>
-                    <p class="brief-description">It seems to take so long to get new members up to speed.</p>
-                    <div class="learn-more">Explore solution</div>
-                </div>
-
-                <div class="card" onclick="openModal('modal4')">
-                    <div class="card-header">
-                        <div class="card-number">4</div>
-                        <h3 class="card-title">Spreadsheet Sprawl</h3>
-                    </div>
-                    <p class="hook-text">"Operating with duplicate data, conflicting formulas, and endless copy/paste."</p>
-                    <p class="brief-description">Regular breakdowns and endless copy/paste make reporting slow and error-prone.</p>
-                    <div class="learn-more">Explore solution</div>
-                </div>
-
-                <div class="card" onclick="openModal('modal5')">
-                    <div class="card-header">
-                        <div class="card-number">5</div>
-                        <h3 class="card-title">Strategy Stall</h3>
-                    </div>
-                    <p class="hook-text">"Strategic goals exist but lack tactical clarity and leadership consensus."</p>
-                    <p class="brief-description">The team cycles through the same priority discussions without resolution. Resources feel stretched, timelines seem unrealistic.</p>
-                    <div class="learn-more">Explore solution</div>
-                </div>
-            </div>
-
-            <div class="main-cta">
-                <h2>Ready to Get Started?</h2>
-                <p>Pick the area that resonates most. We can start small and build from there.</p>
-                <a href="#contact" class="cta-primary">Let's Discuss Your Priority</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="process-section section section--with-separator">
-        <div class="container">
-            <h2 class="section-title">How We Work Together</h2>
             
-            <div class="grid grid--4-col">
-                <div class="card card--process grid__item">
-                    <div class="card__icon card__icon--process"><span class="card__icon-digit">1</span></div>
-                    <h4 class="card__title card__title--process">Deep Dive Assessment</h4>
-                    <p class="card__content card__content--process">We map your current operations and identify the highest-impact improvement opportunities.</p>
+            
+            <h2 class="section-title">Evolve While You Execute</h2>
+            <p class="section-subtitle">Every project is a chance to deliver results now—<br>while reinforcing the foundation for sustainable growth.</p>
+    
+            <img src="assets/images/Icon - Plateau color.svg" alt="Active Problem Icon" id="active-tab-icon-top" data-reveal-on-scroll>
+    
+            <div class="tabs-container">
+                <div class="tab-unit">
+                    <button class="tab-btn active" data-tab="people">People</button>
                 </div>
-                <div class="card card--process grid__item">
-                    <div class="card__icon card__icon--process"><span class="card__icon-digit">2</span></div>
-                    <h4 class="card__title card__title--process">Collaborative Design</h4>
-                    <p class="card__content card__content--process">Together, we design solutions that work for your specific team, constraints, and goals.</p>
+                <div class="tab-unit">
+                    <button class="tab-btn" data-tab="process">Process</button>
                 </div>
-                <div class="card card--process grid__item">
-                    <div class="card__icon card__icon--process"><span class="card__icon-digit">3</span></div>
-                    <h4 class="card__title card__title--process">Hands-On Implementation</h4>
-                    <p class="card__content card__content--process">We work alongside your team to implement changes, ensuring adoption and immediate value.</p>
+                <div class="tab-unit">
+                    <button class="tab-btn" data-tab="technology">Technology</button>
                 </div>
-                <div class="card card--process grid__item">
-                    <div class="card__icon card__icon--process"><span class="card__icon-digit">4</span></div>
-                    <h4 class="card__title card__title--process">Sustainable Results</h4>
-                    <p class="card__content card__content--process">We transfer knowledge and establish systems so improvements stick long after we're gone.</p>
+            </div>
+            <div class="panels-container">
+                <div id="people" class="tab-panel grid grid--3-col">
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Capacity</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Everyone's overloaded, priorities shift daily, and progress stalls.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">Find quick wins for breathing room, then I handle development while you run your business.</p>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Clarity</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Roles blur, tasks bounce between owners, and deadlines shift.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">Together we establish task management and ownership across your team.</p>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Ability</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Skill gaps keep your team—and your business—stuck at the same level.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">I provide missing technical skills while building your team's capabilities.</p>
+                    </div>
                 </div>
+    
+                <div id="process" class="tab-panel grid grid--3-col hidden">
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Efficiency</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Hours disappear to figuring out "how" instead of doing the work.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">We streamline core workflows and remove roadblocks, turning lost hours into output.</p>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Consistency</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Everyone tackles the same task differently, so results vary and timelines slip.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">Lightweight digital playbooks let anyone follow the proven path—every time.</p>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Scalability</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Manual, repetitive steps soak up capacity and cap your growth.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">Targeted automations handle the repeat work so the business expands without extra heroics.</p>
+                    </div>
+                </div>
+    
+                <div id="technology" class="tab-panel grid grid--3-col hidden">
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Utility</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Your tools 'effort-to-impact' ratio feels poorly balanced.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">Deliver the right tool at the right time so every solution drives meaningful impact.</p>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Connectivity</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Disconnected apps force manual workarounds while workflows break.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">I link tools, teams, and data to create clean, connected workflows.</p>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h3 class="ps-card__title">Agility</h3>
+                        </div>
+                        <p class="ps-card__text ps-card__text--problem">Emerging tech opens doors, but you can't move fast enough to leverage it.</p>
+                        <hr class="ps-card__divider">
+                        <p class="ps-card__text ps-card__text--solution">Create systems that flex with your growth and adapt to what's next—without disruption.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <img src="assets/images/Cube - People.svg" alt="Active Solution Icon" id="active-tab-icon-bottom">
+        </div>
+    </section>
+    <section id="starter-projects" class="section section--with-separator">
+        <div class="container">
+            <h2 class="section-title">Find Your Starting Point</h2>
+            <p class="section-subtitle">
+                Every project is different, but they all start with a single step. Select a category to see typical starter projects that deliver tangible value, fast.
+            </p>
+    
+            <div class="timeline-selector" role="tablist" aria-label="Project Categories" data-reveal-on-scroll data-reveal-children=".timeline-selector__button" data-stagger-children="120">
+                <div class="timeline-selector__line"></div>
+                <div class="timeline-selector__step" style="left: 5%;">
+                    <button class="timeline-selector__button" data-category="audit" role="tab" aria-selected="true">Assess</button>
+                    <div class="timeline-selector__node is-active"></div>
+                    <div class="timeline-selector__spacer"></div>
+                </div>
+                <div class="timeline-selector__step" style="left: 27.5%;">
+                    <div class="timeline-selector__spacer"></div>
+                    <div class="timeline-selector__node"></div>
+                    <button class="timeline-selector__button" data-category="optimize" role="tab" aria-selected="false">Enable</button>
+                </div>
+                <div class="timeline-selector__step" style="left: 50%;">
+                    <button class="timeline-selector__button" data-category="automate" role="tab" aria-selected="false">Automate</button>
+                    <div class="timeline-selector__node"></div>
+                    <div class="timeline-selector__spacer"></div>
+                </div>
+                <div class="timeline-selector__step" style="left: 72.5%;">
+                    <div class="timeline-selector__spacer"></div>
+                    <div class="timeline-selector__node"></div>
+                    <button class="timeline-selector__button" data-category="integrate" role="tab" aria-selected="false">Integrate</button>
+                </div>
+                <div class="timeline-selector__step" style="left: 95%;">
+                    <button class="timeline-selector__button" data-category="scale" role="tab" aria-selected="false">Elevate</button>
+                    <div class="timeline-selector__node"></div>
+                    <div class="timeline-selector__spacer"></div>
+                </div>
+            </div>
+    
+            <div id="project-display-container">
+                <div class="project-category-content is-active" data-category-content="audit" data-reveal-on-scroll data-reveal-delay="300">
+                    <div class="project-display">
+                        <div class="project-display__menu" role="tablist">
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-process" aria-selected="true">Audit Your Processes<i data-lucide="search"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-digital" aria-selected="false">Digital Snapshot<i data-lucide="gauge"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-ai" aria-selected="false">AI Readiness Audit<i data-lucide="brain-circuit"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-sales" aria-selected="false">Sales Flow Check<i data-lucide="git-merge"></i></button>
+                        </div>
+                        <div class="project-display__card" role="tabpanel">
+                            <div class="starter-card">
+                                <div class="starter-card__badge">
+                                    <div class="starter-card__badge-icon"><i data-lucide="search"></i></div>
+                                    <span class="starter-card__badge-text">Discovery</span>
+                                </div>
+                                <h3 class="starter-card__title">Audit Your Existing Processes</h3>
+                                <p class="starter-card__desc">A rapid review of your core workflows to find bottlenecks and deliver a priority fix-list.</p>
+                                <ul class="starter-card__checklist">
+                                    <li>98% accuracy</li>
+                                    <li>Real-time processing</li>
+                                </ul>
+                                <a href="#" class="cta-primary">Improve Insights by 40%</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="project-category-content" data-category-content="optimize">
+                    <div class="project-display">
+                        <div class="project-display__menu" role="tablist">
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-software" aria-selected="true">Software Setup Right<i data-lucide="wrench"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-crm" aria-selected="false">CRM Implementation<i data-lucide="contact"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-pm" aria-selected="false">Project Management Adoption<i data-lucide="square-kanban"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-onboarding" aria-selected="false">Onboarding Systems<i data-lucide="graduation-cap"></i></button>
+                        </div>
+                        <div class="project-display__card" role="tabpanel">
+                             </div>
+                    </div>
+                </div>
+    
+                <div class="project-category-content" data-category-content="automate">
+                     <div class="project-display">
+                        <div class="project-display__menu" role="tablist">
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-tasks" aria-selected="true">Admin Automation<i data-lucide="zap"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-inventory" aria-selected="false">Inventory & Orders<i data-lucide="package"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-tools" aria-selected="false">Connect Your Tools<i data-lucide="link"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-triggers" aria-selected="false">Workflow Triggers<i data-lucide="bolt"></i></button>
+                        </div>
+                        <div class="project-display__card" role="tabpanel"></div>
+                    </div>
+                </div>
+    
+                <div class="project-category-content" data-category-content="integrate">
+                     <div class="project-display">
+                        <div class="project-display__menu" role="tablist">
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-erp" aria-selected="true">ERP/MRP Integration<i data-lucide="factory"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-ecom" aria-selected="false">E‑commerce Integration<i data-lucide="shopping-bag"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-finance" aria-selected="false">Finance Systems Sync<i data-lucide="calculator"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-portals" aria-selected="false">Customer/Supplier Portals<i data-lucide="users"></i></button>
+                        </div>
+                        <div class="project-display__card" role="tabpanel"></div>
+                    </div>
+                </div>
+                
+                <div class="project-category-content" data-category-content="scale">
+                     <div class="project-display">
+                        <div class="project-display__menu" role="tablist">
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-aiops" aria-selected="true">AI‑Driven Operations<i data-lucide="bot"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-bi" aria-selected="false">BI Dashboards<i data-lucide="bar-chart-3"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-scale-sops" aria-selected="false">Scalable Process Framework<i data-lucide="layers"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-exec" aria-selected="false">Strategic Execution System<i data-lucide="flag"></i></button>
+                        </div>
+                        <div class="project-display__card" role="tabpanel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <template id="template-audit-process">
+        <div class="starter-card" role="article">
+          <div class="starter-card__header">
+            <div class="starter-card__icon" aria-hidden="true"><i data-lucide="search"></i></div>
+            <h3 class="starter-card__title">Audit Your Processes</h3>
+            </div>
+          <p class="starter-card__value">Cut hidden waste fast with a hands-on audit tailored to your actual workflow—not a template.</p>
+          <p class="starter-card__desc">We skip the fluff and map how work actually flows in your business. You'll get specific fixes you can implement next week, not a fancy report that sits on a shelf.</p>
+          <hr class="starter-card__divider" />
+          <ul class="starter-card__proof">
+            <li>Bottlenecks identified</li>
+            <li>Redundant steps removed</li>
+            <li>Quick wins prioritized</li>
+            <li>Action plan with owners</li>
+          </ul>
+          <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+          <details class="starter-card__details">
+            <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+            <div class="starter-card__details-content">
+              <h4 class="starter-card__section-title">What's Included</h4>
+              <ul class="starter-card__included">
+                <li>Process mapping sessions</li>
+                <li>Issue list with gains</li>
+                <li>Prioritized action plan</li>
+              </ul>
+              <div class="starter-card__meta">
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">"Busy, not better" teams</span></div>
+              </div>
+            </div>
+          </details>
+        </div>
+    </template>
+    <template id="template-audit-digital">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="gauge"></i></div>
+          <h3 class="starter-card__title">Digital Snapshot</h3>
+            </div>
+        <p class="starter-card__value">Know exactly where you stand with your tools—straight talk, no vendor nonsense.</p>
+        <p class="starter-card__desc">We test what you actually use (not what you bought) and tell you what's working, what's broken, and what to fix first. Clear next steps, no jargon.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof">
+          <li>Scorecard now</li>
+          <li>Tool gaps flagged</li>
+          <li>Usage issues surfaced</li>
+          <li>90‑day priorities</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Stack inventory & usage</li>
+              <li>Maturity score & gaps</li>
+              <li>90‑day improvement plan</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1 week</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Unsure what to fix</span></div>
+            </div>
+          </div>
+        </details>
+        </div>
+    </template>
+    <template id="template-audit-ai">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="brain-circuit"></i></div>
+            <h3 class="starter-card__title">AI Readiness Audit</h3>
+        </div>
+        <p class="starter-card__value">Find automation that actually makes sense for your business—no hype, just what works.</p>
+        <p class="starter-card__desc">We look at your real data and real processes to find automation wins that won't break the bank or overwhelm your team. You get a pilot plan you can start small and build on.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof">
+          <li>Feasible use cases</li>
+          <li>Data gaps noted</li>
+          <li>Pilot roadmap</li>
+          <li>Risk controls</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Use case evaluation</li>
+              <li>Data readiness scan</li>
+              <li>Pilot & guardrails plan</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Exploring AI safely</span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </template>
+    <template id="template-audit-sales">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="git-merge"></i></div>
+          <h3 class="starter-card__title">Sales Flow Check</h3>
+        </div>
+        <p class="starter-card__value">Stop deals from falling through the cracks—clear process, clear owners.</p>
+        <p class="starter-card__desc">We untangle your sales process and make it simple enough that everyone knows what happens next. No more "I thought you were handling that."</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof">
+          <li>Stage definitions</li>
+          <li>Handoff clarity</li>
+          <li>Metrics to watch</li>
+          <li>Coaching prompts</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Pipeline review</li>
+              <li>Stage & handoffs</li>
+              <li>Metrics & coaching</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Murky stages</span></div>
+            </div>
+          </div>
+        </details>
+        </div>
+    </template>
+    <template id="template-opt-workflow">
+        <div class="starter-card" role="article">
+          <div class="starter-card__header">
+            <div class="starter-card__icon" aria-hidden="true">
+              <i data-lucide="sliders-horizontal"></i>
+            </div>
+            <h3 class="starter-card__title">Streamline Your Order Workflow</h3>
+          </div>
+          <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
+          <p class="starter-card__desc">We review, refine, and implement the key workflows that slow your team down, setting you up for efficiency and growth.</p>
+          <hr class="starter-card__divider" />
+          <ul class="starter-card__proof">
+            <li>Reduces wasted time by eliminating manual steps</li>
+            <li>Aligns tools with your actual workflow</li>
+            <li>Trains your team for ongoing self-sufficiency</li>
+          </ul>
+          <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+          <details class="starter-card__details">
+            <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+            <div class="starter-card__details-content">
+              <h4 class="starter-card__section-title">What's Included</h4>
+              <ul class="starter-card__included">
+                <li>Process review and mapping</li>
+                <li>Refinement and implementation support</li>
+                <li>Team training and enablement</li>
+              </ul>
+              <div class="starter-card__meta">
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
+              </div>
+            </div>
+          </details>
+        </div>
+    </template>
+    <template id="template-opt-onboarding">
+        <div class="starter-card" role="article">
+          <div class="starter-card__header">
+            <div class="starter-card__icon" aria-hidden="true">
+              <i data-lucide="user-plus"></i>
+            </div>
+            <h3 class="starter-card__title">Map Client Onboarding</h3>
+          </div>
+          <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
+            <p class="starter-card__desc">Standardize how you welcome new clients to ensure smooth handoffs and a professional first impression, every time.</p>
+          <hr class="starter-card__divider" />
+          <ul class="starter-card__proof">
+            <li>Shorter time-to-value for new clients</li>
+            <li>Clear internal ownership and handoffs</li>
+            <li>Consistent client experience</li>
+          </ul>
+          <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+          <details class="starter-card__details">
+            <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+            <div class="starter-card__details-content">
+              <h4 class="starter-card__section-title">What's Included</h4>
+              <ul class="starter-card__included">
+                <li>Onboarding flow mapping</li>
+                <li>Template and checklist creation</li>
+                <li>Staff training and readiness</li>
+              </ul>
+              <div class="starter-card__meta">
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
+              </div>
+            </div>
+          </details>
+        </div>
+    </template>
+    <template id="template-auto-tasks">
+         <div class="starter-card" role="article">
+           <div class="starter-card__header">
+             <div class="starter-card__icon" aria-hidden="true">
+               <i data-lucide="zap"></i>
+            </div>
+            <h3 class="starter-card__title">Automate Repetitive Tasks</h3>
+           </div>
+           <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
+            <p class="starter-card__desc">We build and deploy targeted automations for tasks like data entry or reporting that save time and reduce costly human errors.</p>
+           <hr class="starter-card__divider" />
+           <ul class="starter-card__proof">
+             <li>Frees up staff</li>
+             <li>Improves consistency</li>
+             <li>Reduces error-prone manual steps</li>
+           </ul>
+           <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+           <details class="starter-card__details">
+             <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+             <div class="starter-card__details-content">
+               <h4 class="starter-card__section-title">What's Included</h4>
+               <ul class="starter-card__included">
+                 <li>Process identification & quick wins</li>
+                 <li>Automation build & tests</li>
+                 <li>Documentation & handoff</li>
+               </ul>
+               <div class="starter-card__meta">
+                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
+               </div>
+             </div>
+           </details>
+        </div>
+    </template>
+    <template id="template-integ-tools">
+         <div class="starter-card" role="article">
+           <div class="starter-card__header">
+             <div class="starter-card__icon" aria-hidden="true">
+               <i data-lucide="link"></i>
+            </div>
+            <h3 class="starter-card__title">Integrate Your Core Tools</h3>
+           </div>
+           <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
+            <p class="starter-card__desc">Connect your key applications (e.g., CRM, accounting, inventory) to create a single source of truth for your business data.</p>
+           <hr class="starter-card__divider" />
+           <ul class="starter-card__proof">
+             <li>Single source of truth</li>
+             <li>Eliminates double-entry</li>
+             <li>Improves cross-team visibility</li>
+           </ul>
+           <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+           <details class="starter-card__details">
+             <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+             <div class="starter-card__details-content">
+               <h4 class="starter-card__section-title">What's Included</h4>
+               <ul class="starter-card__included">
+                 <li>Systems review and connection plan</li>
+                 <li>Implementation and validation</li>
+                 <li>Training and handover</li>
+               </ul>
+               <div class="starter-card__meta">
+                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
+               </div>
+             </div>
+           </details>
+        </div>
+    </template>
+    <template id="template-scale-sops">
+         <div class="starter-card" role="article">
+           <div class="starter-card__header">
+             <div class="starter-card__icon" aria-hidden="true">
+               <i data-lucide="a-arrow-up"></i>
+            </div>
+            <h3 class="starter-card__title">Develop Foundational SOPs</h3>
+           </div>
+           <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
+            <p class="starter-card__desc">We document and standardize your core operations, turning tribal knowledge into a durable company asset that enables delegation.</p>
+           <hr class="starter-card__divider" />
+           <ul class="starter-card__proof">
+             <li>Enables growth</li>
+             <li>Simplifies training</li>
+             <li>Improves consistency at scale</li>
+           </ul>
+           <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+           <details class="starter-card__details">
+             <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+             <div class="starter-card__details-content">
+               <h4 class="starter-card__section-title">What's Included</h4>
+               <ul class="starter-card__included">
+                 <li>Process capture sessions</li>
+                 <li>Documentation and templates</li>
+                 <li>Training and rollout plan</li>
+               </ul>
+               <div class="starter-card__meta">
+                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
+               </div>
+             </div>
+           </details>
+        </div>
+    </template>
+
+    <!-- Additional Starter Project Templates -->
+    <template id="template-auto-inventory">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="package"></i></div><h3 class="starter-card__title">Inventory & Orders</h3></div>
+        <p class="starter-card__value">Keep inventory accurate and orders moving—less "out of stock" drama.</p>
+        <p class="starter-card__desc">We automate the flow from order to shipment so you know what you have, what you need, and what's going out the door—for stores and manufacturers.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>Real‑time stock</li><li>Faster pick/pack</li><li>Fewer backorders</li><li>Status sync</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Order/stock mapping</li><li>Automation build</li><li>Testing & handoff</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–6 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Product businesses</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-auto-triggers">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="bolt"></i></div><h3 class="starter-card__title">Workflow Triggers</h3></div>
+        <p class="starter-card__value">If X then Y—automate consistent next steps across tools.</p>
+        <p class="starter-card__desc">We design event‑based triggers to keep deals, invoices, and tasks moving without manual nudges.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>Trigger rules</li><li>SLA reminders</li><li>Status updates</li><li>Audit trail</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Event mapping</li><li>Automation build</li><li>Alerts & logs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–3 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Process delays</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-integ-erp">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="factory"></i></div><h3 class="starter-card__title">ERP/MRP Integration</h3></div>
+        <p class="starter-card__value">Connect planning, production, and finance so schedules and costs stay in sync.</p>
+        <p class="starter-card__desc">We integrate ERP/MRP with CRM, inventory, and accounting, enabling end‑to‑end traceability.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>BOM sync</li><li>Work orders</li><li>Cost visibility</li><li>Auto updates</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Integration plan</li><li>Build & test</li><li>Rollout & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">4–8 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Manufacturers</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-integ-ecom">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="shopping-bag"></i></div><h3 class="starter-card__title">E‑commerce Integration</h3></div>
+        <p class="starter-card__value">Orders, inventory, and customers synced—no more spreadsheet patchwork.</p>
+        <p class="starter-card__desc">We connect Shopify/WooCommerce with your back office for accurate stock and faster fulfillment.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>SKU/stock sync</li><li>Rules set</li><li>Status flow</li><li>Refunds handled</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Platform mapping</li><li>Connect & test</li><li>Handoff & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–5 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Growing stores</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-integ-finance">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="calculator"></i></div><h3 class="starter-card__title">Finance Systems Sync</h3></div>
+        <p class="starter-card__value">Clean books with less effort—transactions flow where they need to.</p>
+        <p class="starter-card__desc">We integrate QuickBooks/Xero/POS with sales and ops for timely, accurate numbers.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>AR/AP sync</li><li>Item mapping</li><li>Reconciliation</li><li>Faster month‑end</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Chart mapping</li><li>Connector build</li><li>Reconcile & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–5 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Multi‑system finance</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-integ-portals">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="users"></i></div><h3 class="starter-card__title">Customer/Supplier Portals</h3></div>
+        <p class="starter-card__value">Fewer emails, faster answers—self‑serve status, docs, and updates.</p>
+        <p class="starter-card__desc">We deploy lightweight portals for orders, tickets, or shipments that reduce back‑and‑forth.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>Secure access</li><li>Live status</li><li>File exchange</li><li>Branded UX</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Portal design</li><li>Integration</li><li>Rollout & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">4–6 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">High‑touch ops</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-elevate-aiops">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="bot"></i></div><h3 class="starter-card__title">AI‑Driven Operations</h3></div>
+        <p class="starter-card__value">Predict issues, recommend actions, and automate decisions safely.</p>
+        <p class="starter-card__desc">We add AI to forecasting, triage, and knowledge retrieval with clear guardrails and human‑in‑the‑loop.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>Forecast accuracy</li><li>Faster triage</li><li>Fewer escalations</li><li>Safe guardrails</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Use cases & data</li><li>Model & guardrails</li><li>Pilot & rollout</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">6–10 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Data‑rich teams</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-elevate-bi">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div><h3 class="starter-card__title">BI Dashboards</h3></div>
+        <p class="starter-card__value">Real‑time visibility—one page, the truth your team trusts.</p>
+        <p class="starter-card__desc">We build decision‑ready dashboards with clear definitions and automated refresh.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>Aligned KPIs</li><li>One data model</li><li>Auto refresh</li><li>Easy drill‑downs</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Metric design</li><li>Data model</li><li>Dashboards & training</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–6 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leadership cadence</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-elevate-exec">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="flag"></i></div><h3 class="starter-card__title">Strategic Execution</h3></div>
+        <p class="starter-card__value">Turn OKRs into weekly actions everyone can see and ship.</p>
+        <p class="starter-card__desc">We align goals, metrics, and cadences so projects move from talk to done.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof"><li>Clear OKRs/KPIs</li><li>Portfolio view</li><li>Meeting rhythm</li><li>Accountability</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Goal design</li><li>Cadence & boards</li><li>Playbook & training</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">4–8 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Cross‑functional teams</span></div></div></div></details>
+      </div>
+    </template>
+
+    <template id="template-opt-software">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="wrench"></i></div>
+          <h3 class="starter-card__title">Software Setup Right</h3>
+        </div>
+        <p class="starter-card__value">Get the right tool set up right—no buyer's remorse, no abandoned software.</p>
+        <p class="starter-card__desc">We help you pick what fits your workflow (not the sales pitch), set it up properly, and make sure your team actually uses it from day one.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof">
+          <li>Requirements brief</li>
+          <li>Shortlist + test</li>
+          <li>Clean configuration</li>
+          <li>Team quickstart</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Requirements & test plan</li>
+              <li>Config & data prep</li>
+              <li>Launch & handoff</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–3 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">"We can't pick a tool"</span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </template>
+
+    <template id="template-opt-crm">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="notebook-pen"></i></div>
+          <h3 class="starter-card__title">CRM Implementation</h3>
+        </div>
+        <p class="starter-card__value">A CRM your team actually uses—simple fields, clear views, and fast follow‑ups.</p>
+        <p class="starter-card__desc">We tailor the CRM to your sales motion, import clean data, and build dashboards your team trusts.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof">
+          <li>Pipeline views</li>
+          <li>Fields that matter</li>
+          <li>Clean data import</li>
+          <li>Live dashboards</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Sales process fit</li>
+              <li>Data migration</li>
+              <li>Dashboards & training</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">First‑time or reset</span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </template>
+
+    <template id="template-opt-pm">
+      <div class="starter-card" role="article">
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="square-kanban"></i></div>
+          <h3 class="starter-card__title">PM Adoption</h3>
+        </div>
+        <p class="starter-card__value">Turn task chaos into a clear board your team updates without nagging.</p>
+        <p class="starter-card__desc">We set up Asana/ClickUp/Trello to match how you actually deliver work, with templates and habits that stick.</p>
+        <hr class="starter-card__divider" />
+        <ul class="starter-card__proof">
+          <li>Templates for repeats</li>
+          <li>Intake process</li>
+          <li>Weekly rhythm</li>
+          <li>Team training</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Board templates</li>
+              <li>Intake & SLAs</li>
+              <li>Training & quickstart</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–3 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Service/ops teams</span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </template>
+
+    <section class="timeline-section section section--with-separator">
+        <div class="container">
+            <h2 class="section-title">Our Collaborative Process</h2>
+            
+            <div class="process-central">
+                <ol class="process-central__list">
+                    <li class="process-central__step process-central__step--left">
+                        <div class="process-central__node">
+                            <span class="process-central__cube"></span>
+                            <span class="process-central__num">1</span>
+                        </div>
+                        <div class="process-central__card" data-reveal-on-scroll>
+                            <div class="process-central__title-row">
+                              <i class="process-central__icon" data-lucide="search"></i>
+                              <h3 class="process-central__title">Discovery Call</h3>
+                            </div>
+                            <p class="process-central__desc">20–30 min to confirm goals and fit.</p>
+                            <div class="process-central__details">
+                              <div class="process-central__details-inner">
+                                <h4>What's Included</h4>
+                                <p>We align on objectives, constraints, and the immediate priority that will create momentum.</p>
+                                <h4>What You'll Get</h4>
+                                <p>A clear next step and a simple plan to begin delivering results quickly.</p>
+                              </div>
+                            </div>
+                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                        </div>
+                    </li>
+                    <li class="process-central__step process-central__step--right">
+                        <div class="process-central__node">
+                            <span class="process-central__cube"></span>
+                            <span class="process-central__num">2</span>
+                        </div>
+                        <div class="process-central__card" data-reveal-on-scroll>
+                            <div class="process-central__title-row">
+                              <i class="process-central__icon" data-lucide="trophy"></i>
+                              <h3 class="process-central__title">Priorities & Quick Wins</h3>
+                            </div>
+                            <p class="process-central__desc">Choose the simplest, highest‑impact starting point.</p>
+                            <div class="process-central__details">
+                              <div class="process-central__details-inner">
+                                <h4>What's Included</h4>
+                                <p>Identify the highest‑leverage work and define a thin slice we can ship fast.</p>
+                                <h4>What You'll Get</h4>
+                                <p>A small, validated win that builds momentum and informs the next step.</p>
+                              </div>
+                            </div>
+                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                        </div>
+                    </li>
+                    <li class="process-central__step process-central__step--left">
+                        <div class="process-central__node">
+                            <span class="process-central__cube"></span>
+                            <span class="process-central__num">3</span>
+                        </div>
+                        <div class="process-central__card" data-reveal-on-scroll>
+                            <div class="process-central__title-row">
+                              <i class="process-central__icon" data-lucide="wrench"></i>
+                              <h3 class="process-central__title">Working Setup</h3>
+                            </div>
+                            <p class="process-central__desc">Agree on tools, cadence, roles, and reporting.</p>
+                            <div class="process-central__details">
+                              <div class="process-central__details-inner">
+                                <h4>What's Included</h4>
+                                <p>Define collaboration channels, access, success criteria, and progress rhythm.</p>
+                                <h4>What You'll Get</h4>
+                                <p>A lean, reliable operating cadence to keep delivery moving without friction.</p>
+                              </div>
+                            </div>
+                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                        </div>
+                    </li>
+                    <li class="process-central__step process-central__step--right">
+                        <div class="process-central__node">
+                            <span class="process-central__cube"></span>
+                            <span class="process-central__num">4</span>
+                        </div>
+                        <div class="process-central__card" data-reveal-on-scroll>
+                            <div class="process-central__title-row">
+                              <i class="process-central__icon" data-lucide="route"></i>
+                              <h3 class="process-central__title">Map Current State</h3>
+                            </div>
+                            <p class="process-central__desc">Capture how work actually flows today.</p>
+                            <div class="process-central__details">
+                              <div class="process-central__details-inner">
+                                <h4>What's Included</h4>
+                                <p>Document real workflows, decision points, and pain areas across teams/tools.</p>
+                                <h4>What You'll Get</h4>
+                                <p>A shared picture of how work happens now and where to intervene first.</p>
+                              </div>
+                            </div>
+                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                        </div>
+                    </li>
+                    <li class="process-central__step process-central__step--left">
+                        <div class="process-central__node">
+                            <span class="process-central__cube"></span>
+                            <span class="process-central__num">5</span>
+                        </div>
+                        <div class="process-central__card" data-reveal-on-scroll>
+                            <div class="process-central__title-row">
+                              <i class="process-central__icon" data-lucide="rocket"></i>
+                              <h3 class="process-central__title">Build & Launch</h3>
+                            </div>
+                            <p class="process-central__desc">Ship improvements in small, testable increments.</p>
+                            <div class="process-central__details">
+                              <div class="process-central__details-inner">
+                                <h4>What's Included</h4>
+                                <p>Deliver value in short cycles with clear acceptance criteria and rollback plans.</p>
+                                <h4>What You'll Get</h4>
+                                <p>Visible progress, reduced risk, and high‑confidence releases.</p>
+                              </div>
+                            </div>
+                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                        </div>
+                    </li>
+                    <li class="process-central__step process-central__step--right">
+                        <div class="process-central__node">
+                            <span class="process-central__cube"></span>
+                            <span class="process-central__num">6</span>
+                        </div>
+                        <div class="process-central__card" data-reveal-on-scroll>
+                            <div class="process-central__title-row">
+                              <i class="process-central__icon" data-lucide="refresh-ccw"></i>
+                              <h3 class="process-central__title">Support & Iterate</h3>
+                            </div>
+                            <p class="process-central__desc">Refine, document, and train for lasting change.</p>
+                            <div class="process-central__details">
+                              <div class="process-central__details-inner">
+                                <h4>What's Included</h4>
+                                <p>Monitor outcomes, tune workflows, and capture how‑to guides as living documentation.</p>
+                                <h4>What You'll Get</h4>
+                                <p>Improvements that stick—embedded practices, not one‑off fixes.</p>
+                              </div>
+                            </div>
+                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </div>
     </section>
@@ -376,177 +1078,6 @@
     </section>
     </main>
 
-    <!-- Modals -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon"><img src="/assets/images/Generic icons/Sales-flat.svg" alt="Sales icon"></div>
-                <h2 class="modal-title">The Sales Black Hole</h2>
-            </div>
-            <div class="impact-section">
-                <h4>The Rhythm</h4>
-                <p>Reduced correspondence to assess potential client fit. The team follows a consistent process and rhythm. Every lead is captured, nurtured, and visible in a living pipeline that shows exactly where tomorrow's revenue will come from.</p>
-            </div>
-            
-            <div class="approach-section">
-                <h4>Our Collaborative Approach:</h4>
-                <ul class="approach-list">
-                    <li>We map every current lead-capture point, connect them to a right-sized CRM (sales pipeline)</li>
-                    <li>Automate reminders, email templates, and set up a simple pipeline view</li>
-                    <li>Team training sessions ensure the team log interactions without friction</li>
-                    <li>Comprehensive and appropriate contact forms to ensure the team has the information needed</li>
-                    <li>Clearly defined sales stages, requirements, and actions</li>
-                </ul>
-            </div>
-            
-            <div class="alternative-section">
-                <h4>vs. Going It Alone:</h4>
-                <p>Months of trial-and-error with CRM tools, team resistance to new systems, abandoned implementations, and continued revenue loss.</p>
-            </div>
-
-            <div class="modal-cta">
-                <a href="#contact" class="modal-cta-button">Let's Fix Your Lead Management</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon"><img src="/assets/images/Generic icons/Checklist-2.svg" alt="Task management icon"></div>
-                <h2 class="modal-title">The Task Tornado</h2>
-            </div>
-            <div class="impact-section">
-                <h4>The Hidden Cost</h4>
-                <p>A consistent and transparent process that suits your team and work environment. Priorities are clear, details and expectations clearly conveyed. A step forward to get ahead of the firefighting.</p>
-            </div>
-            
-            <div class="approach-section">
-                <h4>Our Collaborative Approach:</h4>
-                <ul class="approach-list">
-                    <li>We inventory recurring workflows and encompass them into defined processes</li>
-                    <li>Collaboratively develop a process for managing tasks/responsibilities that fall outside the recurring processes</li>
-                    <li>Coach the team on creating clear expectations, ownership, and sustainable accountability</li>
-                    <li>Clarified communication surrounding tasks quickly creates clarity across the team</li>
-                    <li>Early establishment of where tasks are tracked in a visible manner</li>
-                </ul>
-            </div>
-            
-            <div class="alternative-section">
-                <h4>vs. Buying Software:</h4>
-                <p>Generic tools that don't fit your workflow, team confusion and resistance, back to spreadsheets within 3 months.</p>
-            </div>
-
-            <div class="modal-cta">
-                <a href="#contact" class="modal-cta-button">Let's Organize Your Projects</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon"><img src="/assets/images/Generic icons/Pathway-unknown.svg" alt="Onboarding icon"></div>
-                <h2 class="modal-title">The Onboarding Nightmare</h2>
-            </div>
-            <div class="impact-section">
-                <h4>Onboarding Cost</h4>
-                <p>New hires contribute meaningful work in their first week, feeling confident—not overwhelmed, other team members aren't left feeling burdened.</p>
-            </div>
-            
-            <div class="approach-section">
-                <h4>Our Collaborative Approach:</h4>
-                <ul class="approach-list">
-                    <li>Systemization. Identify core processes within the business, document current model workflows</li>
-                    <li>Apply easy efficiency wins through process or technology, develop quick reference guides</li>
-                    <li>Develop checklists to support process consistency</li>
-                    <li>Document the process details in the form of dynamic digital products with interactivity</li>
-                    <li>Create multimedia content for training of existing team members and future hires</li>
-                </ul>
-            </div>
-            
-            <div class="alternative-section">
-                <h4>vs. Training Companies:</h4>
-                <p>Generic programs that don't fit your business, no follow-through, no lasting systems, and back to ad-hoc training.</p>
-            </div>
-
-            <div class="modal-cta">
-                <a href="#contact" class="modal-cta-button">Let's Scale Your Team</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal4')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon"><img src="/assets/images/Generic icons/Confusion.svg" alt="Spreadsheet management icon"></div>
-                <h2 class="modal-title">Spreadsheet Sprawl</h2>
-            </div>
-            <div class="impact-section">
-                <h4>Time Drain</h4>
-                <p>Robust and sustainable spreadsheet system or graduation into dedicated operations software.</p>
-            </div>
-            
-            <div class="approach-section">
-                <h4>Our Collaborative Approach:</h4>
-                <ul class="approach-list">
-                    <li>Identify the objective and detailed needs of the system, consolidate sheets into a single source of truth</li>
-                    <li>Set proper permission and protected cells, identify and implement improvements</li>
-                    <li>Ensure clear documentation and training documents are developed and automate imports/exports</li>
-                    <li>Version control and permissions keep everything clean</li>
-                    <li>Your existing spreadsheet process quickly becomes more robust, reliable, and easier to use</li>
-                </ul>
-            </div>
-            
-            <div class="alternative-section">
-                <h4>vs. Vendor Solutions:</h4>
-                <p>Expensive "enterprise" tools, complex integrations that break, consultant lock-in, and systems nobody understands.</p>
-            </div>
-
-            <div class="modal-cta">
-                <a href="#contact" class="modal-cta-button">Let's Connect Your Systems</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal5')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon"><img src="/assets/images/Generic icons/Bullseye.svg" alt="Strategy planning icon"></div>
-                <h2 class="modal-title">Strategy Stall</h2>
-            </div>
-            <div class="impact-section">
-                <h4>Leadership Cost</h4>
-                <p>A unified leadership team with crystal-clear tactical priorities that can realistically be executed with available resources. Strategic objectives translate into committed action with genuine consensus on trade-offs.</p>
-            </div>
-            
-            <div class="approach-section">
-                <h4>Our Collaborative Approach:</h4>
-                <ul class="approach-list">
-                    <li>Pressure-test strategic goals against organizational capabilities</li>
-                    <li>Facilitate structured discussions to achieve alignment on 3-5 mission-critical objectives</li>
-                    <li>Map tactical roadmap for next 90 days and identify key obstacles</li>
-                    <li>Complete leadership alignment on priorities and realistic resource assessment</li>
-                    <li>Clear tactical roadmap with documented challenges and mitigation strategies</li>
-                </ul>
-            </div>
-            
-            <div class="alternative-section">
-                <h4>vs. Strategic Consultants:</h4>
-                <p>Expensive reports that sit on shelves, generic frameworks that don't fit your reality, and no implementation support.</p>
-            </div>
-
-            <div class="modal-cta">
-                <a href="#contact" class="modal-cta-button">Let's Align Your Strategy</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Sentence wrap utility -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -556,247 +1087,147 @@
             });
         });
     </script>
-
-    <!-- GSAP Color Transition Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Load complete SVG and initialize animations
-        async function loadAnimatedBathymetry() {
-            try {
-                const response = await fetch('bathymetry.html?v=' + Date.now());
-                const htmlText = await response.text();
-                
-                // Extract SVG content from the full HTML
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(htmlText, 'text/html');
-                const svg = doc.querySelector('svg');
-                
-                if (svg) {
-                    // Replace the placeholder SVG with the complete one
-                    const container = document.querySelector('.bathymetric-background');
-                    container.innerHTML = '';
-                    container.appendChild(svg.cloneNode(true));
-                    
-                    // Initialize the animation
-                    initBathymetricAnimation();
-                }
-            } catch (error) {
-                console.error('Failed to load bathymetric animation:', error);
-            }
-        }
+       // --- COMPLETE FIT FINDER SCRIPT (REVERTED) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const fitFinderSection = document.querySelector('#fit-finder');
+            if (!fitFinderSection) return;
 
-        // Initialize problem item interactions (simplified - no toggles needed)
-        function initProblemItemInteractions() {
-            // No interactive functionality needed - all content is visible by default
-            // This matches the clean layout shown in the attached image
-        }
-        
-        function initBathymetricAnimation() {
-            // Get color palette from CSS variables
-            const rootStyles = getComputedStyle(document.documentElement);
-            const originalColors = {
-                Land:  rootStyles.getPropertyValue('--bathymetry-land').trim(), // cls-6
-                LandDark: "#B6BBA1", // Darker land color for animation steps
-                sea1:  rootStyles.getPropertyValue('--bathymetry-sea1').trim(), // cls-4
-                sea2:  rootStyles.getPropertyValue('--bathymetry-sea2').trim(), // cls-7
-                sea3:  rootStyles.getPropertyValue('--bathymetry-sea3').trim(), // cls-3
-                sea4:  rootStyles.getPropertyValue('--bathymetry-sea4').trim(), // cls-2
-                sea5:  rootStyles.getPropertyValue('--bathymetry-sea5').trim(), // cls-5
-                sea6:  rootStyles.getPropertyValue('--bathymetry-sea6').trim(), // cls-1
-                sea8:  "#000000", // sea-8 (keep hardcoded as it's unique)
+            // --- Data for Buttons ---
+            const fitFinderTypes = [
+            { label: 'Construction / Service Trades', shortLabel: 'Trades', icon: 'hammer' },
+            { label: 'Manufacturing', shortLabel: 'Mfg.', icon: 'factory' },
+            { label: 'E-Commerce', shortLabel: 'E-Com', icon: 'shopping-cart' },
+            { label: 'Product-Based Businesses', shortLabel: 'Product', icon: 'package' },
+            { label: 'Professional Services', shortLabel: 'Professionals', icon: 'briefcase' },
+        ];
+
+        // --- DOM Elements (Updated to use specific view-toggle classes) ---
+        const mainTitle = fitFinderSection.querySelector('#fit-finder-main-title');
+        const selectorContainer = fitFinderSection.querySelector('#fit-finder-selector');
+        const checklistContainer = fitFinderSection.querySelector('#fit-finder-checklist-container');
+        const pillHighlight = fitFinderSection.querySelector('.view-toggle__pill');
+        const strategicOption = fitFinderSection.querySelector('.view-toggle__option[data-view="strategic"]');
+        const industryOption = fitFinderSection.querySelector('.view-toggle__option[data-view="industry"]');
+        let currentActiveButton = null;
+
+        // --- Core Functions ---
+        // Function to show/hide the correct checklist
+        const updateDisplay = (indexToShow) => {
+            const checklistWrappers = checklistContainer.querySelectorAll('.fit-finder__checklist-wrapper');
+            checklistWrappers.forEach((wrapper) => {
+                const items = wrapper.querySelectorAll('.fit-finder__item');
+                if (parseInt(wrapper.dataset.checklistFor) === indexToShow) {
+                    wrapper.style.display = 'block';
+                    items.forEach((item, order) => {
+                        setTimeout(() => item.classList.add('is-visible'), order * 100);
+                    });
+                } else {
+                    wrapper.style.display = 'none';
+                    items.forEach(item => item.classList.remove('is-visible'));
+                }
+            });
+        };
+    
+        // Function to generate the industry buttons
+        const initButtons = () => {
+            selectorContainer.innerHTML = '';
+            fitFinderTypes.forEach((type, index) => {
+                const button = document.createElement('button');
+                button.className = 'fit-finder__button';
+                
+                // Create separate spans for full and short labels
+                button.innerHTML = `
+                    <i class="fit-finder__button-icon" data-lucide="${type.icon}"></i>
+                    <span class="fit-finder__button-label--full">${type.label}</span>
+                    <span class="fit-finder__button-label--short">${type.shortLabel}</span>
+                `;
+                
+                button.addEventListener('click', () => {
+                    if (currentActiveButton) currentActiveButton.classList.remove('active');
+                    button.classList.add('active');
+                    currentActiveButton = button;
+                    mainTitle.textContent = 'Common Pain Points';
+                    updateDisplay(index + 1);
+                });
+                selectorContainer.appendChild(button);
+            });
+            lucide.createIcons();
+        };
+
+            // Function to move the pill highlight
+            const updatePillPosition = (activeButton) => {
+                if (!pillHighlight || !activeButton) return;
+                pillHighlight.style.width = `${activeButton.offsetWidth}px`;
+                pillHighlight.style.left = `${activeButton.offsetLeft}px`;
             };
 
-            // Create main timeline with initial delay
-            const mainTimeline = gsap.timeline({ delay: 1.75 });
+            // --- Event Listeners ---
 
-            // Set initial text visibility states
-            gsap.set("#Text-1", { autoAlpha: 1 });
-            gsap.set("#Text-2, #Text-3, #Text-4, #Text-5", { autoAlpha: 0 });
-
-            // Set initial hero content visibility (hidden until pulse-2)
-            gsap.set(".hero-content .subtitle, .hero-content .cta-primary", { 
-                opacity: 0, 
-                y: 20 
+            strategicOption.addEventListener('click', () => {
+                strategicOption.setAttribute('aria-selected', 'true');
+                industryOption.setAttribute('aria-selected', 'false');
+                updatePillPosition(strategicOption);
+                
+                mainTitle.textContent = 'High-Level Challenges';
+                selectorContainer.classList.remove('is-inactive'); // Use remove, as the class may not exist
+                selectorContainer.classList.add('is-inactive');
+                if (currentActiveButton) currentActiveButton.classList.remove('active');
+                updateDisplay(0);
             });
 
-            // PULSE 1: Progressive shallowing effect + Land darkens
-            // Each layer moves to the color of the layer above it, and Land shifts to darker color
-            mainTimeline
-                .to("#sea-8", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea6 
-                }, "pulse1")
-                .to("#sea-6", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea5 
-                }, "pulse1")
-                .to("#sea-5", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea4 
-                }, "pulse1")
-                .to("#sea-4", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea3 
-                }, "pulse1")
-                .to("#sea-3", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea2 
-                }, "pulse1")
-                .to("#sea-2 path", { 
-                    duration: 1, 
-                    fill: originalColors.sea1 
-                }, "pulse1")
-                .to("#sea-1 path", { 
-                    duration: 1.25, 
-                    fill: originalColors.Land 
-                }, "pulse1")
-                // NEW: Land elements (cls-6) change to darker color
-                .to(".cls-6", { 
-                    duration: 1.25, 
-                    fill: originalColors.LandDark 
-                }, "pulse1")
-                // Text transition: Text-1 out, Text-2 in
-                .to("#Text-1", { 
-                    duration: 1, 
-                    autoAlpha: 0 
-                }, "pulse1")
-                .to("#Text-2", { 
-                    duration: 1, 
-                    autoAlpha: 1 
-                }, "pulse1")
+            industryOption.addEventListener('click', () => {
+                industryOption.setAttribute('aria-selected', 'true');
+                strategicOption.setAttribute('aria-selected', 'false');
+                updatePillPosition(industryOption);
                 
-                // Pause between pulses
-                .to({}, { duration: 0.4 })
-
-            // PULSE 2: Continue progressive shallowing + sea-1 adopts dark land color + Hero content fade-in
-            mainTimeline
-                .to("#sea-8", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea5 
-                }, "pulse2")
-                .to("#sea-6", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea4 
-                }, "pulse2")
-                .to("#sea-5", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea3 
-                }, "pulse2")
-                .to("#sea-4", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea2 
-                }, "pulse2")
-                .to("#sea-3", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea1 
-                }, "pulse2")
-                .to("#sea-2 path", { 
-                    duration: 1.25, 
-                    fill: originalColors.Land 
-                }, "pulse2")
-                // UPDATED: sea-1 now adopts the darker land color
-                .to("#sea-1 path", { 
-                    duration: 1.25, 
-                    fill: originalColors.LandDark 
-                }, "pulse2")
-                // NEW: Hero content fade-in (subtitle and CTA)
-                .to(".hero-content .subtitle", { 
-                    duration: 1.2, 
-                    opacity: 1,
-                    y: 0,
-                    ease: "power2.out"
-                }, "pulse2+=0.3")
-                .to(".hero-content .cta-primary", { 
-                    duration: 1.2, 
-                    opacity: 1,
-                    y: 0,
-                    ease: "power2.out"
-                }, "pulse2+=0.5")
-                // Text transition: Text-2 out, Text-3 in
-                .to("#Text-2", { 
-                    duration: 1, 
-                    autoAlpha: 0 
-                }, "pulse2")
-                .to("#Text-3", { 
-                    duration: 1, 
-                    autoAlpha: 1 
-                }, "pulse2")
-                
-                // Pause between pulses
-                .to({}, { duration: 0.4 })
-
-            // PULSE 3: Final progressive shallowing (stops when sea-3 reaches Land color)
-            mainTimeline
-                .to("#sea-8", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea4 
-                }, "pulse3")
-                .to("#sea-6", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea3 
-                }, "pulse3")
-                .to("#sea-5", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea2 
-                }, "pulse3")
-                .to("#sea-4", { 
-                    duration: 1.25, 
-                    fill: originalColors.sea1 
-                }, "pulse3")
-                .to("#sea-3", { 
-                    duration: 1.25, 
-                    fill: originalColors.Land 
-                }, "pulse3")
-                .to("#sea-2 path", { 
-                    duration: 1.25, 
-                    fill: originalColors.LandDark 
-                }, "pulse3")
-                .to("#sea-1 path", { 
-                    duration: 1.25, 
-                    fill: originalColors.LandDark 
-                }, "pulse3")
-                // Text transition: Text-3 out, Text-4 in
-                .to("#Text-3", { 
-                    duration: 1, 
-                    autoAlpha: 0 
-                }, "pulse3")
-                .to("#Text-4", { 
-                    duration: 1, 
-                    autoAlpha: 1 
-                }, "pulse3")
-                
-                // Pause before final reveal
-                .to({}, { duration: 1.2 })
-                
-                // FINAL REVEAL: Text-4 out, Text-5 in (Strategy & Execution)
-                .to("#Text-4", { 
-                    duration: 1.5, 
-                    autoAlpha: 0 
-                }, "finalReveal")
-                .to("#Text-5", { 
-                    duration: 2, 
-                    autoAlpha: 1,
-                    ease: "power2.out"
-                }, "finalReveal+=0.5");
-
-            // Optional: Add a callback when animation completes
-            mainTimeline.eventCallback("onComplete", () => {
-                console.log("Bathymetry animation sequence completed!");
+                selectorContainer.classList.remove('is-inactive');
+                if (!currentActiveButton) {
+                    const firstIndustryButton = selectorContainer.querySelector('.fit-finder__button');
+                    if(firstIndustryButton) firstIndustryButton.click();
+                } else {
+                    currentActiveButton.click();
+                }
             });
-        }
-        
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // loadAnimatedBathymetry(); // Temporarily disabled while using static bathymetry background
-            initProblemItemInteractions();
-            initMobileMenu();
+            
+            selectorContainer.addEventListener('click', (e) => {
+                if (e.target.closest('.fit-finder__button')) {
+                    industryOption.setAttribute('aria-selected', 'true');
+                    strategicOption.setAttribute('aria-selected', 'false');
+                    updatePillPosition(industryOption);
+                }
+            });
 
-            // Ensure hero subtitle and CTA are visible when static image is used
-            const subtitleEl = document.querySelector('.hero-content .subtitle');
-            const ctaEl = document.querySelector('.hero-content .cta-primary');
-            subtitleEl?.classList.add('visible');
-            ctaEl?.classList.add('visible');
+            // --- Initialization ---
+            const runFitFinderInit = () => {
+            initButtons();
+                // Set initial state explicitly, no reveal gating
+            const initialActivePill = fitFinderSection.querySelector('.view-toggle__option[aria-selected="true"]');
+            if (initialActivePill && initialActivePill.dataset.view === 'strategic') {
+                    updatePillPosition(strategicOption);
+                    mainTitle.textContent = 'High-Level Challenges';
+                    selectorContainer.classList.add('is-inactive');
+                    updateDisplay(0);
+            } else {
+                    // Ensure an industry checklist shows even if no prior click
+                    selectorContainer.classList.remove('is-inactive');
+                    const firstIndustryButton = selectorContainer.querySelector('.fit-finder__button');
+                    if (firstIndustryButton) firstIndustryButton.click();
+            }
+            setTimeout(() => {
+                const activePill = fitFinderSection.querySelector('.view-toggle__option[aria-selected="true"]');
+                if(activePill) updatePillPosition(activePill);
+            }, 100);
+            };
+            runFitFinderInit();
+
+            window.addEventListener('resize', () => {
+                const currentActivePill = fitFinderSection.querySelector('.view-toggle__option[aria-selected="true"]');
+                if (currentActivePill) updatePillPosition(currentActivePill);
+            });
         });
+    </script>
+    <script>
 
         // Mobile Menu Functionality
         function initMobileMenu() {
@@ -830,217 +1261,542 @@
 
       
     </script>
-
-    <!-- Overlay SVG for Dynamic Connectors -->
-    <svg id="flow-lines" 
-         style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0.1;" 
-         aria-hidden="true">
-    </svg>
-
-    <script>
-        // Dynamic SVG Connectors for Problems Section
-        const svg = document.getElementById('flow-lines');
-
-        function drawProblemConnectors() {
-            // Clear previous paths
-            svg.innerHTML = '';
-            
-            // Update SVG dimensions to cover full document
-            const fullWidth = Math.max(document.documentElement.scrollWidth, window.innerWidth);
-            const fullHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight);
-            
-            svg.setAttribute('width', fullWidth);
-            svg.setAttribute('height', fullHeight);
-            svg.style.width = fullWidth + 'px';
-            svg.style.height = fullHeight + 'px';
-
-            // Get card elements (not icons)
-            const strategicProblem = document.getElementById('0-strategic-problem');
-            const problemCards = [
-                document.getElementById('2-problem-plateau'),
-                document.getElementById('4-problem-outcomes'), 
-                document.getElementById('6-problem-toolbox')
-            ];
-
-            if (!strategicProblem || problemCards.some(card => !card)) return;
-
-            // Calculate source position (strategic problem card bottom-center)
-            const sourceRect = strategicProblem.getBoundingClientRect();
-            const sourceX = sourceRect.left + sourceRect.width / 2;
-            const sourceY = sourceRect.bottom; // Bottom of card instead of center
-
-            // Create branching effect: single line down, then split to three targets
-            const branchStartY = sourceY + 40; // Shortened from 60px
-
-            // Draw the main trunk line from source card bottom down
-            const trunkPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            const trunkData = `M${sourceX},${sourceY} L${sourceX},${branchStartY}`;
-            trunkPath.setAttribute('d', trunkData);
-            trunkPath.setAttribute('fill', 'none');
-            trunkPath.setAttribute('stroke', '#0f172a'); // Primary navy color
-            trunkPath.setAttribute('stroke-width', '5');
-            trunkPath.setAttribute('opacity', '0.8');
-            trunkPath.setAttribute('stroke-linecap', 'round');
-            svg.appendChild(trunkPath);
-
-            // Draw branches to each target card
-            problemCards.forEach((targetCard, index) => {
-                const targetRect = targetCard.getBoundingClientRect();
-                const targetX = targetRect.left + targetRect.width / 2;
-                const targetY = targetRect.top; // Top of card instead of center
-
-                // Create smooth curve from branch point to target card top
-                const pathData = `M${sourceX},${branchStartY} C${sourceX},${branchStartY + (targetY - branchStartY) * 0.3} ${targetX},${targetY - (targetY - branchStartY) * 0.3} ${targetX},${targetY}`;
-
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.setAttribute('d', pathData);
-                path.setAttribute('fill', 'none');
-                path.setAttribute('stroke', '#0f172a'); // Primary navy color
-                path.setAttribute('stroke-width', '5');
-                path.setAttribute('opacity', '0.8');
-                path.setAttribute('stroke-linecap', 'round');
-                svg.appendChild(path);
-            });
-
-            // Draw straight lines from problem cards to solution cards
-            const solutionCards = [
-                document.getElementById('3-solution-people'),    // Maps to problem-plateau
-                document.getElementById('5-solution-process'),   // Maps to problem-outcomes  
-                document.getElementById('7-solution-technology') // Maps to problem-toolbox
-            ];
-
-            if (solutionCards.every(card => card)) {
-                problemCards.forEach((problemCard, index) => {
-                    const solutionCard = solutionCards[index];
-                    
-                    const problemRect = problemCard.getBoundingClientRect();
-                    const solutionRect = solutionCard.getBoundingClientRect();
-                    
-                    const startX = problemRect.left + problemRect.width / 2;
-                    const startY = problemRect.bottom;
-                    const endX = solutionRect.left + solutionRect.width / 2;
-                    const endY = solutionRect.top;
-
-                    // Draw straight line from problem card bottom to solution card top
-                    const straightPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                    const straightData = `M${startX},${startY} L${endX},${endY}`;
-                    straightPath.setAttribute('d', straightData);
-                    straightPath.setAttribute('fill', 'none');
-                    straightPath.setAttribute('stroke', '#0f172a');
-                    straightPath.setAttribute('stroke-width', '5');
-                    straightPath.setAttribute('opacity', '0.8');
-                    straightPath.setAttribute('stroke-linecap', 'round');
-                    svg.appendChild(straightPath);
-                });
-
-                // Draw branching lines from solution cards to strategic solution
-                const strategicSolution = document.getElementById('9-strategic-solution');
-                if (strategicSolution) {
-                    const strategicSolutionRect = strategicSolution.getBoundingClientRect();
-                    const strategicSolutionX = strategicSolutionRect.left + strategicSolutionRect.width / 2;
-                    const strategicSolutionY = strategicSolutionRect.top;
-
-                    // Create branching effect: lines from solution cards converge, then single line to strategic solution
-                    const convergenceY = strategicSolutionY - 40; // Branch point above strategic solution
-
-                    // Draw the main trunk line from convergence point to strategic solution top
-                    const solutionTrunkPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                    const solutionTrunkData = `M${strategicSolutionX},${convergenceY} L${strategicSolutionX},${strategicSolutionY}`;
-                    solutionTrunkPath.setAttribute('d', solutionTrunkData);
-                    solutionTrunkPath.setAttribute('fill', 'none');
-                    solutionTrunkPath.setAttribute('stroke', '#0f172a');
-                    solutionTrunkPath.setAttribute('stroke-width', '5');
-                    solutionTrunkPath.setAttribute('opacity', '0.8');
-                    solutionTrunkPath.setAttribute('stroke-linecap', 'round');
-                    svg.appendChild(solutionTrunkPath);
-
-                    // Draw branches from each solution card to the convergence point
-                    solutionCards.forEach((solutionCard, index) => {
-                        const solutionRect = solutionCard.getBoundingClientRect();
-                        const solutionX = solutionRect.left + solutionRect.width / 2;
-                        const solutionY = solutionRect.bottom;
-
-                        // Create smooth curve from solution card bottom to convergence point
-                        const pathData = `M${solutionX},${solutionY} C${solutionX},${solutionY + (convergenceY - solutionY) * 0.3} ${strategicSolutionX},${convergenceY - (convergenceY - solutionY) * 0.3} ${strategicSolutionX},${convergenceY}`;
-
-                        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                        path.setAttribute('d', pathData);
-                        path.setAttribute('fill', 'none');
-                        path.setAttribute('stroke', '#0f172a');
-                        path.setAttribute('stroke-width', '5');
-                        path.setAttribute('opacity', '0.8');
-                        path.setAttribute('stroke-linecap', 'round');
-                        svg.appendChild(path);
-                    });
-                }
-            }
-        }
-
-        // Handle mobile display
-        function handleConnectorMobileDisplay() {
-            if (window.innerWidth <= 768) {
-                svg.style.display = 'none';
-            } else {
-                svg.style.display = 'block';
-                drawProblemConnectors();
-            }
-        }
-
-        // Initialize connectors
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(handleConnectorMobileDisplay, 100);
-            });
-        } else {
-            setTimeout(handleConnectorMobileDisplay, 100);
-        }
-
-        // Event listeners for reactive updates
-        window.addEventListener('resize', () => {
-            clearTimeout(window.connectorTimeout);
-            window.connectorTimeout = setTimeout(handleConnectorMobileDisplay, 100);
-        });
+    <script>// --- COMPLETE STARTER PROJECT SELECTOR SCRIPT (TIMELINE V4 FINAL) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectSelectorSection = document.querySelector('#starter-projects');
+            if (!projectSelectorSection) return;
         
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth > 768) {
-                requestAnimationFrame(drawProblemConnectors);
+            const timelineButtons = projectSelectorSection.querySelectorAll('.timeline-selector__button');
+            const timelineNodes = projectSelectorSection.querySelectorAll('.timeline-selector__node');
+            const displayContainer = projectSelectorSection.querySelector('#project-display-container');
+        
+            // This map defines the order of the nodes
+            const categoryMap = ['audit', 'optimize', 'automate', 'integrate', 'scale'];
+        
+            const activateProject = (menu, cardContainer, templateId) => {
+                // Reveal menu items with stagger when category loads
+                const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                items.forEach((btn, idx) => {
+                    btn.classList.remove('is-revealed');
+                    btn.style.transitionDelay = `${Math.min(idx * 100 + 200, 700)}ms`;
+                    // Use rAF to ensure style applies before toggling
+                    requestAnimationFrame(() => btn.classList.add('is-revealed'));
+                });
+                const template = document.getElementById(templateId);
+                if (!template || !cardContainer) return;
+                cardContainer.classList.add('is-updating');
+                setTimeout(() => {
+                    cardContainer.innerHTML = template.innerHTML;
+                    lucide.createIcons();
+                    cardContainer.classList.remove('is-updating');
+                }, 150);
+                menu.querySelectorAll('.project-display__menu-item').forEach(btn => {
+                    btn.setAttribute('aria-selected', btn.dataset.templateId === templateId);
+                });
+            };
+        
+            // Project menu overflow detection with directional gradients
+            const handleProjectMenuOverflow = (menu) => {
+                if (!menu) return;
+                
+                // Force a reflow to ensure accurate measurements
+                menu.offsetHeight;
+                
+                const scrollLeft = menu.scrollLeft;
+                const scrollWidth = menu.scrollWidth;
+                const clientWidth = menu.clientWidth;
+                const maxScrollLeft = scrollWidth - clientWidth;
+                
+                // Check if there's content hidden on each side (with 2px tolerance)
+                const hasLeftOverflow = scrollLeft > 2;
+                const hasRightOverflow = scrollLeft < (maxScrollLeft - 2);
+                
+                // Debug logging (remove after testing)
+                console.log('Menu overflow check:', {
+                    scrollLeft: scrollLeft,
+                    scrollWidth: scrollWidth,
+                    clientWidth: clientWidth,
+                    maxScrollLeft: maxScrollLeft,
+                    hasLeftOverflow: hasLeftOverflow,
+                    hasRightOverflow: hasRightOverflow
+                });
+                
+                // Remove all overflow classes first
+                menu.classList.remove('has-overflow', 'has-left-overflow', 'has-right-overflow');
+                
+                // Apply specific overflow classes
+                if (hasLeftOverflow && hasRightOverflow) {
+                    menu.classList.add('has-overflow'); // Both sides
+                } else if (hasLeftOverflow) {
+                    menu.classList.add('has-left-overflow'); // Left only
+                } else if (hasRightOverflow) {
+                    menu.classList.add('has-right-overflow'); // Right only
+                }
+            };
+
+            const setupCategoryListeners = (categoryContent) => {
+                const menu = categoryContent.querySelector('.project-display__menu');
+                const cardContainer = categoryContent.querySelector('.project-display__card');
+                if (!menu || !cardContainer) return;
+        
+                menu.querySelectorAll('.project-display__menu-item').forEach(button => {
+                    button.addEventListener('click', () => activateProject(menu, cardContainer, button.dataset.templateId));
+                });
+                const initialProject = menu.querySelector('[aria-selected="true"]');
+                if (initialProject) activateProject(menu, cardContainer, initialProject.dataset.templateId);
+                
+                // Check overflow for this menu
+                handleProjectMenuOverflow(menu);
+                
+                // Add scroll listener to update gradients dynamically
+                menu.addEventListener('scroll', () => handleProjectMenuOverflow(menu));
+            };
+        
+            timelineButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.category;
+                    const activeIndex = categoryMap.indexOf(category);
+        
+                    // Update button states
+                    timelineButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+                    button.setAttribute('aria-selected', 'true');
+        
+                    // Update node states
+                    timelineNodes.forEach((node, index) => {
+                        node.classList.toggle('is-active', index === activeIndex);
+                    });
+        
+                    // Update content display
+                    displayContainer.querySelectorAll('.project-category-content').forEach(content => {
+                        content.classList.remove('is-active');
+                    });
+                    const activeContent = displayContainer.querySelector(`[data-category-content="${category}"]`);
+                    if (activeContent) {
+                        activeContent.classList.add('is-active');
+                        // Add a category-reveal pulse for the card content
+                        const card = activeContent.querySelector('.project-display__card');
+                        if (card) {
+                            card.classList.remove('category-reveal');
+                            // allow style recalc then add class
+                            requestAnimationFrame(() => card.classList.add('category-reveal'));
+                            // clean up after animation to prevent stacking
+                            setTimeout(() => card.classList.remove('category-reveal'), 500);
+                        }
+                        // Reveal menu items with stagger on category activate
+                        const menu = activeContent.querySelector('.project-display__menu');
+                        if (menu) {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            items.forEach((btn, idx) => {
+                                btn.classList.remove('is-revealed');
+                                btn.style.transitionDelay = `${Math.min(idx * 120 + 200, 800)}ms`;
+                                requestAnimationFrame(() => btn.classList.add('is-revealed'));
+                            });
+                        }
+                        // Check overflow when category changes (longer delay for layout completion)
+                        setTimeout(() => handleProjectMenuOverflow(menu), 150);
+                    }
+                });
+            });
+        
+            // --- Initial State Setup ---
+            displayContainer.querySelectorAll('.project-category-content').forEach(setupCategoryListeners);
+            // Reveal-only the initial active category on first scroll (audit) – prevent initial flash
+            const initialCategory = displayContainer.querySelector('.project-category-content.is-active');
+            if (initialCategory && !initialCategory.hasAttribute('data-reveal-on-scroll')) {
+                initialCategory.setAttribute('data-reveal-on-scroll', '');
+                // small guard delay (CSS handles transition)
+                initialCategory.setAttribute('data-reveal-delay', '200');
             }
+            
+            // --- Resize Handler for All Menus ---
+            window.addEventListener('resize', () => {
+                displayContainer.querySelectorAll('.project-display__menu').forEach(handleProjectMenuOverflow);
+            });
         });
     </script>
-
+    <script defer src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
     <script>
-        // Modal functionality
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Restore scrolling
-            }
-        }
-
-        // Close modal when clicking outside the content
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                closeModal(e.target.id);
-            }
+        document.addEventListener("DOMContentLoaded", function() {
+            const timelineItems = document.querySelectorAll(".timeline-item");
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the item is visible
+            });
+    
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
         });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const timelineItems = document.querySelectorAll(".timeline-item");
+    
+            timelineItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Toggle the 'is-open' class on the clicked item
+                    item.classList.toggle('is-open');
+    
+                    // Optional: Close other items when one is opened
+                    timelineItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('is-open');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    
+    <script>
+        // Tab functionality for the "Evolve While You Execute" section
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabsContainer = document.querySelector('#problems-v2');
+            if (!tabsContainer) return;
+    
+            const tabs = tabsContainer.querySelectorAll('.tab-btn');
+            const panels = tabsContainer.querySelectorAll('.tab-panel');
+            const iconTop = document.getElementById('active-tab-icon-top');
+            const iconBottom = document.getElementById('active-tab-icon-bottom');
+    
+            const iconPaths = {
+                people: { top: 'assets/images/Icon - Plateau color.svg', bottom: 'assets/images/Cube - People.svg' },
+                process: { top: 'assets/images/Icon - Maze color.svg', bottom: 'assets/images/Cube - Process.svg' },
+                technology: { top: 'assets/images/Icon - fulcrum color.svg', bottom: 'assets/images/Cube - Tools.svg' }
+            };
+            
+            const animateElements = (panel) => {
+                if (!panel) return;
+    
+                const cards = Array.from(panel.querySelectorAll('.ps-card'));
+                const elementsToAnimate = [iconTop, ...cards, iconBottom].filter(Boolean);
+    
+                elementsToAnimate.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('is-visible');
+                    }, index * 150);
+                });
+            };
+    
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetId = this.dataset.tab;
+                    const targetPanel = document.getElementById(targetId);
+    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    panels.forEach(p => {
+                        p.classList.add('hidden');
+                        p.querySelectorAll('.ps-card').forEach(card => card.classList.remove('is-visible'));
+                    });
+    
+                    this.classList.add('active');
+                    if (targetPanel) {
+                        if (iconTop && iconBottom) {
+                            iconTop.style.transition = 'none';
+                            iconBottom.style.transition = 'none';
+                            iconTop.classList.remove('is-visible');
+                            iconBottom.classList.remove('is-visible');
+                        }
+                        
+                        if (iconPaths[targetId]) {
+                            iconTop.src = iconPaths[targetId].top;
+                            iconBottom.src = iconPaths[targetId].bottom;
+                        }
+                        
+                        void iconTop.offsetHeight;
+                        void iconBottom.offsetHeight;
+                        
+                        if (iconTop && iconBottom) {
+                            iconTop.style.transition = '';
+                            iconBottom.style.transition = '';
+                        }
+    
+                        targetPanel.classList.remove('hidden');
+                        animateElements(targetPanel);
+                    }
+                });
+            });
+    
+            // Defer initial animation to reveal event
+            const runInitial = () => {
+            const initialPanel = tabsContainer.querySelector('.tab-panel:not(.hidden)');
+            animateElements(initialPanel);
+            };
+            tabsContainer.addEventListener('section:reveal', runInitial, { once: true });
+        });
+    </script>
+    <script>
+        // --- COMPLETE STARTER PROJECT SELECTOR SCRIPT (FINAL W/ SCROLL BUTTON) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectSelectorSection = document.querySelector('#starter-projects');
+            if (!projectSelectorSection) return;
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const activeModal = document.querySelector('.modal.active');
-                if (activeModal) {
-                    closeModal(activeModal.id);
+            // --- Main timeline button logic ---
+            const timelineButtons = projectSelectorSection.querySelectorAll('.timeline-selector__button');
+            const timelineNodes = projectSelectorSection.querySelectorAll('.timeline-selector__node');
+            const displayContainer = projectSelectorSection.querySelector('#project-display-container');
+            const categoryMap = ['audit', 'optimize', 'automate', 'integrate', 'scale'];
+
+            timelineButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.category;
+                    const activeIndex = categoryMap.indexOf(category);
+                    timelineButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+                    button.setAttribute('aria-selected', 'true');
+                    timelineNodes.forEach((node, index) => node.classList.toggle('is-active', index === activeIndex));
+                    displayContainer.querySelectorAll('.project-category-content').forEach(content => content.classList.toggle('is-active', content.dataset.categoryContent === category));
+                    
+                    const activeContent = displayContainer.querySelector(`[data-category-content="${category}"]`);
+                    if (activeContent) {
+                        const menu = activeContent.querySelector('.project-display__menu');
+                        setTimeout(() => handleProjectMenuOverflow(menu), 10);
+                    }
+                });
+            });
+
+            const activateProject = (menu, cardContainer, templateId) => {
+                const template = document.getElementById(templateId);
+                if (!template || !cardContainer) return;
+                cardContainer.classList.add('is-updating');
+                setTimeout(() => {
+                    cardContainer.innerHTML = template.innerHTML;
+                    lucide.createIcons();
+                    cardContainer.classList.remove('is-updating');
+                }, 150);
+                menu.querySelectorAll('.project-display__menu-item').forEach(btn => {
+                    btn.setAttribute('aria-selected', btn.dataset.templateId === templateId);
+                });
+            };
+
+            const handleProjectMenuOverflow = (menu) => {
+                if (!menu) return;
+                const scrollButton = menu.parentElement.querySelector('.scroll-indicator-btn');
+                if (!scrollButton) return;
+                const hasOverflow = menu.scrollWidth > menu.clientWidth + 2;
+                
+                if (hasOverflow) {
+                    const atEnd = menu.scrollLeft >= (menu.scrollWidth - menu.clientWidth - 2);
+                    scrollButton.classList.toggle('hidden', atEnd);
+                } else {
+                    scrollButton.classList.add('hidden');
                 }
+            };
+
+            displayContainer.querySelectorAll('.project-category-content').forEach(categoryContent => {
+                const menu = categoryContent.querySelector('.project-display__menu');
+                const cardContainer = categoryContent.querySelector('.project-display__card');
+                if (!menu || !cardContainer) return;
+                
+                const scrollButton = document.createElement('button');
+                scrollButton.className = 'scroll-indicator-btn hidden';
+                scrollButton.setAttribute('aria-label', 'Scroll menu right');
+                scrollButton.innerHTML = '›';
+                menu.parentElement.appendChild(scrollButton);
+
+                scrollButton.addEventListener('click', () => {
+                    const scrollEnd = menu.scrollWidth - menu.clientWidth;
+                    menu.scrollTo({ left: scrollEnd, behavior: 'smooth' });
+                });
+
+                menu.addEventListener('scroll', () => handleProjectMenuOverflow(menu), { passive: true });
+
+                menu.querySelectorAll('.project-display__menu-item').forEach(button => {
+                    button.addEventListener('click', () => {
+                        activateProject(menu, cardContainer, button.dataset.templateId);
+                        button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    });
+                });
+
+                const initialProject = menu.querySelector('[aria-selected="true"]');
+                if (initialProject) activateProject(menu, cardContainer, initialProject.dataset.templateId);
+
+                setTimeout(() => handleProjectMenuOverflow(menu), 50);
+            });
+
+            window.addEventListener('resize', () => {
+                displayContainer.querySelectorAll('.project-display__menu').forEach(handleProjectMenuOverflow);
+            });
+        });
+    </script>
+    <script>
+  // Process Central Accordion Behavior (accessible, with labels + anchored rail)
+  document.addEventListener('DOMContentLoaded', function () {
+    const processSection = document.querySelector('.process-central');
+    if (!processSection) return;
+
+    const steps = processSection.querySelectorAll('.process-central__step');
+
+    const updateRailAnchors = () => {
+      const nodes = processSection.querySelectorAll('.process-central__node');
+      if (!nodes.length) return;
+      const containerRect = processSection.getBoundingClientRect();
+      const first = nodes[0].getBoundingClientRect();
+      const last = nodes[nodes.length - 1].getBoundingClientRect();
+      const firstCenter = first.top - containerRect.top + first.height / 2;
+      const lastCenterFromTop = last.top - containerRect.top + last.height / 2;
+      const containerHeight = containerRect.height;
+      const bottomOffset = containerHeight - lastCenterFromTop;
+      const fudgeTop = 2;
+      const fudgeBottom = 10;
+      processSection.style.setProperty('--rail-top-offset', `${Math.max(0, Math.round(firstCenter + fudgeTop))}px`);
+      processSection.style.setProperty('--rail-bottom-offset', `${Math.max(0, Math.round(bottomOffset + fudgeBottom))}px`);
+    };
+
+    // Recompute on size changes of the container (during animations)
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(() => updateRailAnchors());
+      ro.observe(processSection);
+    }
+
+    steps.forEach((step, idx) => {
+      step.setAttribute('role', 'button');
+      step.setAttribute('tabindex', '0');
+      step.setAttribute('aria-expanded', 'false');
+
+      const details = step.querySelector('.process-central__details');
+      if (details) {
+        const id = details.id || `process-details-${idx+1}`;
+        details.id = id;
+        step.setAttribute('aria-controls', id);
+        // After transition completes, ensure anchors are correct
+        details.addEventListener('transitionend', (e) => {
+          if (e.propertyName === 'grid-template-rows') {
+            updateRailAnchors();
+          }
+        });
+      }
+
+      const setLabel = () => {
+        const labelEl = step.querySelector('.process-central__indicator-label');
+        if (!labelEl) return;
+        labelEl.textContent = step.classList.contains('is-open') ? 'Hide' : 'Details';
+      };
+      
+
+      const closeOthers = () => {
+        steps.forEach(s => {
+          if (s !== step) {
+            s.classList.remove('is-open');
+            s.setAttribute('aria-expanded', 'false');
+            const le = s.querySelector('.process-central__indicator-label');
+            if (le) le.textContent = 'Details';
+          }
+        });
+      };
+
+      const toggle = () => {
+        const willOpen = !step.classList.contains('is-open');
+        closeOthers();
+        step.classList.toggle('is-open', willOpen);
+        step.setAttribute('aria-expanded', String(willOpen));
+        setLabel();
+        // After layout change, update rail anchors (multiple frames to catch anim)
+        requestAnimationFrame(updateRailAnchors);
+        setTimeout(updateRailAnchors, 180);
+        setTimeout(updateRailAnchors, 350);
+      };
+
+      step.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
+        toggle();
+      });
+      step.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+
+      setLabel();
+    });
+
+    // Initial anchor compute and on resize
+    updateRailAnchors();
+    window.addEventListener('resize', updateRailAnchors);
+  });
+</script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        const hero = document.querySelector('.hero');
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (hero && !reduced) {
+          // Defer to next frame to avoid layout thrash
+          requestAnimationFrame(() => hero.classList.add('hero--animate'));
+        } else if (hero) {
+          hero.classList.add('hero--animate'); // instantly visible due to CSS reduce rules
+        }
+      });
+    </script>
+    <script>
+      // Reveal-on-scroll bus: toggles is-revealed and dispatches section:reveal
+      document.addEventListener('DOMContentLoaded', function(){
+        const targets = Array.from(document.querySelectorAll('[data-reveal-on-scroll]'));
+        if (!targets.length) return;
+        const revealNow = (el) => {
+          el.classList.add('is-revealed');
+          // If configured, reveal children with stagger
+          const childSelector = el.getAttribute('data-reveal-children');
+          if (childSelector) {
+            let children = Array.from(el.querySelectorAll(childSelector));
+            const stagger = parseInt(el.getAttribute('data-stagger-children') || '80', 10);
+            const randomize = (el.getAttribute('data-reveal-random') || 'false') === 'true';
+            if (randomize) {
+              // Fisher-Yates shuffle
+              for (let i = children.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [children[i], children[j]] = [children[j], children[i]];
+              }
             }
+            children.forEach((child, index) => {
+              const run = () => child.classList.add('is-visible');
+              setTimeout(run, index * stagger);
+            });
+          }
+          el.dispatchEvent(new CustomEvent('section:reveal', { bubbles: true }));
+        };
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) {
+          targets.forEach(el => {
+            const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+            if (delay > 0) {
+              setTimeout(() => revealNow(el), delay);
+            } else {
+              revealNow(el);
+            }
+          });
+          return;
+        }
+        const getOpts = (el) => ({
+          threshold: parseFloat(el.getAttribute('data-reveal-threshold') || '0.15'),
+          rootMargin: el.getAttribute('data-reveal-root-margin') || '0px 0px -10% 0px'
+        });
+        const observers = new Map();
+        targets.forEach(el => {
+          const opts = getOpts(el);
+          const key = JSON.stringify(opts);
+          if (!observers.has(key)) {
+            observers.set(key, new IntersectionObserver((entries, obs) => {
+              entries.forEach(entry => {
+                const node = entry.target;
+                if (entry.isIntersecting) {
+                  const delay = parseInt(node.getAttribute('data-reveal-delay') || '0', 10);
+                  const once = node.getAttribute('data-reveal-once');
+                  const run = () => revealNow(node);
+                  if (delay > 0) setTimeout(run, delay); else run();
+                  if (once !== 'false') obs.unobserve(node);
+                }
+              });
+            }, opts));
+          }
+          observers.get(key).observe(el);
+            });
         });
     </script>
 </body>
