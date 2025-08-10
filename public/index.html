@@ -1344,31 +1344,28 @@
                     button.addEventListener('click', () => activateProject(menu, cardContainer, button.dataset.templateId));
                 });
 
-                // Touch swipe on card to change selected project
+                // Swipe on card to change selected project (pointer events for Chrome Android reliability)
                 if (!cardContainer.dataset.swipeBound) {
                     cardContainer.dataset.swipeBound = 'true';
-                    let touchStartX = 0;
-                    let touchStartY = 0;
+                    let startX = 0;
+                    let startY = 0;
                     let tracking = false;
-                    const horizThreshold = 44; // px
-                    const vertBlockThreshold = 20; // allow small vertical jiggle
+                    const horizThreshold = 30; // px
+                    const vertBlockThreshold = 40; // px
 
-                    cardContainer.addEventListener('touchstart', (e) => {
-                        const t = e.changedTouches[0];
-                        touchStartX = t.clientX;
-                        touchStartY = t.clientY;
+                    const onPointerDown = (e) => {
+                        if (e.pointerType && e.pointerType !== 'touch') return;
+                        startX = e.clientX;
+                        startY = e.clientY;
                         tracking = true;
-                    }, { passive: true });
+                    };
 
-                    cardContainer.addEventListener('touchmove', (e) => {
+                    const onPointerUp = (e) => {
                         if (!tracking) return;
-                        const t = e.changedTouches[0];
-                        const dx = t.clientX - touchStartX;
-                        const dy = Math.abs(t.clientY - touchStartY);
-                        // If mostly horizontal movement and exceeds threshold, act and stop tracking
+                        tracking = false;
+                        const dx = e.clientX - startX;
+                        const dy = Math.abs(e.clientY - startY);
                         if (Math.abs(dx) > horizThreshold && dy < vertBlockThreshold) {
-                            e.preventDefault();
-                            tracking = false;
                             const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
                             if (!items.length) return;
                             const currentIdx = items.findIndex(btn => btn.getAttribute('aria-selected') === 'true');
@@ -1380,10 +1377,13 @@
                                 target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                             }
                         }
-                    }, { passive: false });
+                    };
 
-                    cardContainer.addEventListener('touchend', () => { tracking = false; }, { passive: true });
-                    cardContainer.addEventListener('touchcancel', () => { tracking = false; }, { passive: true });
+                    const onPointerCancel = () => { tracking = false; };
+
+                    cardContainer.addEventListener('pointerdown', onPointerDown, { passive: true });
+                    cardContainer.addEventListener('pointerup', onPointerUp, { passive: true });
+                    cardContainer.addEventListener('pointercancel', onPointerCancel, { passive: true });
                 }
 
                 const initialProject = menu.querySelector('[aria-selected="true"]');
@@ -1673,30 +1673,28 @@
                     });
                 });
 
-                // Touch swipe on card to change selected project
+                // Swipe on card to change selected project (pointer events for Chrome Android reliability)
                 if (!cardContainer.dataset.swipeBound) {
                     cardContainer.dataset.swipeBound = 'true';
-                    let touchStartX = 0;
-                    let touchStartY = 0;
+                    let startX = 0;
+                    let startY = 0;
                     let tracking = false;
-                    const horizThreshold = 44; // px
-                    const vertBlockThreshold = 20; // small vertical forgiveness
+                    const horizThreshold = 30; // px
+                    const vertBlockThreshold = 40; // px
 
-                    cardContainer.addEventListener('touchstart', (e) => {
-                        const t = e.changedTouches[0];
-                        touchStartX = t.clientX;
-                        touchStartY = t.clientY;
+                    const onPointerDown = (e) => {
+                        if (e.pointerType && e.pointerType !== 'touch') return;
+                        startX = e.clientX;
+                        startY = e.clientY;
                         tracking = true;
-                    }, { passive: true });
+                    };
 
-                    cardContainer.addEventListener('touchmove', (e) => {
+                    const onPointerUp = (e) => {
                         if (!tracking) return;
-                        const t = e.changedTouches[0];
-                        const dx = t.clientX - touchStartX;
-                        const dy = Math.abs(t.clientY - touchStartY);
+                        tracking = false;
+                        const dx = e.clientX - startX;
+                        const dy = Math.abs(e.clientY - startY);
                         if (Math.abs(dx) > horizThreshold && dy < vertBlockThreshold) {
-                            e.preventDefault();
-                            tracking = false;
                             const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
                             if (!items.length) return;
                             const currentIdx = items.findIndex(btn => btn.getAttribute('aria-selected') === 'true');
@@ -1708,10 +1706,13 @@
                                 target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                             }
                         }
-                    }, { passive: false });
+                    };
 
-                    cardContainer.addEventListener('touchend', () => { tracking = false; }, { passive: true });
-                    cardContainer.addEventListener('touchcancel', () => { tracking = false; }, { passive: true });
+                    const onPointerCancel = () => { tracking = false; };
+
+                    cardContainer.addEventListener('pointerdown', onPointerDown, { passive: true });
+                    cardContainer.addEventListener('pointerup', onPointerUp, { passive: true });
+                    cardContainer.addEventListener('pointercancel', onPointerCancel, { passive: true });
                 }
 
                 const initialProject = menu.querySelector('[aria-selected="true"]');
