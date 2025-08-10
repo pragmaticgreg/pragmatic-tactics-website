@@ -1338,10 +1338,54 @@
                 const menu = categoryContent.querySelector('.project-display__menu');
                 const cardContainer = categoryContent.querySelector('.project-display__card');
                 if (!menu || !cardContainer) return;
-        
+
+                // Click -> load template and set selection
                 menu.querySelectorAll('.project-display__menu-item').forEach(button => {
                     button.addEventListener('click', () => activateProject(menu, cardContainer, button.dataset.templateId));
                 });
+
+                // Swipe on card to change selected project (pointer events for Chrome Android reliability)
+                if (!cardContainer.dataset.swipeBound) {
+                    cardContainer.dataset.swipeBound = 'true';
+                    let startX = 0;
+                    let startY = 0;
+                    let tracking = false;
+                    const horizThreshold = 30; // px
+                    const vertBlockThreshold = 40; // px
+
+                    const onPointerDown = (e) => {
+                        if (e.pointerType && e.pointerType !== 'touch') return;
+                        startX = e.clientX;
+                        startY = e.clientY;
+                        tracking = true;
+                    };
+
+                    const onPointerUp = (e) => {
+                        if (!tracking) return;
+                        tracking = false;
+                        const dx = e.clientX - startX;
+                        const dy = Math.abs(e.clientY - startY);
+                        if (Math.abs(dx) > horizThreshold && dy < vertBlockThreshold) {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            if (!items.length) return;
+                            const currentIdx = items.findIndex(btn => btn.getAttribute('aria-selected') === 'true');
+                            if (currentIdx === -1) return;
+                            const nextIdx = dx < 0 ? Math.min(items.length - 1, currentIdx + 1) : Math.max(0, currentIdx - 1);
+                            const target = items[nextIdx];
+                            if (target && nextIdx !== currentIdx) {
+                                activateProject(menu, cardContainer, target.dataset.templateId);
+                                target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            }
+                        }
+                    };
+
+                    const onPointerCancel = () => { tracking = false; };
+
+                    cardContainer.addEventListener('pointerdown', onPointerDown, { passive: true });
+                    cardContainer.addEventListener('pointerup', onPointerUp, { passive: true });
+                    cardContainer.addEventListener('pointercancel', onPointerCancel, { passive: true });
+                }
+
                 const initialProject = menu.querySelector('[aria-selected="true"]');
                 if (initialProject) activateProject(menu, cardContainer, initialProject.dataset.templateId);
                 
@@ -1607,12 +1651,69 @@
 
                 menu.addEventListener('scroll', () => handleProjectMenuOverflow(menu), { passive: true });
 
+                // Click and keyboard interaction
                 menu.querySelectorAll('.project-display__menu-item').forEach(button => {
                     button.addEventListener('click', () => {
                         activateProject(menu, cardContainer, button.dataset.templateId);
                         button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                     });
+                    button.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            const idx = items.indexOf(button);
+                            const nextIdx = e.key === 'ArrowRight' ? Math.min(items.length - 1, idx + 1) : Math.max(0, idx - 1);
+                            const target = items[nextIdx];
+                            if (target) {
+                                e.preventDefault();
+                                activateProject(menu, cardContainer, target.dataset.templateId);
+                                target.focus();
+                                target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            }
+                        }
+                    });
                 });
+
+                // Swipe on card to change selected project (pointer events for Chrome Android reliability)
+                if (!cardContainer.dataset.swipeBound) {
+                    cardContainer.dataset.swipeBound = 'true';
+                    let startX = 0;
+                    let startY = 0;
+                    let tracking = false;
+                    const horizThreshold = 30; // px
+                    const vertBlockThreshold = 40; // px
+
+                    const onPointerDown = (e) => {
+                        if (e.pointerType && e.pointerType !== 'touch') return;
+                        startX = e.clientX;
+                        startY = e.clientY;
+                        tracking = true;
+                    };
+
+                    const onPointerUp = (e) => {
+                        if (!tracking) return;
+                        tracking = false;
+                        const dx = e.clientX - startX;
+                        const dy = Math.abs(e.clientY - startY);
+                        if (Math.abs(dx) > horizThreshold && dy < vertBlockThreshold) {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            if (!items.length) return;
+                            const currentIdx = items.findIndex(btn => btn.getAttribute('aria-selected') === 'true');
+                            if (currentIdx === -1) return;
+                            const nextIdx = dx < 0 ? Math.min(items.length - 1, currentIdx + 1) : Math.max(0, currentIdx - 1);
+                            const target = items[nextIdx];
+                            if (target && nextIdx !== currentIdx) {
+                                activateProject(menu, cardContainer, target.dataset.templateId);
+                                target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            }
+                        }
+                    };
+
+                    const onPointerCancel = () => { tracking = false; };
+
+                    cardContainer.addEventListener('pointerdown', onPointerDown, { passive: true });
+                    cardContainer.addEventListener('pointerup', onPointerUp, { passive: true });
+                    cardContainer.addEventListener('pointercancel', onPointerCancel, { passive: true });
+                }
 
                 const initialProject = menu.querySelector('[aria-selected="true"]');
                 if (initialProject) activateProject(menu, cardContainer, initialProject.dataset.templateId);
