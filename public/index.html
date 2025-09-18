@@ -298,32 +298,29 @@
                 Every project is different, but they all start with a single step. Select a category to see typical starter projects that deliver tangible value, fast.
             </p>
     
-            <div class="timeline-selector" role="tablist" aria-label="Project Categories" data-reveal-on-scroll data-reveal-children=".timeline-selector__button" data-stagger-children="120">
-                <div class="timeline-selector__line"></div>
-                <div class="timeline-selector__step" style="left: 5%;">
-                    <button class="timeline-selector__button" data-category="audit" role="tab" aria-selected="true">Assess</button>
-                    <div class="timeline-selector__node is-active"></div>
-                    <div class="timeline-selector__spacer"></div>
-                </div>
-                <div class="timeline-selector__step" style="left: 27.5%;">
-                    <div class="timeline-selector__spacer"></div>
-                    <div class="timeline-selector__node"></div>
-                    <button class="timeline-selector__button" data-category="optimize" role="tab" aria-selected="false">Enable</button>
-                </div>
-                <div class="timeline-selector__step" style="left: 50%;">
-                    <button class="timeline-selector__button" data-category="automate" role="tab" aria-selected="false">Automate</button>
-                    <div class="timeline-selector__node"></div>
-                    <div class="timeline-selector__spacer"></div>
-                </div>
-                <div class="timeline-selector__step" style="left: 72.5%;">
-                    <div class="timeline-selector__spacer"></div>
-                    <div class="timeline-selector__node"></div>
-                    <button class="timeline-selector__button" data-category="integrate" role="tab" aria-selected="false">Integrate</button>
-                </div>
-                <div class="timeline-selector__step" style="left: 95%;">
-                    <button class="timeline-selector__button" data-category="scale" role="tab" aria-selected="false">Elevate</button>
-                    <div class="timeline-selector__node"></div>
-                    <div class="timeline-selector__spacer"></div>
+            <div class="timeline-wrapper">
+                <div class="timeline-selector" role="tablist" aria-label="Project Categories" data-reveal-on-scroll data-reveal-children=".timeline-selector__button" data-stagger-children="120">
+                    <div class="timeline-selector__line"></div>
+                    <div class="timeline-selector__step" style="left: 5%;">
+                        <button class="timeline-selector__button" data-category="audit" role="tab" aria-selected="true">1. Assess</button>
+                        <div class="timeline-selector__node is-active"></div>
+                        <div class="timeline-selector__spacer"></div>
+                    </div>
+                    <div class="timeline-selector__step" style="left: 33.33%;">
+                        <div class="timeline-selector__spacer"></div>
+                        <div class="timeline-selector__node"></div>
+                        <button class="timeline-selector__button" data-category="optimize" role="tab" aria-selected="false">2. Enable</button>
+                    </div>
+                    <div class="timeline-selector__step" style="left: 66.67%;">
+                        <button class="timeline-selector__button" data-category="automate" role="tab" aria-selected="false">3. Automate</button>
+                        <div class="timeline-selector__node"></div>
+                        <div class="timeline-selector__spacer"></div>
+                    </div>
+                    <div class="timeline-selector__step" style="left: 95%;">
+                        <button class="timeline-selector__button" data-category="scale" role="tab" aria-selected="false">4. Elevate</button>
+                        <div class="timeline-selector__node"></div>
+                        <div class="timeline-selector__spacer"></div>
+                    </div>
                 </div>
             </div>
     
@@ -333,8 +330,9 @@
                         <div class="project-display__menu" role="tablist">
                             <button class="project-display__menu-item" role="tab" data-template-id="template-audit-process" aria-selected="true">Audit Your Processes<i data-lucide="search"></i></button>
                             <button class="project-display__menu-item" role="tab" data-template-id="template-audit-digital" aria-selected="false">Digital Snapshot<i data-lucide="gauge"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-ai" aria-selected="false">AI Readiness Audit<i data-lucide="brain-circuit"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-sales" aria-selected="false">Sales Flow Check<i data-lucide="git-merge"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-ai" aria-selected="false">AI Business Workshop<i data-lucide="bot"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-sales" aria-selected="false">Sales Flow Check<i data-lucide="repeat"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-docs" aria-selected="false">Process Documentation Sprint<i data-lucide="clipboard-check"></i></button>
                         </div>
                         <div class="project-display__card" role="tabpanel">
                             <div class="starter-card">
@@ -342,7 +340,7 @@
                                     <div class="starter-card__badge-icon"><i data-lucide="search"></i></div>
                                     <span class="starter-card__badge-text">Discovery</span>
                                 </div>
-                                <h3 class="starter-card__title">Audit Your Existing Processes</h3>
+                                <h3 class="starter-card__title">Audit Your Processes</h3>
                                 <p class="starter-card__desc">A rapid review of your core workflows to find bottlenecks and deliver a priority fix-list.</p>
                                 <ul class="starter-card__checklist">
                                     <li>98% accuracy</li>
@@ -357,10 +355,10 @@
                 <div class="project-category-content" data-category-content="optimize">
                     <div class="project-display">
                         <div class="project-display__menu" role="tablist">
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-software" aria-selected="true">Software Setup Right<i data-lucide="wrench"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-crm" aria-selected="false">CRM Implementation<i data-lucide="contact"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-pm" aria-selected="false">Project Management Adoption<i data-lucide="square-kanban"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-onboarding" aria-selected="false">Onboarding Systems<i data-lucide="graduation-cap"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-onboarding" aria-selected="true">Customer Journey Mapping<i data-lucide="route"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-crm" aria-selected="false">CRM Implementation<i data-lucide="notebook-pen"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-pm" aria-selected="false">Task Management Foundation<i data-lucide="check-square"></i></button>
+                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-software" aria-selected="false">Software Selection & Implementation<i data-lucide="search-check"></i></button>
                         </div>
                         <div class="project-display__card" role="tabpanel">
                              </div>
@@ -370,34 +368,21 @@
                 <div class="project-category-content" data-category-content="automate">
                      <div class="project-display">
                         <div class="project-display__menu" role="tablist">
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-tasks" aria-selected="true">Admin Automation<i data-lucide="zap"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-inventory" aria-selected="false">Inventory & Orders<i data-lucide="package"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-tools" aria-selected="false">Connect Your Tools<i data-lucide="link"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-triggers" aria-selected="false">Workflow Triggers<i data-lucide="bolt"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-time" aria-selected="true">Leadership Time Recovery<i data-lucide="clock-5"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-optimize" aria-selected="false">Process Optimization<i data-lucide="settings"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-integrate" aria-selected="false">System Integration<i data-lucide="link-2"></i></button>
                         </div>
                         <div class="project-display__card" role="tabpanel"></div>
                     </div>
                 </div>
     
-                <div class="project-category-content" data-category-content="integrate">
-                     <div class="project-display">
-                        <div class="project-display__menu" role="tablist">
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-erp" aria-selected="true">ERP/MRP Integration<i data-lucide="factory"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-ecom" aria-selected="false">E‑commerce Integration<i data-lucide="shopping-bag"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-finance" aria-selected="false">Finance Systems Sync<i data-lucide="calculator"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-integ-portals" aria-selected="false">Customer/Supplier Portals<i data-lucide="users"></i></button>
-                        </div>
-                        <div class="project-display__card" role="tabpanel"></div>
-                    </div>
-                </div>
                 
                 <div class="project-category-content" data-category-content="scale">
                      <div class="project-display">
                         <div class="project-display__menu" role="tablist">
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-aiops" aria-selected="true">AI‑Driven Operations<i data-lucide="bot"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-bi" aria-selected="false">BI Dashboards<i data-lucide="bar-chart-3"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-scale-sops" aria-selected="false">Scalable Process Framework<i data-lucide="layers"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-exec" aria-selected="false">Strategic Execution System<i data-lucide="flag"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-roadmap" aria-selected="true">Continuous Improvement Roadmap<i data-lucide="map"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-learning" aria-selected="false">Team Enablement & Micro‑Learning<i data-lucide="book-open-check"></i></button>
+                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-goals" aria-selected="false">Goal Execution Framework<i data-lucide="target"></i></button>
                         </div>
                         <div class="project-display__card" role="tabpanel"></div>
                     </div>
@@ -412,28 +397,22 @@
             <div class="starter-card__icon" aria-hidden="true"><i data-lucide="search"></i></div>
             <h3 class="starter-card__title">Audit Your Processes</h3>
             </div>
-          <p class="starter-card__value">Cut hidden waste fast with a hands-on audit tailored to your actual workflow—not a template.</p>
-          <p class="starter-card__desc">We skip the fluff and map how work actually flows in your business. You'll get specific fixes you can implement next week, not a fancy report that sits on a shelf.</p>
-          <hr class="starter-card__divider" />
-          <ul class="starter-card__proof">
-            <li>Bottlenecks identified</li>
-            <li>Redundant steps removed</li>
-            <li>Quick wins prioritized</li>
-            <li>Action plan with owners</li>
-          </ul>
-          <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+          <p class="starter-card__value">Get a clear roadmap for systemizing your business, prioritize what to tackle first for maximum impact.</p>
+          <p class="starter-card__desc">The first step to systemizing your business. Together we identify your core processes and prioritize them for the next stage of process documentation which wil deliver more consistent outcomes.</p>
+          <a href="#" class="cta-primary starter-card__cta">Start Your System Journey</a>
           <details class="starter-card__details">
-            <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+            <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
             <div class="starter-card__details-content">
-              <h4 class="starter-card__section-title">What's Included</h4>
+              <h4 class="starter-card__section-title">Key Deliverables</h4>
               <ul class="starter-card__included">
-                <li>Process mapping sessions</li>
-                <li>Issue list with gains</li>
-                <li>Prioritized action plan</li>
+                <li>Identify critical woerkflows that make up bulk of your business</li>
+                <li>Priority action plan, what detail to capture and document first</li>
+                <li>Quick win opportunities, we prioritize high ROI areas</li>
+                <li>Foundation for ongoing Pragmatic collaboraation</li>
               </ul>
               <div class="starter-card__meta">
-                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
-                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">"Busy, not better" teams</span></div>
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1 week</span></div>
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Teams starting systemization journey or leaders looking for effective delegation</span></div>
               </div>
             </div>
           </details>
@@ -445,28 +424,22 @@
           <div class="starter-card__icon" aria-hidden="true"><i data-lucide="gauge"></i></div>
           <h3 class="starter-card__title">Digital Snapshot</h3>
             </div>
-        <p class="starter-card__value">Know exactly where you stand with your tools—straight talk, no vendor nonsense.</p>
-        <p class="starter-card__desc">We test what you actually use (not what you bought) and tell you what's working, what's broken, and what to fix first. Clear next steps, no jargon.</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof">
-          <li>Scorecard now</li>
-          <li>Tool gaps flagged</li>
-          <li>Usage issues surfaced</li>
-          <li>90‑day priorities</li>
-        </ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <p class="starter-card__value">Discover gaps, redundancy, and missed opportunities within your tech stack.</p>
+        <p class="starter-card__desc">Your tools should make work easier, not create more headaches. We assess what's actually working versus what's just burning budget and time. We'll identify what might be missing and list what tech matches well with your current tools.</p>
+        <a href="#" class="cta-primary starter-card__cta">Run a Quick Tech Audit</a>
         <details class="starter-card__details">
-          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
-            <h4 class="starter-card__section-title">What's Included</h4>
+            <h4 class="starter-card__section-title">Key Deliverables</h4>
             <ul class="starter-card__included">
-              <li>Stack inventory & usage</li>
-              <li>Maturity score & gaps</li>
-              <li>90‑day improvement plan</li>
+              <li>Tool assessment with fix-now vs. replace-later priorities</li>
+              <li>Cost-benefit analysis of current setup</li>
+              <li>Quick improvements with existing tools</li>
+              <li>Roadmap from current state to optimized tech stack</li>
             </ul>
             <div class="starter-card__meta">
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1 week</span></div>
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Unsure what to fix</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">3–5 business days</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Businesses frustrated with current tools or planning tech changes</span></div>
             </div>
           </div>
         </details>
@@ -475,31 +448,25 @@
     <template id="template-audit-ai">
       <div class="starter-card" role="article">
         <div class="starter-card__header">
-          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="brain-circuit"></i></div>
-            <h3 class="starter-card__title">AI Readiness Audit</h3>
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="bot"></i></div>
+            <h3 class="starter-card__title">AI Business Workshop</h3>
         </div>
-        <p class="starter-card__value">Find automation that actually makes sense for your business—no hype, just what works.</p>
-        <p class="starter-card__desc">We look at your real data and real processes to find automation wins that won't break the bank or overwhelm your team. You get a pilot plan you can start small and build on.</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof">
-          <li>Feasible use cases</li>
-          <li>Data gaps noted</li>
-          <li>Pilot roadmap</li>
-          <li>Risk controls</li>
-        </ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <p class="starter-card__value">Cut through AI hype and confusion—discover realistic opportunities for your business and why good processes come before good AI.</p>
+        <p class="starter-card__desc">You hear about AI everywhere but don't know how it actually applies to your operations or if you're missing opportunities. We'll show you where AI genuinely helps versus where basic automation or process fixes work better, plus give your team practical ways to use AI in their daily work.</p>
+        <a href="#" class="cta-primary starter-card__cta">Get AI Clarity</a>
         <details class="starter-card__details">
-          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
-            <h4 class="starter-card__section-title">What's Included</h4>
+            <h4 class="starter-card__section-title">Key Deliverables</h4>
             <ul class="starter-card__included">
-              <li>Use case evaluation</li>
-              <li>Data readiness scan</li>
-              <li>Pilot & guardrails plan</li>
+              <li>Realistic AI opportunity assessment</li>
+              <li>Individual productivity guidance</li>
+              <li>Process integration evaluation</li>
+              <li>Action roadmap</li>
             </ul>
             <div class="starter-card__meta">
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Exploring AI safely</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1–2 focused sessions</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders using basic AI who want bigger opportunities</span></div>
             </div>
           </div>
         </details>
@@ -508,34 +475,56 @@
     <template id="template-audit-sales">
       <div class="starter-card" role="article">
         <div class="starter-card__header">
-          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="git-merge"></i></div>
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="repeat"></i></div>
           <h3 class="starter-card__title">Sales Flow Check</h3>
         </div>
-        <p class="starter-card__value">Stop deals from falling through the cracks—clear process, clear owners.</p>
-        <p class="starter-card__desc">We untangle your sales process and make it simple enough that everyone knows what happens next. No more "I thought you were handling that."</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof">
-          <li>Stage definitions</li>
-          <li>Handoff clarity</li>
-          <li>Metrics to watch</li>
-          <li>Coaching prompts</li>
-        </ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <p class="starter-card__value">Stop losing deals in email chaos—discover your actual sales process (or lack of one) and get a clear roadmap before investing in any tools.</p>
+        <p class="starter-card__desc">Most teams think they have a sales process, but it's really just everyone responding to emails with no structure, qualification, or follow-up system. We map how deals actually flow through your business and create a draft process that turns your current approach into something you can manage and improve.</p>
+        <a href="#" class="cta-primary starter-card__cta">Map Your Sales Flow</a>
         <details class="starter-card__details">
-          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
-            <h4 class="starter-card__section-title">What's Included</h4>
+            <h4 class="starter-card__section-title">Key Deliverables</h4>
             <ul class="starter-card__included">
-              <li>Pipeline review</li>
-              <li>Stage & handoffs</li>
-              <li>Metrics & coaching</li>
+              <li>Sales process discovery</li>
+              <li>Draft sales process design</li>
+              <li>Process workshop and refinement</li>
+              <li>CRM readiness assessment</li>
             </ul>
             <div class="starter-card__meta">
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Murky stages</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1 week</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Email‑driven teams considering CRM or missing follow‑ups</span></div>
             </div>
           </div>
         </details>
+        </div>
+    </template>
+
+    <template id="template-audit-docs">
+        <div class="starter-card" role="article">
+          <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="clipboard-check"></i></div>
+          <h3 class="starter-card__title">Process Documentation Sprint</h3>
+            </div>
+        <p class="starter-card__value">Stop redoing work and delegate with confidence—capture your best practices so everyone delivers consistent results whether it's you, your team, or someone new.</p>
+        <p class="starter-card__desc">Your team does great work, but outcomes vary depending on who's handling the task or how much time has passed since the last time you did it. We document your proven processes so work gets done the same way every time, making delegation smooth and ensuring quality stays consistent across your entire team.</p>
+        <a href="#" class="cta-primary starter-card__cta">Document for Consistency</a>
+          <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
+            <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">Key Deliverables</h4>
+              <ul class="starter-card__included">
+              <li>Current Process Capture</li>
+              <li>Reference-Ready Checklists</li>
+              <li>Process Repository Setup</li>
+              <li>Delegation Readiness Assessment</li>
+              </ul>
+              <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1–2 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders seeking successful delegation, businesses adapting to team size changes, or operations struggling with inconsistent outcomes</span></div>
+              </div>
+            </div>
+          </details>
         </div>
     </template>
     <template id="template-opt-workflow">
@@ -573,104 +562,71 @@
         </div>
     </template>
     <template id="template-opt-onboarding">
-        <div class="starter-card" role="article">
-          <div class="starter-card__header">
-            <div class="starter-card__icon" aria-hidden="true">
-              <i data-lucide="user-plus"></i>
-            </div>
-            <h3 class="starter-card__title">Map Client Onboarding</h3>
-          </div>
-          <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
-            <p class="starter-card__desc">Standardize how you welcome new clients to ensure smooth handoffs and a professional first impression, every time.</p>
-          <hr class="starter-card__divider" />
-          <ul class="starter-card__proof">
-            <li>Shorter time-to-value for new clients</li>
-            <li>Clear internal ownership and handoffs</li>
-            <li>Consistent client experience</li>
-          </ul>
-          <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-          <details class="starter-card__details">
-            <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
-            <div class="starter-card__details-content">
-              <h4 class="starter-card__section-title">What's Included</h4>
-              <ul class="starter-card__included">
-                <li>Onboarding flow mapping</li>
-                <li>Template and checklist creation</li>
-                <li>Staff training and readiness</li>
-              </ul>
-              <div class="starter-card__meta">
-                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
-                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
-              </div>
-            </div>
-          </details>
-        </div>
-    </template>
-    <template id="template-auto-tasks">
          <div class="starter-card" role="article">
            <div class="starter-card__header">
-             <div class="starter-card__icon" aria-hidden="true">
-               <i data-lucide="zap"></i>
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="route"></i></div>
+          <h3 class="starter-card__title">Customer Journey Mapping</h3>
             </div>
-            <h3 class="starter-card__title">Automate Repetitive Tasks</h3>
-           </div>
-           <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
-            <p class="starter-card__desc">We build and deploy targeted automations for tasks like data entry or reporting that save time and reduce costly human errors.</p>
+        <p class="starter-card__value">Streamline your customer intake process—collect the right information upfront so you spend time on qualified prospects instead of chasing missing details.</p>
+        <p class="starter-card__desc">You're drowning in email chains trying to collect basic customer information and can't invest in a full CRM system right now. This lightweight approach gives you immediate relief by creating intake processes that capture what you need upfront, and it sets the perfect foundation when you're ready to adopt a CRM later.</p>
            <hr class="starter-card__divider" />
            <ul class="starter-card__proof">
-             <li>Frees up staff</li>
-             <li>Improves consistency</li>
-             <li>Reduces error-prone manual steps</li>
+          <li>Automatically capture the right information at the right time</li>
+          <li>Smoother handoffs across teams</li>
+          <li>Handle increased lead volume without overwhelm</li>
            </ul>
-           <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <a href="#" class="cta-primary starter-card__cta">Map Your Customer Flow</a>
            <details class="starter-card__details">
-             <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
              <div class="starter-card__details-content">
                <h4 class="starter-card__section-title">What's Included</h4>
                <ul class="starter-card__included">
-                 <li>Process identification & quick wins</li>
-                 <li>Automation build & tests</li>
-                 <li>Documentation & handoff</li>
+              <li>Complete Customer Journey Map</li>
+              <li>Lead Qualification Framework</li>
+              <li>Intake Process Design</li>
+              <li>Team Workflow Setup</li>
+              <li>Implementation Support</li>
                </ul>
                <div class="starter-card__meta">
-                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
-                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Teams drowning in unqualified leads or preparing for increased marketing efforts</span></div>
                </div>
              </div>
            </details>
         </div>
     </template>
-    <template id="template-integ-tools">
+    <template id="template-auto-optimize">
          <div class="starter-card" role="article">
            <div class="starter-card__header">
-             <div class="starter-card__icon" aria-hidden="true">
-               <i data-lucide="link"></i>
+             <div class="starter-card__icon" aria-hidden="true"><i data-lucide="settings"></i></div>
+             <h3 class="starter-card__title">Process Optimization</h3>
             </div>
-            <h3 class="starter-card__title">Integrate Your Core Tools</h3>
-           </div>
-           <p class="starter-card__value">Cut setup time by 50% with hands-on guidance tailored to your team — not a generic script.</p>
-            <p class="starter-card__desc">Connect your key applications (e.g., CRM, accounting, inventory) to create a single source of truth for your business data.</p>
+           <p class="starter-card__value">Free up valuable human time for truly human work—eliminate tedious tasks and add consistency to variable results through smart process improvements.</p>
+           <p class="starter-card__desc">You've documented how work gets done, now let's make it work better by eliminating the repetitive stuff that burns out your team. We take your existing workflows and systematically improve them through process changes first, then automation, then AI where it makes sense.</p>
            <hr class="starter-card__divider" />
            <ul class="starter-card__proof">
-             <li>Single source of truth</li>
-             <li>Eliminates double-entry</li>
-             <li>Improves cross-team visibility</li>
+            <li>Teams spend more time on skilled work when routine tasks get automated properly</li>
+            <li>Consistent results happen when variable processes get standardized and streamlined</li>
+            <li>Simple solutions often solve complex problems before expensive technology is needed</li>
+            <li>Working implementations deliver immediate relief, not future promises</li>
            </ul>
-           <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+           <a href="#" class="cta-primary starter-card__cta">Optimize Your Workflows</a>
            <details class="starter-card__details">
-             <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
-             <div class="starter-card__details-content">
-               <h4 class="starter-card__section-title">What's Included</h4>
-               <ul class="starter-card__included">
-                 <li>Systems review and connection plan</li>
-                 <li>Implementation and validation</li>
-                 <li>Training and handover</li>
-               </ul>
-               <div class="starter-card__meta">
-                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
-                 <div class="starter-card__meta-item"><span class="starter-card__meta-label">Starting cost</span><span class="starter-card__meta-value">$X–$Y</span></div>
-               </div>
-             </div>
+            <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
+            <div class="starter-card__details-content">
+              <h4 class="starter-card__section-title">What's Included</h4>
+              <ul class="starter-card__included">
+                <li>Process Redesign & Streamlining</li>
+                <li>Automation & AI Integration</li>
+                <li>Live Deployment</li>
+                <li>Team Training & Adoption</li>
+                <li>Feedback & Iteration Cycle</li>
+              </ul>
+              <div class="starter-card__meta">
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1–3 weeks per workflow set</span></div>
+                <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Teams with documented processes ready to eliminate repetitive work and improve consistency</span></div>
+              </div>
+            </div>
            </details>
         </div>
     </template>
@@ -710,142 +666,147 @@
     </template>
 
     <!-- Additional Starter Project Templates -->
-    <template id="template-auto-inventory">
+    <template id="template-auto-integrate">
       <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="package"></i></div><h3 class="starter-card__title">Inventory & Orders</h3></div>
-        <p class="starter-card__value">Keep inventory accurate and orders moving—less "out of stock" drama.</p>
-        <p class="starter-card__desc">We automate the flow from order to shipment so you know what you have, what you need, and what's going out the door—for stores and manufacturers.</p>
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="link-2"></i></div>
+          <h3 class="starter-card__title">System Integration</h3>
+        </div>
+        <p class="starter-card__value">Connect your established processes and digital systems—eliminate the gaps where information gets stuck between departments and software platforms.</p>
+        <p class="starter-card__desc">You've built effective workflows and adopted useful tools, but they're still operating in silos that create bottlenecks and missed handoffs. We connect your processes and systems so outputs from one area automatically flow to where they're needed next, creating a seamless operation.</p>
         <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>Real‑time stock</li><li>Faster pick/pack</li><li>Fewer backorders</li><li>Status sync</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Order/stock mapping</li><li>Automation build</li><li>Testing & handoff</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–6 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Product businesses</span></div></div></div></details>
+        <ul class="starter-card__proof">
+          <li>Smoother project flow end‑to‑end</li>
+          <li>Less manual transfer between systems</li>
+          <li>Fewer dropped details at handoffs</li>
+          <li>Less coordination overhead for leaders</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Connect Your Operations</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>End‑to‑End Flow Mapping</li>
+              <li>Integration Build‑Out</li>
+              <li>Seamless Workflow Deployment</li>
+              <li>Team Training & Support</li>
+              <li>Feedback & Refinement Cycle</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1–2 weeks per integration set</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Businesses with established processes and multiple systems that need to work together</span></div>
+            </div>
+          </div>
+        </details>
       </div>
     </template>
 
-    <template id="template-auto-triggers">
+    <template id="template-auto-time">
       <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="bolt"></i></div><h3 class="starter-card__title">Workflow Triggers</h3></div>
-        <p class="starter-card__value">If X then Y—automate consistent next steps across tools.</p>
-        <p class="starter-card__desc">We design event‑based triggers to keep deals, invoices, and tasks moving without manual nudges.</p>
+        <div class="starter-card__header">
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="clock-5"></i></div>
+          <h3 class="starter-card__title">Leadership Time Recovery</h3>
+        </div>
+        <p class="starter-card__value">Win back your time—systemize your work and delegate effectively so you can focus on the highest‑value activities.</p>
+        <p class="starter-card__desc">Too many hats. We take a pragmatic look at your workload, identify where your time goes, and rework processes so they can be streamlined, delegated, or simplified. Start with simple fixes, then layer in automation and AI where it makes sense.</p>
         <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>Trigger rules</li><li>SLA reminders</li><li>Status updates</li><li>Audit trail</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Event mapping</li><li>Automation build</li><li>Alerts & logs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–3 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Process delays</span></div></div></div></details>
+        <ul class="starter-card__proof">
+          <li>Gain meaningful time back through simplification and delegation</li>
+          <li>Teams become more independent with clear handoffs</li>
+          <li>Owners refocus on highest‑value work</li>
+          <li>Simple first, automation/AI when valuable</li>
+        </ul>
+        <a href="#" class="cta-primary starter-card__cta">Reclaim Your Time</a>
+        <details class="starter-card__details">
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
+          <div class="starter-card__details-content">
+            <h4 class="starter-card__section-title">What's Included</h4>
+            <ul class="starter-card__included">
+              <li>Leadership Workload Review</li>
+              <li>Quick Wins Identification</li>
+              <li>Delegation‑Ready Systems</li>
+              <li>Targeted Automation & AI</li>
+              <li>Transition Support</li>
+            </ul>
+            <div class="starter-card__meta">
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">4–8 weeks (phased)</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Owner‑operators bogged down in operations who want to work at their highest level of value</span></div>
+            </div>
+          </div>
+        </details>
       </div>
     </template>
 
-    <template id="template-integ-erp">
+
+
+
+
+    <template id="template-elevate-roadmap">
       <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="factory"></i></div><h3 class="starter-card__title">ERP/MRP Integration</h3></div>
-        <p class="starter-card__value">Connect planning, production, and finance so schedules and costs stay in sync.</p>
-        <p class="starter-card__desc">We integrate ERP/MRP with CRM, inventory, and accounting, enabling end‑to‑end traceability.</p>
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="map"></i></div><h3 class="starter-card__title">Continuous Improvement Roadmap</h3></div>
+        <p class="starter-card__value">Cut through the noise—turn scattered ideas and advice into a clear roadmap of improvements your business can actually execute.</p>
+        <p class="starter-card__desc">Many leaders know their business needs to change but feel overwhelmed by too many ideas, competing priorities, or fragmented advice. We take a holistic look at customer flow, systems, and processes, then create a phased plan that shows what to do first, what can wait, and how to proceed at a pace your team can handle.</p>
         <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>BOM sync</li><li>Work orders</li><li>Cost visibility</li><li>Auto updates</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Integration plan</li><li>Build & test</li><li>Rollout & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">4–8 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Manufacturers</span></div></div></div></details>
+        <ul class="starter-card__proof"><li>Clarity despite advice overload and competing priorities</li><li>Phased improvements that fit team capacity</li><li>Focus on meaningful work that creates near‑term results</li><li>Investments aligned with a bigger transformation picture</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Embrace Kaizen</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Discovery & Feedback Sessions</li><li>Holistic Business Review</li><li>Prioritized Roadmap</li><li>Execution Pathways</li><li>Living Document</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">2–4 weeks for roadmap development</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders overwhelmed by ideas or fragmented advice who need a clear starting point</span></div></div></div></details>
       </div>
     </template>
 
-    <template id="template-integ-ecom">
+    <template id="template-elevate-learning">
       <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="shopping-bag"></i></div><h3 class="starter-card__title">E‑commerce Integration</h3></div>
-        <p class="starter-card__value">Orders, inventory, and customers synced—no more spreadsheet patchwork.</p>
-        <p class="starter-card__desc">We connect Shopify/WooCommerce with your back office for accurate stock and faster fulfillment.</p>
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="book-open-check"></i></div><h3 class="starter-card__title">Team Enablement & Micro‑Learning</h3></div>
+        <p class="starter-card__value">Develop your team's skills while delivering immediate business results—custom training that applies directly to their current role and responsibilities.</p>
+        <p class="starter-card__desc">We identify skill gaps and build flexible, role‑specific learning modules tied to real business processes—digital fluency, AI adoption, and workflow improvements that deliver direct value without pulling people out of the business for days.</p>
         <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>SKU/stock sync</li><li>Rules set</li><li>Status flow</li><li>Refunds handled</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Platform mapping</li><li>Connect & test</li><li>Handoff & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–5 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Growing stores</span></div></div></div></details>
+        <ul class="starter-card__proof"><li>Aligned with business goals and daily operations</li><li>Immediate application to real work</li><li>Confidence that training creates tangible value</li><li>Flexible delivery without disrupting operations</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Build Skills That Stick</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Skill Gap Discovery</li><li>Custom Learning Modules</li><li>Guided Activities</li><li>Progressive Skill Development</li><li>Flexible Implementation Support</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">2–4 weeks development; 4–8 weeks delivery</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders who want targeted skill development that delivers immediate and lasting value</span></div></div></div></details>
       </div>
     </template>
 
-    <template id="template-integ-finance">
+    <template id="template-elevate-goals">
       <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="calculator"></i></div><h3 class="starter-card__title">Finance Systems Sync</h3></div>
-        <p class="starter-card__value">Clean books with less effort—transactions flow where they need to.</p>
-        <p class="starter-card__desc">We integrate QuickBooks/Xero/POS with sales and ops for timely, accurate numbers.</p>
+        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="target"></i></div><h3 class="starter-card__title">Goal Execution Framework</h3></div>
+        <p class="starter-card__value">Turn ambitious goals into completed results—create a practical execution process your team will actually follow without adding bureaucracy.</p>
+        <p class="starter-card__desc">Define clear priorities, break them into executable tasks, and create simple accountability rhythms that your team will actually use—without heavy frameworks that collapse under their own complexity.</p>
         <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>AR/AP sync</li><li>Item mapping</li><li>Reconciliation</li><li>Faster month‑end</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Chart mapping</li><li>Connector build</li><li>Reconcile & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–5 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Multi‑system finance</span></div></div></div></details>
-      </div>
-    </template>
-
-    <template id="template-integ-portals">
-      <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="users"></i></div><h3 class="starter-card__title">Customer/Supplier Portals</h3></div>
-        <p class="starter-card__value">Fewer emails, faster answers—self‑serve status, docs, and updates.</p>
-        <p class="starter-card__desc">We deploy lightweight portals for orders, tickets, or shipments that reduce back‑and‑forth.</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>Secure access</li><li>Live status</li><li>File exchange</li><li>Branded UX</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Portal design</li><li>Integration</li><li>Rollout & docs</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">4–6 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">High‑touch ops</span></div></div></div></details>
-      </div>
-    </template>
-
-    <template id="template-elevate-aiops">
-      <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="bot"></i></div><h3 class="starter-card__title">AI‑Driven Operations</h3></div>
-        <p class="starter-card__value">Predict issues, recommend actions, and automate decisions safely.</p>
-        <p class="starter-card__desc">We add AI to forecasting, triage, and knowledge retrieval with clear guardrails and human‑in‑the‑loop.</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>Forecast accuracy</li><li>Faster triage</li><li>Fewer escalations</li><li>Safe guardrails</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Use cases & data</li><li>Model & guardrails</li><li>Pilot & rollout</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">6–10 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Data‑rich teams</span></div></div></div></details>
-      </div>
-    </template>
-
-    <template id="template-elevate-bi">
-      <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div><h3 class="starter-card__title">BI Dashboards</h3></div>
-        <p class="starter-card__value">Real‑time visibility—one page, the truth your team trusts.</p>
-        <p class="starter-card__desc">We build decision‑ready dashboards with clear definitions and automated refresh.</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>Aligned KPIs</li><li>One data model</li><li>Auto refresh</li><li>Easy drill‑downs</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Metric design</li><li>Data model</li><li>Dashboards & training</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">3–6 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leadership cadence</span></div></div></div></details>
-      </div>
-    </template>
-
-    <template id="template-elevate-exec">
-      <div class="starter-card" role="article">
-        <div class="starter-card__header"><div class="starter-card__icon" aria-hidden="true"><i data-lucide="flag"></i></div><h3 class="starter-card__title">Strategic Execution</h3></div>
-        <p class="starter-card__value">Turn OKRs into weekly actions everyone can see and ship.</p>
-        <p class="starter-card__desc">We align goals, metrics, and cadences so projects move from talk to done.</p>
-        <hr class="starter-card__divider" />
-        <ul class="starter-card__proof"><li>Clear OKRs/KPIs</li><li>Portfolio view</li><li>Meeting rhythm</li><li>Accountability</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
-        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & pricing</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Goal design</li><li>Cadence & boards</li><li>Playbook & training</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">4–8 weeks</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Cross‑functional teams</span></div></div></div></details>
+        <ul class="starter-card__proof"><li>More strategic initiatives completed</li><li>Simple tracking keeps progress visible</li><li>Natural accountability through lightweight rhythms</li></ul>
+        <a href="#" class="cta-primary starter-card__cta">Turn Goals into Results</a>
+        <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary><div class="starter-card__details-content"><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Strategic Priority Definition</li><li>Execution Plan</li><li>Progress Tracking Framework</li><li>Team Accountability Structure</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">4–6 weeks for setup with ongoing check‑in cycles</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders who want their team to actually achieve goals, not just set them</span></div></div></div></details>
       </div>
     </template>
 
     <template id="template-opt-software">
       <div class="starter-card" role="article">
         <div class="starter-card__header">
-          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="wrench"></i></div>
-          <h3 class="starter-card__title">Software Setup Right</h3>
+          <div class="starter-card__icon" aria-hidden="true"><i data-lucide="search-check"></i></div>
+          <h3 class="starter-card__title">Software Selection & Implementation</h3>
         </div>
-        <p class="starter-card__value">Get the right tool set up right—no buyer's remorse, no abandoned software.</p>
-        <p class="starter-card__desc">We help you pick what fits your workflow (not the sales pitch), set it up properly, and make sure your team actually uses it from day one.</p>
+        <p class="starter-card__value">Adopt with confidence—confirm the right tool and get it implemented so your team actually uses it from day one.</p>
+        <p class="starter-card__desc">You need new software but don't want another expensive mistake sitting unused. We help confirm you're choosing the right solution, then structure the implementation to get your team up and running with minimal disruption and maximum buy-in.</p>
         <hr class="starter-card__divider" />
         <ul class="starter-card__proof">
-          <li>Requirements brief</li>
-          <li>Shortlist + test</li>
-          <li>Clean configuration</li>
-          <li>Team quickstart</li>
+          <li>Teams use software that matches how they actually work</li>
+          <li>Hidden costs and integration issues are surfaced upfront</li>
+          <li>Smoother implementation from realistic expectations</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <a href="#" class="cta-primary starter-card__cta">Choose Smart Software</a>
         <details class="starter-card__details">
-          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
             <h4 class="starter-card__section-title">What's Included</h4>
             <ul class="starter-card__included">
-              <li>Requirements & test plan</li>
-              <li>Config & data prep</li>
-              <li>Launch & handoff</li>
+              <li>Selection verification</li>
+              <li>Implementation strategy</li>
+              <li>Minimum viable setup</li>
+              <li>Training framework</li>
+              <li>Adoption support</li>
             </ul>
             <div class="starter-card__meta">
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–3 weeks</span></div>
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">"We can't pick a tool"</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">3–4 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Teams committed to software implementation who want to avoid common deployment mistakes</span></div>
             </div>
           </div>
         </details>
@@ -858,28 +819,29 @@
           <div class="starter-card__icon" aria-hidden="true"><i data-lucide="notebook-pen"></i></div>
           <h3 class="starter-card__title">CRM Implementation</h3>
         </div>
-        <p class="starter-card__value">A CRM your team actually uses—simple fields, clear views, and fast follow‑ups.</p>
-        <p class="starter-card__desc">We tailor the CRM to your sales motion, import clean data, and build dashboards your team trusts.</p>
+        <p class="starter-card__value">Set up your CRM properly from day one—avoid the common implementation mistakes that lead to abandoned systems and frustrated teams.</p>
+        <p class="starter-card__desc">You have a documented sales process and need a CRM that supports how you actually work with customers. We configure the right platform to match your established workflow and guide your team through proper adoption, so you avoid the typical pitfalls that cause CRM implementations to fail.</p>
         <hr class="starter-card__divider" />
         <ul class="starter-card__proof">
-          <li>Pipeline views</li>
-          <li>Fields that matter</li>
-          <li>Clean data import</li>
-          <li>Live dashboards</li>
+          <li>Process comes first, configuration follows</li>
+          <li>Training that builds understanding, not just clicks</li>
+          <li>Higher adoption through collaborative implementation</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <a href="#" class="cta-primary starter-card__cta">Implement Your CRM</a>
         <details class="starter-card__details">
-          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
             <h4 class="starter-card__section-title">What's Included</h4>
             <ul class="starter-card__included">
-              <li>Sales process fit</li>
-              <li>Data migration</li>
-              <li>Dashboards & training</li>
+              <li>CRM selection & setup</li>
+              <li>Process-to-system translation</li>
+              <li>Team training materials</li>
+              <li>Usage habit framework</li>
+              <li>Team adoption support</li>
             </ul>
             <div class="starter-card__meta">
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–4 weeks</span></div>
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">First‑time or reset</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">3–5 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Teams with documented sales processes who are committed to CRM adoption and want to avoid common implementation mistakes</span></div>
             </div>
           </div>
         </details>
@@ -890,30 +852,32 @@
       <div class="starter-card" role="article">
         <div class="starter-card__header">
           <div class="starter-card__icon" aria-hidden="true"><i data-lucide="square-kanban"></i></div>
-          <h3 class="starter-card__title">PM Adoption</h3>
+          <h3 class="starter-card__title">Task Management Foundation</h3>
         </div>
-        <p class="starter-card__value">Turn task chaos into a clear board your team updates without nagging.</p>
-        <p class="starter-card__desc">We set up Asana/ClickUp/Trello to match how you actually deliver work, with templates and habits that stick.</p>
+        <p class="starter-card__value">Stop letting your inbox run your business—build a system where important work gets done consistently and you can trust your team to follow through.</p>
+        <p class="starter-card__desc">You're tired of chasing sticky notes, wondering what happened to that project you discussed weeks ago, and feeling like your email inbox controls everyones day. Together we establish clear "who does what by when" systems so you spend less time in follow-up meetings and more time confident that important work is actually happening.</p>
         <hr class="starter-card__divider" />
         <ul class="starter-card__proof">
-          <li>Templates for repeats</li>
-          <li>Intake process</li>
-          <li>Weekly rhythm</li>
-          <li>Team training</li>
+          <li>Reduce weekly status meetings</li>
+          <li>3x more initiatives completed</li>
+          <li>Less time chasing updates</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+        <a href="#" class="cta-primary starter-card__cta">Build Task Clarity</a>
         <details class="starter-card__details">
-          <summary class="starter-card__details-toggle">What's included, timeline & pricing</summary>
+          <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
             <h4 class="starter-card__section-title">What's Included</h4>
             <ul class="starter-card__included">
-              <li>Board templates</li>
-              <li>Intake & SLAs</li>
-              <li>Training & quickstart</li>
+              <li>Project Breakdown Process</li>
+              <li>Task Capture System</li>
+              <li>Priority Framework</li>
+              <li>Team Accountability Structure</li>
+              <li>Follow-Through Process</li>
+              <li>Team Training Materials</li>
             </ul>
             <div class="starter-card__meta">
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Typical timeline</span><span class="starter-card__meta-value">2–3 weeks</span></div>
-              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Service/ops teams</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">3–4 weeks</span></div>
+              <div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Teams that need to move beyond reactive work management toward proactive priority-based systems</span></div>
             </div>
           </div>
         </details>
@@ -1271,7 +1235,7 @@
             const displayContainer = projectSelectorSection.querySelector('#project-display-container');
         
             // This map defines the order of the nodes
-            const categoryMap = ['audit', 'optimize', 'automate', 'integrate', 'scale'];
+            const categoryMap = ['audit', 'optimize', 'automate', 'scale'];
         
             const activateProject = (menu, cardContainer, templateId) => {
                 // Reveal menu items with stagger when category loads
@@ -1338,10 +1302,54 @@
                 const menu = categoryContent.querySelector('.project-display__menu');
                 const cardContainer = categoryContent.querySelector('.project-display__card');
                 if (!menu || !cardContainer) return;
-        
+
+                // Click -> load template and set selection
                 menu.querySelectorAll('.project-display__menu-item').forEach(button => {
                     button.addEventListener('click', () => activateProject(menu, cardContainer, button.dataset.templateId));
                 });
+
+                // Swipe on card to change selected project (pointer events for Chrome Android reliability)
+                if (!cardContainer.dataset.swipeBound) {
+                    cardContainer.dataset.swipeBound = 'true';
+                    let startX = 0;
+                    let startY = 0;
+                    let tracking = false;
+                    const horizThreshold = 30; // px
+                    const vertBlockThreshold = 40; // px
+
+                    const onPointerDown = (e) => {
+                        if (e.pointerType && e.pointerType !== 'touch') return;
+                        startX = e.clientX;
+                        startY = e.clientY;
+                        tracking = true;
+                    };
+
+                    const onPointerUp = (e) => {
+                        if (!tracking) return;
+                        tracking = false;
+                        const dx = e.clientX - startX;
+                        const dy = Math.abs(e.clientY - startY);
+                        if (Math.abs(dx) > horizThreshold && dy < vertBlockThreshold) {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            if (!items.length) return;
+                            const currentIdx = items.findIndex(btn => btn.getAttribute('aria-selected') === 'true');
+                            if (currentIdx === -1) return;
+                            const nextIdx = dx < 0 ? Math.min(items.length - 1, currentIdx + 1) : Math.max(0, currentIdx - 1);
+                            const target = items[nextIdx];
+                            if (target && nextIdx !== currentIdx) {
+                                activateProject(menu, cardContainer, target.dataset.templateId);
+                                target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            }
+                        }
+                    };
+
+                    const onPointerCancel = () => { tracking = false; };
+
+                    cardContainer.addEventListener('pointerdown', onPointerDown, { passive: true });
+                    cardContainer.addEventListener('pointerup', onPointerUp, { passive: true });
+                    cardContainer.addEventListener('pointercancel', onPointerCancel, { passive: true });
+                }
+
                 const initialProject = menu.querySelector('[aria-selected="true"]');
                 if (initialProject) activateProject(menu, cardContainer, initialProject.dataset.templateId);
                 
@@ -1542,7 +1550,7 @@
             const timelineButtons = projectSelectorSection.querySelectorAll('.timeline-selector__button');
             const timelineNodes = projectSelectorSection.querySelectorAll('.timeline-selector__node');
             const displayContainer = projectSelectorSection.querySelector('#project-display-container');
-            const categoryMap = ['audit', 'optimize', 'automate', 'integrate', 'scale'];
+            const categoryMap = ['audit', 'optimize', 'automate', 'scale'];
 
             timelineButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -1607,12 +1615,69 @@
 
                 menu.addEventListener('scroll', () => handleProjectMenuOverflow(menu), { passive: true });
 
+                // Click and keyboard interaction
                 menu.querySelectorAll('.project-display__menu-item').forEach(button => {
                     button.addEventListener('click', () => {
                         activateProject(menu, cardContainer, button.dataset.templateId);
                         button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                     });
+                    button.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            const idx = items.indexOf(button);
+                            const nextIdx = e.key === 'ArrowRight' ? Math.min(items.length - 1, idx + 1) : Math.max(0, idx - 1);
+                            const target = items[nextIdx];
+                            if (target) {
+                                e.preventDefault();
+                                activateProject(menu, cardContainer, target.dataset.templateId);
+                                target.focus();
+                                target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            }
+                        }
+                    });
                 });
+
+                // Swipe on card to change selected project (pointer events for Chrome Android reliability)
+                if (!cardContainer.dataset.swipeBound) {
+                    cardContainer.dataset.swipeBound = 'true';
+                    let startX = 0;
+                    let startY = 0;
+                    let tracking = false;
+                    const horizThreshold = 30; // px
+                    const vertBlockThreshold = 40; // px
+
+                    const onPointerDown = (e) => {
+                        if (e.pointerType && e.pointerType !== 'touch') return;
+                        startX = e.clientX;
+                        startY = e.clientY;
+                        tracking = true;
+                    };
+
+                    const onPointerUp = (e) => {
+                        if (!tracking) return;
+                        tracking = false;
+                        const dx = e.clientX - startX;
+                        const dy = Math.abs(e.clientY - startY);
+                        if (Math.abs(dx) > horizThreshold && dy < vertBlockThreshold) {
+                            const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
+                            if (!items.length) return;
+                            const currentIdx = items.findIndex(btn => btn.getAttribute('aria-selected') === 'true');
+                            if (currentIdx === -1) return;
+                            const nextIdx = dx < 0 ? Math.min(items.length - 1, currentIdx + 1) : Math.max(0, currentIdx - 1);
+                            const target = items[nextIdx];
+                            if (target && nextIdx !== currentIdx) {
+                                activateProject(menu, cardContainer, target.dataset.templateId);
+                                target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            }
+                        }
+                    };
+
+                    const onPointerCancel = () => { tracking = false; };
+
+                    cardContainer.addEventListener('pointerdown', onPointerDown, { passive: true });
+                    cardContainer.addEventListener('pointerup', onPointerUp, { passive: true });
+                    cardContainer.addEventListener('pointercancel', onPointerCancel, { passive: true });
+                }
 
                 const initialProject = menu.querySelector('[aria-selected="true"]');
                 if (initialProject) activateProject(menu, cardContainer, initialProject.dataset.templateId);
