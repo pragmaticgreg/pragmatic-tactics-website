@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule a Call – Pragmatic Tactics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M6BQ5BW5');</script>
+  <!-- End Google Tag Manager -->
+  <style>
+    .booking-header { text-align: center; margin: 40px 0 16px; }
+    .booking-subtitle { text-align: center; color: var(--text-secondary); max-width: 70ch; margin: 0 auto 28px; }
+    .booking-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media(min-width: 900px){ .booking-grid { grid-template-columns: 1.1fr 0.9fr; align-items: start; } }
+    .booking-card { background: var(--background-white); border: 1px solid var(--border-medium); border-radius: 16px; padding: 22px; box-shadow: var(--shadow-medium); }
+    .booking-aside h3 { margin: 0 0 8px 0; color: var(--primary-navy); }
+    .booking-aside ul { margin: 0 0 14px 18px; color: var(--text-secondary); }
+    .booking-meta { display: grid; gap: 10px; margin-top: 10px; }
+    .booking-meta div { color: var(--text-secondary); }
+    .booking-fallback { text-align: center; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6BQ5BW5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main class="section">
+    <div class="container">
+      <div class="booking-header">
+        <h1 class="section-title">Schedule a Call</h1>
+        <p class="booking-subtitle">20–30 minutes to understand your goals, assess fit, and agree on a practical starting point. Bring a teammate if useful.</p>
+      </div>
+      <div class="booking-grid">
+        <div class="booking-card">
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <iframe id="booking-iframe" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zhmhI_3L1J6eLQEaOtS_u8S02GcQHAkbFfH5H5gSX76HTYS6UTTVJHuWW64YQVD7h1QTDjddc?gv=true" style="border: 0" width="100%" height="760" frameborder="0"></iframe>
+          <!-- end Google Calendar Appointment Scheduling -->
+          <div class="booking-fallback"><a id="booking-direct" class="cta-primary" href="#">Open booking in a new tab</a></div>
+        </div>
+        <aside class="booking-card booking-aside">
+          <h3>What we’ll cover</h3>
+          <ul>
+            <li>Your context: goals, constraints, and immediate priorities</li>
+            <li>Where work gets stuck today and quick wins available</li>
+            <li>Best starting option and next steps</li>
+          </ul>
+          <h3>Good to know</h3>
+          <div class="booking-meta">
+            <div><strong>Who should join</strong>: you and (optionally) an operator/lead</div>
+            <div><strong>Format</strong>: video, 20–30 minutes</div>
+            <div><strong>Outcome</strong>: a clear recommendation and plan to begin</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const base = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zhmhI_3L1J6eLQEaOtS_u8S02GcQHAkbFfH5H5gSX76HTYS6UTTVJHuWW64YQVD7h1QTDjddc?gv=true';
+      const params = new URLSearchParams(window.location.search);
+      const utm = new URLSearchParams({
+        utm_source: params.get('utm_source') || 'site',
+        utm_medium: params.get('utm_medium') || 'cta',
+        utm_campaign: params.get('utm_campaign') || 'booking',
+        utm_content: params.get('utm_content') || sessionStorage.getItem('cta_source') || 'booking-page'
+      });
+      const tracked = base + '&' + utm.toString();
+      const iframe = document.getElementById('booking-iframe');
+      const a = document.getElementById('booking-direct');
+      if (iframe) iframe.src = tracked;
+      if (a) a.href = tracked;
+    })();
+  </script>
+</body>
+</html>

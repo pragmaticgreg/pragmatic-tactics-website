@@ -7,20 +7,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/main.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6BQ5BW5');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6BQ5BW5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <nav class="nav">
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
                     <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link">Services</a></li>
-                    <li><a href="#" class="nav-link">Results</a></li>
-                    <li><a href="#" class="nav-link">Contact</a></li>
-                </ul>
+                <div id="header-booking-cta"></div>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -29,10 +35,7 @@
             </div>
             <div class="mobile-menu" id="mobile-menu">
                 <ul>
-                    <li><a href="#" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link">Services</a></li>
-                    <li><a href="#" class="nav-link">Results</a></li>
-                    <li><a href="#" class="nav-link">Contact</a></li>
+                    <li><a href="booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
                 </ul>
             </div>
         </div>
@@ -49,12 +52,14 @@
             <div class="hero__content">
                 <h1 class="hero__title"><span class="hero__title-line hero__title-line--left">You don't need more strategy.</span><br><span class="hero__title-line hero__title-line--right hero__title-right">It's time to execute.</span></h1>
                 <div class="hero__bottom">
-                    <h2 class="hero__subtitle"><span class="hero__subline">Helping small teams</span><br class="mobile-break"><span class="hero__subline"> translate strategic goals</span><br class="mobile-break"><span class="hero__subline"> into operational results.</span></h2>
-                    <a href="#solutions" class="hero__cta cta-primary">See How We Deliver Results</a>
+                    <h2 class="hero__subtitle"><span class="hero__subline">Turn chaos into order that you and your team can own.</span></h2>
+                    <a href="#starter-projects" class="hero__cta cta-primary">Find Your Starting Point</a>
                 </div>
             </div>
         </div>
     </section>
+
+    
 
     <section class="about section">
         <div class="quote-block">
@@ -94,7 +99,7 @@
 
     <section id="fit-finder" class="section section--with-separator">
         <div class="container">
-            <h2 class="section-title">Pragmatic Collaboration</h2>
+            <h2 class="section-title">Sound Familiar?</h2>
             <div class="icon-content-layout">
                 <div class="icon-content-layout__image">
                     <img src="assets/images/Icon - Target blk-wht.svg" alt="Strategic ambitions icon">
@@ -185,114 +190,10 @@
         </div>
     </section>
 
-    <section id="problems-v2" class="section section--with-separator">
-        <div class="container">
-            
-            
-            <h2 class="section-title">Evolve While You Execute</h2>
-            <p class="section-subtitle">Every project is a chance to deliver results now—<br>while reinforcing the foundation for sustainable growth.</p>
     
-            <img src="assets/images/Icon - Plateau color.svg" alt="Active Problem Icon" id="active-tab-icon-top" data-reveal-on-scroll>
-    
-            <div class="tabs-container">
-                <div class="tab-unit">
-                    <button class="tab-btn active" data-tab="people">People</button>
-                </div>
-                <div class="tab-unit">
-                    <button class="tab-btn" data-tab="process">Process</button>
-                </div>
-                <div class="tab-unit">
-                    <button class="tab-btn" data-tab="technology">Technology</button>
-                </div>
-            </div>
-            <div class="panels-container">
-                <div id="people" class="tab-panel grid grid--3-col">
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Capacity</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Everyone's overloaded, priorities shift daily, and progress stalls.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">Find quick wins for breathing room, then I handle development while you run your business.</p>
-                    </div>
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Clarity</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Roles blur, tasks bounce between owners, and deadlines shift.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">Together we establish task management and ownership across your team.</p>
-                    </div>
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Ability</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Skill gaps keep your team—and your business—stuck at the same level.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">I provide missing technical skills while building your team's capabilities.</p>
-                    </div>
-                </div>
-    
-                <div id="process" class="tab-panel grid grid--3-col hidden">
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Efficiency</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Hours disappear to figuring out "how" instead of doing the work.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">We streamline core workflows and remove roadblocks, turning lost hours into output.</p>
-                    </div>
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Consistency</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Everyone tackles the same task differently, so results vary and timelines slip.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">Lightweight digital playbooks let anyone follow the proven path—every time.</p>
-                    </div>
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Scalability</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Manual, repetitive steps soak up capacity and cap your growth.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">Targeted automations handle the repeat work so the business expands without extra heroics.</p>
-                    </div>
-                </div>
-    
-                <div id="technology" class="tab-panel grid grid--3-col hidden">
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Utility</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Your tools 'effort-to-impact' ratio feels poorly balanced.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">Deliver the right tool at the right time so every solution drives meaningful impact.</p>
-                    </div>
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Connectivity</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Disconnected apps force manual workarounds while workflows break.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">I link tools, teams, and data to create clean, connected workflows.</p>
-                    </div>
-                    <div class="ps-card">
-                        <div class="ps-card__header">
-                            <h3 class="ps-card__title">Agility</h3>
-                        </div>
-                        <p class="ps-card__text ps-card__text--problem">Emerging tech opens doors, but you can't move fast enough to leverage it.</p>
-                        <hr class="ps-card__divider">
-                        <p class="ps-card__text ps-card__text--solution">Create systems that flex with your growth and adapt to what's next—without disruption.</p>
-                    </div>
-                </div>
-            </div>
-    
-            <img src="assets/images/Cube - People.svg" alt="Active Solution Icon" id="active-tab-icon-bottom">
-        </div>
-    </section>
     <section id="starter-projects" class="section section--with-separator">
         <div class="container">
+            <a id="book"></a>
             <h2 class="section-title">Find Your Starting Point</h2>
             <p class="section-subtitle">
                 Every project is different, but they all start with a single step. Select a category to see typical starter projects that deliver tangible value, fast.
@@ -325,7 +226,7 @@
             </div>
 
             <p class="section-subtitle" id="project-category-desc">Start simple, start smart. Low-commitment services that give you immediate insight into where your business stands today.</div>
-
+    
             <div id="project-display-container">
                 <div class="project-category-content is-active" data-category-content="audit" data-reveal-on-scroll data-reveal-delay="300">
                     <div class="project-display">
@@ -348,7 +249,7 @@
                                     <li>98% accuracy</li>
                                     <li>Real-time processing</li>
                                 </ul>
-                                <a href="#" class="cta-primary">Improve Insights by 40%</a>
+                                <a href="booking.html" class="cta-primary" data-cta="about-quote">Improve Insights by 40%</a>
                             </div>
                         </div>
                     </div>
@@ -401,7 +302,7 @@
             </div>
           <p class="starter-card__value">Get quick clarity on your core workflows—what to fix first and why.</p>
           <p class="starter-card__desc">We map key workflows, surface bottlenecks, and outline fast wins so you can focus effort where it matters before making bigger investments.</p>
-          <a href="#" class="cta-primary starter-card__cta">Start Your Process Audit</a>
+          <a href="booking.html" class="cta-primary starter-card__cta" data-cta="audit-process">Start Your Process Audit</a>
           <details class="starter-card__details">
             <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
             <div class="starter-card__details-content">
@@ -427,8 +328,8 @@
           <h3 class="starter-card__title">Digital Snapshot</h3>
             </div>
         <p class="starter-card__value">Get fast clarity on your stack—what to keep, fix, drop, or add.</p>
-        <p class="starter-card__desc">A lightweight assessment to see what’s working, what isn’t, and where simple tweaks deliver immediate wins—before you invest in new tools.</p>
-        <a href="#" class="cta-primary starter-card__cta">Start Your Snapshot</a>
+        <p class="starter-card__desc">A lightweight assessment to see what's working, what isn't, and where simple tweaks deliver immediate wins—before you invest in new tools.</p>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="audit-digital">Start Your Snapshot</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -455,7 +356,7 @@
         </div>
         <p class="starter-card__value">Cut through the noise—find practical AI use cases you can act on now.</p>
         <p class="starter-card__desc">A focused, jargon‑free workshop to identify where AI helps today, where process fixes come first, and simple ways your team can start using AI safely and effectively.</p>
-        <a href="#" class="cta-primary starter-card__cta">Get AI Clarity</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="audit-ai">Get AI Clarity</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -482,7 +383,7 @@
         </div>
         <p class="starter-card__value">Find and fix the leaks—see how deals really move through your business.</p>
         <p class="starter-card__desc">A fast discovery to map your real‑world sales flow, surface handoff gaps and missed follow‑ups, and outline a simple, working process—before you invest in a CRM.</p>
-        <a href="#" class="cta-primary starter-card__cta">Map Your Sales Flow</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="audit-sales">Map Your Sales Flow</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -514,7 +415,7 @@
         </div>
         <p class="starter-card__value">Lock in your best practices—make great work repeatable by anyone.</p>
         <p class="starter-card__desc">A fast documentation sprint to capture how work actually gets done, produce reference‑ready checklists, and enable confident delegation with consistent results.</p>
-        <a href="#" class="cta-primary starter-card__cta">Document for Consistency</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="audit-docs">Document for Consistency</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -549,7 +450,7 @@
             <li>Fewer manual steps with practical adjustments</li>
             <li>Teams follow a reliable, repeatable path</li>
           </ul>
-          <a href="#" class="cta-primary starter-card__cta">Start This Project</a>
+          <a href="booking.html" class="cta-primary starter-card__cta" data-cta="opt-workflow">Start This Project</a>
           <details class="starter-card__details">
             <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
             <div class="starter-card__details-content">
@@ -574,14 +475,14 @@
           <h3 class="starter-card__title">Customer Journey Mapping</h3>
             </div>
         <p class="starter-card__value">Collect the right info the first time—smoother handoffs, better follow‑through.</p>
-        <p class="starter-card__desc">We design a clear, lightweight intake and journey flow so teams get exactly what they need at each step—no more email ping‑pong or missing details—and you’re ready for CRM when the time comes.</p>
+        <p class="starter-card__desc">We design a clear, lightweight intake and journey flow so teams get exactly what they need at each step—no more email ping‑pong or missing details—and you're ready for CRM when the time comes.</p>
           <hr class="starter-card__divider" />
           <ul class="starter-card__proof">
           <li>Right information captured at the right time</li>
           <li>Cleaner handoffs across marketing, sales, and delivery</li>
           <li>More capacity to handle increased lead volume</li>
           </ul>
-        <a href="#" class="cta-primary starter-card__cta">Map Your Customer Flow</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="opt-onboarding">Map Your Customer Flow</a>
           <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
             <div class="starter-card__details-content">
@@ -620,7 +521,7 @@
             <li>Automation/AI only where impact is clear</li>
             <li>Working implementations deliver immediate relief</li>
            </ul>
-           <a href="#" class="cta-primary starter-card__cta">Optimize Your Workflows</a>
+           <a href="booking.html" class="cta-primary starter-card__cta" data-cta="auto-optimize">Optimize Your Workflows</a>
            <details class="starter-card__details">
             <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
              <div class="starter-card__details-content">
@@ -662,7 +563,7 @@
           <li>Fewer dropped details at handoffs</li>
           <li>Lower coordination overhead for leaders</li>
            </ul>
-        <a href="#" class="cta-primary starter-card__cta">Connect Your Operations</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="auto-integrate">Connect Your Operations</a>
            <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
              <div class="starter-card__details-content">
@@ -702,7 +603,7 @@
           <li>Owners refocus on highest‑value work</li>
           <li>Simple first, automation/AI when it adds value</li>
            </ul>
-        <a href="#" class="cta-primary starter-card__cta">Reclaim Your Time</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="auto-time">Reclaim Your Time</a>
            <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
              <div class="starter-card__details-content">
@@ -734,7 +635,7 @@
         <p class="starter-card__desc">We translate scattered ideas into a clear roadmap across customer flow, systems, and process—what to do first, what to pause, and how to move at a sustainable pace with visible progress.</p>
         <hr class="starter-card__divider" />
         <ul class="starter-card__proof"><li>Clarity despite advice overload and competing priorities</li><li>Phased improvements that fit team capacity</li><li>Near‑term results that build momentum</li><li>Investments aligned to a bigger transformation</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Launch Your Roadmap</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="elevate-roadmap">Launch Your Roadmap</a>
         <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary><div class="starter-card__details-content"><div class="starter-card__prereqs" aria-label="Optional prerequisites"><span class="starter-card__prereq-label">Optional:</span><button type="button" class="starter-card__pill" data-prereq-link="true" data-template-id="template-audit-process">Audit Your Processes</button><button type="button" class="starter-card__pill" data-prereq-link="true" data-template-id="template-audit-digital">Digital Snapshot</button></div><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Discovery & leadership alignment sessions</li><li>Holistic business review</li><li>Prioritized improvement roadmap</li><li>Execution pathways with owners</li><li>Living document for iteration</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1-2 weeks for roadmap development</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders overwhelmed by options who need a clear, executable plan</span></div></div></div></details>
       </div>
     </template>
@@ -746,7 +647,7 @@
         <p class="starter-card__desc">We design role‑specific micro‑learning tied to the processes your team runs—digital fluency, AI usage, and workflow skills that produce measurable results without long training days.</p>
         <hr class="starter-card__divider" />
         <ul class="starter-card__proof"><li>Aligned with business goals and daily operations</li><li>Immediate application to real work</li><li>Practical skills demonstrated through real tasks</li><li>Flexible delivery without disrupting operations</li></ul>
-        <a href="#" class="cta-primary starter-card__cta">Build Skills That Stick</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="elevate-learning">Build Skills That Stick</a>
         <details class="starter-card__details"><summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary><div class="starter-card__details-content"><div class="starter-card__prereqs" aria-label="Optional prerequisites"><span class="starter-card__prereq-label">Optional:</span><button type="button" class="starter-card__pill" data-prereq-link="true" data-template-id="template-audit-docs">Process Documentation Sprint</button></div><h4 class="starter-card__section-title">What's Included</h4><ul class="starter-card__included"><li>Skill gap discovery</li><li>Custom learning modules</li><li>Guided, role‑based activities</li><li>Progressive skill development</li><li>Flexible implementation support</li></ul><div class="starter-card__meta"><div class="starter-card__meta-item"><span class="starter-card__meta-label">Timeline</span><span class="starter-card__meta-value">1-2 weeks development; 6–10 weeks delivery</span></div><div class="starter-card__meta-item"><span class="starter-card__meta-label">Ideal for</span><span class="starter-card__meta-value">Leaders who want targeted skill development that delivers immediate and lasting value</span></div></div></div></details>
       </div>
     </template>
@@ -769,7 +670,7 @@
           <li>Progress stays visible with simple lead‑measures</li>
           <li>Momentum builds through regular check‑ins</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Launch Goal Execution</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="elevate-goals">Launch Goal Execution</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -808,7 +709,7 @@
           <li>Hidden costs and integration risks surfaced early</li>
           <li>Avoid self‑implementation chalenges</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Choose Smart Software</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="opt-software">Choose Smart Software</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -847,7 +748,7 @@
           <li>Training and usage habits that stick</li>
           <li>Higher adoption through collaborative rollout</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Implement Your CRM</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="opt-crm">Implement Your CRM</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -886,7 +787,7 @@
           <li>More initiatives completed on time</li>
           <li>Clear ownership and next actions</li>
         </ul>
-        <a href="#" class="cta-primary starter-card__cta">Build Task Clarity</a>
+        <a href="booking.html" class="cta-primary starter-card__cta" data-cta="opt-pm">Build Task Clarity</a>
         <details class="starter-card__details">
           <summary class="starter-card__details-toggle">What's included, timeline & ideal fit</summary>
           <div class="starter-card__details-content">
@@ -911,9 +812,107 @@
       </div>
     </template>
 
+    <section id="problems-v2" class="section section--with-separator">
+      <div class="container">
+          
+          
+          <h2 class="section-title">The Pragmatic Foundation</h2>
+          <p class="section-subtitle">These <strong>foundational blocks</strong> drive all our work together—we reinforce each area from the <strong>ground up</strong>, <strong>building strength</strong> into your operations rather than <strong>surface-level solutions</strong>.</p>
+  
+          <img src="assets/images/Icon - Plateau color.svg" alt="Active Problem Icon" id="active-tab-icon-top" data-reveal-on-scroll>
+  
+          <div class="tabs-container">
+              <div class="tab-unit">
+                  <button class="tab-btn active" data-tab="people">People</button>
+              </div>
+              <div class="tab-unit">
+                  <button class="tab-btn" data-tab="process">Process</button>
+              </div>
+              <div class="tab-unit">
+                  <button class="tab-btn" data-tab="technology">Technology</button>
+              </div>
+          </div>
+          <div class="panels-container">
+              <div id="people" class="tab-panel grid grid--3-col">
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Capacity</h3>
+                      </div>
+                      <p class="ps-card__text">A business can only perform as well as its people have <strong>bandwidth</strong> to think and act strategically.</p>
+                      <p class="ps-card__text">We help create capacity by <strong>removing bottlenecks</strong>, eliminating time drains, and ensuring teams aren't overwhelmed by inefficient processes—freeing them to focus on <strong>high-impact work</strong>.</p>
+                  </div>
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Clarity</h3>
+                      </div>
+                      <p class="ps-card__text">Without clarity, even talented teams spin their wheels.</p>
+                      <p class="ps-card__text">We ensure teams have the <strong>right information at the right time</strong>, understand <strong>priorities clearly</strong>, and have access to the resources they need to deliver <strong>quality work consistently</strong>.</p>
+                  </div>
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Ability</h3>
+                      </div>
+                      <p class="ps-card__text">Strong execution requires both <strong>skills and collaboration</strong>.</p>
+                      <p class="ps-card__text">Throughout our work together, we build your team's <strong>capability</strong>—developing skills, improving workflows, and strengthening how team members depend on and support each other's work.</p>
+                  </div>
+              </div>
+  
+              <div id="process" class="tab-panel grid grid--3-col hidden">
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Efficiency</h3>
+                      </div>
+                      <p class="ps-card__text">Efficient processes reduce <strong>wasted effort</strong> and free up time for <strong>revenue-generating work</strong>.</p>
+                      <p class="ps-card__text">We redesign workflows to <strong>cut friction</strong>, eliminate redundant steps, and ensure every action moves you closer to your goals.</p>
+                  </div>
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Consistency</h3>
+                      </div>
+                      <p class="ps-card__text">Great businesses <strong>don't rely on luck</strong>—they rely on consistency.</p>
+                      <p class="ps-card__text">We build processes that deliver <strong>repeatable outcomes</strong>, so you can <strong>confidently promise results</strong> and your team can deliver them every time.</p>
+                  </div>
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Sustainability</h3>
+                      </div>
+                      <p class="ps-card__text">Running everything through <strong>memory and improvisation isn't sustainable</strong>.</p>
+                      <p class="ps-card__text">We create <strong>lasting processes</strong> that work without <strong>constant oversight</strong>—so your business can thrive even when you're not managing every detail.</p>
+                  </div>
+              </div>
+  
+              <div id="technology" class="tab-panel grid grid--3-col hidden">
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Utility</h3>
+                      </div>
+                      <p class="ps-card__text">The right technology should <strong>make work easier, not harder</strong>.</p>
+                      <p class="ps-card__text">We focus on technology that actually improves how you work—tools that <strong>pay for themselves</strong> through time saved and problems solved.</p>
+                  </div>
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Connectivity</h3>
+                      </div>
+                      <p class="ps-card__text">Juggling multiple <strong>disconnected tools</strong> can create more work, not less.</p>
+                      <p class="ps-card__text">We integrate your technology so data moves <strong>seamlessly between systems</strong>, <strong>eliminating redundant tasks</strong> and preventing things from falling through the cracks.</p>
+                  </div>
+                  <div class="ps-card">
+                      <div class="ps-card__header">
+                          <h3 class="ps-card__title">Agility</h3>
+                      </div>
+                      <p class="ps-card__text">Markets and technology both evolve quickly—your <strong>systems should keep up</strong>.</p>
+                      <p class="ps-card__text">We build flexibility into your setup, adding automation strategically so you can pivot with <strong>current data</strong> and <strong>adopt new tools seamlessly</strong>.</p>
+                  </div>
+              </div>
+          </div>
+  
+          <img src="assets/images/Cube - People.svg" alt="Active Solution Icon" id="active-tab-icon-bottom">
+      </div>
+  </section>
+
     <section class="timeline-section section section--with-separator">
         <div class="container">
-            <h2 class="section-title">Our Collaborative Process</h2>
+            <h2 class="section-title">The Pragmatic Process</h2>
             
             <div class="process-central">
                 <ol class="process-central__list">
@@ -927,16 +926,7 @@
                               <i class="process-central__icon" data-lucide="search"></i>
                               <h3 class="process-central__title">Discovery Call</h3>
                             </div>
-                            <p class="process-central__desc">20–30 min to confirm goals and fit.</p>
-                            <div class="process-central__details">
-                              <div class="process-central__details-inner">
-                                <h4>What's Included</h4>
-                                <p>We align on objectives, constraints, and the immediate priority that will create momentum.</p>
-                                <h4>What You'll Get</h4>
-                                <p>A clear next step and a simple plan to begin delivering results quickly.</p>
-                              </div>
-                            </div>
-                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                            <p class="process-central__desc">20–30 minutes to understand your goals, assess fit, and identify your biggest opportunity.</p>
                         </div>
                     </li>
                     <li class="process-central__step process-central__step--right">
@@ -946,19 +936,10 @@
                         </div>
                         <div class="process-central__card" data-reveal-on-scroll>
                             <div class="process-central__title-row">
-                              <i class="process-central__icon" data-lucide="trophy"></i>
-                              <h3 class="process-central__title">Priorities & Quick Wins</h3>
+                              <i class="process-central__icon" data-lucide="file-text"></i>
+                              <h3 class="process-central__title">Proposal & Starting Points</h3>
                             </div>
-                            <p class="process-central__desc">Choose the simplest, highest‑impact starting point.</p>
-                            <div class="process-central__details">
-                              <div class="process-central__details-inner">
-                                <h4>What's Included</h4>
-                                <p>Identify the highest‑leverage work and define a thin slice we can ship fast.</p>
-                                <h4>What You'll Get</h4>
-                                <p>A small, validated win that builds momentum and informs the next step.</p>
-                              </div>
-                            </div>
-                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                            <p class="process-central__desc">We present 1–2 starting options tailored to your situation, with clear benefits and expected outcomes.</p>
                         </div>
                     </li>
                     <li class="process-central__step process-central__step--left">
@@ -968,19 +949,10 @@
                         </div>
                         <div class="process-central__card" data-reveal-on-scroll>
                             <div class="process-central__title-row">
-                              <i class="process-central__icon" data-lucide="wrench"></i>
-                              <h3 class="process-central__title">Working Setup</h3>
+                              <i class="process-central__icon" data-lucide="route"></i>
+                              <h3 class="process-central__title">Map Current State</h3>
                             </div>
-                            <p class="process-central__desc">Agree on tools, cadence, roles, and reporting.</p>
-                            <div class="process-central__details">
-                              <div class="process-central__details-inner">
-                                <h4>What's Included</h4>
-                                <p>Define collaboration channels, access, success criteria, and progress rhythm.</p>
-                                <h4>What You'll Get</h4>
-                                <p>A lean, reliable operating cadence to keep delivery moving without friction.</p>
-                              </div>
-                            </div>
-                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                            <p class="process-central__desc">For the selected starting point, we document the current process, locate bottlenecks, and create a targeted plan.</p>
                         </div>
                     </li>
                     <li class="process-central__step process-central__step--right">
@@ -990,63 +962,10 @@
                         </div>
                         <div class="process-central__card" data-reveal-on-scroll>
                             <div class="process-central__title-row">
-                              <i class="process-central__icon" data-lucide="route"></i>
-                              <h3 class="process-central__title">Map Current State</h3>
-                            </div>
-                            <p class="process-central__desc">Capture how work actually flows today.</p>
-                            <div class="process-central__details">
-                              <div class="process-central__details-inner">
-                                <h4>What's Included</h4>
-                                <p>Document real workflows, decision points, and pain areas across teams/tools.</p>
-                                <h4>What You'll Get</h4>
-                                <p>A shared picture of how work happens now and where to intervene first.</p>
-                              </div>
-                            </div>
-                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
-                        </div>
-                    </li>
-                    <li class="process-central__step process-central__step--left">
-                        <div class="process-central__node">
-                            <span class="process-central__cube"></span>
-                            <span class="process-central__num">5</span>
-                        </div>
-                        <div class="process-central__card" data-reveal-on-scroll>
-                            <div class="process-central__title-row">
                               <i class="process-central__icon" data-lucide="rocket"></i>
                               <h3 class="process-central__title">Build & Launch</h3>
                             </div>
-                            <p class="process-central__desc">Ship improvements in small, testable increments.</p>
-                            <div class="process-central__details">
-                              <div class="process-central__details-inner">
-                                <h4>What's Included</h4>
-                                <p>Deliver value in short cycles with clear acceptance criteria and rollback plans.</p>
-                                <h4>What You'll Get</h4>
-                                <p>Visible progress, reduced risk, and high‑confidence releases.</p>
-                              </div>
-                            </div>
-                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
-                        </div>
-                    </li>
-                    <li class="process-central__step process-central__step--right">
-                        <div class="process-central__node">
-                            <span class="process-central__cube"></span>
-                            <span class="process-central__num">6</span>
-                        </div>
-                        <div class="process-central__card" data-reveal-on-scroll>
-                            <div class="process-central__title-row">
-                              <i class="process-central__icon" data-lucide="refresh-ccw"></i>
-                              <h3 class="process-central__title">Support & Iterate</h3>
-                            </div>
-                            <p class="process-central__desc">Refine, document, and train for lasting change.</p>
-                            <div class="process-central__details">
-                              <div class="process-central__details-inner">
-                                <h4>What's Included</h4>
-                                <p>Monitor outcomes, tune workflows, and capture how‑to guides as living documentation.</p>
-                                <h4>What You'll Get</h4>
-                                <p>Improvements that stick—embedded practices, not one‑off fixes.</p>
-                              </div>
-                            </div>
-                            <div class="process-central__indicator"><span class="process-central__indicator-label">Details</span></div>
+                            <p class="process-central__desc">We implement in manageable phases, test with your team, and ensure smooth operation with ongoing support.</p>
                         </div>
                     </li>
                 </ol>
@@ -1056,14 +975,13 @@
 
     <section class="final-cta section section--with-separator">
         <div class="container">
-            <h2>Ready to Break Through Your Operational Barriers?</h2>
-            <p>Let's discuss your specific challenges and explore if we're a good fit to work together.</p>
-            <a href="#" class="cta-primary">Schedule Free Consultation</a>
-            <a href="#" class="cta-secondary">Download Case Studies</a>
+            <h2>No more 'someday'<br>let's nail down your first quick win</h2>
+            <p>In 20 minutes, we'll identify your biggest quick win opportunity and create a plan to establish it in less than 30 days.</p>
+            <a href="booking.html" class="cta-primary" data-cta="conclusion">Schedule Free Conversation</a>
             <div class="risk-mitigation">
                 ✓ No long-term contracts required<br>
-                ✓ Clear project milestones and deliverables<br>
-                ✓ Local BC references available
+                ✓ Start with small projects that deliver independant value<br>
+                ✓ Fixed scope projects with fixed pricing
             </div>
         </div>
     </section>
@@ -1751,7 +1669,7 @@
         });
     </script>
     <script>
-  // Process Central Accordion Behavior (accessible, with labels + anchored rail)
+  // Process Central layout – anchors only (no open/close behavior)
   document.addEventListener('DOMContentLoaded', function () {
     const processSection = document.querySelector('.process-central');
     if (!processSection) return;
@@ -1780,66 +1698,16 @@
       ro.observe(processSection);
     }
 
-    steps.forEach((step, idx) => {
-      step.setAttribute('role', 'button');
-      step.setAttribute('tabindex', '0');
-      step.setAttribute('aria-expanded', 'false');
-
+    // Remove interactive attributes and classes related to open/close
+    steps.forEach((step) => {
+      step.removeAttribute('role');
+      step.removeAttribute('tabindex');
+      step.removeAttribute('aria-expanded');
+      step.classList.remove('is-open');
+      const labelEl = step.querySelector('.process-central__indicator-label');
+      if (labelEl) labelEl.textContent = '';
       const details = step.querySelector('.process-central__details');
-      if (details) {
-        const id = details.id || `process-details-${idx+1}`;
-        details.id = id;
-        step.setAttribute('aria-controls', id);
-        // After transition completes, ensure anchors are correct
-        details.addEventListener('transitionend', (e) => {
-          if (e.propertyName === 'grid-template-rows') {
-            updateRailAnchors();
-          }
-        });
-      }
-
-      const setLabel = () => {
-        const labelEl = step.querySelector('.process-central__indicator-label');
-        if (!labelEl) return;
-        labelEl.textContent = step.classList.contains('is-open') ? 'Hide' : 'Details';
-      };
-      
-
-      const closeOthers = () => {
-        steps.forEach(s => {
-          if (s !== step) {
-            s.classList.remove('is-open');
-            s.setAttribute('aria-expanded', 'false');
-            const le = s.querySelector('.process-central__indicator-label');
-            if (le) le.textContent = 'Details';
-          }
-        });
-      };
-
-      const toggle = () => {
-        const willOpen = !step.classList.contains('is-open');
-        closeOthers();
-        step.classList.toggle('is-open', willOpen);
-        step.setAttribute('aria-expanded', String(willOpen));
-        setLabel();
-        // After layout change, update rail anchors (multiple frames to catch anim)
-        requestAnimationFrame(updateRailAnchors);
-        setTimeout(updateRailAnchors, 180);
-        setTimeout(updateRailAnchors, 350);
-      };
-
-      step.addEventListener('click', (e) => {
-        if (e.target.closest('a, button')) return;
-        toggle();
-      });
-      step.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle();
-        }
-      });
-
-      setLabel();
+      if (details) details.remove();
     });
 
     // Initial anchor compute and on resize
@@ -1923,6 +1791,64 @@
           observers.get(key).observe(el);
             });
         });
+    </script>
+    <script>
+        // Header booking CTA (Google Scheduling Button) + CTA tracking
+        (function() {
+          const bookingUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zhmhI_3L1J6eLQEaOtS_u8S02GcQHAkbFfH5H5gSX76HTYS6UTTVJHuWW64YQVD7h1QTDjddc?gv=true';
+          const withTracking = (base, fallbackContent) => {
+            const params = new URLSearchParams(window.location.search);
+            const utm = new URLSearchParams({
+              utm_source: params.get('utm_source') || 'site',
+              utm_medium: params.get('utm_medium') || 'cta',
+              utm_campaign: params.get('utm_campaign') || 'booking',
+              utm_content: sessionStorage.getItem('cta_source') || fallbackContent || 'header'
+            });
+            return base + (base.includes('?') ? '&' : '?') + utm.toString();
+          };
+
+          document.addEventListener('DOMContentLoaded', function() {
+            // Tag CTA clicks to sessionStorage
+            document.querySelectorAll('[data-cta]').forEach(el => {
+              el.addEventListener('click', () => sessionStorage.setItem('cta_source', el.getAttribute('data-cta')));
+            });
+
+            const mount = document.getElementById('header-booking-cta');
+            if (!mount) return;
+
+            // Inject Google scheduling button assets
+            const linkEl = document.createElement('link');
+            linkEl.rel = 'stylesheet';
+            linkEl.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+            document.head.appendChild(linkEl);
+
+            const scriptEl = document.createElement('script');
+            scriptEl.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+            scriptEl.async = true;
+            document.head.appendChild(scriptEl);
+
+            scriptEl.addEventListener('load', function(){
+              try {
+                if (window.calendar && calendar.schedulingButton && calendar.schedulingButton.load) {
+                  calendar.schedulingButton.load({
+                    url: withTracking(bookingUrl, 'header'),
+                    color: '#EF6C00',
+                    label: 'Schedule a Call',
+                    target: mount
+                  });
+                  return;
+                }
+              } catch(e) {}
+              // Fallback link
+              const a = document.createElement('a');
+              a.className = 'cta-primary';
+              a.href = withTracking(bookingUrl, 'header');
+              a.textContent = 'Schedule a Call';
+              a.setAttribute('data-cta', 'header');
+              mount.appendChild(a);
+            });
+          });
+        })();
     </script>
 </body>
 </html> 
