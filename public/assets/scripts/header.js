@@ -48,6 +48,12 @@
   function initHeaderBookingCta(){
     const mount = document.getElementById('header-booking-cta');
     if (!mount) return;
+    // Do not render header CTA on mobile to keep header uncluttered
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+      mount.innerHTML = '';
+      return;
+    }
     const bookingUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zhmhI_3L1J6eLQEaOtS_u8S02GcQHAkbFfH5H5gSX76HTYS6UTTVJHuWW64YQVD7h1QTDjddc?gv=true';
     const linkEl = document.createElement('link');
     linkEl.rel = 'stylesheet';
@@ -79,6 +85,17 @@
   }
 
   document.addEventListener('DOMContentLoaded', injectHeader);
+  // Re-evaluate CTA rendering on resize across breakpoints
+  window.addEventListener('resize', () => {
+    const mount = document.getElementById('header-booking-cta');
+    if (!mount) return;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+      mount.innerHTML = '';
+    } else if (!mount.children.length) {
+      initHeaderBookingCta();
+    }
+  });
 })();
 
 

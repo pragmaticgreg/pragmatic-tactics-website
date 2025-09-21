@@ -1359,7 +1359,8 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
 
 /* Hide header booking CTA on small screens; keep only in hamburger */
 @media (max-width: 768px) {
-    #header-booking-cta { display: none; }
+    /* Ensure CTA button and any injected children are hidden on mobile */
+    #header-booking-cta, #header-booking-cta * { display: none !important; }
 }
 
 /* Mobile Navigation */
