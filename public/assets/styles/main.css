@@ -1357,6 +1357,11 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     color: var(--primary-navy);
 }
 
+/* Hide header booking CTA on small screens; keep only in hamburger */
+@media (max-width: 768px) {
+    #header-booking-cta { display: none; }
+}
+
 /* Mobile Navigation */
 .hamburger {
     display: none;
