@@ -1093,65 +1093,56 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     position: relative;
 }
 
+/* Add visible shadow overlays for scroll indication */
+.project-display__menu::before,
+.project-display__menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 12px; /* Account for padding-bottom */
+    width: 100px;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-display__menu::before {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(255,255,255,1.0) 0%, 
+        rgba(255,255,255,0.9) 50%,
+        transparent 100%);
+}
+
+.project-display__menu::after {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(255,255,255,1.0) 0%, 
+        rgba(255,255,255,0.9) 50%,
+        transparent 100%);
+}
+
 /* Enable vertical scroll while allowing JS-driven horizontal swipes on the card area */
 .project-display__card {
     touch-action: pan-y;
+    margin: 0 10px;
 }
 
-/* Both sides have overflow */
-.project-display__menu.has-overflow {
-    mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        rgba(0,0,0,0.9) 16px,
-        rgba(0,0,0,1) 32px,
-        rgba(0,0,0,1) calc(100% - 32px),
-        rgba(0,0,0,0.9) calc(100% - 16px),
-        transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        rgba(0,0,0,0.9) 16px,
-        rgba(0,0,0,1) 32px,
-        rgba(0,0,0,1) calc(100% - 32px),
-        rgba(0,0,0,0.9) calc(100% - 16px),
-        transparent 100%
-    );
+/* Both sides have overflow - show both fade overlays */
+.project-display__menu.has-overflow::before,
+.project-display__menu.has-overflow::after {
+    opacity: 1;
 }
 
-/* Only left side has overflow */
-.project-display__menu.has-left-overflow {
-    mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        rgba(0,0,0,0.9) 16px,
-        rgba(0,0,0,1) 32px,
-        rgba(0,0,0,1) 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        rgba(0,0,0,0.9) 16px,
-        rgba(0,0,0,1) 32px,
-        rgba(0,0,0,1) 100%
-    );
+/* Only left side has overflow - show left fade overlay */
+.project-display__menu.has-left-overflow::before {
+    opacity: 1;
 }
 
-/* Only right side has overflow */
-.project-display__menu.has-right-overflow {
-    mask-image: linear-gradient(
-        to right,
-        rgba(0,0,0,1) 0px,
-        rgba(0,0,0,1) calc(100% - 48px),
-        transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        to right,
-        rgba(0,0,0,1) 0px,
-        rgba(0,0,0,1) calc(100% - 48px),
-        transparent 100%
-    );
+/* Only right side has overflow - show right fade overlay */
+.project-display__menu.has-right-overflow::after {
+    opacity: 1;
 }
 
 /* Styles for the new clickable scroll button */
@@ -1620,15 +1611,22 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
         text-align: center;
     }
     
+    /* Center second line on mobile - higher specificity to override later rule */
+    .hero__title .hero__title-right { text-align: center !important; }
+    
     .hero__bottom {
+        display: flex;
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        gap: 20px;
     }
     
     .hero__subtitle {
         text-align: center;
     }
     
+    .hero__cta { margin-top: 0; }
+
     .mobile-break {
         display: inline; /* Show line breaks on mobile */
     }
