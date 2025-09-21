@@ -1459,7 +1459,7 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.25); /* semi-transparent navy overlay, adjust alpha as needed */
+    background: rgba(0, 0, 0, 0.0); /* semi-transparent navy overlay, adjust alpha as needed */
     z-index: 2;
     pointer-events: none; /* allow clicks to pass through */
 }
@@ -2659,6 +2659,8 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     .nav { position: relative; }
     
     /* Hero - Mobile optimizations handled by clamp() and picture element */
+    .hero__bottom { gap: 20px; }
+    .hero__cta { margin-top: 12px; }
     
     /* Content Grid */
     .grid { gap: 24px; }
