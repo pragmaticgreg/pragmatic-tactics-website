@@ -1,25 +1,39 @@
-<nav class="nav">
+<header class="nav">
     <div class="container">
         <div class="nav-content">
+            <!-- Logo (links to home) -->
             <div class="logo">
                 <a href="/">
                     <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
                 </a>
             </div>
             
-            <div id="header-booking-cta"></div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <!-- Desktop nav (empty for now, can add links when we have more pages) -->
+            <nav class="nav-links">
+                <!-- Future navigation links go here -->
+            </nav>
+            
+            <!-- Actions -->
+            <div class="nav-actions">
+                <!-- Mobile hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Desktop CTA -->
+                <a href="booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
             </div>
         </div>
+        
+        <!-- Mobile menu (hidden by default) -->
         <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
             </ul>
         </div>
     </div>
-</nav>
+</header>
 
 

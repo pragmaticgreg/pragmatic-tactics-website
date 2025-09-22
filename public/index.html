@@ -20,7 +20,43 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6BQ5BW5"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div data-include="site-header"></div>
+    <header class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo (links to home) -->
+                <div class="logo">
+                    <a href="/">
+                    <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+                    </a>
+                </div>
+                
+                <!-- Desktop nav (empty for now, can add links when we have more pages) -->
+                <nav class="nav-links">
+                    <!-- Future navigation links go here -->
+                </nav>
+                
+                <!-- Actions -->
+                <div class="nav-actions">
+                    <!-- Mobile hamburger -->
+                    <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </button>
+                    
+                    <!-- Desktop CTA -->
+                    <a href="booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu (hidden by default) -->
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     <main>
     <section class="hero">
@@ -968,6 +1004,60 @@
     </section>
     </main>
 
+    <footer class="footer">
+        <div class="footer__gradient"></div>
+        <div class="container">
+            <div class="footer__top">
+                <!-- Logo/Brand -->
+                <div class="footer__brand">
+                    <img src="assets/logos/PT-logo-white-panels-only.svg" alt="Pragmatic Tactics" class="footer__logo">
+                </div>
+                
+                <!-- Email Signup -->
+                <div class="footer__signup">
+                    <form class="signup-form" id="newsletter-form">
+                        <div class="signup-form__input-wrapper">
+                            <input 
+                                type="email" 
+                                placeholder="Get practical insights delivered to your inbox" 
+                                class="signup-form__input"
+                                id="newsletter-email"
+                                required
+                            >
+                            <i data-lucide="mail" class="signup-form__icon"></i>
+                        </div>
+                        <button type="submit" class="signup-form__button" id="newsletter-submit">
+                            <i data-lucide="send" class="signup-form__button-icon"></i>
+                            <span class="button-text">Subscribe</span>
+                        </button>
+                    </form>
+                    <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="footer__middle">
+                <!-- Location & Service Area -->
+                <div class="footer__location">
+                    <p class="footer__location-text">
+                        <strong>Based in Revelstoke, BC, Canada</strong><br>
+                        Remote consulting available across Canada
+                    </p>
+                </div>
+                
+                <!-- Social -->
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" aria-label="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Pragmatic Tactics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Sentence wrap utility -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1141,6 +1231,7 @@
         });
     </script>
     <script src="assets/scripts/header.js"></script>
+    <script src="assets/scripts/newsletter.js"></script>
     <script>// --- COMPLETE STARTER PROJECT SELECTOR SCRIPT (TIMELINE V4 FINAL) ---
         document.addEventListener('DOMContentLoaded', () => {
             const projectSelectorSection = document.querySelector('#starter-projects');
@@ -1756,45 +1847,9 @@
           };
 
           document.addEventListener('DOMContentLoaded', function() {
-            // Tag CTA clicks to sessionStorage
-            document.querySelectorAll('[data-cta]').forEach(el => {
-              el.addEventListener('click', () => sessionStorage.setItem('cta_source', el.getAttribute('data-cta')));
-            });
+            // CTA tracking now handled in header.js
 
-            const mount = document.getElementById('header-booking-cta');
-            if (!mount) return;
-
-            // Inject Google scheduling button assets
-            const linkEl = document.createElement('link');
-            linkEl.rel = 'stylesheet';
-            linkEl.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
-            document.head.appendChild(linkEl);
-
-            const scriptEl = document.createElement('script');
-            scriptEl.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
-            scriptEl.async = true;
-            document.head.appendChild(scriptEl);
-
-            scriptEl.addEventListener('load', function(){
-              try {
-                if (window.calendar && calendar.schedulingButton && calendar.schedulingButton.load) {
-                  calendar.schedulingButton.load({
-                    url: withTracking(bookingUrl, 'header'),
-                    color: '#EF6C00',
-                    label: 'Schedule a Call',
-                    target: mount
-                  });
-                  return;
-                }
-              } catch(e) {}
-              // Fallback link
-              const a = document.createElement('a');
-              a.className = 'cta-primary';
-              a.href = withTracking(bookingUrl, 'header');
-              a.textContent = 'Schedule a Call';
-              a.setAttribute('data-cta', 'header');
-              mount.appendChild(a);
-            });
+            // Header CTA is now static - no injection needed
           });
         })();
     </script>
