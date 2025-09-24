@@ -258,21 +258,22 @@ Categories progress from simple diagnostic work to complex strategic implementat
 ### 1. Continuous Improvement Roadmap
 - **Icon:** 🗺️ roadmap with milestone flags
 - **Title:** Continuous Improvement Roadmap
-- **Value Prop:** Stop wondering what to tackle next—get a clear development plan that prioritizes the highest-impact improvements for sustainable growth.
-- **Description:** You know your business needs ongoing improvement but can't tell what deserves attention first or how the pieces fit together long-term. We create a strategic roadmap that shows you exactly what to work on next, whether you're implementing changes yourself or working with us on each area as you grow.
+- **Value Prop:** Cut through the noise—turn scattered ideas and advice into a clear roadmap of improvements your business can actually execute.
+- **Description:** Many leaders know their business needs to change but feel overwhelmed by too many ideas, competing priorities, or fragmented advice. This service helps you find focus. We take a holistic look at how your business operates—customer flow, digital systems, processes, and even marketing readiness—and identify where improvements will create the most value soonest. Together, we create a phased roadmap that shows you exactly what to work on first, what can wait, and how to move forward at a pace your team can handle. The end result is a practical guide you can follow independently or with support, without getting lost in distractions.
 - **Proof Bullets:**
-  - Teams focus on meaningful improvements instead of jumping between random initiatives
-  - Business development happens systematically rather than reactively to urgent problems
-  - Leaders make confident investment decisions when they can see the bigger transformation picture
+  - Leaders gain clarity by cutting through advice overload and competing priorities
+  - Improvements are tackled in phases that fit team capacity instead of all at once
+  - Teams focus on meaningful work that creates near-term results and long-term momentum
+  - Business growth accelerates when investments align with a bigger transformation picture
 - **Deliverables:**
-  - **Strategic Assessment Overview** - Current state analysis across all business systems and processes
-  - **Priority Development Map** - Sequenced improvement opportunities ranked by impact and effort
-  - **Growth Phase Planning** - Roadmap aligned with business capacity and growth timeline
-  - **Self-Implementation Guidance** - Resources and frameworks for tackling improvements independently
-  - **Partnership Pathway Options** - Clear next steps for collaborative development when ready
-- **Timeline:** 2-4 weeks for roadmap development
-- **Ideal For:** Leaders who want to see the big picture before committing to specific improvement projects
-- **CTA:** Map Your Growth Path
+  - **Discovery & Feedback Sessions** – Conversations to surface pain points and align on goals
+  - **Holistic Business Review** – High-level assessment of processes, customer flow, systems, and capability gaps
+  - **Prioritized Roadmap** – Sequenced plan that highlights what to address first and what to tackle later
+  - **Execution Pathways** – Guidance for implementing improvements independently, with your team, or with outside support
+  - **Living Document** – A reusable plan your business can adapt as conditions and priorities change
+- **Timeline:** 2–4 weeks for roadmap development
+- **Ideal For:** Leaders who know their business needs change but feel overwhelmed by too many ideas, fragmented advice, or uncertainty about where to start
+- **CTA:** Embrace Kaizen
 
 ---
 
@@ -280,18 +281,20 @@ Categories progress from simple diagnostic work to complex strategic implementat
 - **Icon:** 📘⚡ workbook with spark
 - **Title:** Team Enablement & Micro-Learning
 - **Value Prop:** Develop your team's skills while delivering immediate business results—custom training that applies directly to their current role and responsibilities.
-- **Description:** Your team needs new skills but generic training courses don't fit your specific business needs or workflows. We create focused learning modules tied directly to your actual processes and challenges, so your team develops capabilities they can use immediately while contributing to business results.
+- **Description:** Your team doesn’t need generic courses—they need training that fits their roles, your business goals, and the way they actually work. We start by identifying skills gaps and development opportunities within your team, then create flexible, role-specific learning modules tied to real business processes. Whether it’s digital fluency, AI adoption, or streamlining workflows, we build training that delivers direct value while strengthening your team’s long-term capabilities—without pulling them out of the business for days at a time.
 - **Proof Bullets:**
-  - Teams apply new skills immediately because training connects directly to their daily work
-  - Business results improve while team members gain confidence in expanded capabilities
-  - Custom modules eliminate time wasted on irrelevant generic training content
+  - Training is aligned with business goals and daily operations, not abstract concepts
+  - Teams apply new skills immediately because learning connects to real work
+  - Leaders gain confidence knowing development efforts create tangible business value
+  - Flexible delivery ensures training happens without disrupting operations
 - **Deliverables:**
-  - **Custom Learning Modules** - Tailored training content linked to your actual workflows and challenges
-  - **Guided Activities** - Hands-on experiments and exercises tied to real business tasks
-  - **Progressive Skill Development** - Sequenced modules that gradually build team confidence and capability
-  - **Implementation Support** - Regular touchpoints to troubleshoot learning and sustain progress
-- **Timeline:** 2-4 weeks for content development, implemented over 4-8 weeks depending on scope
-- **Ideal For:** Leaders who want practical skill development that delivers immediate business value
+  - **Skill Gap Discovery** – Identify where development opportunities exist for individuals or departments  
+  - **Custom Learning Modules** – Training content designed around actual workflows and business priorities  
+  - **Guided Activities** – Practical exercises and experiments tied to live business tasks  
+  - **Progressive Skill Development** – Sequenced modules (including AI and digital tools) that build confidence step by step  
+  - **Flexible Implementation Support** – Check-ins and guidance delivered in a way that works with your team’s availability  
+- **Timeline:** 2–4 weeks for content development, implemented over 4–8 weeks depending on scope
+- **Ideal For:** Leaders who want targeted skill development that delivers immediate and lasting business value
 - **CTA:** Build Skills That Stick
 
 ---
