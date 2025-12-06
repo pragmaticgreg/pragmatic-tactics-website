@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="Stop talking about fixes—start executing. We turn strategy into operational results for small BC businesses. Quick wins first. On-site or remote.">
     <meta name="twitter:image" content="https://pragmatictactics.com/assets/logos/Pragmatic_Tactics_Logo_1200x630.png">
     <title>Stop Working IN Your Business. Let's work ON It. | Revelstoke, BC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/main.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Google Tag Manager -->
@@ -81,7 +81,7 @@
         
         <div class="container">
             <div class="hero__content">
-                <h1 class="hero__title"><span class="hero__title-line hero__title-line--left">You don't need more strategy.</span><br><span class="hero__title-line hero__title-line--right hero__title-right">It's time to execute.</span></h1>
+                <h1 class="hero__title"><span class="hero__title-line hero__title-line--left">You don't need more strategy.</span><br><span class="hero__title-line hero__title-line--right hero__title-right">It's time to <span class="hero__title-emphasis">execute</span>.</span></h1>
                 <div class="hero__bottom">
                     <h2 class="hero__subtitle"><span class="hero__subline">Turn chaos into order that you and your team can own.</span></h2>
                     <a href="#starter-projects" class="hero__cta cta-primary">Find Your Starting Point</a>
@@ -92,17 +92,18 @@
 
     
 
-    <section class="about section">
-        <div class="quote-block">
-            <div class="quote-block__text prefer-sentence-wrap hidden">
-              <strong>Ideas are cheap</strong>. Execution is everything. 
-              <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span>
-            </div>
-            <div class="quote-block__text prefer-sentence-wrap">
-              <strong>Ideas are easy</strong>.<br>Execution is everything. 
-              <span class="quote-block__attribution"><br>— John Doerr</span>
-            </div>
+    <section class="section">
+        <div class="quote-block__text prefer-sentence-wrap hidden">
+          <strong>Ideas are cheap</strong>. Execution is everything. 
+          <span class="quote-block__attribution"><br class="sentence-break">— Christina Wodtke</span>
         </div>
+        <div class="quote-block__text prefer-sentence-wrap">
+          " <strong>Ideas are easy</strong>. Execution is everything. " 
+          <span class="quote-block__attribution"><br>— John Doerr</span>
+        </div>
+    </section>
+
+    <section class="about section">
         <div class="image-content-layout">
             <div class="image-content-layout__image">
               <img src="../assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier">
@@ -221,7 +222,40 @@
         </div>
     </section>
 
-    
+    <!-- Framework Section: People, Process, Technology -->
+    <section id="framework" class="section section--with-separator">
+        <div class="container">
+            <h2 class="section-title">How I Think About Your Business</h2>
+            <p class="section-subtitle">Three lenses. One integrated approach.</p>
+
+            <div class="grid grid--3-col" data-reveal-on-scroll data-reveal-children=".ps-card" data-stagger-children="120">
+                <div class="ps-card">
+                    <div class="ps-card__header">
+                        <h3 class="ps-card__title"><i data-lucide="user" class="ps-card__title-icon"></i>People</h3>
+                    </div>
+                    <p class="ps-card__text">Roles, communication patterns, skills gaps, and augmentation.</p>
+                    <p class="ps-card__text">Making sure your people can do their best work.</p>
+                </div>
+
+                <div class="ps-card">
+                    <div class="ps-card__header">
+                        <h3 class="ps-card__title"><i data-lucide="route" class="ps-card__title-icon"></i>Process</h3>
+                    </div>
+                    <p class="ps-card__text">Workflows, systems, optimization, and automation.</p>
+                    <p class="ps-card__text">Augmenting tribal knowledge into repeatable operations.</p>
+                </div>
+
+                <div class="ps-card">
+                    <div class="ps-card__header">
+                        <h3 class="ps-card__title"><i data-lucide="monitor" class="ps-card__title-icon"></i>Technology</h3>
+                    </div>
+                    <p class="ps-card__text">The right tools at the right time, for the right reasons.</p>
+                    <p class="ps-card__text">Digital solutions that work with your operations, not against them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="starter-projects" class="section section--with-separator">
         <div class="container">
             <a id="book"></a>
@@ -261,12 +295,14 @@
             <div id="project-display-container">
                 <div class="project-category-content is-active" data-category-content="audit" data-reveal-on-scroll data-reveal-delay="300">
                     <div class="project-display">
-                        <div class="project-display__menu" role="tablist">
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-process" aria-selected="true">Audit Your Processes<i data-lucide="search"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-digital" aria-selected="false">Digital Snapshot<i data-lucide="gauge"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-ai" aria-selected="false">AI Business Workshop<i data-lucide="bot"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-sales" aria-selected="false">Sales Flow Check<i data-lucide="repeat"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-audit-docs" aria-selected="false">Process Documentation Sprint<i data-lucide="clipboard-check"></i></button>
+                        <div class="project-display__menu-wrapper">
+                            <div class="project-display__menu" role="tablist">
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-audit-process" aria-selected="true">Audit Your Processes<i data-lucide="search"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-audit-digital" aria-selected="false">Digital Snapshot<i data-lucide="gauge"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-audit-ai" aria-selected="false">AI Business Workshop<i data-lucide="bot"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-audit-sales" aria-selected="false">Sales Flow Check<i data-lucide="repeat"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-audit-docs" aria-selected="false">Process Documentation Sprint<i data-lucide="clipboard-check"></i></button>
+                            </div>
                         </div>
                         <div class="project-display__card" role="tabpanel">
                             <div class="starter-card">
@@ -288,23 +324,26 @@
     
                 <div class="project-category-content" data-category-content="optimize">
                     <div class="project-display">
-                        <div class="project-display__menu" role="tablist">
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-onboarding" aria-selected="true">Customer Journey Mapping<i data-lucide="route"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-crm" aria-selected="false">CRM Implementation<i data-lucide="notebook-pen"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-pm" aria-selected="false">Task Management Foundation<i data-lucide="check-square"></i></button>
-                            <button class="project-display__menu-item" role="tab" data-template-id="template-opt-software" aria-selected="false">Software Selection & Implementation<i data-lucide="search-check"></i></button>
+                        <div class="project-display__menu-wrapper">
+                            <div class="project-display__menu" role="tablist">
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-opt-onboarding" aria-selected="true">Customer Journey Mapping<i data-lucide="route"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-opt-crm" aria-selected="false">CRM Implementation<i data-lucide="notebook-pen"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-opt-pm" aria-selected="false">Task Management Foundation<i data-lucide="check-square"></i></button>
+                                <button class="project-display__menu-item" role="tab" data-template-id="template-opt-software" aria-selected="false">Software Selection & Implementation<i data-lucide="search-check"></i></button>
+                            </div>
                         </div>
-                        <div class="project-display__card" role="tabpanel">
-                             </div>
+                        <div class="project-display__card" role="tabpanel"></div>
                     </div>
                 </div>
     
                 <div class="project-category-content" data-category-content="automate">
-                     <div class="project-display">
-                        <div class="project-display__menu" role="tablist">
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-time" aria-selected="true">Leadership Time Recovery<i data-lucide="clock-5"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-optimize" aria-selected="false">Process Optimization<i data-lucide="settings"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-auto-integrate" aria-selected="false">System Integration<i data-lucide="link-2"></i></button>
+                    <div class="project-display">
+                        <div class="project-display__menu-wrapper">
+                            <div class="project-display__menu" role="tablist">
+                                 <button class="project-display__menu-item" role="tab" data-template-id="template-auto-time" aria-selected="true">Leadership Time Recovery<i data-lucide="clock-5"></i></button>
+                                 <button class="project-display__menu-item" role="tab" data-template-id="template-auto-optimize" aria-selected="false">Process Optimization<i data-lucide="settings"></i></button>
+                                 <button class="project-display__menu-item" role="tab" data-template-id="template-auto-integrate" aria-selected="false">System Integration<i data-lucide="link-2"></i></button>
+                            </div>
                         </div>
                         <div class="project-display__card" role="tabpanel"></div>
                     </div>
@@ -312,11 +351,13 @@
     
                 
                 <div class="project-category-content" data-category-content="scale">
-                     <div class="project-display">
-                        <div class="project-display__menu" role="tablist">
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-roadmap" aria-selected="true">Continuous Improvement Roadmap<i data-lucide="map"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-learning" aria-selected="false">Team Enablement & Micro‑Learning<i data-lucide="book-open-check"></i></button>
-                             <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-goals" aria-selected="false">Goal Execution Framework<i data-lucide="target"></i></button>
+                    <div class="project-display">
+                        <div class="project-display__menu-wrapper">
+                            <div class="project-display__menu" role="tablist">
+                                 <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-roadmap" aria-selected="true">Continuous Improvement Roadmap<i data-lucide="map"></i></button>
+                                 <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-learning" aria-selected="false">Team Enablement & Micro‑Learning<i data-lucide="book-open-check"></i></button>
+                                 <button class="project-display__menu-item" role="tab" data-template-id="template-elevate-goals" aria-selected="false">Goal Execution Framework<i data-lucide="target"></i></button>
+                            </div>
                         </div>
                         <div class="project-display__card" role="tabpanel"></div>
                     </div>
@@ -867,21 +908,21 @@
               <div id="people" class="tab-panel grid grid--3-col">
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Capacity</h3>
+                          <h3 class="ps-card__title"><i data-lucide="brain" class="ps-card__title-icon"></i>Capacity</h3>
                       </div>
                       <p class="ps-card__text">A business can only perform as well as its people have <strong>bandwidth</strong> to think and act strategically.</p>
                       <p class="ps-card__text">We help create capacity by <strong>removing bottlenecks</strong>, eliminating time drains, and ensuring teams aren't overwhelmed by inefficient processes—freeing them to focus on <strong>high-impact work</strong>.</p>
                   </div>
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Clarity</h3>
+                          <h3 class="ps-card__title"><i data-lucide="glasses" class="ps-card__title-icon"></i>Clarity</h3>
                       </div>
                       <p class="ps-card__text">Without clarity, even talented teams spin their wheels.</p>
                       <p class="ps-card__text">We ensure teams have the <strong>right information at the right time</strong>, understand <strong>priorities clearly</strong>, and have access to the resources they need to deliver <strong>quality work consistently</strong>.</p>
                   </div>
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Ability</h3>
+                          <h3 class="ps-card__title"><i data-lucide="biceps-flexed" class="ps-card__title-icon"></i>Ability</h3>
                       </div>
                       <p class="ps-card__text">Strong execution requires both <strong>skills and collaboration</strong>.</p>
                       <p class="ps-card__text">Throughout our work together, we build your team's <strong>capability</strong>—developing skills, improving workflows, and strengthening how team members depend on and support each other's work.</p>
@@ -891,21 +932,21 @@
               <div id="process" class="tab-panel grid grid--3-col hidden">
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Efficiency</h3>
+                          <h3 class="ps-card__title"><i data-lucide="bike" class="ps-card__title-icon"></i>Efficiency</h3>
                       </div>
                       <p class="ps-card__text">Efficient processes reduce <strong>wasted effort</strong> and free up time for <strong>revenue-generating work</strong>.</p>
                       <p class="ps-card__text">We redesign workflows to <strong>cut friction</strong>, eliminate redundant steps, and ensure every action moves you closer to your goals.</p>
                   </div>
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Consistency</h3>
+                          <h3 class="ps-card__title"><i data-lucide="timer-reset" class="ps-card__title-icon"></i>Consistency</h3>
                       </div>
                       <p class="ps-card__text">Great businesses <strong>don't rely on luck</strong>—they rely on consistency.</p>
                       <p class="ps-card__text">We build processes that deliver <strong>repeatable outcomes</strong>, so you can <strong>confidently promise results</strong> and your team can deliver them every time.</p>
                   </div>
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Sustainability</h3>
+                          <h3 class="ps-card__title"><i data-lucide="sprout" class="ps-card__title-icon"></i>Sustainability</h3>
                       </div>
                       <p class="ps-card__text">Running everything through <strong>memory and improvisation isn't sustainable</strong>.</p>
                       <p class="ps-card__text">We create <strong>lasting processes</strong> that work without <strong>constant oversight</strong>—so your business can thrive even when you're not managing every detail.</p>
@@ -915,21 +956,21 @@
               <div id="technology" class="tab-panel grid grid--3-col hidden">
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Utility</h3>
+                          <h3 class="ps-card__title"><i data-lucide="drill" class="ps-card__title-icon"></i>Utility</h3>
                       </div>
                       <p class="ps-card__text">The right technology should <strong>make work easier, not harder</strong>.</p>
                       <p class="ps-card__text">We focus on technology that actually improves how you work—tools that <strong>pay for themselves</strong> through time saved and problems solved.</p>
                   </div>
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Connectivity</h3>
+                          <h3 class="ps-card__title"><i data-lucide="waypoints" class="ps-card__title-icon"></i>Connectivity</h3>
                       </div>
                       <p class="ps-card__text">Juggling multiple <strong>disconnected tools</strong> can create more work, not less.</p>
                       <p class="ps-card__text">We integrate your technology so data moves <strong>seamlessly between systems</strong>, <strong>eliminating redundant tasks</strong> and preventing things from falling through the cracks.</p>
                   </div>
                   <div class="ps-card">
                       <div class="ps-card__header">
-                          <h3 class="ps-card__title">Agility</h3>
+                          <h3 class="ps-card__title"><i data-lucide="feather" class="ps-card__title-icon"></i>Agility</h3>
                       </div>
                       <p class="ps-card__text">Markets and technology both evolve quickly—your <strong>systems should keep up</strong>.</p>
                       <p class="ps-card__text">We build flexibility into your setup, adding automation strategically so you can pivot with <strong>current data</strong> and <strong>adopt new tools seamlessly</strong>.</p>
@@ -940,6 +981,82 @@
           <img src="assets/images/Cube - People.svg" alt="Active Solution Icon" id="active-tab-icon-bottom">
       </div>
   </section>
+
+    <!-- Contact Form Popup -->
+    <div id="contact-popup" class="contact-popup">
+        <div class="contact-popup__overlay"></div>
+        <div class="contact-popup__modal">
+            <button class="contact-popup__close" aria-label="Close popup">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="contact-popup__content">
+                <h3 class="contact-popup__title">Let's Trade Insights</h3>
+                <div class="contact-popup__checklist">
+                    <div class="contact-popup__item">
+                        <i data-lucide="check" class="contact-popup__check"></i>
+                        <span>You share a few details about your business</span>
+                    </div>
+                    <div class="contact-popup__item">
+                        <i data-lucide="check" class="contact-popup__check"></i>
+                        <span>I learn what challenges you're facing</span>
+                    </div>
+                    <div class="contact-popup__item">
+                        <i data-lucide="check" class="contact-popup__check"></i>
+                        <span>I send back free, personalized ideas you can act on</span>
+                    </div>
+                </div>
+                <p class="contact-popup__subtitle">Just a fair exchange: your experience for mine.</p>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="contact-form__field">
+                        <label for="contact-name" class="contact-form__label">Name *</label>
+                        <input type="text" id="contact-name" name="name" class="contact-form__input" required>
+                    </div>
+                    
+                    <div class="contact-form__field">
+                        <label for="contact-email" class="contact-form__label">Email *</label>
+                        <input type="email" id="contact-email" name="email" class="contact-form__input" required>
+                    </div>
+                    
+                    <div class="contact-form__field">
+                        <label for="contact-business-type" class="contact-form__label">Type of Business *</label>
+                        <select id="contact-business-type" name="business_type" class="contact-form__select" required>
+                            <option value="">Select your business type</option>
+                            <option value="Trades">Trades (construction/service)</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Product based">Product based</option>
+                            <option value="Professional services">Professional services</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="contact-form__field">
+                        <label for="contact-message" class="contact-form__label">Tell me about your biggest challenge</label>
+                        <textarea id="contact-message" name="message" class="contact-form__textarea" rows="4" placeholder="What's keeping you up at night? What would you most like to improve?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="contact-form__submit">
+                        <span class="contact-form__submit-text">Start the Conversation</span>
+                        <span class="contact-form__submit-loading" style="display: none;">
+                            <i data-lucide="loader-2" class="animate-spin"></i>
+                            Sending...
+                        </span>
+                    </button>
+                    
+                    <p class="contact-form__disclaimer">
+                        <strong>Not a subscription.</strong> This is simply a contact form to start a conversation. I'll respond personally within 24 hours.
+                    </p>
+                </form>
+                
+                <div id="contact-success" class="contact-success" style="display: none;">
+                    <i data-lucide="check-circle" class="contact-success__icon"></i>
+                    <h4 class="contact-success__title">Thanks for reaching out!</h4>
+                    <p class="contact-success__message">I'll review your message and get back to you within 24 hours with some personalized ideas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="timeline-section section section--with-separator">
         <div class="container">
@@ -1246,6 +1363,7 @@
     </script>
     <script src="assets/scripts/header.js"></script>
     <script src="assets/scripts/newsletter.js"></script>
+    <script src="assets/scripts/contact-popup.js"></script>
     <script>// --- COMPLETE STARTER PROJECT SELECTOR SCRIPT (TIMELINE V4 FINAL) ---
         document.addEventListener('DOMContentLoaded', () => {
             const projectSelectorSection = document.querySelector('#starter-projects');
@@ -1262,10 +1380,11 @@
                 // Reveal menu items with stagger when category loads
                 const items = Array.from(menu.querySelectorAll('.project-display__menu-item'));
                 items.forEach((btn, idx) => {
-                    btn.classList.remove('is-revealed');
-                    btn.style.transitionDelay = `${Math.min(idx * 100 + 200, 700)}ms`;
-                    // Use rAF to ensure style applies before toggling
-                    requestAnimationFrame(() => btn.classList.add('is-revealed'));
+                    // Only re-trigger reveal if not already revealed
+                    if (!btn.classList.contains('is-revealed')) {
+                        btn.style.transitionDelay = `${Math.min(idx * 100 + 200, 700)}ms`;
+                        requestAnimationFrame(() => btn.classList.add('is-revealed'));
+                    }
                 });
                 const template = document.getElementById(templateId);
                 if (!template || !cardContainer) return;
@@ -1283,45 +1402,44 @@
             // Project menu overflow detection with directional gradients
             const handleProjectMenuOverflow = (menu) => {
                 if (!menu) return;
-                
+
                 // Force a reflow to ensure accurate measurements
                 menu.offsetHeight;
-                
+
                 const scrollLeft = menu.scrollLeft;
                 const scrollWidth = menu.scrollWidth;
                 const clientWidth = menu.clientWidth;
                 const maxScrollLeft = scrollWidth - clientWidth;
-                
-                // Check if there's content hidden on each side (with 2px tolerance)
-                const hasLeftOverflow = scrollLeft > 2;
-                const hasRightOverflow = scrollLeft < (maxScrollLeft - 2);
-                
-                // Debug logging (remove after testing)
-                console.log('Menu overflow check:', {
-                    scrollLeft: scrollLeft,
-                    scrollWidth: scrollWidth,
-                    clientWidth: clientWidth,
-                    maxScrollLeft: maxScrollLeft,
-                    hasLeftOverflow: hasLeftOverflow,
-                    hasRightOverflow: hasRightOverflow
-                });
-                
-                // Remove all overflow classes first
-                menu.classList.remove('has-overflow', 'has-left-overflow', 'has-right-overflow');
-                
-                // Apply specific overflow classes
-                if (hasLeftOverflow && hasRightOverflow) {
-                    menu.classList.add('has-overflow'); // Both sides
-                } else if (hasLeftOverflow) {
-                    menu.classList.add('has-left-overflow'); // Left only
-                } else if (hasRightOverflow) {
-                    menu.classList.add('has-right-overflow'); // Right only
+
+                // Check overflow states (with 2px tolerance)
+                const isAtEnd = scrollLeft >= (maxScrollLeft - 2);
+                const isAtStart = scrollLeft <= 2;
+
+                // Target the wrapper for visual classes
+                const wrapper = menu.parentElement;
+                if (!wrapper.classList.contains('project-display__menu-wrapper')) return;
+
+                // Toggle mask state for end
+                if (isAtEnd) {
+                    wrapper.classList.add('is-end');
+                } else {
+                    wrapper.classList.remove('is-end');
+                }
+
+                // Toggle mask state for start
+                if (isAtStart) {
+                    wrapper.classList.add('is-start');
+                } else {
+                    wrapper.classList.remove('is-start');
                 }
             };
 
             const setupCategoryListeners = (categoryContent) => {
+                // Look for menu inside wrapper if present, or direct child
                 const menu = categoryContent.querySelector('.project-display__menu');
+                // Card container is a sibling of the wrapper now
                 const cardContainer = categoryContent.querySelector('.project-display__card');
+                
                 if (!menu || !cardContainer) return;
 
                 // Click -> load template and set selection
@@ -1420,9 +1538,9 @@
                                 btn.style.transitionDelay = `${Math.min(idx * 120 + 200, 800)}ms`;
                                 requestAnimationFrame(() => btn.classList.add('is-revealed'));
                             });
+                            // Check overflow when category changes (longer delay for layout completion)
+                            setTimeout(() => handleProjectMenuOverflow(menu), 150);
                         }
-                        // Check overflow when category changes (longer delay for layout completion)
-                        setTimeout(() => handleProjectMenuOverflow(menu), 150);
                     }
                 });
             });
@@ -1779,6 +1897,33 @@
           hero.classList.add('hero--animate'); // instantly visible due to CSS reduce rules
         }
       });
+    </script>
+    <script>
+      // Hide-on-scroll-down, show-on-scroll-up for header
+      (function() {
+        const nav = document.querySelector('.nav');
+        if (!nav) return;
+
+        let lastY = window.scrollY || 0;
+        const threshold = 8;
+
+        const onScroll = () => {
+          const currentY = window.scrollY || 0;
+          const delta = currentY - lastY;
+
+          if (currentY < 10) {
+            nav.classList.remove('nav--hidden');
+          } else if (delta > threshold) {
+            nav.classList.add('nav--hidden');
+          } else if (delta < -threshold) {
+            nav.classList.remove('nav--hidden');
+          }
+
+          lastY = currentY;
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+      })();
     </script>
     <script>
       // Reveal-on-scroll bus: toggles is-revealed and dispatches section:reveal

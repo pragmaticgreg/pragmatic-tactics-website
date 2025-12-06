@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragmatic Tactics — Brand Direction Exploration</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================= */
+        /* THEME TOGGLE & SHARED FOUNDATION             */
+        /* ============================================= */
+        
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Theme Toggle Bar */
+        .theme-toggle-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .theme-toggle-bar__label {
+            color: rgba(255,255,255,0.6);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .theme-toggle {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 4px;
+            gap: 4px;
+        }
+        
+        .theme-toggle__btn {
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            color: rgba(255,255,255,0.5);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle__btn:hover {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .theme-toggle__btn.active {
+            background: rgba(255,255,255,0.95);
+            color: #1a1a1a;
+        }
+        
+        /* ============================================= */
+        /* OPTION A: WARM MINIMALISM                    */
+        /* ============================================= */
+        
+        .theme-a {
+            --bg-primary: #FDFBF7;
+            --bg-secondary: #F5F2EB;
+            --bg-accent: #E8E4DA;
+            --text-primary: #2C2825;
+            --text-secondary: #5C564E;
+            --text-tertiary: #8A847A;
+            --accent-warm: #B8845C;
+            --accent-sage: #7A8B73;
+            --accent-muted: #C4A77D;
+            --border-light: rgba(44, 40, 37, 0.08);
+            --border-medium: rgba(44, 40, 37, 0.15);
+            
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+        }
+        
+        .theme-a body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.7;
+        }
+        
+        /* A: Navigation */
+        .theme-a .nav {
+            padding: 24px 0;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            margin-top: 60px;
+        }
+        
+        .theme-a .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .theme-a .nav__logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .theme-a .nav__cta {
+            padding: 12px 28px;
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-a .nav__cta:hover {
+            background: var(--accent-warm);
+            transform: translateY(-1px);
+        }
+        
+        /* A: Hero */
+        .theme-a .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        
+        .theme-a .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(184, 132, 92, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .theme-a .hero__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .theme-a .hero__eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .theme-a .hero__eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--accent-warm);
+        }
+        
+        .theme-a .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+        
+        .theme-a .hero__title em {
+            font-style: italic;
+            color: var(--accent-warm);
+        }
+        
+        .theme-a .hero__subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+        
+        .theme-a .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+        }
+        
+        .theme-a .hero__cta:hover {
+            background: var(--accent-warm);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(184, 132, 92, 0.25);
+        }
+        
+        .theme-a .hero__cta svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .theme-a .hero__cta:hover svg {
+            transform: translateX(4px);
+        }
+        
+        /* A: Value Prop Section */
+        .theme-a .value-prop {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .theme-a .value-prop__inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        .theme-a .value-prop__quote {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        
+        .theme-a .value-prop__attribution {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            letter-spacing: 0.05em;
+        }
+        
+        /* A: Problem/Solution Section */
+        .theme-a .problem-solution {
+            padding: 120px 0;
+            background: var(--bg-primary);
+        }
+        
+        .theme-a .problem-solution__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .theme-a .problem-solution__image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--bg-accent);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .theme-a .problem-solution__image::after {
+            content: 'Photo';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .theme-a .problem-solution__content h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        
+        .theme-a .problem-solution__content p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .theme-a .problem-solution__content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        /* A: Framework Section */
+        .theme-a .framework {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .theme-a .framework__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        .theme-a .framework__header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .theme-a .framework__title {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        
+        .theme-a .framework__subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+        }
+        
+        .theme-a .framework__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .theme-a .framework__card {
+            background: var(--bg-primary);
+            padding: 40px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+        }
+        
+        .theme-a .framework__card:hover {
+            border-color: var(--accent-warm);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+        }
+        
+        .theme-a .framework__card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--accent-warm);
+        }
+        
+        .theme-a .framework__card-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .theme-a .framework__card-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        
+        /* ============================================= */
+        /* OPTION B: GROUNDED & TEXTURED                */
+        /* Sand, Sage, Clay — "Jeans & Flannel"         */
+        /* ============================================= */
+        
+        .theme-b {
+            /* Sand — The Foundation */
+            --sand-50: #fcfbf9;
+            --sand-100: #f7f5f2;
+            --sand-200: #efebe6;
+            --sand-300: #e4dfd8;
+            --sand-900: #3d3834;
+            
+            /* Sage — The Shop Floor */
+            --sage-600: #3d5e59;
+            --sage-700: #2f4f4a;
+            --sage-800: #2c4a46;
+            --sage-900: #1d3330;
+            
+            /* Clay — The Warmth */
+            --clay-400: #d4906f;
+            --clay-500: #c27b5e;
+            --clay-600: #a86348;
+            --clay-700: #8f5239;
+            
+            /* Text */
+            --charcoal: #2d3748;
+            --charcoal-light: #4a5568;
+            --charcoal-muted: #718096;
+            
+            /* Mapped to component vars */
+            --bg-primary: var(--sand-50);
+            --bg-secondary: var(--sand-100);
+            --bg-accent: var(--sand-200);
+            --text-primary: var(--sand-900);
+            --text-secondary: var(--charcoal);
+            --text-tertiary: var(--charcoal-muted);
+            --accent-primary: var(--sage-800);
+            --accent-warm: var(--clay-500);
+            --accent-warm-hover: var(--clay-600);
+            --border-light: var(--sand-200);
+            --border-medium: var(--sand-300);
+            
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+        }
+        
+        .theme-b body {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            line-height: 1.7;
+        }
+        
+        /* B: Subtle paper texture overlay */
+        .theme-b::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.025;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        /* B: Navigation */
+        .theme-b .nav {
+            padding: 20px 0;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .theme-b .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .theme-b .nav__logo {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        
+        .theme-b .nav__cta {
+            padding: 12px 28px;
+            background: var(--accent-primary);
+            color: var(--sand-50);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-b .nav__cta:hover {
+            background: var(--accent-warm);
+            transform: translateY(-1px);
+        }
+        
+        /* B: Hero */
+        .theme-b .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-primary);
+        }
+        
+        /* Warm gradient wash */
+        .theme-b .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 70%;
+            height: 120%;
+            background: radial-gradient(ellipse at center, rgba(194, 123, 94, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        /* Sage accent in corner */
+        .theme-b .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 50%;
+            height: 80%;
+            background: radial-gradient(ellipse at center, rgba(44, 74, 70, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .theme-b .hero__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .theme-b .hero__eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-primary);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .theme-b .hero__eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--accent-primary);
+        }
+        
+        .theme-b .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 5.5vw, 68px);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--text-primary);
+            max-width: 780px;
+            margin-bottom: 28px;
+            letter-spacing: -0.02em;
+        }
+        
+        .theme-b .hero__title em {
+            font-style: italic;
+            color: var(--accent-warm);
+            font-weight: 400;
+        }
+        
+        .theme-b .hero__subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+        
+        .theme-b .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: var(--accent-primary);
+            color: var(--sand-50);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            border: none;
+        }
+        
+        .theme-b .hero__cta:hover {
+            background: var(--accent-warm);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(194, 123, 94, 0.25);
+        }
+        
+        .theme-b .hero__cta svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .theme-b .hero__cta:hover svg {
+            transform: translateX(4px);
+        }
+        
+        /* B: Value Prop Section */
+        .theme-b .value-prop {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+        
+        .theme-b .value-prop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--border-light);
+        }
+        
+        .theme-b .value-prop__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        .theme-b .value-prop__quote {
+            font-family: var(--font-display);
+            font-size: clamp(26px, 3.5vw, 38px);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .theme-b .value-prop__quote strong {
+            color: var(--accent-warm);
+            font-weight: 500;
+        }
+        
+        .theme-b .value-prop__attribution {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        /* B: Problem/Solution Section */
+        .theme-b .problem-solution {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+        
+        .theme-b .problem-solution__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+        
+        .theme-b .problem-solution__image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--bg-accent);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 20px rgba(61, 56, 52, 0.08);
+        }
+        
+        .theme-b .problem-solution__image::after {
+            content: 'Photo';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .theme-b .problem-solution__content h2 {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        
+        .theme-b .problem-solution__content p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            line-height: 1.85;
+        }
+        
+        .theme-b .problem-solution__content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        /* B: Framework Section */
+        .theme-b .framework {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+        
+        .theme-b .framework::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--border-light);
+        }
+        
+        .theme-b .framework__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        .theme-b .framework__header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .theme-b .framework__title {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+        }
+        
+        .theme-b .framework__subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .theme-b .framework__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .theme-b .framework__card {
+            background: var(--bg-primary);
+            padding: 40px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 8px rgba(61, 56, 52, 0.04);
+        }
+        
+        .theme-b .framework__card:hover {
+            border-color: var(--accent-warm);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(61, 56, 52, 0.1);
+        }
+        
+        .theme-b .framework__card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--accent-warm);
+        }
+        
+        .theme-b .framework__card-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .theme-b .framework__card-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        
+        /* ============================================= */
+        /* OPTION C: LIGHT/DARK ALTERNATING             */
+        /* Sand + Deep Sage — Hybrid Rhythm             */
+        /* ============================================= */
+        
+        .theme-c {
+            /* Sand — The Foundation (light sections) */
+            --sand-50: #fcfbf9;
+            --sand-100: #f7f5f2;
+            --sand-200: #efebe6;
+            --sand-300: #e4dfd8;
+            --sand-900: #3d3834;
+            
+            /* Deep Forest — Dark sections */
+            --forest-900: #1a2421;
+            --forest-800: #1f2d29;
+            --forest-700: #253632;
+            --forest-600: #2c3f3a;
+            
+            /* Sage — The Shop Floor */
+            --sage-600: #3d5e59;
+            --sage-700: #2f4f4a;
+            --sage-800: #2c4a46;
+            --sage-900: #1d3330;
+            
+            /* Clay — The Warmth */
+            --clay-400: #d4906f;
+            --clay-500: #c27b5e;
+            --clay-600: #a86348;
+            
+            /* Text */
+            --charcoal: #2d3748;
+            --charcoal-light: #4a5568;
+            --charcoal-muted: #718096;
+            
+            /* Light section vars */
+            --light-bg: var(--sand-50);
+            --light-bg-alt: var(--sand-100);
+            --light-text: var(--sand-900);
+            --light-text-secondary: var(--charcoal);
+            --light-border: var(--sand-200);
+            
+            /* Dark section vars */
+            --dark-bg: var(--forest-900);
+            --dark-bg-alt: var(--forest-800);
+            --dark-text: var(--sand-100);
+            --dark-text-secondary: rgba(247, 245, 242, 0.75);
+            --dark-text-muted: rgba(247, 245, 242, 0.5);
+            --dark-border: rgba(247, 245, 242, 0.1);
+            
+            /* Accents */
+            --accent-primary: var(--sage-800);
+            --accent-warm: var(--clay-500);
+            --accent-warm-hover: var(--clay-600);
+            
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+        }
+        
+        .theme-c body {
+            background: var(--light-bg);
+            color: var(--light-text-secondary);
+            font-family: var(--font-body);
+            line-height: 1.7;
+        }
+        
+        /* C: Navigation - Dark */
+        .theme-c .nav {
+            padding: 20px 0;
+            background: var(--dark-bg);
+            border-bottom: 1px solid var(--dark-border);
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .theme-c .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .theme-c .nav__logo {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark-text);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        
+        .theme-c .nav__cta {
+            padding: 12px 28px;
+            background: var(--accent-warm);
+            color: var(--sand-50);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-c .nav__cta:hover {
+            background: var(--clay-400);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(194, 123, 94, 0.3);
+        }
+        
+        /* C: Hero - Dark with gradient */
+        .theme-c .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                165deg,
+                var(--forest-900) 0%,
+                var(--forest-800) 40%,
+                var(--forest-700) 100%
+            );
+        }
+        
+        /* Warm glow accent */
+        .theme-c .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(194, 123, 94, 0.12) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        
+        /* Subtle sage glow bottom left */
+        .theme-c .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 50%;
+            height: 70%;
+            background: radial-gradient(ellipse at center, rgba(44, 74, 70, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* Noise texture for dark sections */
+        .theme-c .hero .hero__inner::before {
+            content: '';
+            position: absolute;
+            inset: -100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        .theme-c .hero__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .theme-c .hero__eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .theme-c .hero__eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--accent-warm);
+        }
+        
+        .theme-c .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 5.5vw, 68px);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--dark-text);
+            max-width: 780px;
+            margin-bottom: 28px;
+            letter-spacing: -0.02em;
+        }
+        
+        .theme-c .hero__title em {
+            font-style: italic;
+            color: var(--accent-warm);
+            font-weight: 400;
+        }
+        
+        .theme-c .hero__subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--dark-text-secondary);
+            max-width: 540px;
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+        
+        .theme-c .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 36px;
+            background: var(--accent-warm);
+            color: var(--sand-50);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            border-radius: 6px;
+            transition: all 0.4s ease;
+            border: none;
+        }
+        
+        .theme-c .hero__cta:hover {
+            background: var(--clay-400);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(194, 123, 94, 0.25);
+        }
+        
+        .theme-c .hero__cta svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .theme-c .hero__cta:hover svg {
+            transform: translateX(4px);
+        }
+        
+        /* C: Value Prop Section - Light */
+        .theme-c .value-prop {
+            padding: 100px 0;
+            background: var(--light-bg);
+            position: relative;
+        }
+        
+        .theme-c .value-prop__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        .theme-c .value-prop__quote {
+            font-family: var(--font-display);
+            font-size: clamp(26px, 3.5vw, 38px);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--light-text);
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .theme-c .value-prop__quote strong {
+            color: var(--accent-warm);
+            font-weight: 500;
+        }
+        
+        .theme-c .value-prop__attribution {
+            text-align: center;
+            font-size: 13px;
+            color: var(--charcoal-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        /* C: Problem/Solution Section - Light */
+        .theme-c .problem-solution {
+            padding: 100px 0 120px;
+            background: var(--light-bg-alt);
+            position: relative;
+        }
+        
+        .theme-c .problem-solution::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--light-border);
+        }
+        
+        .theme-c .problem-solution__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+        
+        .theme-c .problem-solution__image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--sand-200);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--light-border);
+            box-shadow: 0 4px 20px rgba(61, 56, 52, 0.08);
+        }
+        
+        .theme-c .problem-solution__image::after {
+            content: 'Photo';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--charcoal-muted);
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .theme-c .problem-solution__content h2 {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--light-text);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        
+        .theme-c .problem-solution__content p {
+            font-size: 16px;
+            color: var(--light-text-secondary);
+            margin-bottom: 18px;
+            line-height: 1.85;
+        }
+        
+        .theme-c .problem-solution__content strong {
+            color: var(--light-text);
+            font-weight: 600;
+        }
+        
+        /* C: Framework Section - Dark */
+        .theme-c .framework {
+            padding: 120px 0;
+            background: linear-gradient(
+                180deg,
+                var(--forest-900) 0%,
+                var(--forest-800) 100%
+            );
+            position: relative;
+        }
+        
+        /* Subtle noise texture */
+        .theme-c .framework::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.025;
+            pointer-events: none;
+        }
+        
+        .theme-c .framework__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .theme-c .framework__header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .theme-c .framework__title {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--dark-text);
+            margin-bottom: 14px;
+        }
+        
+        .theme-c .framework__subtitle {
+            font-size: 16px;
+            color: var(--dark-text-secondary);
+        }
+        
+        .theme-c .framework__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .theme-c .framework__card {
+            background: rgba(247, 245, 242, 0.04);
+            padding: 36px 28px;
+            border-radius: 8px;
+            border: 1px solid var(--dark-border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
+        }
+        
+        /* Top accent bar on hover */
+        .theme-c .framework__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-warm), var(--clay-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .theme-c .framework__card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .theme-c .framework__card:hover {
+            background: rgba(247, 245, 242, 0.07);
+            border-color: rgba(247, 245, 242, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .theme-c .framework__card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-warm);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--sand-50);
+        }
+        
+        .theme-c .framework__card-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+        
+        .theme-c .framework__card-desc {
+            font-size: 14px;
+            color: var(--dark-text-secondary);
+            line-height: 1.75;
+        }
+        
+        
+        /* ============================================= */
+        /* RESPONSIVE                                   */
+        /* ============================================= */
+        
+        @media (max-width: 768px) {
+            .theme-toggle-bar {
+                padding: 10px 16px;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            
+            .theme-toggle-bar__label {
+                display: none;
+            }
+            
+            .theme-toggle {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .theme-toggle__btn {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+            
+            .theme-a .hero__inner,
+            .theme-b .hero__inner,
+            .theme-c .hero__inner,
+            .theme-a .problem-solution__inner,
+            .theme-b .problem-solution__inner,
+            .theme-c .problem-solution__inner {
+                padding: 60px 24px;
+            }
+            
+            .theme-a .problem-solution__inner,
+            .theme-b .problem-solution__inner,
+            .theme-c .problem-solution__inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .theme-a .problem-solution__image,
+            .theme-b .problem-solution__image,
+            .theme-c .problem-solution__image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            
+            .theme-a .framework__grid,
+            .theme-b .framework__grid,
+            .theme-c .framework__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ============================================= */
+        /* VISIBILITY CONTROL                           */
+        /* ============================================= */
+        
+        .theme-a, .theme-b, .theme-c {
+            display: none;
+        }
+        
+        .theme-a.visible, .theme-b.visible, .theme-c.visible {
+            display: block;
+        }
+        
+        /* Animation on theme switch */
+        .theme-a.visible, .theme-b.visible, .theme-c.visible {
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-bar">
+        <span class="theme-toggle-bar__label">Direction:</span>
+        <div class="theme-toggle">
+            <button class="theme-toggle__btn active" data-theme="a">A — Warm Minimalism</button>
+            <button class="theme-toggle__btn" data-theme="b">B — Grounded & Textured</button>
+            <button class="theme-toggle__btn" data-theme="c">C — Light/Dark Hybrid</button>
+        </div>
+    </div>
+    
+    <!-- ============================================= -->
+    <!-- OPTION A: WARM MINIMALISM                    -->
+    <!-- ============================================= -->
+    <div class="theme-a visible">
+        <nav class="nav">
+            <div class="nav__inner">
+                <a href="#" class="nav__logo">Pragmatic Tactics</a>
+                <a href="#" class="nav__cta">Schedule a Call</a>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <div class="hero__inner">
+                <span class="hero__eyebrow">Strategic Execution Partner</span>
+                <h1 class="hero__title">You don't need more strategy.<br>It's time to <em>execute</em>.</h1>
+                <p class="hero__subtitle">I help small business owners move from working in the chaos to owning the systems. Calm, focused partnership—starting with the wins that matter most.</p>
+                <a href="#" class="hero__cta">
+                    Find Your Starting Point
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        
+        <section class="value-prop">
+            <div class="value-prop__inner">
+                <p class="value-prop__quote">"Ideas are easy. Execution is everything."</p>
+                <p class="value-prop__attribution">— John Doerr</p>
+            </div>
+        </section>
+        
+        <section class="problem-solution">
+            <div class="problem-solution__inner">
+                <div class="problem-solution__image"></div>
+                <div class="problem-solution__content">
+                    <h2>The gap between knowing and doing</h2>
+                    <p>"Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle."</p>
+                    <p>Solid advice. But here's the thing: <strong>knowing what to do and actually doing it</strong> are worlds apart.</p>
+                    <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice—it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="framework">
+            <div class="framework__inner">
+                <div class="framework__header">
+                    <h2 class="framework__title">How I Think About Your Business</h2>
+                    <p class="framework__subtitle">Three lenses. One integrated approach.</p>
+                </div>
+                <div class="framework__grid">
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="5"/>
+                                <path d="M20 21a8 8 0 0 0-16 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">People</h3>
+                        <p class="framework__card-desc">Roles, accountability, communication patterns. Making sure the right people can do their best work.</p>
+                    </div>
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18"/>
+                                <path d="M7 16l4-4 4 4 6-6"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">Process</h3>
+                        <p class="framework__card-desc">Workflows, systems, documentation. Turning tribal knowledge into repeatable operations.</p>
+                    </div>
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">Technology</h3>
+                        <p class="framework__card-desc">Tools that actually fit. Digital solutions that work with your operations, not against them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
+    <!-- ============================================= -->
+    <!-- OPTION B: GROUNDED & TEXTURED                -->
+    <!-- ============================================= -->
+    <div class="theme-b">
+        <nav class="nav">
+            <div class="nav__inner">
+                <a href="#" class="nav__logo">Pragmatic Tactics</a>
+                <a href="#" class="nav__cta">Schedule a Call</a>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <div class="hero__inner">
+                <span class="hero__eyebrow">Strategic Execution Partner</span>
+                <h1 class="hero__title">You don't need more strategy.<br>It's time to <em>execute</em>.</h1>
+                <p class="hero__subtitle">I help small business owners move from working in the chaos to owning the systems. Calm, focused partnership—starting with the wins that matter most.</p>
+                <a href="#" class="hero__cta">
+                    Find Your Starting Point
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        
+        <section class="value-prop">
+            <div class="value-prop__inner">
+                <p class="value-prop__quote">"<strong>Ideas are easy.</strong> Execution is everything."</p>
+                <p class="value-prop__attribution">— John Doerr</p>
+            </div>
+        </section>
+        
+        <section class="problem-solution">
+            <div class="problem-solution__inner">
+                <div class="problem-solution__image"></div>
+                <div class="problem-solution__content">
+                    <h2>The gap between knowing and doing</h2>
+                    <p>"Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle."</p>
+                    <p>Solid advice. But here's the thing: <strong>knowing what to do and actually doing it</strong> are worlds apart.</p>
+                    <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice—it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="framework">
+            <div class="framework__inner">
+                <div class="framework__header">
+                    <h2 class="framework__title">How I Think About Your Business</h2>
+                    <p class="framework__subtitle">Three lenses. One integrated approach.</p>
+                </div>
+                <div class="framework__grid">
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="5"/>
+                                <path d="M20 21a8 8 0 0 0-16 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">People</h3>
+                        <p class="framework__card-desc">Roles, accountability, communication patterns. Making sure the right people can do their best work.</p>
+                    </div>
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18"/>
+                                <path d="M7 16l4-4 4 4 6-6"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">Process</h3>
+                        <p class="framework__card-desc">Workflows, systems, documentation. Turning tribal knowledge into repeatable operations.</p>
+                    </div>
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">Technology</h3>
+                        <p class="framework__card-desc">Tools that actually fit. Digital solutions that work with your operations, not against them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
+    <!-- ============================================= -->
+    <!-- OPTION C: LIGHT/DARK HYBRID                  -->
+    <!-- ============================================= -->
+    <div class="theme-c">
+        <nav class="nav">
+            <div class="nav__inner">
+                <a href="#" class="nav__logo">Pragmatic Tactics</a>
+                <a href="#" class="nav__cta">Schedule a Call</a>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <div class="hero__inner">
+                <span class="hero__eyebrow">Strategic Execution Partner</span>
+                <h1 class="hero__title">You don't need more strategy.<br>It's time to <em>execute</em>.</h1>
+                <p class="hero__subtitle">I help small business owners move from working in the chaos to owning the systems. Calm, focused partnership—starting with the wins that matter most.</p>
+                <a href="#" class="hero__cta">
+                    Find Your Starting Point
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        
+        <section class="value-prop">
+            <div class="value-prop__inner">
+                <p class="value-prop__quote">"<strong>Ideas are easy.</strong> Execution is everything."</p>
+                <p class="value-prop__attribution">— John Doerr</p>
+            </div>
+        </section>
+        
+        <section class="problem-solution">
+            <div class="problem-solution__inner">
+                <div class="problem-solution__image"></div>
+                <div class="problem-solution__content">
+                    <h2>The gap between knowing and doing</h2>
+                    <p>"Work on your business, not in it" — "Delegate or drown" — "Systematize or struggle."</p>
+                    <p>Solid advice. But here's the thing: <strong>knowing what to do and actually doing it</strong> are worlds apart.</p>
+                    <p>That disparity is exactly why I started Pragmatic Tactics. After seeing brilliant businesses get stuck in this gap, I realized what was missing wasn't more advice—it was <strong>a partner focused on strategic execution</strong>, someone who works alongside you to make it happen.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="framework">
+            <div class="framework__inner">
+                <div class="framework__header">
+                    <h2 class="framework__title">How I Think About Your Business</h2>
+                    <p class="framework__subtitle">Three lenses. One integrated approach.</p>
+                </div>
+                <div class="framework__grid">
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="5"/>
+                                <path d="M20 21a8 8 0 0 0-16 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">People</h3>
+                        <p class="framework__card-desc">Roles, accountability, communication patterns. Making sure the right people can do their best work.</p>
+                    </div>
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18"/>
+                                <path d="M7 16l4-4 4 4 6-6"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">Process</h3>
+                        <p class="framework__card-desc">Workflows, systems, documentation. Turning tribal knowledge into repeatable operations.</p>
+                    </div>
+                    <div class="framework__card">
+                        <div class="framework__card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="framework__card-title">Technology</h3>
+                        <p class="framework__card-desc">Tools that actually fit. Digital solutions that work with your operations, not against them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
+    <script>
+        // Theme toggle functionality
+        const toggleBtns = document.querySelectorAll('.theme-toggle__btn');
+        const themeA = document.querySelector('.theme-a');
+        const themeB = document.querySelector('.theme-b');
+        const themeC = document.querySelector('.theme-c');
+        
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update button states
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Hide all themes
+                themeA.classList.remove('visible');
+                themeB.classList.remove('visible');
+                themeC.classList.remove('visible');
+                
+                // Show selected theme
+                const theme = btn.dataset.theme;
+                if (theme === 'a') {
+                    themeA.classList.add('visible');
+                } else if (theme === 'b') {
+                    themeB.classList.add('visible');
+                } else if (theme === 'c') {
+                    themeC.classList.add('visible');
+                }
+                
+                // Scroll to top on switch
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
