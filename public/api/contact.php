@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = json_decode(file_get_contents('php://input'), true);
 
 // Validate required fields
-$required_fields = ['name', 'email', 'business_type'];
+$required_fields = ['name', 'email'];
 foreach ($required_fields as $field) {
     if (empty($input[$field])) {
         http_response_code(400);
@@ -34,7 +34,7 @@ if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
 // Sanitize input
 $name = htmlspecialchars(trim($input['name']));
 $email = filter_var($input['email'], FILTER_SANITIZE_EMAIL);
-$business_type = htmlspecialchars(trim($input['business_type']));
+$business_type = htmlspecialchars(trim($input['business_type'] ?? 'General'));
 $message = htmlspecialchars(trim($input['message'] ?? ''));
 $timestamp = $input['timestamp'] ?? date('Y-m-d H:i:s');
 $source = $input['source'] ?? 'contact_form';
