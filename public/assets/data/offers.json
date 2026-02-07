@@ -1,0 +1,60 @@
+[
+  {
+    "id": "ops-basecamp",
+    "name": "Ops Basecamp",
+    "kind": "service_intake",
+    "status": "active",
+    "price": 750,
+    "currency": "CAD",
+    "shortDescription": "8-week 1-on-1 operational consulting program for Revelstoke small business owners.",
+    "fulfillment": {
+      "type": "redirect",
+      "redirectUrl": "https://tally.so/r/your-intake-form",
+      "buttonLabel": "Open intake form",
+      "fallbackMessage": "If the intake form does not open, reply to your receipt email and we will send it manually."
+    }
+  },
+  {
+    "id": "strategy-kickoff",
+    "name": "Strategy Kickoff Session",
+    "kind": "service_intake",
+    "status": "active",
+    "price": 297,
+    "currency": "CAD",
+    "shortDescription": "90-minute kickoff call plus a focused action plan.",
+    "fulfillment": {
+      "type": "redirect",
+      "redirectUrl": "https://tally.so/r/your-intake-form",
+      "buttonLabel": "Open intake form",
+      "fallbackMessage": "If the intake form does not open, reply to your receipt email and we will send it manually."
+    }
+  },
+  {
+    "id": "ops-blueprint-download",
+    "name": "Operations Blueprint (Download)",
+    "kind": "download",
+    "status": "draft",
+    "price": 79,
+    "currency": "CAD",
+    "shortDescription": "A guided template pack to map and standardize operations.",
+    "fulfillment": {
+      "type": "message",
+      "buttonLabel": "Check your email",
+      "fallbackMessage": "Access is delivered by email within 1 business day."
+    }
+  },
+  {
+    "id": "findoc-extractor-access",
+    "name": "FinDoc Extractor App Access",
+    "kind": "app_access",
+    "status": "draft",
+    "price": 49,
+    "currency": "CAD",
+    "shortDescription": "License key access to the FinDoc Extractor app.",
+    "fulfillment": {
+      "type": "message",
+      "buttonLabel": "Check your email",
+      "fallbackMessage": "App access instructions are delivered by email within 1 business day."
+    }
+  }
+]

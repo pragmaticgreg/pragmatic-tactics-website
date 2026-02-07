@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You – Pragmatic Tactics</title>
+  <meta name="description" content="Thanks for your purchase. Here are your next steps." />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <style>
+    .thank-you-card { background: var(--background-white); border: 1px solid var(--border-medium); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-medium); max-width: 720px; margin: 0 auto; text-align: center; }
+    .thank-you-actions { margin-top: 20px; display: grid; gap: 12px; justify-items: center; }
+    .thank-you-muted { color: var(--text-tertiary); margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="/services/strategy-kickoff.html" class="nav-link" data-cta="nav-service">Buy a Service</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a href="/booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <ul>
+          <li><a href="/services/strategy-kickoff.html" class="nav-link" data-cta="header-mobile-service">Buy a Service</a></li>
+          <li><a href="/booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="thank-you-card">
+        <h1 class="section-title" data-thank-you-title>Thanks for your purchase</h1>
+        <p class="section-subtitle" data-thank-you-message>
+          We received your order. Check your inbox for your receipt and the next steps.
+        </p>
+        <div class="thank-you-actions">
+          <a class="cta-primary" data-thank-you-action href="#" target="_blank" rel="noopener">Open intake form</a>
+          <p class="thank-you-muted" data-thank-you-fallback></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__gradient"></div>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="/assets/logos/PT-logo-white-panels-only.svg" alt="Pragmatic Tactics" class="footer__logo">
+        </div>
+        <div class="footer__signup">
+          <form class="signup-form" id="newsletter-form">
+            <div class="signup-form__input-wrapper">
+              <input
+                type="email"
+                placeholder="Get practical insights delivered to your inbox"
+                class="signup-form__input"
+                id="newsletter-email"
+                required
+              >
+              <i data-lucide="mail" class="signup-form__icon"></i>
+            </div>
+            <button type="submit" class="signup-form__button" id="newsletter-submit">
+              <i data-lucide="send" class="signup-form__button-icon"></i>
+              <span class="button-text">Subscribe</span>
+            </button>
+          </form>
+          <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="footer__middle">
+        <div class="footer__location">
+          <p class="footer__location-text">
+            <strong>Based in Revelstoke, BC, Canada</strong><br>
+            Remote consulting available across Canada
+          </p>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Pragmatic Tactics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/scripts/header.js"></script>
+  <script src="/assets/scripts/newsletter.js"></script>
+  <script src="/assets/scripts/thank-you.js"></script>
+</body>
+</html>
