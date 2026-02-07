@@ -1,12 +1,12 @@
 [
   {
     "id": "ops-basecamp",
-    "name": "Ops Basecamp",
+    "name": "Owner Tactics",
     "kind": "service_intake",
     "status": "active",
     "price": 750,
     "currency": "CAD",
-    "shortDescription": "8-week 1-on-1 operational consulting program for Revelstoke small business owners.",
+    "shortDescription": "8-week 1-on-1 consulting engagement for Revelstoke small business owners.",
     "fulfillment": {
       "type": "redirect",
       "redirectUrl": "https://tally.so/r/your-intake-form",
