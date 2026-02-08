@@ -1,6 +1,10 @@
 # macOS noise
 .DS_Store
 
+# Local tooling state (do not commit)
+.firebase/
+.cursor/plans/
+
 # Design archives, drafts, research, AI output dumps
 archive/
 mockups/
