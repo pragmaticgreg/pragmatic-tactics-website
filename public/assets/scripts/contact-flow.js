@@ -10,8 +10,6 @@
   if (!modal) return;
 
   // Elements
-  const overlay = modal.querySelector('[data-cf-close]');
-  const closeBtn = modal.querySelector('.cf-modal__close');
   const backBtn = modal.querySelector('[data-cf-back]');
   const nextBtn = modal.querySelector('[data-cf-next]');
   const progressText = modal.querySelector('[data-cf-progress-text]');
@@ -21,6 +19,7 @@
 
   let currentStep = 1;
   let formData = {};
+  let isSubmitting = false;
 
   // ===================== Open / Close =====================
 
@@ -105,10 +104,12 @@
   }
 
   backBtn.addEventListener('click', () => {
+    if (isSubmitting) return;
     if (currentStep > 1) showStep(currentStep - 1);
   });
 
   nextBtn.addEventListener('click', () => {
+    if (isSubmitting) return;
     if (!validateCurrentStep()) return;
     collectCurrentStepData();
 
@@ -198,6 +199,10 @@
   }
 
   function updateNextEnabled() {
+    if (isSubmitting) {
+      nextBtn.disabled = true;
+      return;
+    }
     if (currentStep === 1) {
       const name = modal.querySelector('[data-cf-field="name"]').value.trim();
       const email = modal.querySelector('[data-cf-field="email"]').value.trim();
@@ -258,8 +263,12 @@
   // ===================== Submission =====================
 
   async function submitForm() {
+    if (isSubmitting) return;
+    isSubmitting = true;
+    backBtn.disabled = true;
     nextBtn.disabled = true;
     nextBtn.textContent = 'Sending...';
+    clearSubmitError();
 
     const payload = {
       name: formData.name || '',
@@ -280,13 +289,50 @@
         body: JSON.stringify(payload)
       });
 
-      if (!response.ok) throw new Error('Submission failed');
+      if (!response.ok) {
+        throw new Error(`Submission failed with status ${response.status}`);
+      }
+
+      showStep(TOTAL_STEPS + 1);
+      isSubmitting = false;
+      return;
     } catch (err) {
-      // Log but don't block — still show confirmation
       console.error('Contact flow submission error:', err);
+      showSubmitError('Something went wrong. Please try again.');
     }
 
-    showStep(TOTAL_STEPS + 1);
+    isSubmitting = false;
+    backBtn.disabled = false;
+    nextBtn.disabled = false;
+    nextBtn.textContent = 'Send';
+  }
+
+  function getSubmitErrorEl() {
+    let errorEl = modal.querySelector('[data-cf-submit-error]');
+    if (!errorEl) {
+      errorEl = document.createElement('p');
+      errorEl.setAttribute('data-cf-submit-error', '');
+      errorEl.style.color = '#b42318';
+      errorEl.style.fontSize = '0.95rem';
+      errorEl.style.margin = '0 0 12px';
+      errorEl.style.display = 'none';
+      footer.prepend(errorEl);
+    }
+    return errorEl;
+  }
+
+  function showSubmitError(message) {
+    const errorEl = getSubmitErrorEl();
+    errorEl.textContent = message;
+    errorEl.style.display = 'block';
+  }
+
+  function clearSubmitError() {
+    const errorEl = modal.querySelector('[data-cf-submit-error]');
+    if (errorEl) {
+      errorEl.textContent = '';
+      errorEl.style.display = 'none';
+    }
   }
 
   // ===================== Reset =====================
@@ -315,5 +361,7 @@
 
     // Show footer
     footer.style.display = 'flex';
+
+    clearSubmitError();
   }
 })();
