@@ -510,12 +510,435 @@
       margin-bottom: 0;
     }
 
+    /* ---------- Secondary CTA ---------- */
+    .ob-secondary-cta {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--sage-700);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .ob-secondary-cta:hover {
+      color: var(--clay-500);
+    }
+    .ob-secondary-cta:focus-visible {
+      outline: 3px solid var(--clay-300);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ---------- Contact Flow Modal ---------- */
+    .cf-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .cf-modal.cf-modal--active {
+      display: flex;
+    }
+    .cf-modal__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
+    .cf-modal__container {
+      position: relative;
+      background: var(--background-white);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      width: 90%;
+      max-width: 520px;
+      max-height: 90dvh;
+      display: flex;
+      flex-direction: column;
+      animation: cf-slide-in 0.3s ease-out;
+      overflow: hidden;
+    }
+    @keyframes cf-slide-in {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Header */
+    .cf-modal__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px 0;
+      flex-shrink: 0;
+    }
+    .cf-modal__progress {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+    }
+    .cf-modal__close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      color: var(--text-tertiary);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cf-modal__close:hover {
+      background: var(--background-light);
+      color: var(--text-primary);
+    }
+    .cf-modal__close:focus-visible {
+      outline: 3px solid var(--clay-300);
+      outline-offset: -3px;
+    }
+
+    /* Progress bar */
+    .cf-modal__progress-bar {
+      height: 3px;
+      background: var(--sand-200);
+      margin: 16px 24px 0;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cf-modal__progress-fill {
+      height: 100%;
+      background: var(--sage-700);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    /* Body */
+    .cf-modal__body {
+      padding: 28px 24px 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* Steps */
+    .cf-step {
+      display: none;
+    }
+    .cf-step--active {
+      display: block;
+      animation: cf-step-in 0.25s ease-out;
+    }
+    @keyframes cf-step-in {
+      from { opacity: 0; transform: translateX(12px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .cf-step__context {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .cf-step__question {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    /* Text inputs */
+    .cf-input-group {
+      margin-bottom: 20px;
+    }
+    .cf-input-group label {
+      display: block;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .cf-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--sand-300);
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--sand-50);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+    .cf-input:focus {
+      outline: none;
+      border-color: var(--sage-600);
+      box-shadow: 0 0 0 3px rgba(61, 94, 89, 0.15);
+    }
+    .cf-input--error {
+      border-color: #c53030;
+    }
+    .cf-input-error {
+      font-size: 13px;
+      color: #c53030;
+      margin-top: 4px;
+      display: none;
+    }
+    .cf-input-error--visible {
+      display: block;
+    }
+
+    /* Option chips (single & multi select) */
+    .cf-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cf-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--sand-50);
+      border: 2px solid var(--sand-300);
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.4;
+      transition: all 0.15s ease;
+      text-align: left;
+      width: 100%;
+      min-height: 48px;
+    }
+    .cf-option:hover {
+      border-color: var(--sage-600);
+      background: var(--background-white);
+    }
+    .cf-option:focus-visible {
+      outline: 3px solid var(--clay-300);
+      outline-offset: -3px;
+    }
+    .cf-option--selected {
+      border-color: var(--sage-700);
+      background: var(--background-white);
+      box-shadow: 0 0 0 1px var(--sage-700);
+    }
+    .cf-option__indicator {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--sand-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    .cf-option--multi .cf-option__indicator {
+      border-radius: 6px;
+    }
+    .cf-option--selected .cf-option__indicator {
+      border-color: var(--sage-700);
+      background: var(--sage-700);
+    }
+    .cf-option__check {
+      display: none;
+      width: 12px;
+      height: 12px;
+      color: white;
+    }
+    .cf-option--selected .cf-option__check {
+      display: block;
+    }
+
+    /* "Other" text input that reveals on selection */
+    .cf-other-input {
+      margin-top: 10px;
+      display: none;
+    }
+    .cf-other-input--visible {
+      display: block;
+    }
+
+    /* Multi-select hint */
+    .cf-multi-hint {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+    }
+
+    /* Textarea */
+    .cf-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--sand-300);
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--sand-50);
+      resize: vertical;
+      min-height: 120px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+    .cf-textarea:focus {
+      outline: none;
+      border-color: var(--sage-600);
+      box-shadow: 0 0 0 3px rgba(61, 94, 89, 0.15);
+    }
+
+    /* Footer / navigation */
+    .cf-modal__footer {
+      padding: 16px 24px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .cf-btn-back {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .cf-btn-back:hover {
+      color: var(--text-primary);
+      background: var(--background-light);
+    }
+    .cf-btn-back:focus-visible {
+      outline: 3px solid var(--clay-300);
+      outline-offset: -3px;
+    }
+    .cf-btn-back--hidden {
+      visibility: hidden;
+    }
+    .cf-btn-next {
+      background: var(--sage-800);
+      color: var(--sand-50);
+      border: none;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-medium);
+      letter-spacing: 0.02em;
+      min-width: 120px;
+    }
+    .cf-btn-next:hover {
+      background: var(--clay-500);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(194, 123, 94, 0.25);
+    }
+    .cf-btn-next:focus-visible {
+      outline: 3px solid var(--clay-300);
+      outline-offset: 2px;
+    }
+    .cf-btn-next:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Confirmation step */
+    .cf-confirmation {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .cf-confirmation__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--sage-700);
+      color: var(--sand-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .cf-confirmation__icon svg {
+      width: 28px;
+      height: 28px;
+    }
+    .cf-confirmation__heading {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .cf-confirmation__text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .cf-confirmation__link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 15px;
+      color: var(--sage-700);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .cf-confirmation__link:hover {
+      color: var(--clay-500);
+    }
+
     /* ---------- Responsive Adjustments ---------- */
     @media (max-width: 768px) {
       .ob-hero { padding: 64px 0 32px; }
       .ob-pain__grid { grid-template-columns: 1fr; }
       .ob-timeline { padding-left: 44px; }
       .ob-pricing__card { padding: 28px 20px; }
+
+      .cf-modal__container {
+        width: 100%;
+        max-width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+      }
+      .cf-modal__body {
+        padding: 24px 20px 20px;
+      }
+      .cf-modal__footer {
+        padding: 12px 20px 20px;
+      }
+      .cf-step__question {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -563,6 +986,9 @@
         <p class="ob-hero__subheadline">8 weeks. 1-on-1. We dig into your business together and build a clear plan around what will make the biggest difference.</p>
         <a href="#pricing" class="cta-primary">Reserve Your Spot — $750</a>
         <p class="ob-hero__micro">Pilot cohort · 6–8 spots · Starts late February 2025</p>
+        <p style="margin-top: 8px;">
+          <button type="button" class="ob-secondary-cta" data-contact-flow-trigger>Not sure yet? Let's see if this is the right fit &rarr;</button>
+        </p>
       </div>
     </section>
 
@@ -794,6 +1220,9 @@
               <span data-spots-count>6</span> of 8 spots remaining
             </div>
             <div class="ob-pricing__spots-note">Limited to ensure dedicated 1-on-1 focus.</div>
+            <p style="margin-top: 20px;">
+              <button type="button" class="ob-secondary-cta" data-contact-flow-trigger>Have questions? Tell us about your business first &rarr;</button>
+            </p>
           </div>
         </div>
       </div>
@@ -1010,6 +1439,209 @@
     }
   })();
   </script>
+
+  <!-- ==================== CONTACT FLOW MODAL ==================== -->
+  <div class="cf-modal" id="contact-flow" role="dialog" aria-modal="true" aria-label="Tell us about your business">
+    <div class="cf-modal__overlay" data-cf-close></div>
+    <div class="cf-modal__container">
+      <div class="cf-modal__header">
+        <span class="cf-modal__progress" data-cf-progress-text>Step 1 of 6</span>
+        <button type="button" class="cf-modal__close" data-cf-close aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="cf-modal__progress-bar">
+        <div class="cf-modal__progress-fill" data-cf-progress-bar style="width: 16.6%"></div>
+      </div>
+
+      <div class="cf-modal__body">
+
+        <!-- Step 1: Who Are You? -->
+        <div class="cf-step cf-step--active" data-cf-step="1">
+          <p class="cf-step__context">So Greg knows who he's talking to.</p>
+          <h3 class="cf-step__question">Who are you?</h3>
+          <div class="cf-input-group">
+            <label for="cf-name">First name</label>
+            <input type="text" id="cf-name" class="cf-input" data-cf-field="name" autocomplete="given-name" required>
+            <p class="cf-input-error" data-cf-error="name">Please enter your name.</p>
+          </div>
+          <div class="cf-input-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" class="cf-input" data-cf-field="email" autocomplete="email" required>
+            <p class="cf-input-error" data-cf-error="email">Please enter a valid email.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: Business Type -->
+        <div class="cf-step" data-cf-step="2">
+          <p class="cf-step__context">Owner Tactics works across industries — this just helps Greg prepare.</p>
+          <h3 class="cf-step__question">What kind of business do you run?</h3>
+          <div class="cf-options" data-cf-select="single" data-cf-field="business_type">
+            <button type="button" class="cf-option" data-value="Trades / Construction">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Trades / Construction
+            </button>
+            <button type="button" class="cf-option" data-value="Professional Services">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Professional Services (accounting, legal, consulting, etc.)
+            </button>
+            <button type="button" class="cf-option" data-value="Hospitality / Food & Beverage">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Hospitality / Food &amp; Beverage
+            </button>
+            <button type="button" class="cf-option" data-value="Retail / E-commerce">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Retail / E-commerce
+            </button>
+            <button type="button" class="cf-option" data-value="Manufacturing / Production">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Manufacturing / Production
+            </button>
+            <button type="button" class="cf-option" data-value="Other">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Other
+            </button>
+          </div>
+          <div class="cf-other-input" data-cf-other="business_type">
+            <input type="text" class="cf-input" data-cf-field="business_type_other" placeholder="What kind of business?">
+          </div>
+        </div>
+
+        <!-- Step 3: Team Size -->
+        <div class="cf-step" data-cf-step="3">
+          <p class="cf-step__context">Including yourself, roughly.</p>
+          <h3 class="cf-step__question">How many people are on your team?</h3>
+          <div class="cf-options" data-cf-select="single" data-cf-field="team_size">
+            <button type="button" class="cf-option" data-value="Just me (solo)">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Just me (solo)
+            </button>
+            <button type="button" class="cf-option" data-value="2–5 people">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              2–5 people
+            </button>
+            <button type="button" class="cf-option" data-value="6–10 people">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              6–10 people
+            </button>
+            <button type="button" class="cf-option" data-value="11–20 people">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              11–20 people
+            </button>
+            <button type="button" class="cf-option" data-value="20+ people">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              20+ people
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Biggest Drags -->
+        <div class="cf-step" data-cf-step="4">
+          <p class="cf-step__context">Pick the ones that hit closest to home. No wrong answers.</p>
+          <h3 class="cf-step__question">What feels like the biggest drag on your time right now?</h3>
+          <p class="cf-multi-hint">Select up to 3</p>
+          <div class="cf-options" data-cf-select="multi" data-cf-field="biggest_drags" data-cf-max="3">
+            <button type="button" class="cf-option cf-option--multi" data-value="I'm involved in every decision">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              I'm involved in every decision
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Delegation doesn't stick — things come back to me">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Delegation doesn't stick — things come back to me
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="We're not using our tools well (or at all)">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              We're not using our tools well (or at all)
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Hiring and training is eating my time">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Hiring and training is eating my time
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="I'm doing work my team should be handling">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              I'm doing work my team should be handling
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="I don't have systems — everything's in my head">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              I don't have systems — everything's in my head
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="I'm not sure, I just know something needs to change">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              I'm not sure, I just know something needs to change
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5: Interests/Goals -->
+        <div class="cf-step" data-cf-step="5">
+          <p class="cf-step__context">This helps Greg tailor his response to what matters most to you.</p>
+          <h3 class="cf-step__question">What would you most want to get out of working with Greg?</h3>
+          <p class="cf-multi-hint">Select up to 3</p>
+          <div class="cf-options" data-cf-select="multi" data-cf-field="interests" data-cf-max="3">
+            <button type="button" class="cf-option cf-option--multi" data-value="Get a clear plan for what to focus on first">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Get a clear plan for what to focus on first
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Better use of tools we're already paying for">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Better use of tools we're already paying for
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Figure out how AI can actually help my business">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Figure out how AI can actually help my business
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Get processes out of my head and into something my team can run">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Get processes out of my head and into something my team can run
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Free up my time without hiring more people">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Free up my time without hiring more people
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Build a roadmap I can actually follow">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Build a roadmap I can actually follow
+            </button>
+            <button type="button" class="cf-option cf-option--multi" data-value="Support for a specific problem I already know about">
+              <span class="cf-option__indicator"><svg class="cf-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              Support for a specific problem I already know about
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 6: Open Text -->
+        <div class="cf-step" data-cf-step="6">
+          <p class="cf-step__context">Totally optional. But if there's something specific on your mind, this is the place.</p>
+          <h3 class="cf-step__question">Is there anything specific you'd like to ask or tell Greg?</h3>
+          <textarea class="cf-textarea" data-cf-field="open_text" placeholder="Whatever's on your mind..." rows="5"></textarea>
+        </div>
+
+        <!-- Step 7: Confirmation -->
+        <div class="cf-step" data-cf-step="7">
+          <div class="cf-confirmation">
+            <div class="cf-confirmation__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h3 class="cf-confirmation__heading">Got it. Greg will be in touch.</h3>
+            <p class="cf-confirmation__text">You'll hear back within 1–2 business days with thoughts tailored to what you've shared. In the meantime, feel free to review the full details on this page.</p>
+            <a href="#pricing" class="cf-confirmation__link" data-cf-close>Review pricing &amp; details &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cf-modal__footer" data-cf-footer>
+        <button type="button" class="cf-btn-back cf-btn-back--hidden" data-cf-back aria-label="Go back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back
+        </button>
+        <button type="button" class="cf-btn-next" data-cf-next>Continue</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/assets/scripts/contact-flow.js"></script>
 
   <script>
     // Initialize Lucide icons
