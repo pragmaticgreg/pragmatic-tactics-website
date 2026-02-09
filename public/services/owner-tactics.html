@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Owner Tactics | Operational Consulting for Revelstoke Small Businesses</title>
   <meta name="description" content="8-week 1-on-1 consulting for Revelstoke small business owners. Find out where to focus, get a custom roadmap, and start making real changes. Pilot pricing — $750.">
-  <link rel="canonical" href="https://pragmatictactics.com/services/strategy-kickoff.html">
+  <link rel="canonical" href="https://pragmatictactics.com/services/owner-tactics.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pragmatictactics.com/services/strategy-kickoff.html">
+  <meta property="og:url" content="https://pragmatictactics.com/services/owner-tactics.html">
   <meta property="og:title" content="Owner Tactics | Operational Consulting for Revelstoke Small Businesses">
   <meta property="og:description" content="8-week 1-on-1 consulting for Revelstoke small business owners. Find out where to focus, get a custom roadmap, and start making real changes. Pilot pricing — $750.">
   <meta property="og:image" content="https://pragmatictactics.com/assets/logos/Pragmatic_Tactics_Logo_1200x630.png">
@@ -20,7 +20,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://pragmatictactics.com/services/strategy-kickoff.html">
+  <meta name="twitter:url" content="https://pragmatictactics.com/services/owner-tactics.html">
   <meta name="twitter:title" content="Owner Tactics | Operational Consulting for Revelstoke Small Businesses">
   <meta name="twitter:description" content="8-week 1-on-1 consulting for Revelstoke small business owners. Find out where to focus, get a custom roadmap, and start making real changes. Pilot pricing.">
   <meta name="twitter:image" content="https://pragmatictactics.com/assets/logos/Pragmatic_Tactics_Logo_1200x630.png">
@@ -97,6 +97,23 @@
     /* OPS BASECAMP — PAGE-SPECIFIC STYLES           */
     /* ============================================= */
 
+    /* ---------- Primary CTA override (clay) ---------- */
+    .ob-hero .cta-primary,
+    .ob-cta-block .cta-primary,
+    .ob-pricing__card .cta-primary,
+    .ob-final-cta .cta-primary,
+    .ob-sticky-cta .cta-primary {
+      background: var(--accent-orange);
+      color: white;
+    }
+    .ob-hero .cta-primary:hover,
+    .ob-cta-block .cta-primary:hover,
+    .ob-pricing__card .cta-primary:hover,
+    .ob-final-cta .cta-primary:hover,
+    .ob-sticky-cta .cta-primary:hover {
+      background: #d55a00;
+    }
+
     /* ---------- Hero ---------- */
     .ob-hero {
       padding: 80px 0 48px;
@@ -161,6 +178,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ob-pain__item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
     }
     .ob-pain__item::before {
       content: "\201C";
@@ -199,6 +221,11 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: var(--shadow-subtle);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ob-accordion__item:hover {
+      border-color: var(--clay-300);
+      box-shadow: var(--shadow-medium);
     }
     .ob-accordion__trigger {
       width: 100%;
@@ -298,6 +325,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .ob-timeline__step:hover .ob-timeline__node {
+      transform: scale(1.15);
+      background: var(--clay-500);
     }
     .ob-timeline__title {
       font-family: 'Fraunces', serif;
@@ -310,6 +342,50 @@
       font-size: 16px;
       line-height: 1.6;
       color: var(--text-secondary);
+    }
+    .ob-timeline__toggle {
+      display: inline-block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--sage-700);
+      padding: 4px 0;
+      margin-top: 8px;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+    .ob-timeline__toggle:hover {
+      color: var(--clay-500);
+    }
+    .ob-timeline__toggle:focus-visible {
+      outline: 2px solid var(--clay-300);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .ob-timeline__toggle svg {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-left: 4px;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+    }
+    .ob-timeline__toggle[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+    .ob-timeline__detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, margin-top 0.35s ease;
+    }
+    .ob-timeline__detail-content {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      padding-top: 12px;
     }
 
     /* ---------- Deliverables (What You Get) ---------- */
@@ -336,6 +412,11 @@
       height: 24px;
       color: var(--sage-700);
       margin-top: 3px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .ob-deliverables__item:hover .ob-deliverables__icon {
+      color: var(--clay-500);
+      transform: scale(1.1);
     }
 
     /* ---------- About Greg ---------- */
@@ -373,6 +454,12 @@
       padding: 36px 32px;
       text-align: center;
       box-shadow: var(--shadow-medium);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .ob-pricing__card:hover {
+      transform: translateY(-4px);
+      border-color: var(--clay-500);
+      box-shadow: 0 20px 60px rgba(61, 56, 52, 0.12);
     }
     .ob-pricing__label {
       font-size: 13px;
@@ -467,7 +554,10 @@
     /* ---------- Inline CTA block (between sections) ---------- */
     .ob-cta-block {
       text-align: center;
-      padding: 24px 0;
+      padding: 40px 24px;
+      background: var(--background-medium);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
     }
 
     /* ---------- Sticky Mobile CTA ---------- */
@@ -516,17 +606,21 @@
       margin-top: 16px;
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 15px;
-      font-weight: 500;
-      color: var(--sage-700);
+      font-weight: 600;
+      color: var(--clay-500);
       text-decoration: none;
-      transition: color 0.2s ease;
+      border-bottom: 1.5px solid var(--clay-300);
+      padding: 0 0 2px;
       cursor: pointer;
       background: none;
-      border: none;
-      padding: 0;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
     .ob-secondary-cta:hover {
-      color: var(--clay-500);
+      color: var(--clay-700);
+      border-bottom-color: var(--clay-500);
     }
     .ob-secondary-cta:focus-visible {
       outline: 3px solid var(--clay-300);
@@ -916,6 +1010,36 @@
       color: var(--clay-500);
     }
 
+    /* ---------- Reveal-on-scroll children ---------- */
+    .ob-pain__item,
+    .ob-accordion__item,
+    .ob-timeline__step,
+    .ob-deliverables__item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .ob-pain__item.is-visible,
+    .ob-accordion__item.is-visible,
+    .ob-timeline__step.is-visible,
+    .ob-deliverables__item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ob-pain__item,
+      .ob-accordion__item,
+      .ob-timeline__step,
+      .ob-deliverables__item,
+      .ob-timeline__node,
+      .ob-deliverables__icon,
+      .ob-pricing__card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
     /* ---------- Responsive Adjustments ---------- */
     @media (max-width: 768px) {
       .ob-hero { padding: 64px 0 32px; }
@@ -947,30 +1071,27 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Header -->
-  <header class="nav">
+  <header class="nav" role="banner">
     <div class="container">
       <div class="nav-content">
         <div class="logo">
           <a href="/">
-            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;" loading="eager">
           </a>
         </div>
-        <nav class="nav-links">
-          <a href="/services/strategy-kickoff.html" class="nav-link" data-cta="nav-service">Owner Tactics</a>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="/services/owner-tactics.html" class="nav-link" data-cta="nav-service" aria-current="page">Services</a>
         </nav>
         <div class="nav-actions">
           <button class="hamburger" id="hamburger" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </button>
           <a href="/booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
         </div>
       </div>
       <div class="mobile-menu" id="mobile-menu">
         <ul>
-          <li><a href="/services/strategy-kickoff.html" class="nav-link" data-cta="header-mobile-service">Owner Tactics</a></li>
-          <li><a href="/booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
+          <li><a href="/services/owner-tactics.html" class="nav-link" data-cta="header-mobile-service" aria-current="page">Services</a></li>
         </ul>
       </div>
     </div>
@@ -982,10 +1103,10 @@
     <section class="section ob-hero">
       <div class="container">
         <p class="ob-hero__eyebrow">For Revelstoke Business Owners with Teams of 3–20</p>
-        <h1 class="ob-hero__headline">You're Doing Too Much. Let's Figure Out What Actually Matters.</h1>
-        <p class="ob-hero__subheadline">8 weeks. 1-on-1. We dig into your business together and build a clear plan around what will make the biggest difference.</p>
+        <h1 class="ob-hero__headline">You're Doing Too Much. <br>Let's Figure Out What Actually Matters.</h1>
+        <p class="ob-hero__subheadline">8 weeks. 1-on-1. We figure out what's costing you the most time, put real fixes in place, and give you a clear path forward.</p>
         <a href="#pricing" class="cta-primary">Reserve Your Spot — $750</a>
-        <p class="ob-hero__micro">Pilot cohort · 6–8 spots · Starts late February 2025</p>
+        <p class="ob-hero__micro">Pilot cohort · only 5 spots · Starts late February 2025</p>
         <p style="margin-top: 8px;">
           <button type="button" class="ob-secondary-cta" data-contact-flow-trigger>Not sure yet? Let's see if this is the right fit &rarr;</button>
         </p>
@@ -998,12 +1119,12 @@
         <div class="ob-section-heading">
           <h2 class="section-title">Sound Familiar?</h2>
         </div>
-        <div class="ob-pain__grid">
+        <div class="ob-pain__grid" data-reveal-on-scroll data-reveal-children=".ob-pain__item" data-stagger-children="90">
           <div class="ob-pain__item">I'm involved in every decision and nothing moves without me</div>
-          <div class="ob-pain__item">I've tried delegating but it doesn't stick</div>
-          <div class="ob-pain__item">We're at capacity but I can't just keep hiring</div>
+          <div class="ob-pain__item">There has to be a better way, this is too manual</div>
+          <div class="ob-pain__item">Everyone's talking about AI but how does it actually fit</div>
           <div class="ob-pain__item">I know we're not using half the tools we're paying for</div>
-          <div class="ob-pain__item">Everyone's talking about AI but I don't know where to start</div>
+          <div class="ob-pain__item">We're at capacity but I can't just keep hiring</div>
           <div class="ob-pain__item">I know things need to change — I just don't know what to focus on first</div>
         </div>
       </div>
@@ -1015,8 +1136,8 @@
         <div class="ob-section-heading">
           <h2 class="section-title">What This Is</h2>
         </div>
-        <div class="ob-overview__text">
-          <p>Owner Tactics is an 8-week, 1-on-1 engagement that starts with understanding your business and where your time is actually going — not a template. Through a guided discovery process and weekly working sessions, we figure out what's creating the most drag and where small changes will make the biggest difference. You walk away with a clear plan and changes already in motion.</p>
+        <div class="ob-overview__text" data-reveal-on-scroll>
+          <p>Owner Tactics is an 8-week, 1-on-1 engagement built entirely around your business — not a template or a generic framework. We start by understanding where your time is actually going and what's creating the most drag. Then through weekly working sessions, we prioritize what matters, put solutions in place, and build a roadmap for what comes next. This isn't just a plan on paper — you'll have real changes implemented before the 8 weeks are up.</p>
         </div>
       </div>
     </section>
@@ -1027,7 +1148,7 @@
         <div class="ob-section-heading">
           <h2 class="section-title">What We Work On</h2>
         </div>
-        <div class="ob-accordion" data-accordion>
+        <div class="ob-accordion" data-accordion data-reveal-on-scroll data-reveal-children=".ob-accordion__item" data-stagger-children="100">
 
           <div class="ob-accordion__item" data-open="false">
             <button class="ob-accordion__trigger" aria-expanded="false" aria-controls="work-1">
@@ -1039,7 +1160,7 @@
             </button>
             <div class="ob-accordion__body" id="work-1" role="region">
               <div class="ob-accordion__content">
-                Before recommending anything new, we look at what's already in place — Google Workspace, project management tools, shared drives, existing subscriptions — and figure out how to actually get value from them. Sometimes the biggest wins come from using what you're already paying for.
+                Before recommending anything new, we look at what's already in place — Google Workspace, project management tools, shared drives, existing subscriptions — and figure out how to actually get value from them. Sometimes the biggest wins come from using what you're already paying for. We'll identify the gaps and help you or your team put the changes in place during the engagement.
               </div>
             </div>
           </div>
@@ -1054,7 +1175,7 @@
             </button>
             <div class="ob-accordion__body" id="work-2" role="region">
               <div class="ob-accordion__content">
-                Part of the program can include working with you to understand how AI tools can support your own day-to-day as a business leader — from decision-making to communication to planning. We also look at practical use cases for your team: where these tools can reduce repetitive work, improve quality, or free up capacity. The goal isn't to chase trends — it's to find what's genuinely useful for how your business actually operates.
+                I work with you to understand how AI tools can actually support your day-to-day as a business leader — from decision-making to communication to planning. We also look at practical use cases for your team: where these tools can reduce repetitive work, improve quality, or free up capacity. The goal isn't to chase trends — it's to find what's genuinely useful and help you start using it.
               </div>
             </div>
           </div>
@@ -1084,7 +1205,7 @@
             </button>
             <div class="ob-accordion__body" id="work-4" role="region">
               <div class="ob-accordion__content">
-                Sometimes the bottleneck isn't the process — it's that a key person needs support in a specific area. If a particular function of your business is consuming your time because the team needs constant guidance there, that's something we'd identify and build a plan around.
+                Sometimes the bottleneck isn't the process — it's that a key person needs support in a specific area. If a particular function of your business is consuming your time because the team needs constant guidance there, we'll flag it and work on a solution — whether that's something your team can implement on their own, or something I come in and help with directly.
               </div>
             </div>
           </div>
@@ -1099,7 +1220,7 @@
         <div class="ob-section-heading">
           <h2 class="section-title">How It Works</h2>
         </div>
-        <div class="ob-timeline">
+        <div class="ob-timeline" data-reveal-on-scroll data-reveal-children=".ob-timeline__step" data-stagger-children="120">
           <div class="ob-timeline__step">
             <div class="ob-timeline__node">1</div>
             <div class="ob-timeline__title">Enroll & Kickoff</div>
@@ -1108,17 +1229,35 @@
           <div class="ob-timeline__step">
             <div class="ob-timeline__node">2</div>
             <div class="ob-timeline__title">Discovery Phase (2 weeks)</div>
-            <p class="ob-timeline__desc">Use a simple voice-capture tool to record what's on your mind — problems, ideas, goals, frustrations. 5–10 minutes a day.</p>
+            <p class="ob-timeline__desc">Use a private voice-capture tool to record what's on your mind — problems, ideas, goals, frustrations. 5–10 minutes a day, whenever something hits you.</p>
+            <button type="button" class="ob-timeline__toggle" aria-expanded="false" aria-controls="timeline-detail-2" data-timeline-toggle="2">
+              Learn more
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="ob-timeline__detail" id="timeline-detail-2" data-timeline-detail="2">
+              <div class="ob-timeline__detail-content">
+                Everything you capture is private — only you and Greg see it. Between sessions, Greg reviews your entries using pattern-recognition tools to identify root causes, and opportunities. By the end of the discovery phase, he'll bring a compiled summary and mind map to your next session so you can review it together, pressure-test it, and start setting priorities for the weeks ahead.
+              </div>
+            </div>
           </div>
           <div class="ob-timeline__step">
             <div class="ob-timeline__node">3</div>
             <div class="ob-timeline__title">Weekly Working Sessions (5 weeks)</div>
-            <p class="ob-timeline__desc">60-minute 1-on-1 sessions where we turn discovery into action. Prioritize, plan, and start implementing.</p>
+            <p class="ob-timeline__desc">60-minute 1-on-1 sessions where we work through your priorities together. Quick fixes happen on the spot. Bigger things get a plan.</p>
+            <button type="button" class="ob-timeline__toggle" aria-expanded="false" aria-controls="timeline-detail-3" data-timeline-toggle="3">
+              Learn more
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="ob-timeline__detail" id="timeline-detail-3" data-timeline-detail="3">
+              <div class="ob-timeline__detail-content">
+                Some things we'll solve right there in the session — if it's a quick fix, we just do it rather than send you off with homework. Other times, I will prepare something between sessions and walk you through how to put it in place. For bigger items, we'll map out a plan together and figure out whether it's something you tackle on your own, something your team takes on, or something that makes sense to bring myself in for.
+              </div>
+            </div>
           </div>
           <div class="ob-timeline__step">
             <div class="ob-timeline__node">4</div>
-            <div class="ob-timeline__title">Walk Away With a Plan</div>
-            <p class="ob-timeline__desc">A 90-day roadmap, quick wins already in motion, and clarity on what's next.</p>
+            <div class="ob-timeline__title">Walk Away Ready</div>
+            <p class="ob-timeline__desc">A 90-day roadmap, quick wins already working, and clarity on exactly what to do next.</p>
           </div>
         </div>
       </div>
@@ -1135,14 +1274,14 @@
         <div class="ob-section-heading">
           <h2 class="section-title">What You Get</h2>
         </div>
-        <ul class="ob-deliverables">
+        <ul class="ob-deliverables" data-reveal-on-scroll data-reveal-children=".ob-deliverables__item" data-stagger-children="100">
           <li class="ob-deliverables__item">
             <svg class="ob-deliverables__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
             <span>A prioritized 90-day roadmap — what to focus on, in what order, built around your business</span>
           </li>
           <li class="ob-deliverables__item">
             <svg class="ob-deliverables__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Quick wins implemented during the program — not just planned</span>
+            <span>Quick wins implemented during the engagement — not just planned</span>
           </li>
           <li class="ob-deliverables__item">
             <svg class="ob-deliverables__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1150,7 +1289,7 @@
           </li>
           <li class="ob-deliverables__item">
             <svg class="ob-deliverables__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>A trusted advisor who knows your business and can help beyond the program</span>
+            <span>A trusted advisor who knows your business and is available when the next challenge comes up</span>
           </li>
         </ul>
       </div>
@@ -1162,15 +1301,16 @@
         <div class="ob-section-heading">
           <h2 class="section-title">Who's Behind This</h2>
         </div>
-        <div class="image-content-layout">
+        <div class="image-content-layout" data-reveal-on-scroll>
           <div class="image-content-layout__image">
             <img src="/assets/images/Greg Fortier - Freelance business systems support 1200x72dpi.png" alt="Greg Fortier — Pragmatic Tactics, Revelstoke BC">
           </div>
           <div class="image-content-layout__content">
             <div class="ob-about__name">Greg Fortier</div>
             <div class="ob-about__bio">
-              <p>I build things and fix what's not working. I'm not going to sell you a framework or a mindset shift. I've run manufacturing floors, built software, and helped business owners like you figure out where to focus — then actually make the changes.</p>
-              <p>I live and work in Revelstoke. I run my own businesses here. This engagement exists because I kept having the same conversation with local owners: "I know things need to change, I just don't know where to start." Owner Tactics is the answer to that.</p>
+              <p>I think like a manufacturer. Every operation has waste, bottlenecks, and untapped capacity — whether it's a shop floor or an office. I've built production lines, developed inventory management processes, implemented software, and helped business owners get out of the weeds and into a position where their business starts to run without them.</p>
+              <p>I'm not a coach and I'm not selling software. I'm the person who figures out what's broken, what's underused, and what to do about it — then helps you get it done.
+                I live and work in Revelstoke. I run my own businesses here. I built Owner Tactics because I kept having the same conversation with local owners: "I know things need to change, I just don't know where to start.</p>
             </div>
           </div>
         </div>
@@ -1183,7 +1323,7 @@
         <div class="ob-section-heading">
           <h2 class="section-title">Pricing — Revelstoke Pilot Cohort</h2>
         </div>
-        <div class="ob-pricing">
+        <div class="ob-pricing" data-reveal-on-scroll data-reveal-variant="sm">
           <div class="ob-pricing__card">
             <div class="ob-pricing__label">Pilot Cohort Pricing</div>
             <div class="ob-pricing__price" data-offer-price>$750</div>
@@ -1212,16 +1352,16 @@
             <div class="checkout-status" data-checkout-status></div>
 
             <div class="ob-pricing__details">
-              <span>Future cohorts: $1,500+</span>
+              <span>Future cohorts: $1000+</span>
               <span>Paid in advance · In-person in Revelstoke preferred, virtual available</span>
             </div>
 
             <div class="ob-pricing__spots" data-spots-remaining="6">
-              <span data-spots-count>6</span> of 8 spots remaining
+              <span data-spots-count>3</span> of 5 spots remaining
             </div>
-            <div class="ob-pricing__spots-note">Limited to ensure dedicated 1-on-1 focus.</div>
+            <div class="ob-pricing__spots-note">Limited to ensure dedicated 1-on-1 focus and hands-on availability throughout the engagement</div>
             <p style="margin-top: 20px;">
-              <button type="button" class="ob-secondary-cta" data-contact-flow-trigger>Have questions? Tell us about your business first &rarr;</button>
+              <button type="button" class="ob-secondary-cta" data-contact-flow-trigger>Have questions? Tell me about your business first &rarr;</button>
             </p>
           </div>
         </div>
@@ -1234,7 +1374,7 @@
         <div class="ob-section-heading">
           <h2 class="section-title">Frequently Asked Questions</h2>
         </div>
-        <div class="ob-accordion" data-accordion>
+        <div class="ob-accordion" data-accordion data-reveal-on-scroll data-reveal-children=".ob-accordion__item" data-stagger-children="100">
 
           <div class="ob-accordion__item" data-open="false">
             <button class="ob-accordion__trigger" aria-expanded="false" aria-controls="faq-1">
@@ -1243,7 +1383,7 @@
             </button>
             <div class="ob-accordion__body" id="faq-1" role="region">
               <div class="ob-accordion__content">
-                Not exactly. Think of it as having someone in your corner for 8 weeks who helps you figure out where your time and energy should actually go — and then helps you make those changes. We're focused on what's real in your business, not mindset.
+                No. Think of it as having someone in your corner for 8 weeks who helps you figure out where your time and energy should actually go — and then works with you to make real changes. I'm not here to motivate you. I'm here to help fix what's not working.
               </div>
             </div>
           </div>
@@ -1255,7 +1395,7 @@
             </button>
             <div class="ob-accordion__body" id="faq-2" role="region">
               <div class="ob-accordion__content">
-                Any. The program is built around your specific business, not a template. Participants will come from different industries — trades, services, retail, hospitality, etc.
+                This engagement is built for businesses that build, make, fix, or deliver something — trades, construction, manufacturing, professional services, and similar operations. If your business runs on teams, tools, and workflows, this is designed for you.
               </div>
             </div>
           </div>
@@ -1279,7 +1419,7 @@
             </button>
             <div class="ob-accordion__body" id="faq-4" role="region">
               <div class="ob-accordion__content">
-                Great — that's actually a feature. If we find work that goes beyond what your team can handle alone, we can scope additional support separately. The Revelstoke-local format makes this practical.
+                That's the whole point. If we find something that needs more than guidance — whether it's building a tool for your team, working directly with a key person, or implementing a system — I can come in and do that work. Being local in Revelstoke makes this practical in a way that remote consulting can't.
               </div>
             </div>
           </div>
@@ -1291,7 +1431,7 @@
             </button>
             <div class="ob-accordion__body" id="faq-5" role="region">
               <div class="ob-accordion__content">
-                One 60-minute session per week, plus 5–10 minutes per day during the 2-week discovery phase. Manageable for busy owners.
+                The sessions are 60 minutes per week, plus 5–10 minutes a day during the 2-week discovery phase. Between sessions, there's real work to do — implementing changes, testing new approaches, having conversations with your team. It's not busywork. It's the stuff that starts getting your time back. The more you put in between sessions, the more ground we cover together.
               </div>
             </div>
           </div>
@@ -1310,12 +1450,12 @@
 
           <div class="ob-accordion__item" data-open="false">
             <button class="ob-accordion__trigger" aria-expanded="false" aria-controls="faq-7">
-              <div class="ob-accordion__header">Who is this NOT for?</div>
+              <div class="ob-accordion__header">Who IS this for?</div>
               <svg class="ob-accordion__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="ob-accordion__body" id="faq-7" role="region">
               <div class="ob-accordion__content">
-                Solopreneurs without a team (the leverage isn't there yet), anyone looking for a done-for-you service, or anyone not willing to be honest about what's broken. If that's you, no hard feelings — this just isn't the right fit.
+                This is for owners who know something needs to change and are ready to do something about it. You don't need to have the answers — that's what the engagement is for. But you do need to be willing to look honestly at what's working and what isn't, and commit to making changes when we find them.
               </div>
             </div>
           </div>
@@ -1326,8 +1466,8 @@
 
     <!-- ==================== 10. FINAL CTA ==================== -->
     <section class="section ob-final-cta">
-      <div class="container">
-        <p class="ob-final-cta__text">6–8 spots. First come, first served. Pilot pricing won't last.</p>
+      <div class="container" data-reveal-on-scroll>
+        <p class="ob-final-cta__text">Only 5 spots. First come, first served. Pilot pricing won't last.</p>
         <a href="#pricing" class="cta-primary">Reserve Your Spot — $750</a>
       </div>
     </section>
@@ -1340,23 +1480,42 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__gradient"></div>
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer__top">
+      <div class="footer__main">
+        <!-- Column 1: Brand -->
         <div class="footer__brand">
-          <img src="/assets/logos/PT-logo-white-panels-only.svg" alt="Pragmatic Tactics" class="footer__logo">
+          <a href="/" class="footer__logo-link" aria-label="Pragmatic Tactics home">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" class="footer__logo" loading="lazy">
+          </a>
+          <div class="footer__location">
+            <p class="footer__location-city">Revelstoke, BC, Canada</p>
+            <p class="footer__location-note">Remote consulting available across Canada</p>
+          </div>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer__signup">
+        <!-- Column 2: Navigation -->
+        <div class="footer__nav">
+          <h4 class="footer__heading">Navigate</h4>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/owner-tactics.html">Owner Tactics</a></li>
+            <li><a href="/booking.html">Schedule a Call</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Connect -->
+        <div class="footer__connect">
+          <h4 class="footer__heading">Connect</h4>
+          <a href="#" id="footer-email-trigger" class="footer__email-link" aria-label="Send Greg a message">
+            Send Greg a message &rarr;
+          </a>
           <form class="signup-form" id="newsletter-form">
             <div class="signup-form__input-wrapper">
-              <input
-                type="email"
-                placeholder="Get practical insights delivered to your inbox"
-                class="signup-form__input"
-                id="newsletter-email"
-                required
-              >
+              <input type="email" placeholder="Get practical insights delivered to your inbox" class="signup-form__input" id="newsletter-email" required autocomplete="email">
               <i data-lucide="mail" class="signup-form__icon"></i>
             </div>
             <button type="submit" class="signup-form__button" id="newsletter-submit">
@@ -1367,31 +1526,98 @@
           <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
         </div>
       </div>
-      <div class="footer__middle">
-        <div class="footer__location">
-          <p class="footer__location-text">
-            <strong>Based in Revelstoke, BC, Canada</strong><br>
-            Remote consulting available across Canada
-          </p>
-        </div>
-        <div class="footer__social">
-          <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
-        </div>
-      </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2025 Pragmatic Tactics. All rights reserved.</p>
+        <p class="footer__copyright">© 2025 Pragmatic Tactics. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Contact Popup -->
+  <div id="contact-popup" class="contact-popup">
+    <div class="contact-popup__overlay"></div>
+    <div class="contact-popup__modal">
+      <button class="contact-popup__close" aria-label="Close popup">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="contact-popup__content">
+        <h3 class="contact-popup__title">Let's Trade Insights</h3>
+        <div class="contact-popup__checklist">
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>You share a few details about your business</span>
+          </div>
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>I learn what challenges you're facing</span>
+          </div>
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>I send back free, personalized ideas you can act on</span>
+          </div>
+        </div>
+        <p class="contact-popup__subtitle">Just a fair exchange: your experience for mine.</p>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="contact-form__field">
+            <label for="contact-name" class="contact-form__label">Name <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input type="text" id="contact-name" name="name" class="contact-form__input" required autocomplete="name" aria-required="true" aria-describedby="name-hint name-error" placeholder="Your name">
+            <span id="name-hint" class="form-hint visually-hidden">Enter your full name</span>
+            <span id="name-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email" class="contact-form__label">Email <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input type="email" id="contact-email" name="email" class="contact-form__input" required autocomplete="email" aria-required="true" aria-describedby="email-hint email-error" placeholder="you@company.com">
+            <span id="email-hint" class="form-hint visually-hidden">Enter your email address</span>
+            <span id="email-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-business-type" class="contact-form__label">Type of Business <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <select id="contact-business-type" name="business_type" class="contact-form__select" required aria-required="true" aria-describedby="business-error">
+              <option value="" disabled selected>Select your business type</option>
+              <option value="Trades">Trades (construction/service)</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Product based">Product based</option>
+              <option value="Professional services">Professional services</option>
+              <option value="Other">Other</option>
+            </select>
+            <span id="business-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message" class="contact-form__label">Tell me about your biggest challenge</label>
+            <textarea id="contact-message" name="message" class="contact-form__textarea" rows="4" aria-describedby="message-hint" placeholder="What's keeping you up at night? What would change if you solved it?"></textarea>
+            <span id="message-hint" class="form-hint">Optional, but helps me prepare thoughtful ideas for you.</span>
+          </div>
+          <button type="submit" class="contact-form__submit">
+            <span class="contact-form__submit-text">Start the Conversation</span>
+            <span class="contact-form__submit-loading" style="display: none;">
+              <i data-lucide="loader-2" class="animate-spin"></i>
+              Sending...
+            </span>
+          </button>
+          <div id="form-status" class="form-status" role="status" aria-live="polite" hidden>
+            <p class="form-status__message"></p>
+          </div>
+          <p class="contact-form__disclaimer">
+            <strong>Not a subscription.</strong> This is simply a contact form to start a conversation. I'll respond personally within 24 hours.
+          </p>
+        </form>
+        <div id="contact-success" class="contact-success" style="display: none;">
+          <i data-lucide="check-circle" class="contact-success__icon"></i>
+          <h4 class="contact-success__title">Thanks for reaching out!</h4>
+          <p class="contact-success__message">I'll review your message and get back to you within 24 hours with some personalized ideas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="/assets/scripts/header.js"></script>
+  <script src="/assets/scripts/reveal-on-scroll.js"></script>
   <script src="/assets/scripts/newsletter.js"></script>
+  <script src="/assets/scripts/contact-popup.js"></script>
   <script src="/assets/scripts/checkout.js"></script>
 
-  <!-- Accordion + Sticky CTA -->
+  <!-- Accordion + Sticky CTA + Timeline Toggle -->
   <script>
   (() => {
     // --- Accordion ---
@@ -1412,6 +1638,25 @@
           body.style.maxHeight = body.scrollHeight + 'px';
           item.setAttribute('data-open', 'true');
           trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // --- Timeline Toggle ---
+    document.querySelectorAll('[data-timeline-toggle]').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const stepId = toggle.getAttribute('data-timeline-toggle');
+        const detail = document.querySelector(`[data-timeline-detail="${stepId}"]`);
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          detail.style.maxHeight = '0';
+          detail.style.marginTop = '0';
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          detail.style.maxHeight = detail.scrollHeight + 'px';
+          detail.style.marginTop = '8px';
+          toggle.setAttribute('aria-expanded', 'true');
         }
       });
     });
@@ -1441,7 +1686,7 @@
   </script>
 
   <!-- ==================== CONTACT FLOW MODAL ==================== -->
-  <div class="cf-modal" id="contact-flow" role="dialog" aria-modal="true" aria-label="Tell us about your business">
+  <div class="cf-modal" id="contact-flow" role="dialog" aria-modal="true" aria-label="Tell me about your business">
     <div class="cf-modal__overlay" data-cf-close></div>
     <div class="cf-modal__container">
       <div class="cf-modal__header">

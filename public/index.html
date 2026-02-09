@@ -34,7 +34,7 @@
     <meta name="msapplication-TileColor" content="#2c4a46">
 
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -144,37 +144,24 @@
     <header class="nav" role="banner">
         <div class="container">
             <div class="nav-content">
-                <!-- Logo (links to home) -->
                 <div class="logo">
                     <a href="/">
-                    <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;" loading="eager">
+                        <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;" loading="eager">
                     </a>
                 </div>
-
-                <!-- Desktop nav (empty for now, can add links when we have more pages) -->
                 <nav class="nav-links" role="navigation" aria-label="Main navigation">
-                    <a href="/services/strategy-kickoff.html" class="nav-link" data-cta="nav-service">Buy a Service</a>
+                    <a href="/services/owner-tactics.html" class="nav-link" data-cta="nav-service">Services</a>
                 </nav>
-                
-                <!-- Actions -->
                 <div class="nav-actions">
-                    <!-- Mobile hamburger -->
                     <button class="hamburger" id="hamburger" aria-label="Open menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                        <span></span><span></span><span></span>
                     </button>
-                    
-                    <!-- Desktop CTA -->
-                    <a href="booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
+                    <a href="/booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
                 </div>
             </div>
-            
-            <!-- Mobile menu (hidden by default) -->
             <div class="mobile-menu" id="mobile-menu">
                 <ul>
-                    <li><a href="/services/strategy-kickoff.html" class="nav-link" data-cta="header-mobile-service">Buy a Service</a></li>
-                    <li><a href="booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
+                    <li><a href="/services/owner-tactics.html" class="nav-link" data-cta="header-mobile-service">Services</a></li>
                 </ul>
             </div>
         </div>
@@ -1308,75 +1295,40 @@
 
     <footer class="footer" role="contentinfo">
         <div class="container">
-            
             <div class="footer__main">
-                
                 <!-- Column 1: Brand -->
                 <div class="footer__brand">
                     <a href="/" class="footer__logo-link" aria-label="Pragmatic Tactics home">
-                        <img 
-                            src="assets/logos/Logo - Horizontal vibrant.svg" 
-                            alt="Pragmatic Tactics" 
-                            class="footer__logo"
-                            loading="lazy"
-                        >
+                        <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" class="footer__logo" loading="lazy">
                     </a>
-                    
                     <div class="footer__location">
                         <p class="footer__location-city">Revelstoke, BC, Canada</p>
-                        <p class="footer__location-note">Remote support across Canada</p>
+                        <p class="footer__location-note">Remote consulting available across Canada</p>
                     </div>
-                    
-                <div class="footer__social">
+                    <div class="footer__social">
                         <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
                             <i data-lucide="linkedin"></i>
                         </a>
-                        <a href="#" class="footer__social-link footer__social-link--email" id="footer-email-trigger" aria-label="Send an email">
-                            <i data-lucide="mail"></i>
-                        </a>
                     </div>
                 </div>
-                
-                <!-- Column 2: Navigate -->
+                <!-- Column 2: Navigation -->
                 <div class="footer__nav">
                     <h4 class="footer__heading">Navigate</h4>
                     <ul class="footer__links">
-                        <li><a href="#fit-finder">Find Your Fit</a></li>
-                        <li><a href="#starter-projects">Starter Projects</a></li>
-                        <li><a href="#foundation">The Foundation</a></li>
-                        <li><a href="#process">The Process</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services/owner-tactics.html">Owner Tactics</a></li>
+                        <li><a href="/booking.html">Schedule a Call</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 3: Tools -->
-                <div class="footer__nav">
-                    <h4 class="footer__heading">Tools</h4>
-                    <ul class="footer__links">
-                        <li>
-                            <a href="https://findoc-extractor.app" target="_blank" rel="noopener noreferrer">
-                                FinDoc Extractor
-                                <svg class="footer__external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Column 4: Newsletter -->
-                <div class="footer__newsletter">
+                <!-- Column 3: Connect -->
+                <div class="footer__connect">
+                    <h4 class="footer__heading">Connect</h4>
+                    <a href="#" id="footer-email-trigger" class="footer__email-link" aria-label="Send Greg a message">
+                        Send Greg a message &rarr;
+                    </a>
                     <form class="signup-form" id="newsletter-form">
                         <div class="signup-form__input-wrapper">
-                            <input
-                                type="email"
-                                placeholder="Get practical insights delivered to your inbox"
-                                class="signup-form__input"
-                                id="newsletter-email"
-                                required
-                                autocomplete="email"
-                            >
+                            <input type="email" placeholder="Get practical insights delivered to your inbox" class="signup-form__input" id="newsletter-email" required autocomplete="email">
                             <i data-lucide="mail" class="signup-form__icon"></i>
                         </div>
                         <button type="submit" class="signup-form__button" id="newsletter-submit">
@@ -1385,16 +1337,11 @@
                         </button>
                     </form>
                     <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
-                    <p class="footer__tagline">Less advice. More action.</p>
                 </div>
-                
             </div>
-            
-            <!-- Footer Bottom -->
             <div class="footer__bottom">
                 <p class="footer__copyright">© 2025 Pragmatic Tactics. All rights reserved.</p>
             </div>
-            
         </div>
     </footer>
 
@@ -1570,9 +1517,9 @@
             });
         });
     </script>
-    <script src="assets/scripts/header.js"></script>
-    <script src="assets/scripts/newsletter.js"></script>
-    <script src="assets/scripts/contact-popup.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/newsletter.js"></script>
+    <script src="/assets/scripts/contact-popup.js"></script>
     <script>// --- COMPLETE STARTER PROJECT SELECTOR SCRIPT (TIMELINE V4 FINAL) ---
         document.addEventListener('DOMContentLoaded', () => {
             const projectSelectorSection = document.querySelector('#starter-projects');
@@ -2107,98 +2054,7 @@
         }
       });
     </script>
-    <script>
-      // Hide-on-scroll-down, show-on-scroll-up for header
-      (function() {
-        const nav = document.querySelector('.nav');
-        if (!nav) return;
-
-        let lastY = window.scrollY || 0;
-        const threshold = 8;
-
-        const onScroll = () => {
-          const currentY = window.scrollY || 0;
-          const delta = currentY - lastY;
-
-          if (currentY < 10) {
-            nav.classList.remove('nav--hidden');
-          } else if (delta > threshold) {
-            nav.classList.add('nav--hidden');
-          } else if (delta < -threshold) {
-            nav.classList.remove('nav--hidden');
-          }
-
-          lastY = currentY;
-        };
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-      })();
-    </script>
-    <script>
-      // Reveal-on-scroll bus: toggles is-revealed and dispatches section:reveal
-      document.addEventListener('DOMContentLoaded', function(){
-        const targets = Array.from(document.querySelectorAll('[data-reveal-on-scroll]'));
-        if (!targets.length) return;
-        const revealNow = (el) => {
-          el.classList.add('is-revealed');
-          // If configured, reveal children with stagger
-          const childSelector = el.getAttribute('data-reveal-children');
-          if (childSelector) {
-            let children = Array.from(el.querySelectorAll(childSelector));
-            const stagger = parseInt(el.getAttribute('data-stagger-children') || '80', 10);
-            const randomize = (el.getAttribute('data-reveal-random') || 'false') === 'true';
-            if (randomize) {
-              // Fisher-Yates shuffle
-              for (let i = children.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [children[i], children[j]] = [children[j], children[i]];
-              }
-            }
-            children.forEach((child, index) => {
-              const run = () => child.classList.add('is-visible');
-              setTimeout(run, index * stagger);
-            });
-          }
-          el.dispatchEvent(new CustomEvent('section:reveal', { bubbles: true }));
-        };
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduced) {
-          targets.forEach(el => {
-            const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
-            if (delay > 0) {
-              setTimeout(() => revealNow(el), delay);
-            } else {
-              revealNow(el);
-            }
-          });
-          return;
-        }
-        const getOpts = (el) => ({
-          threshold: parseFloat(el.getAttribute('data-reveal-threshold') || '0.15'),
-          rootMargin: el.getAttribute('data-reveal-root-margin') || '0px 0px -10% 0px'
-        });
-        const observers = new Map();
-        targets.forEach(el => {
-          const opts = getOpts(el);
-          const key = JSON.stringify(opts);
-          if (!observers.has(key)) {
-            observers.set(key, new IntersectionObserver((entries, obs) => {
-              entries.forEach(entry => {
-                const node = entry.target;
-                if (entry.isIntersecting) {
-                  const delay = parseInt(node.getAttribute('data-reveal-delay') || '0', 10);
-                  const once = node.getAttribute('data-reveal-once');
-                  const run = () => revealNow(node);
-                  if (delay > 0) setTimeout(run, delay); else run();
-                  if (once !== 'false') obs.unobserve(node);
-                }
-              });
-            }, opts));
-          }
-          observers.get(key).observe(el);
-            });
-        });
-    </script>
+    <script src="/assets/scripts/reveal-on-scroll.js"></script>
     <script>
         // Header booking CTA (Google Scheduling Button) + CTA tracking
         (function() {

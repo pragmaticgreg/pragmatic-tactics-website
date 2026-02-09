@@ -7,35 +7,33 @@
   <meta name="description" content="Your checkout was cancelled or not completed." />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles/main.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .cancel-card { background: var(--background-white); border: 1px solid var(--border-medium); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-medium); max-width: 720px; margin: 0 auto; text-align: center; }
   </style>
 </head>
 <body>
-  <header class="nav">
+  <header class="nav" role="banner">
     <div class="container">
       <div class="nav-content">
         <div class="logo">
           <a href="/">
-            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;" loading="eager">
           </a>
         </div>
-        <nav class="nav-links">
-          <a href="/services/strategy-kickoff.html" class="nav-link" data-cta="nav-service">Buy a Service</a>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="/services/owner-tactics.html" class="nav-link" data-cta="nav-service">Services</a>
         </nav>
         <div class="nav-actions">
           <button class="hamburger" id="hamburger" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </button>
           <a href="/booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
         </div>
       </div>
       <div class="mobile-menu" id="mobile-menu">
         <ul>
-          <li><a href="/services/strategy-kickoff.html" class="nav-link" data-cta="header-mobile-service">Buy a Service</a></li>
-          <li><a href="/booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
+          <li><a href="/services/owner-tactics.html" class="nav-link" data-cta="header-mobile-service">Services</a></li>
         </ul>
       </div>
     </div>
@@ -56,23 +54,42 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer__gradient"></div>
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer__top">
+      <div class="footer__main">
+        <!-- Column 1: Brand -->
         <div class="footer__brand">
-          <img src="/assets/logos/PT-logo-white-panels-only.svg" alt="Pragmatic Tactics" class="footer__logo">
+          <a href="/" class="footer__logo-link" aria-label="Pragmatic Tactics home">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" class="footer__logo" loading="lazy">
+          </a>
+          <div class="footer__location">
+            <p class="footer__location-city">Revelstoke, BC, Canada</p>
+            <p class="footer__location-note">Remote consulting available across Canada</p>
+          </div>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer__signup">
+        <!-- Column 2: Navigation -->
+        <div class="footer__nav">
+          <h4 class="footer__heading">Navigate</h4>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/owner-tactics.html">Owner Tactics</a></li>
+            <li><a href="/booking.html">Schedule a Call</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Connect -->
+        <div class="footer__connect">
+          <h4 class="footer__heading">Connect</h4>
+          <a href="#" id="footer-email-trigger" class="footer__email-link" aria-label="Send Greg a message">
+            Send Greg a message &rarr;
+          </a>
           <form class="signup-form" id="newsletter-form">
             <div class="signup-form__input-wrapper">
-              <input
-                type="email"
-                placeholder="Get practical insights delivered to your inbox"
-                class="signup-form__input"
-                id="newsletter-email"
-                required
-              >
+              <input type="email" placeholder="Get practical insights delivered to your inbox" class="signup-form__input" id="newsletter-email" required autocomplete="email">
               <i data-lucide="mail" class="signup-form__icon"></i>
             </div>
             <button type="submit" class="signup-form__button" id="newsletter-submit">
@@ -83,26 +100,93 @@
           <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
         </div>
       </div>
-      <div class="footer__middle">
-        <div class="footer__location">
-          <p class="footer__location-text">
-            <strong>Based in Revelstoke, BC, Canada</strong><br>
-            Remote consulting available across Canada
-          </p>
-        </div>
-        <div class="footer__social">
-          <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
-        </div>
-      </div>
       <div class="footer__bottom">
         <p class="footer__copyright">© 2025 Pragmatic Tactics. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Contact Popup -->
+  <div id="contact-popup" class="contact-popup">
+    <div class="contact-popup__overlay"></div>
+    <div class="contact-popup__modal">
+      <button class="contact-popup__close" aria-label="Close popup">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="contact-popup__content">
+        <h3 class="contact-popup__title">Let's Trade Insights</h3>
+        <div class="contact-popup__checklist">
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>You share a few details about your business</span>
+          </div>
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>I learn what challenges you're facing</span>
+          </div>
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>I send back free, personalized ideas you can act on</span>
+          </div>
+        </div>
+        <p class="contact-popup__subtitle">Just a fair exchange: your experience for mine.</p>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="contact-form__field">
+            <label for="contact-name" class="contact-form__label">Name <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input type="text" id="contact-name" name="name" class="contact-form__input" required autocomplete="name" aria-required="true" aria-describedby="name-hint name-error" placeholder="Your name">
+            <span id="name-hint" class="form-hint visually-hidden">Enter your full name</span>
+            <span id="name-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email" class="contact-form__label">Email <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input type="email" id="contact-email" name="email" class="contact-form__input" required autocomplete="email" aria-required="true" aria-describedby="email-hint email-error" placeholder="you@company.com">
+            <span id="email-hint" class="form-hint visually-hidden">Enter your email address</span>
+            <span id="email-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-business-type" class="contact-form__label">Type of Business <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <select id="contact-business-type" name="business_type" class="contact-form__select" required aria-required="true" aria-describedby="business-error">
+              <option value="" disabled selected>Select your business type</option>
+              <option value="Trades">Trades (construction/service)</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Product based">Product based</option>
+              <option value="Professional services">Professional services</option>
+              <option value="Other">Other</option>
+            </select>
+            <span id="business-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message" class="contact-form__label">Tell me about your biggest challenge</label>
+            <textarea id="contact-message" name="message" class="contact-form__textarea" rows="4" aria-describedby="message-hint" placeholder="What's keeping you up at night? What would change if you solved it?"></textarea>
+            <span id="message-hint" class="form-hint">Optional, but helps me prepare thoughtful ideas for you.</span>
+          </div>
+          <button type="submit" class="contact-form__submit">
+            <span class="contact-form__submit-text">Start the Conversation</span>
+            <span class="contact-form__submit-loading" style="display: none;">
+              <i data-lucide="loader-2" class="animate-spin"></i>
+              Sending...
+            </span>
+          </button>
+          <div id="form-status" class="form-status" role="status" aria-live="polite" hidden>
+            <p class="form-status__message"></p>
+          </div>
+          <p class="contact-form__disclaimer">
+            <strong>Not a subscription.</strong> This is simply a contact form to start a conversation. I'll respond personally within 24 hours.
+          </p>
+        </form>
+        <div id="contact-success" class="contact-success" style="display: none;">
+          <i data-lucide="check-circle" class="contact-success__icon"></i>
+          <h4 class="contact-success__title">Thanks for reaching out!</h4>
+          <p class="contact-success__message">I'll review your message and get back to you within 24 hours with some personalized ideas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="/assets/scripts/header.js"></script>
   <script src="/assets/scripts/newsletter.js"></script>
+  <script src="/assets/scripts/contact-popup.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

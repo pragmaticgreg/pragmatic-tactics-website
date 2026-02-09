@@ -1,55 +1,51 @@
-<footer class="footer">
-    <div class="footer__gradient"></div>
+<footer class="footer" role="contentinfo">
     <div class="container">
-        <div class="footer__top">
-            <!-- Logo/Brand -->
+        <div class="footer__main">
+            <!-- Column 1: Brand -->
             <div class="footer__brand">
-                <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" class="footer__logo">
+                <a href="/" class="footer__logo-link" aria-label="Pragmatic Tactics home">
+                    <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" class="footer__logo" loading="lazy">
+                </a>
+                <div class="footer__location">
+                    <p class="footer__location-city">Revelstoke, BC, Canada</p>
+                    <p class="footer__location-note">Remote consulting available across Canada</p>
+                </div>
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                </div>
             </div>
-            
-            <!-- Email Signup -->
-            <div class="footer__signup">
-                <form class="signup-form">
+            <!-- Column 2: Navigation -->
+            <div class="footer__nav">
+                <h4 class="footer__heading">Navigate</h4>
+                <ul class="footer__links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services/owner-tactics.html">Owner Tactics</a></li>
+                    <li><a href="/booking.html">Schedule a Call</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: Connect -->
+            <div class="footer__connect">
+                <h4 class="footer__heading">Connect</h4>
+                <a href="#" id="footer-email-trigger" class="footer__email-link" aria-label="Send Greg a message">
+                    Send Greg a message &rarr;
+                </a>
+                <form class="signup-form" id="newsletter-form">
                     <div class="signup-form__input-wrapper">
-                        <input 
-                            type="email" 
-                            placeholder="Get practical insights delivered to your inbox" 
-                            class="signup-form__input"
-                            required
-                        >
+                        <input type="email" placeholder="Get practical insights delivered to your inbox" class="signup-form__input" id="newsletter-email" required autocomplete="email">
                         <i data-lucide="mail" class="signup-form__icon"></i>
                     </div>
-                    <button type="submit" class="signup-form__button">
+                    <button type="submit" class="signup-form__button" id="newsletter-submit">
                         <i data-lucide="send" class="signup-form__button-icon"></i>
-                        Subscribe
+                        <span class="button-text">Subscribe</span>
                     </button>
                 </form>
+                <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
             </div>
         </div>
-
-        <div class="footer__middle">
-            <!-- Location & Service Area -->
-            <div class="footer__location">
-                <p class="footer__location-text">
-                    <strong>Based in Halifax, NS</strong> • Serving Atlantic Canada<br>
-                    Remote consulting available across Canada
-                </p>
-            </div>
-            
-            <!-- Social -->
-            <div class="footer__social">
-                <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" aria-label="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-            </div>
-        </div>
-
         <div class="footer__bottom">
             <p class="footer__copyright">© 2025 Pragmatic Tactics. All rights reserved.</p>
-            <div class="footer__legal">
-                <a href="#" class="footer__legal-link">Privacy</a>
-                <a href="#" class="footer__legal-link">Terms</a>
-            </div>
         </div>
     </div>
 </footer>

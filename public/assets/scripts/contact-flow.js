@@ -286,7 +286,7 @@
       interests: formData.interests || [],
       open_text: formData.open_text || '',
       submitted_at: new Date().toISOString(),
-      source_page: 'strategy-kickoff.html'
+      source_page: 'owner-tactics.html'
     };
 
     try {

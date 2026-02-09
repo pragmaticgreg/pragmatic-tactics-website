@@ -1543,9 +1543,18 @@ h6.section-title { font-size: 20px; }  /* Tiny sections */
     color: var(--primary-navy);
 }
 
-/* Hide desktop CTA on mobile; keep only in hamburger menu */
+/* Shrink CTA button on mobile — stays visible outside hamburger */
 @media (max-width: 768px) {
-    .nav-cta { display: none; }
+    .nav-cta {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Active state for current-page nav link */
+.nav-link[aria-current="page"] {
+    color: var(--primary-navy);
+    font-weight: 600;
 }
 
 /* Mobile Navigation */
@@ -2992,12 +3001,12 @@ select:focus-visible {
 }
 
 /* ─────────────────────────────────────────────
-   FOOTER MAIN: 4-Column Layout
+   FOOTER MAIN: 3-Column Layout
    ───────────────────────────────────────────── */
 
 .footer__main {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 48px;
     align-items: start;
     padding: 48px 0;
@@ -3143,6 +3152,24 @@ select:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+
+.footer__connect {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer__email-link {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer__email-link:hover {
+    color: var(--clay-500);
 }
 
 .signup-form {
@@ -3301,23 +3328,18 @@ select:focus-visible {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
-    
+
     .footer__brand {
-        grid-column: 1;
+        grid-column: 1 / -1;
         grid-row: 1;
     }
-    
-    .footer__newsletter {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    
-    .footer__nav:nth-child(2) {
+
+    .footer__nav {
         grid-column: 1;
         grid-row: 2;
     }
-    
-    .footer__nav:nth-child(3) {
+
+    .footer__connect {
         grid-column: 2;
         grid-row: 2;
     }
@@ -3368,6 +3390,15 @@ select:focus-visible {
         grid-column: auto;
         grid-row: auto;
         order: -1;
+    }
+
+    .footer__connect {
+        align-items: center;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        grid-column: auto;
+        grid-row: auto;
     }
     .signup-form {
         width: 100%;

@@ -1,39 +1,25 @@
-<header class="nav">
+<header class="nav" role="banner">
     <div class="container">
         <div class="nav-content">
-            <!-- Logo (links to home) -->
             <div class="logo">
                 <a href="/">
-                    <img src="assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;">
+                    <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;" loading="eager">
                 </a>
             </div>
-            
-            <nav class="nav-links">
-                <a href="/services/strategy-kickoff.html" class="nav-link" data-cta="nav-service">Buy a Service</a>
+            <nav class="nav-links" role="navigation" aria-label="Main navigation">
+                <a href="/services/owner-tactics.html" class="nav-link" data-cta="nav-service">Services</a>
             </nav>
-            
-            <!-- Actions -->
             <div class="nav-actions">
-                <!-- Mobile hamburger -->
                 <button class="hamburger" id="hamburger" aria-label="Open menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
-                
-                <!-- Desktop CTA -->
-                <a href="booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
+                <a href="/booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
             </div>
         </div>
-        
-        <!-- Mobile menu (hidden by default) -->
         <div class="mobile-menu" id="mobile-menu">
             <ul>
-                <li><a href="/services/strategy-kickoff.html" class="nav-link" data-cta="header-mobile-service">Buy a Service</a></li>
-                <li><a href="booking.html" class="nav-link" data-cta="header-mobile">Schedule a Call</a></li>
+                <li><a href="/services/owner-tactics.html" class="nav-link" data-cta="header-mobile-service">Services</a></li>
             </ul>
         </div>
     </div>
 </header>
-
-

@@ -8,6 +8,15 @@ const db = admin.firestore();
 const helcimApiToken = defineSecret('HELCIM_API_TOKEN');
 
 const OFFERS = {
+  'ops-basecamp': {
+    price: 750,
+    currency: 'CAD',
+    helcimOptions: {
+      paymentMethod: 'cc',
+      confirmationScreen: true,
+      displayContactFields: 1
+    }
+  },
   'strategy-kickoff': {
     price: 297,
     currency: 'CAD',
