@@ -20,10 +20,13 @@
   let currentStep = 1;
   let formData = {};
   let isSubmitting = false;
+  let submitController = null;
+  let submitRequestId = 0;
 
   // ===================== Open / Close =====================
 
   function open() {
+    cancelInFlightSubmission();
     currentStep = 1;
     formData = {};
     resetAllSteps();
@@ -38,6 +41,7 @@
   }
 
   function close() {
+    cancelInFlightSubmission();
     modal.classList.remove('cf-modal--active');
     document.body.style.overflow = '';
   }
@@ -265,6 +269,9 @@
   async function submitForm() {
     if (isSubmitting) return;
     isSubmitting = true;
+    submitRequestId += 1;
+    const requestId = submitRequestId;
+    submitController = new AbortController();
     backBtn.disabled = true;
     nextBtn.disabled = true;
     nextBtn.textContent = 'Sending...';
@@ -286,21 +293,38 @@
       const response = await fetch('/api/contact-flow', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: submitController.signal
       });
 
       if (!response.ok) {
         throw new Error(`Submission failed with status ${response.status}`);
       }
 
-      showStep(TOTAL_STEPS + 1);
-      isSubmitting = false;
-      return;
+      if (requestId === submitRequestId) {
+        showStep(TOTAL_STEPS + 1);
+      }
     } catch (err) {
+      if (err?.name === 'AbortError') {
+        return;
+      }
       console.error('Contact flow submission error:', err);
       showSubmitError('Something went wrong. Please try again.');
+    } finally {
+      isSubmitting = false;
+      submitController = null;
+      backBtn.disabled = false;
+      nextBtn.disabled = false;
+      nextBtn.textContent = 'Send';
     }
+  }
 
+  function cancelInFlightSubmission() {
+    if (!isSubmitting) return;
+    if (submitController) {
+      submitController.abort();
+    }
+    submitController = null;
     isSubmitting = false;
     backBtn.disabled = false;
     nextBtn.disabled = false;
@@ -358,6 +382,7 @@
     // Reset next button
     nextBtn.textContent = 'Continue';
     nextBtn.disabled = true;
+    backBtn.disabled = false;
 
     // Show footer
     footer.style.display = 'flex';
