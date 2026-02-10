@@ -6,6 +6,7 @@
   "hosting": {
     "site": "pragmatic-tactics-site",
     "public": "public",
+    "cleanUrls": true,
     "ignore": [
       "firebase.json",
       "**/.*",
