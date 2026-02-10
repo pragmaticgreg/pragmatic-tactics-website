@@ -1,17 +1,18 @@
 (() => {
   const offersUrl = '/assets/data/offers.json';
-  const buyButton = document.querySelector('[data-checkout-button]');
+  const buyButtons = Array.from(document.querySelectorAll('[data-checkout-button]'));
   const statusEl = document.querySelector('[data-checkout-status]');
-  const nameEl = document.querySelector('[data-offer-name]');
+  const nameEl = document.querySelector('[data-offer-name-display]');
   const priceEl = document.querySelector('[data-offer-price]');
-  const descEl = document.querySelector('[data-offer-description]');
+  const descEl = document.querySelector('[data-offer-description-display]');
 
   let activeCheckoutToken = null;
   let cachedOffer = null;
+  let isInitializingCheckout = false;
 
   const offerId =
     window.OFFER_ID ||
-    buyButton?.getAttribute('data-offer-id') ||
+    buyButtons[0]?.getAttribute('data-offer-id') ||
     document.querySelector('[data-offer-id]')?.getAttribute('data-offer-id');
 
   if (!offerId) {
@@ -100,11 +101,23 @@
     }
   };
 
-  const initializeCheckout = async () => {
-    if (!buyButton) return;
+  const setButtonsBusy = (isBusy) => {
+    buyButtons.forEach((button) => {
+      button.setAttribute('aria-busy', isBusy ? 'true' : 'false');
+      button.setAttribute('aria-disabled', isBusy ? 'true' : 'false');
+      if (isBusy) {
+        button.classList.add('is-processing');
+      } else {
+        button.classList.remove('is-processing');
+      }
+    });
+  };
 
-    buyButton.disabled = true;
-    buyButton.setAttribute('aria-busy', 'true');
+  const initializeCheckout = async () => {
+    if (buyButtons.length === 0 || isInitializingCheckout) return;
+    isInitializingCheckout = true;
+
+    setButtonsBusy(true);
     setStatus('Preparing secure checkout...', 'info');
 
     try {
@@ -133,17 +146,17 @@
     } catch (error) {
       setStatus('We could not start checkout. Please try again or contact us.', 'error');
     } finally {
-      buyButton.disabled = false;
-      buyButton.removeAttribute('aria-busy');
+      isInitializingCheckout = false;
+      setButtonsBusy(false);
     }
   };
 
   hydrateOffer();
 
-  if (buyButton) {
+  buyButtons.forEach((buyButton) => {
     buyButton.addEventListener('click', (event) => {
       event.preventDefault();
       initializeCheckout();
     });
-  }
+  });
 })();
