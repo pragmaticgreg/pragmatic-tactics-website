@@ -12,6 +12,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/services/owner-tactics/",
+        "destination": "/services/owner-tactics",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "/api/**",

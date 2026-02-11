@@ -16,7 +16,7 @@ It's 8 weeks, and it's hands-on — not coaching, not a course. I work with them
 
 I'm running a pilot cohort at $750 (future pricing will be $1,000+), limited to 5 spots, so I can give each person proper attention and reserve capacity for deeper work if needed.
 
-**Here's my ask:** you talk to local business owners every day. If anyone comes to mind who's stretched thin, wearing too many hats, or keeps saying "I know I need to get organized" — I'd love an introduction. Even just a name and I'll take it from there.
+**Here's my ask:** you talk to local business owners every day. If anyone comes to mind who's stretched thin, wearing too many hats, or wondering where things like AI actually fit — I'd love an introduction. Even just a name and I'll take it from there.
 
 Here's the page if you want to take a look: [pragmatictactics.com/services/owner-tactics](https://pragmatictactics.com/services/owner-tactics)
 
