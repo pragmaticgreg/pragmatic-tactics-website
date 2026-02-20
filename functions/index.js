@@ -1,11 +1,10 @@
 const { onRequest } = require('firebase-functions/v2/https');
 const { defineSecret } = require('firebase-functions/params');
-const admin = require('firebase-admin');
-
-admin.initializeApp();
-const db = admin.firestore();
+const nodemailer = require('nodemailer');
 
 const helcimApiToken = defineSecret('HELCIM_API_TOKEN');
+const contactFlowSmtpUser = defineSecret('CONTACT_FLOW_SMTP_USER');
+const contactFlowSmtpPass = defineSecret('CONTACT_FLOW_SMTP_PASS');
 
 const OFFERS = {
   'ops-basecamp': {
@@ -43,6 +42,15 @@ const OFFERS = {
       confirmationScreen: true,
       displayContactFields: 1
     }
+  },
+  'discovery': {
+    price: 800,
+    currency: 'CAD',
+    helcimOptions: {
+      paymentMethod: 'cc',
+      confirmationScreen: true,
+      displayContactFields: 1
+    }
   }
 };
 
@@ -55,7 +63,7 @@ const isContactFlowPath = (req) => {
 };
 
 exports.api = onRequest(
-  { secrets: [helcimApiToken], cors: true, region: 'us-central1' },
+  { secrets: [helcimApiToken, contactFlowSmtpUser, contactFlowSmtpPass], cors: true, region: 'us-central1' },
   async (req, res) => {
     if (req.method === 'OPTIONS') {
       res.status(204).send('');
@@ -65,34 +73,60 @@ exports.api = onRequest(
     // --- Contact Flow Submission ---
     if (isContactFlowPath(req) && req.method === 'POST') {
       try {
-        const {
-          name, email, business_type, team_size,
-          biggest_drags, interests, open_text,
-          submitted_at, source_page
-        } = req.body || {};
+        const body = req.body || {};
+        const { name, email, source_page, submitted_at, ...rest } = body;
 
         if (!name || !email) {
           res.status(400).json({ error: 'Name and email are required' });
           return;
         }
 
-        await db.collection('contact_flow_submissions').add({
-          name,
-          email,
-          business_type: business_type || '',
-          team_size: team_size || '',
-          biggest_drags: biggest_drags || [],
-          interests: interests || [],
-          open_text: open_text || '',
-          submitted_at: submitted_at || new Date().toISOString(),
-          source_page: source_page || '',
-          created_at: admin.firestore.FieldValue.serverTimestamp()
+        const transporter = nodemailer.createTransport({
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: true,
+          auth: {
+            user: contactFlowSmtpUser.value(),
+            pass: contactFlowSmtpPass.value()
+          }
+        });
+
+        const sourcePage = source_page || 'unknown';
+        const submittedAt = submitted_at || new Date().toISOString();
+
+        // Build email body from all submitted fields
+        const emailLines = [
+          `New contact flow submission (${sourcePage})`,
+          '',
+          `Name: ${name}`,
+          `Email: ${email}`
+        ];
+
+        // Append all other fields dynamically
+        for (const [key, value] of Object.entries(rest)) {
+          const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          if (Array.isArray(value)) {
+            emailLines.push(`${label}: ${value.length ? value.join(', ') : 'None selected'}`);
+          } else {
+            emailLines.push(`${label}: ${value || 'Not provided'}`);
+          }
+        }
+
+        emailLines.push(`Submitted at: ${submittedAt}`);
+        emailLines.push(`Source page: ${sourcePage}`);
+
+        await transporter.sendMail({
+          from: `Pragmatic Tactics <${contactFlowSmtpUser.value()}>`,
+          to: 'Greg@pragmatictactics.com',
+          replyTo: email,
+          subject: `Contact flow submission (${sourcePage}) - ${name}`,
+          text: emailLines.join('\n')
         });
 
         res.json({ success: true });
       } catch (error) {
         console.error('Contact flow error:', error);
-        res.status(500).json({ error: 'Failed to save submission' });
+        res.status(500).json({ error: 'Failed to send submission' });
       }
       return;
     }

@@ -15,6 +15,21 @@
     }
   },
   {
+    "id": "discovery",
+    "name": "Discovery",
+    "kind": "service_intake",
+    "status": "active",
+    "price": 800,
+    "currency": "CAD",
+    "shortDescription": "A fixed-price assessment of your business operations with a clear roadmap for automation and efficiency improvements.",
+    "fulfillment": {
+      "type": "redirect",
+      "redirectUrl": "https://tally.so/r/your-intake-form",
+      "buttonLabel": "Open intake form",
+      "fallbackMessage": "If the intake form does not open, reply to your receipt email and we will send it manually."
+    }
+  },
+  {
     "id": "strategy-kickoff",
     "name": "Strategy Kickoff Session",
     "kind": "service_intake",

@@ -17,6 +17,11 @@
         "source": "/services/owner-tactics/",
         "destination": "/services/owner-tactics",
         "type": 301
+      },
+      {
+        "source": "/services/discovery/",
+        "destination": "/services/discovery",
+        "type": 301
       }
     ],
     "rewrites": [

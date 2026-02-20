@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Pragmatic Tactics — Operational Consulting for Small Businesses</title>
+  <meta name="description" content="Operational consulting services for small businesses. Discovery assessments, hands-on consulting engagements, and clear roadmaps for automation and efficiency.">
+  <link rel="canonical" href="https://pragmatictactics.com/services">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pragmatictactics.com/services">
+  <meta property="og:title" content="Services | Pragmatic Tactics — Operational Consulting for Small Businesses">
+  <meta property="og:description" content="Operational consulting services for small businesses. Discovery assessments, hands-on consulting, and clear roadmaps.">
+  <meta property="og:image" content="https://pragmatictactics.com/assets/logos/Pragmatic_Tactics_Logo_1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:site_name" content="Pragmatic Tactics">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pragmatictactics.com/services">
+  <meta name="twitter:title" content="Services | Pragmatic Tactics — Operational Consulting for Small Businesses">
+  <meta name="twitter:description" content="Operational consulting services for small businesses. Discovery assessments, hands-on consulting, and clear roadmaps.">
+  <meta name="twitter:image" content="https://pragmatictactics.com/assets/logos/Pragmatic_Tactics_Logo_1200x630.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logos/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logos/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logos/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#2c4a46">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Pragmatic Tactics",
+    "url": "https://pragmatictactics.com",
+    "logo": "https://pragmatictactics.com/assets/logos/Logo - Horizontal vibrant.svg",
+    "email": "greg@pragmatictactics.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Revelstoke",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Consulting Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Owner Tactics — 8-Week Operational Consulting",
+          "description": "8-week, 1-on-1 operational consulting engagement for small business owners.",
+          "price": "750",
+          "priceCurrency": "CAD",
+          "url": "https://pragmatictactics.com/services/owner-tactics"
+        },
+        {
+          "@type": "Offer",
+          "name": "Discovery — Business Systems Assessment",
+          "description": "A fixed-price assessment of your business operations with a clear roadmap for automation and efficiency improvements.",
+          "price": "800",
+          "priceCurrency": "CAD",
+          "url": "https://pragmatictactics.com/services/discovery"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* ============================================= */
+    /* SERVICES LANDING — PAGE-SPECIFIC STYLES       */
+    /* ============================================= */
+
+    /* ---------- Hero ---------- */
+    .sv-hero {
+      padding: 80px 0 48px;
+      text-align: center;
+    }
+    .sv-hero__eyebrow {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clay-500);
+      margin-bottom: 16px;
+    }
+    .sv-hero__headline {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sv-hero__subheadline {
+      font-size: clamp(17px, 2.2vw, 20px);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Section Headings ---------- */
+    .sv-section-heading {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .sv-section-heading .section-title {
+      margin-bottom: 0;
+    }
+    .sv-section-heading .section-subtitle {
+      margin-top: 12px;
+    }
+
+    /* ---------- Service Cards ---------- */
+    .sv-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .sv-cards {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+      }
+    }
+
+    .sv-card {
+      background: var(--background-white);
+      border: 1px solid var(--border-medium);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+    }
+    .sv-card--alt {
+      border-style: dashed;
+      background: var(--background-light);
+    }
+
+    .sv-card__name {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .sv-card__price {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--clay-700);
+      margin-bottom: 12px;
+    }
+    .sv-card__outcome {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .sv-card__best-for {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .sv-card__best-for li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+    .sv-card__best-for li svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      color: var(--sage-700);
+      margin-top: 4px;
+    }
+    .sv-card__cta {
+      margin-top: auto;
+    }
+    .sv-card__cta .cta-primary {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    .sv-card__cta .cta-primary--orange {
+      background: var(--accent-orange);
+      color: white;
+    }
+    .sv-card__cta .cta-primary--orange:hover {
+      background: #d55a00;
+    }
+    .sv-card__sub-link {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .sv-card__sub-link:hover {
+      color: var(--clay-500);
+    }
+
+    /* ---------- Comparison Table ---------- */
+    .sv-compare {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .sv-compare__table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .sv-compare__table thead th {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 2px solid var(--border-medium);
+    }
+    .sv-compare__table thead th:first-child {
+      color: var(--text-tertiary);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .sv-compare__table tbody td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      vertical-align: top;
+    }
+    .sv-compare__table tbody td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .sv-compare__table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Mobile stacked comparison */
+    @media (max-width: 600px) {
+      .sv-compare__table {
+        display: none;
+      }
+      .sv-compare__mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .sv-compare__mobile-card {
+        background: var(--background-white);
+        border: 1px solid var(--border-medium);
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: var(--shadow-subtle);
+      }
+      .sv-compare__mobile-card h3 {
+        font-family: 'Fraunces', serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+      }
+      .sv-compare__mobile-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-light);
+        font-size: 15px;
+        gap: 12px;
+      }
+      .sv-compare__mobile-row:last-child {
+        border-bottom: none;
+      }
+      .sv-compare__mobile-label {
+        font-weight: 600;
+        color: var(--text-primary);
+        flex-shrink: 0;
+      }
+      .sv-compare__mobile-value {
+        color: var(--text-secondary);
+        text-align: right;
+      }
+    }
+    @media (min-width: 601px) {
+      .sv-compare__mobile {
+        display: none;
+      }
+    }
+
+    /* ---------- SEO Narrative ---------- */
+    .sv-narrative__text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 720px;
+    }
+    .sv-narrative__text p + p {
+      margin-top: 16px;
+    }
+    @media (min-width: 768px) {
+      .sv-narrative__text {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+
+    /* ---------- Reveal-on-scroll children ---------- */
+    .sv-card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .sv-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sv-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ---------- Responsive Adjustments ---------- */
+    @media (max-width: 768px) {
+      .sv-hero { padding: 64px 0 32px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" style="height: 60px;" loading="eager">
+          </a>
+        </div>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="/services" class="nav-link" data-cta="nav-service" aria-current="page">Services</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+          <a href="/booking.html" class="nav-cta" data-cta="header">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <ul>
+          <li><a href="/services" class="nav-link" data-cta="header-mobile-service" aria-current="page">Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==================== 1. HERO ==================== -->
+    <section class="section sv-hero">
+      <div class="container">
+        <p class="sv-hero__eyebrow">Consulting Services</p>
+        <h1 class="sv-hero__headline">Real Fixes for How Your Business Actually Runs</h1>
+        <p class="sv-hero__subheadline">Not theory. Not templates. Hands-on consulting that finds what's broken, underused, or holding you back — and helps you fix it.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 2. SERVICE CARDS ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="sv-cards" data-reveal-on-scroll data-reveal-children=".sv-card" data-stagger-children="120">
+
+          <!-- Card A: Owner Tactics -->
+          <div class="sv-card">
+            <div class="sv-card__name">Owner Tactics</div>
+            <div class="sv-card__price">$750 CAD</div>
+            <p class="sv-card__outcome">8-week, 1-on-1 engagement to get your time back and put real fixes in place.</p>
+            <ul class="sv-card__best-for">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Weekly working sessions
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Changes implemented during the engagement
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Custom 90-day roadmap
+              </li>
+            </ul>
+            <div class="sv-card__cta">
+              <a href="/services/owner-tactics" class="cta-primary cta-primary--orange">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Card B: Discovery -->
+          <div class="sv-card">
+            <div class="sv-card__name">Discovery</div>
+            <div class="sv-card__price">$800 CAD</div>
+            <p class="sv-card__outcome">A fixed-price assessment with a clear roadmap for what to automate, streamline, and fix first.</p>
+            <ul class="sv-card__best-for">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                90-minute deep-dive session
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Written operations assessment
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Money-back guarantee
+              </li>
+            </ul>
+            <div class="sv-card__cta">
+              <a href="/services/discovery" class="cta-primary cta-primary--orange">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Card C: Not Sure -->
+          <div class="sv-card sv-card--alt">
+            <div class="sv-card__name">Not Sure Where to Start?</div>
+            <div class="sv-card__price">&nbsp;</div>
+            <p class="sv-card__outcome">No pressure, no pitch. Book a free 15-minute call and Greg will help you figure out what makes sense.</p>
+            <ul class="sv-card__best-for">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Casual conversation
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Free — no obligation
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Get pointed in the right direction
+              </li>
+            </ul>
+            <div class="sv-card__cta">
+              <a href="/booking.html" class="cta-primary">Book a Call</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. COMPARISON TABLE ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="sv-section-heading">
+          <h2 class="section-title">Which One Is Right?</h2>
+        </div>
+        <div class="sv-compare" data-reveal-on-scroll>
+
+          <!-- Desktop table -->
+          <table class="sv-compare__table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Owner Tactics</th>
+                <th>Discovery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Focus</td>
+                <td>Ongoing 1-on-1 consulting &amp; implementation</td>
+                <td>One-time assessment &amp; roadmap</td>
+              </tr>
+              <tr>
+                <td>Who's involved</td>
+                <td>You (owner) — with Greg each week</td>
+                <td>You + key team members (optional)</td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td>8 weeks</td>
+                <td>1–2 weeks</td>
+              </tr>
+              <tr>
+                <td>Deliverable</td>
+                <td>90-day roadmap + implemented changes</td>
+                <td>Written assessment + prioritized roadmap</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>$750 CAD</td>
+                <td>$800 CAD</td>
+              </tr>
+              <tr>
+                <td>Best when...</td>
+                <td>You want hands-on help making changes now</td>
+                <td>You want clarity on what to fix first</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Mobile stacked -->
+          <div class="sv-compare__mobile">
+            <div class="sv-compare__mobile-card">
+              <h3>Owner Tactics</h3>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Focus</span>
+                <span class="sv-compare__mobile-value">Ongoing 1-on-1 consulting</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Who</span>
+                <span class="sv-compare__mobile-value">You + Greg each week</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Duration</span>
+                <span class="sv-compare__mobile-value">8 weeks</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Deliverable</span>
+                <span class="sv-compare__mobile-value">Roadmap + implemented changes</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Price</span>
+                <span class="sv-compare__mobile-value">$750 CAD</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Best when</span>
+                <span class="sv-compare__mobile-value">You want hands-on help now</span>
+              </div>
+            </div>
+            <div class="sv-compare__mobile-card">
+              <h3>Discovery</h3>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Focus</span>
+                <span class="sv-compare__mobile-value">One-time assessment</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Who</span>
+                <span class="sv-compare__mobile-value">You + key team (optional)</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Duration</span>
+                <span class="sv-compare__mobile-value">1–2 weeks</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Deliverable</span>
+                <span class="sv-compare__mobile-value">Written assessment + roadmap</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Price</span>
+                <span class="sv-compare__mobile-value">$800 CAD</span>
+              </div>
+              <div class="sv-compare__mobile-row">
+                <span class="sv-compare__mobile-label">Best when</span>
+                <span class="sv-compare__mobile-value">You want clarity on what to fix first</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. SEO NARRATIVE ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="sv-section-heading">
+          <h2 class="section-title">Built for Businesses That Build, Make, and Deliver</h2>
+        </div>
+        <div class="sv-narrative__text" data-reveal-on-scroll>
+          <p>Most small business consulting focuses on strategy. We focus on <strong>execution</strong> — the actual systems, tools, and workflows your business runs on every day. The things that determine whether your team can operate without you hovering over every decision.</p>
+          <p>Whether you need a full engagement to rebuild how things work, or a focused assessment to figure out where to start — these services are designed to <strong>match the way real businesses actually operate</strong>. No frameworks. No jargon. Just clear recommendations and real changes.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo-link" aria-label="Pragmatic Tactics home">
+            <img src="/assets/logos/Logo - Horizontal vibrant.svg" alt="Pragmatic Tactics" class="footer__logo" loading="lazy">
+          </a>
+          <div class="footer__location">
+            <p class="footer__location-city">Revelstoke, BC, Canada</p>
+            <p class="footer__location-note">Remote consulting available across Canada</p>
+          </div>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/greg-fortier-4ta/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer__nav">
+          <h4 class="footer__heading">Navigate</h4>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/services/owner-tactics">Owner Tactics</a></li>
+            <li><a href="/services/discovery">Discovery</a></li>
+            <li><a href="/booking.html">Schedule a Call</a></li>
+          </ul>
+        </div>
+        <div class="footer__connect">
+          <h4 class="footer__heading">Connect</h4>
+          <a href="#" id="footer-email-trigger" class="footer__email-link" aria-label="Send Greg a message">
+            Send Greg a message &rarr;
+          </a>
+          <form class="signup-form" id="newsletter-form">
+            <div class="signup-form__input-wrapper">
+              <input type="email" placeholder="Get practical insights delivered to your inbox" class="signup-form__input" id="newsletter-email" required autocomplete="email">
+              <i data-lucide="mail" class="signup-form__icon"></i>
+            </div>
+            <button type="submit" class="signup-form__button" id="newsletter-submit">
+              <i data-lucide="send" class="signup-form__button-icon"></i>
+              <span class="button-text">Subscribe</span>
+            </button>
+          </form>
+          <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Pragmatic Tactics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Popup -->
+  <div id="contact-popup" class="contact-popup">
+    <div class="contact-popup__overlay"></div>
+    <div class="contact-popup__modal">
+      <button class="contact-popup__close" aria-label="Close popup">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="contact-popup__content">
+        <h3 class="contact-popup__title">Let's Trade Insights</h3>
+        <div class="contact-popup__checklist">
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>You share a few details about your business</span>
+          </div>
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>I learn what challenges you're facing</span>
+          </div>
+          <div class="contact-popup__item">
+            <i data-lucide="check" class="contact-popup__check"></i>
+            <span>I send back free, personalized ideas you can act on</span>
+          </div>
+        </div>
+        <p class="contact-popup__subtitle">Just a fair exchange: your experience for mine.</p>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="contact-form__field">
+            <label for="contact-name" class="contact-form__label">Name <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input type="text" id="contact-name" name="name" class="contact-form__input" required autocomplete="name" aria-required="true" aria-describedby="name-hint name-error" placeholder="Your name">
+            <span id="name-hint" class="form-hint visually-hidden">Enter your full name</span>
+            <span id="name-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email" class="contact-form__label">Email <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input type="email" id="contact-email" name="email" class="contact-form__input" required autocomplete="email" aria-required="true" aria-describedby="email-hint email-error" placeholder="you@company.com">
+            <span id="email-hint" class="form-hint visually-hidden">Enter your email address</span>
+            <span id="email-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-business-type" class="contact-form__label">Type of Business <span class="required" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <select id="contact-business-type" name="business_type" class="contact-form__select" required aria-required="true" aria-describedby="business-error">
+              <option value="" disabled selected>Select your business type</option>
+              <option value="Trades">Trades (construction/service)</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Product based">Product based</option>
+              <option value="Professional services">Professional services</option>
+              <option value="Other">Other</option>
+            </select>
+            <span id="business-error" class="form-error" role="alert" aria-live="polite" hidden></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message" class="contact-form__label">Tell me about your biggest challenge</label>
+            <textarea id="contact-message" name="message" class="contact-form__textarea" rows="4" aria-describedby="message-hint" placeholder="What's keeping you up at night? What would change if you solved it?"></textarea>
+            <span id="message-hint" class="form-hint">Optional, but helps me prepare thoughtful ideas for you.</span>
+          </div>
+          <button type="submit" class="contact-form__submit">
+            <span class="contact-form__submit-text">Start the Conversation</span>
+            <span class="contact-form__submit-loading" style="display: none;">
+              <i data-lucide="loader-2" class="animate-spin"></i>
+              Sending...
+            </span>
+          </button>
+          <div id="form-status" class="form-status" role="status" aria-live="polite" hidden>
+            <p class="form-status__message"></p>
+          </div>
+          <p class="contact-form__disclaimer">
+            <strong>Not a subscription.</strong> This is simply a contact form to start a conversation. I'll respond personally within 24 hours.
+          </p>
+        </form>
+        <div id="contact-success" class="contact-success" style="display: none;">
+          <i data-lucide="check-circle" class="contact-success__icon"></i>
+          <h4 class="contact-success__title">Thanks for reaching out!</h4>
+          <p class="contact-success__message">I'll review your message and get back to you within 24 hours with some personalized ideas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/assets/scripts/header.js"></script>
+  <script src="/assets/scripts/reveal-on-scroll.js"></script>
+  <script src="/assets/scripts/newsletter.js"></script>
+  <script src="/assets/scripts/contact-popup.js"></script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

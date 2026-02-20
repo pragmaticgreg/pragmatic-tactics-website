@@ -1,13 +1,16 @@
 /**
  * Contact Flow — Multi-step modal form
- * Triggered by [data-contact-flow-trigger] buttons on the Owner Tactics page.
+ * Triggered by [data-contact-flow-trigger] buttons.
+ * Works across pages — step count and fields are detected from the DOM.
  */
 
 (() => {
-  const TOTAL_STEPS = 6; // steps 1-6 are form steps; 7 is confirmation
-
   const modal = document.getElementById('contact-flow');
   if (!modal) return;
+
+  // Auto-detect step count from DOM (exclude confirmation step)
+  const allSteps = modal.querySelectorAll('[data-cf-step]');
+  const TOTAL_STEPS = allSteps.length - 1;
 
   // Elements
   const backBtn = modal.querySelector('[data-cf-back]');
@@ -16,10 +19,22 @@
   const progressBar = modal.querySelector('[data-cf-progress-bar]');
   const footer = modal.querySelector('[data-cf-footer]');
   const steps = modal.querySelectorAll('[data-cf-step]');
+  const apiBaseOverride = modal.getAttribute('data-cf-api-base');
 
   let currentStep = 1;
   let formData = {};
   let isSubmitting = false;
+
+  const getApiBase = () => {
+    if (apiBaseOverride) return apiBaseOverride;
+    if (window.CONTACT_FLOW_API_BASE) return window.CONTACT_FLOW_API_BASE;
+    if (window.location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+      return 'https://us-central1-pragmatic-tactics-site.cloudfunctions.net/api';
+    }
+    return '/api';
+  };
+
+  const contactFlowUrl = `${getApiBase().replace(/\/$/, '')}/contact-flow`;
   let submitController = null;
   let submitRequestId = 0;
 
@@ -235,17 +250,21 @@
   // ===================== Data Collection =====================
 
   function collectCurrentStepData() {
-    if (currentStep === 1) {
-      formData.name = modal.querySelector('[data-cf-field="name"]').value.trim();
-      formData.email = modal.querySelector('[data-cf-field="email"]').value.trim();
-    } else if (currentStep === 6) {
-      formData.open_text = modal.querySelector('[data-cf-field="open_text"]').value.trim();
-    } else {
-      // Collect from option selections
-      const step = modal.querySelector(`[data-cf-step="${currentStep}"]`);
-      const container = step.querySelector('[data-cf-select]');
-      if (!container) return;
+    const step = modal.querySelector(`[data-cf-step="${currentStep}"]`);
+    if (!step) return;
 
+    // Collect text inputs with data-cf-field
+    step.querySelectorAll('.cf-input[data-cf-field]').forEach(input => {
+      formData[input.getAttribute('data-cf-field')] = input.value.trim();
+    });
+
+    // Collect textareas with data-cf-field
+    step.querySelectorAll('.cf-textarea[data-cf-field]').forEach(textarea => {
+      formData[textarea.getAttribute('data-cf-field')] = textarea.value.trim();
+    });
+
+    // Collect option selections
+    step.querySelectorAll('[data-cf-select]').forEach(container => {
       const fieldName = container.getAttribute('data-cf-field');
       const selectType = container.getAttribute('data-cf-select');
       const selected = container.querySelectorAll('.cf-option--selected');
@@ -261,7 +280,7 @@
       } else if (selectType === 'multi') {
         formData[fieldName] = Array.from(selected).map(o => o.getAttribute('data-value'));
       }
-    }
+    });
   }
 
   // ===================== Submission =====================
@@ -278,19 +297,13 @@
     clearSubmitError();
 
     const payload = {
-      name: formData.name || '',
-      email: formData.email || '',
-      business_type: formData.business_type || '',
-      team_size: formData.team_size || '',
-      biggest_drags: formData.biggest_drags || [],
-      interests: formData.interests || [],
-      open_text: formData.open_text || '',
+      ...formData,
       submitted_at: new Date().toISOString(),
-      source_page: 'owner-tactics'
+      source_page: modal.getAttribute('data-cf-source') || window.location.pathname
     };
 
     try {
-      const response = await fetch('/api/contact-flow', {
+      const response = await fetch(contactFlowUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

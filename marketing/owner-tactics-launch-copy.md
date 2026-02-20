@@ -76,15 +76,17 @@ Caroline
 
 Asking for a favour, Revelstoke.
 
-I've been working on something for local business owners and I'm looking for the right people.
+I'm kicking off something for local business ownersleaders and I'm looking for the right people.
 
-**Owner Tactics** is an 8-week, 1-on-1 engagement for owners with small teams (3–20 people) who know things need to change but aren't sure where to focus. We dig into where your time is actually going — tools you're paying for but barely using, things that still run through you that shouldn't, processes that are way more manual than they need to be — including where AI and modern tools can genuinely help versus where they're just noise. The implementation is based on what they can handle internally with guidance versus what needs additional support. Not a course. Not coaching. Real changes, during the engagement, plus a roadmap to keep building on.
+An 8-week, 1-on-1 engagement for owners/leaders with small teams (3–20 people) who know things need to change but aren't sure where to focus. Focusing on where their personal time gets drained, underutilized software, processes that are way more manual than they need to be, and of course the elephant in the room..... where AI and modern tools can genuinely help versus where they're just noise. 
 
-I'm running a pilot cohort right now: **5 spots at $750** (pilot pricing — it's going up after this).
+A combination of guided/supported internal implementation and additional hands-on support. Not a course. Not coaching. Real changes during the engagement, plus a roadmap to keep building on.
 
-**If you know a business owner in Revelstoke who's stretched thin and could use a fresh set of eyes on how they're running things, I'd really appreciate you sending this their way.** Remote is also an option if they're not always in town.
+I'm running a pilot cohort right now: 5 spots at $750 (discounted pilot pricing).
 
-Link in the comments for anyone who wants to take a look or pass it along.
+If you know a business owner in Revelstoke who's stretched thin and could use a fresh set of eyes on how they're running things, I'd really appreciate you sending this their way. For the right fit remote is also an option if they're not in town.
+
+Link for anyone who wants to take a look or pass it along.
 
 🔗 pragmatictactics.com/services/owner-tactics
 
